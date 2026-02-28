@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Soares Serviços Consultoria e Locação</title>
+
+    <meta name="description"
+        content="Entre em contato com a Soares Serviços. Solicite uma análise técnica para sua operação industrial ou mineradora.">
+    <meta name="keywords" content="contato, orçamento, análise técnica, Soares Serviços, mineração">
+    <meta property="og:title" content="Contato | Soares Serviços">
+    <meta property="og:description" content="Integramos Engenharia e Conformidade para fortalecer sua operação.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+        }
+
+        .contact-info h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 3rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            width: 24px;
+            margin-top: 5px;
+        }
+
+        .contact-item h4 {
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            background: var(--light);
+            padding: 4rem;
+            border-top: 6px solid var(--accent);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--navy-mid);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(11, 46, 107, 0.1);
+            background: var(--white);
+            font-family: 'Barlow', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+        }
+
+        @media (max-width: 960px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="https://via.placeholder.com/200x50/0B2E6B/C9922A?text=SOARES+SERVIÇOS" alt="Soares Serviços">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="contato.html">Contato</a>
+            <a href="contato.html" class="nav-cta">Solicitar Análise</a>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 40vh; padding-top: 180px;">
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="eyebrow">Canais de Atendimento</div>
+            <h1>Vamos Fortalecer sua<br><em>Operação</em> Hoje</h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="contact-grid">
+            <div class="contact-info fade-up">
+                <h2>Canais Diretos</h2>
+
+                <div class="contact-item">
+                    <i data-lucide="mail"></i>
+                    <div>
+                        <h4>E-mail</h4>
+                        <p>contato@soaresservicos.com.br</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i data-lucide="phone"></i>
+                    <div>
+                        <h4>WhatsApp / Telefone</h4>
+                        <p>+55 (XX) XXXXX-XXXX</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <h4>Localização</h4>
+                        <p>Atendimento Nacional com base operacional estratégica.</p>
+                    </div>
+                </div>
+
+                <div
+                    style="margin-top: 3rem; padding: 2rem; background: rgba(201,146,42,0.1); border-left: 4px solid var(--accent);">
+                    <p style="font-weight: 600; color: var(--navy-deep);">Disponível para mobilizações urgentes em todo
+                        o Brasil.</p>
+                </div>
+            </div>
+
+            <div class="contact-form fade-up" style="transition-delay: 0.2s;">
+                <h3
+                    style="font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; margin-bottom:2rem; font-size:1.8rem;">
+                    Solicite uma Análise Técnica</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label>Nome Completo</label>
+                        <input type="text" placeholder="Seu nome ou da sua empresa" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail Corporativo</label>
+                        <input type="email" placeholder="email@empresa.com.br" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone / WhatsApp</label>
+                        <input type="tel" placeholder="(00) 00000-0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Como podemos ajudar?</label>
+                        <textarea rows="4" placeholder="Descreva brevemente sua necessidade operacional"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; border:none;">Enviar
+                        Solicitação</button>
+                    <p style="font-size:0.7rem; color:rgba(0,0,0,0.4); margin-top:1rem; text-align:center;">Retornaremos
+                        em até 24h úteis.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 4rem 6% 2rem; background: var(--navy-deep); color: var(--white);">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem;">
+            <div>
+                <h4 style="font-family:'Barlow Condensed',sans-serif; letter-spacing:0.1em; color:var(--accent);">SOARES
+                    SERVIÇOS</h4>
+                <p style="font-size:0.8rem; color:rgba(255,255,255,0.5);">Engenharia e Locação para Mineração</p>
+            </div>
+            <div style="display: flex; gap: 2rem;">
+                <a href="#" style="color:var(--white); text-decoration:none; font-size:0.9rem;">LinkedIn</a>
+                <a href="#" style="color:var(--white); text-decoration:none; font-size:0.9rem;">WhatsApp</a>
+            </div>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.75rem; color: rgba(255,255,255,0.3); text-align: center;">&copy; 2025
+            Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        lucide.createIcons();
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Esta é uma versão demonstrativa. O formulário está pronto para integração com o backend.');
+        });
+    </script>
+</body>
+
+</html>

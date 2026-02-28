@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós | Soares Serviços Consultoria e Locação</title>
+
+    <meta name="description"
+        content="Saiba mais sobre a Soares Serviços. Integramos Engenharia e Conformidade para fortalecer sua operação industrial e mineradora.">
+    <meta name="keywords" content="engenharia, conformidade, mineração, gestão técnica, Soares Serviços">
+    <meta property="og:title" content="Sobre Nós | Soares Serviços">
+    <meta property="og:description"
+        content="Nossa missão é transformar exigência em solução através da engenharia aplicada.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--slate);
+        }
+
+        .highlight-box {
+            background: var(--primary);
+            color: var(--white);
+            padding: 3rem;
+            border-left: 6px solid var(--accent);
+        }
+
+        .highlight-box h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        @media (max-width: 960px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="https://via.placeholder.com/200x50/0B2E6B/C9922A?text=SOARES+SERVIÇOS" alt="Soares Serviços">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="contato.html">Contato</a>
+            <a href="contato.html" class="nav-cta">Solicitar Análise</a>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 50vh; padding-top: 180px;">
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="eyebrow">Institucional</div>
+            <h1>Autoridade Técnica &<br><em>Segurança</em> Operacional</h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="about-grid">
+            <div class="about-content fade-up">
+                <span class="section-tag">Quem Somos</span>
+                <h2 class="section-title">Engenharia, frota e conformidade em uma única empresa</h2>
+                <p>A Soares Serviços Consultoria e Locação atua na integração estratégica entre engenharia aplicada,
+                    locação de frotas operacionais e conformidade regulatória para grandes operações industriais.</p>
+                <p>Nossa atuação vai além de fornecer veículos: entregamos segurança, controle documental e aderência
+                    total às normas exigidas por mineradoras. Trabalhamos com rigor técnico para reduzir riscos e
+                    garantir aprovação em qualquer processo de credenciamento.</p>
+            </div>
+            <div class="highlight-box fade-up" style="transition-delay: 0.2s;">
+                <h3>Nossa Missão</h3>
+                <p>Fortalecer a operação de nossos clientes através de soluções técnicas integradas, eliminando
+                    burocracia e garantindo a máxima segurança e conformidade normativa.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 4rem 6% 2rem; background: var(--navy-deep); color: var(--white);">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem;">
+            <div>
+                <h4 style="font-family:'Barlow Condensed',sans-serif; letter-spacing:0.1em; color:var(--accent);">SOARES
+                    SERVIÇOS</h4>
+                <p style="font-size:0.8rem; color:rgba(255,255,255,0.5);">Engenharia e Locação para Mineração</p>
+            </div>
+            <div style="display: flex; gap: 2rem;">
+                <a href="#" style="color:var(--white); text-decoration:none; font-size:0.9rem;">LinkedIn</a>
+                <a href="#" style="color:var(--white); text-decoration:none; font-size:0.9rem;">WhatsApp</a>
+            </div>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.75rem; color: rgba(255,255,255,0.3); text-align: center;">&copy; 2025
+            Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

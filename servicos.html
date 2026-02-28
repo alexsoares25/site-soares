@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Serviços | Soares Serviços Consultoria e Locação</title>
+
+    <meta name="description"
+        content="Soluções completas em locação de frotas, gestão técnica, adequação para mineração e consultoria operacional. Atendimento nacional.">
+    <meta name="keywords" content="locação de frotas, mineração, gestão de veículos, NR13, conformidade industrial">
+    <meta property="og:title" content="Nossos Serviços | Soares Serviços">
+    <meta property="og:description" content="Integramos Engenharia e Conformidade para fortalecer sua operação.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .services-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .service-block {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 3rem;
+            padding: 4rem;
+            background: var(--light);
+            border-left: 6px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .service-block:hover {
+            background: var(--white);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-info h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-details ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .service-details li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1rem;
+            color: var(--slate);
+        }
+
+        .service-details li i {
+            color: var(--accent);
+            width: 20px;
+        }
+
+        @media (max-width: 960px) {
+            .service-block {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+
+            .service-details ul {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="https://via.placeholder.com/200x50/0B2E6B/C9922A?text=SOARES+SERVIÇOS" alt="Soares Serviços">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="contato.html">Contato</a>
+            <a href="contato.html" class="nav-cta">Solicitar Análise</a>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 50vh; padding-top: 180px;">
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="eyebrow">Nossas Soluções</div>
+            <h1>Engenharia Aplicada &<br><em>Eficiência</em> Operacional</h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="services-detail-grid">
+
+            <!-- Service 1 -->
+            <div class="service-block fade-up">
+                <div class="service-info">
+                    <h3>Locação de Frotas Operacionais</h3>
+                    <p>Veículos preparados para atuar em áreas industriais e mineradoras, já adaptados às exigências de
+                        segurança e conformidade.</p>
+                </div>
+                <div class="service-details">
+                    <p style="margin-bottom: 1.5rem;">Benefícios core:</p>
+                    <ul>
+                        <li><i data-lucide="check-circle-2"></i> Redução de tempo de adequação</li>
+                        <li><i data-lucide="check-circle-2"></i> Operação Imediata</li>
+                        <li><i data-lucide="check-circle-2"></i> Segurança Certificada</li>
+                        <li><i data-lucide="check-circle-2"></i> Custo Operacional Reduzido</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-block fade-up">
+                <div class="service-info">
+                    <h3>Gestão Técnica de Frotas</h3>
+                    <p>Assumimos o controle técnico da sua frota para que você foque exclusivamente na sua operação.</p>
+                </div>
+                <div class="service-details">
+                    <p style="margin-bottom: 1.5rem;">O que garantimos:</p>
+                    <ul>
+                        <li><i data-lucide="check-circle-2"></i> Manutenção Preventiva/Corretiva</li>
+                        <li><i data-lucide="check-circle-2"></i> Controle Documental Rigoroso</li>
+                        <li><i data-lucide="check-circle-2"></i> Inspeções Técnicas Periódicas</li>
+                        <li><i data-lucide="check-circle-2"></i> Gestão Estratégica de Pneus</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-block fade-up">
+                <div class="service-info">
+                    <h3>Adequação para Mineração</h3>
+                    <p>Executamos a implementação completa dos requisitos exigidos pelas maiores mineradoras do país.
+                    </p>
+                </div>
+                <div class="service-details">
+                    <ul>
+                        <li><i data-lucide="check-circle-2"></i> Itens Obrigatórios de Segurança</li>
+                        <li><i data-lucide="check-circle-2"></i> Padronização Visual Técnica</li>
+                        <li><i data-lucide="check-circle-2"></i> Instalação de Dispositivos</li>
+                        <li><i data-lucide="check-circle-2"></i> Auditoria Documental</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-block fade-up">
+                <div class="service-info">
+                    <h3>Mobilização de Veículos e Pessoas</h3>
+                    <p>Mobilização estratégica eliminando retrabalho e garantindo atendimento aos prazos da contratante.
+                    </p>
+                </div>
+                <div class="service-details">
+                    <ul>
+                        <li><i data-lucide="check-circle-2"></i> Organização Documental</li>
+                        <li><i data-lucide="check-circle-2"></i> Controle de Prazos</li>
+                        <li><i data-lucide="check-circle-2"></i> Acompanhamento Técnico</li>
+                        <li><i data-lucide="check-circle-2"></i> Redução de Atrasos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-block fade-up">
+                <div class="service-info">
+                    <h3>Consultoria Operacional</h3>
+                    <p>Oferecemos suporte técnico especializado para elevar a performance e conformidade da sua
+                        operação.</p>
+                </div>
+                <div class="service-details">
+                    <ul>
+                        <li><i data-lucide="check-circle-2"></i> Estruturação de Processos</li>
+                        <li><i data-lucide="check-circle-2"></i> Adequação Normativa</li>
+                        <li><i data-lucide="check-circle-2"></i> Redução de Não Conformidades</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer style="padding: 4rem 6% 2rem; background: var(--navy-deep); color: var(--white);">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem;">
+            <div>
+                <h4 style="font-family:'Barlow Condensed',sans-serif; letter-spacing:0.1em; color:var(--accent);">SOARES
+                    SERVIÇOS</h4>
+                <p style="font-size:0.8rem; color:rgba(255,255,255,0.5);">Engenharia e Locação para Mineração</p>
+            </div>
+            <div style="display: flex; gap: 2rem;">
+                <a href="#" style="color:var(--white); text-decoration:none; font-size:0.9rem;">LinkedIn</a>
+                <a href="#" style="color:var(--white); text-decoration:none; font-size:0.9rem;">WhatsApp</a>
+            </div>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.75rem; color: rgba(255,255,255,0.3); text-align: center;">&copy; 2025
+            Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
