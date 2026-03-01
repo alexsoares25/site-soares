@@ -4,28 +4,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
   <title>Soares Serviços Consultoria e Locação | Engenharia e Conformidade</title>
 
   <!-- SEO ESTRUTURADO -->
   <meta name="description"
-    content="Locação de frotas, gestão técnica e adequação de veículos para mineração. Soluções completas para operações industriais no Brasil.">
+    content="Engenharia aplicada à conformidade para operações mineradoras de alta exigência. Locação de frotas, gestão técnica (NR-22/NR-12) e adequação de veículos com rigor normativo e controle operacional.">
   <meta name="keywords"
-    content="mineração, gestão de frotas, adequação de veículos, mobilização industrial, consultoria operacional">
-  <meta property="og:title" content="Soares Serviços Consultoria e Locação">
-  <meta property="og:description" content="Integramos Engenharia e Conformidade para fortalecer sua operação.">
+    content="mineração, NR-22, NR-12, gestão de frotas, adequação de veículos, mobilização industrial, compliance operacional, risco contratual">
+  <meta property="og:title" content="Soares Serviços | Engenharia e Conformidade Mineradora">
+  <meta property="og:description"
+    content="Estruturação técnica e controle documental para operações mineradoras de alta exigência.">
 
-  <!-- FONTS -->
+  <!-- PERFORMANCE & FONTS -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
     rel="stylesheet">
 
+  <!-- JSON-LD (Autoridade de Domínio) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Soares Serviços Consultoria e Locação",
+    "url": "https://soaresservicos.com.br",
+    "logo": "https://soaresservicos.com.br/assets/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-62-98273-6369",
+      "contactType": "customer service",
+      "areaServed": "BR"
+    }
+  }
+  </script>
+
   <!-- ICONS (Lucide) -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
 
   <!-- LOCAL STYLES -->
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
 
   <style>
     /* Additional page-specific decorative styles for consistency with base model */
@@ -91,41 +115,63 @@
 
 <body>
 
-  <!-- ── NAVIGATION ── -->
+  <!--  NAVIGATION  -->
   <nav>
     <div class="nav-logo">
       <a href="index.html">
         <!-- Using placeholder for logo as specified in instructions -->
-        <img src="https://via.placeholder.com/200x50/0B2E6B/C9922A?text=SOARES+SERVIÇOS" alt="Soares Serviços">
+        <img src="assets/logo.png" alt="Soares Serviços" loading="lazy">
       </a>
     </div>
     <div class="nav-links">
       <a href="index.html">Início</a>
       <a href="sobre.html">Sobre</a>
       <a href="servicos.html">Serviços</a>
+      <a href="servicos.html#ead">Cursos EAD</a>
       <a href="contato.html">Contato</a>
-      <a href="contato.html" class="nav-cta">Solicitar Análise</a>
+
     </div>
   </nav>
 
-  <!-- ── HERO SECTION ── -->
+  <!--  HERO SECTION  -->
   <section class="hero">
     <div class="hero-grid"></div>
     <div class="hero-accent"></div>
     <div class="hero-ghost">SOARES</div>
 
     <div class="hero-content">
-      <div class="eyebrow">Segurança em Primeiro Lugar</div>
-      <h1>Integramos Engenharia e<br><em>Conformidade</em> para fortalecer sua operação.</h1>
-      <div class="hero-sub">Soluções completas em locação, adequação e gestão técnica para operações industriais e
-        mineradoras em todo o Brasil.</div>
+      <div class="eyebrow">Redução de Risco Contratual & Compliance</div>
+      <h1>Engenharia aplicada à <em>conformidade</em> para operações mineradoras de alta exigência.</h1>
+      <div class="hero-sub">Operações mineradoras aprovadas, mobilizadas e prontas para produção. Atendimento integral
+        às NRs e requisitos de grandes contratantes do setor mineral.</div>
       <div class="hero-ctas">
-        <a href="contato.html" class="btn-primary">Solicitar Análise Técnica</a>
+        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20Análise%20técnica%20e%20proposta%20comercial%20junto%20%20Soares%20Serviços."
+          target="_blank" rel="noopener" class="btn-primary">Solicitar Análise Técnica</a>
       </div>
     </div>
   </section>
 
-  <!-- ── SERVICES PILLARS ── -->
+  <!--  QUANTITATIVE PROOF (Enterprise Level)  -->
+  <section class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-num">Rigor</span>
+      <span class="stat-label">Normativo</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">Controle</span>
+      <span class="stat-label">Operacional</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">Gestão</span>
+      <span class="stat-label">Documental Estruturada</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">Mitigação</span>
+      <span class="stat-label">De Risco Contratual</span>
+    </div>
+  </section>
+
+  <!--  SERVICES PILLARS ══ -->
   <section id="servicos">
     <span class="section-tag">Soluções Estratégicas</span>
     <h2 class="section-title">Nossos Pilares de Atuação</h2>
@@ -135,77 +181,328 @@
       <div class="pillar-card fade-up">
         <div class="pillar-icon"><i data-lucide="truck"></i></div>
         <h3>Locação de Frotas Operacionais</h3>
-        <p>Veículos preparados para áreas industriais e mineradoras, adaptados às mais rigorosas exigências de
-          segurança. Reduza tempo de adequação e entre em operação imediatamente.</p>
+        <p>Veículos 4x4 e utilitários já adequados aos padrões de segurança de mina. Mobilização imediata para reduzir o
+          <em>lead time</em> de entrada em operação.
+        </p>
       </div>
 
       <!-- Pillar 2 -->
-      <div class="pillar-card fade-up" style="transition-delay: 0.1s;">
+      <div class="pillar-card fade-up delay-1">
         <div class="pillar-icon"><i data-lucide="settings"></i></div>
-        <h3>Gestão Técnica de Frotas</h3>
-        <p>Assumimos o controle técnico: manutenção, controle documental, inspeções e gestão de pneus. Você foca na
-          operação, nós garantimos a conformidade normativa.</p>
+        <h3>Gestão Técnica (NR-22/NR-12)</h3>
+        <p>Assumimos o controle técnico: manutenção rigorosa, gestão de pneus e compliance documental 24/7. Mitigamos o
+          risco de interrupção operacional por falha técnica.</p>
       </div>
 
       <!-- Pillar 3 -->
-      <div class="pillar-card fade-up" style="transition-delay: 0.2s;">
+      <div class="pillar-card fade-up delay-2">
         <div class="pillar-icon"><i data-lucide="shield-check"></i></div>
-        <h3>Adequação para Mineração</h3>
-        <p>Implementação completa de requisitos exigidos por mineradoras: itens de segurança, padronização visual e
-          dispositivos técnicos. Seu veículo pronto para aprovação.</p>
+        <h3>Adequação Técnica Especializada</h3>
+        <p>Implementação de requisitos críticos (incluómetros, travas de segurança, iluminação) conforme normas de cada
+          contratante, seguindo critérios técnicos e exigências específicas.</p>
       </div>
 
       <!-- Pillar 4 -->
-      <div class="pillar-card fade-up" style="transition-delay: 0.3s;">
+      <div class="pillar-card fade-up delay-3">
         <div class="pillar-icon"><i data-lucide="users"></i></div>
-        <h3>Mobilização de Veículos e Pessoas</h3>
-        <p>Atuação estratégica na organização documental e atendimento às exigências da contratante. Reduzimos atrasos e
-          eliminamos retrabalho na mobilização.</p>
+        <h3>Mobilização & Compliance</h3>
+        <p>Gestão de documentação de veículos e equipes para acesso a áreas restritas. Reduzimos riscos de não
+          conformidade e atrasos no credenciamento por meio de controle documental estruturado.</p>
       </div>
 
       <!-- Pillar 5 -->
-      <div class="pillar-card fade-up" style="transition-delay: 0.4s;">
+      <div class="pillar-card fade-up delay-4">
         <div class="pillar-icon"><i data-lucide="hard-hat"></i></div>
         <h3>Consultoria Operacional em Engenharia</h3>
-        <p>Suporte técnico especializado para estruturação de processos, adequação normativa e melhoria da performance
-          operacional com foco em redução de não conformidades.</p>
+        <p>Suporte técnico especializado para conformidade com NR-12, NR-22 e requisitos específicos de contratantes.
+          Foco total na mitigação de riscos contratuais e operacionais.</p>
+      </div>
+
+      <!-- Pillar 6 (EAD) -->
+      <div class="pillar-card fade-up delay-5">
+        <div class="pillar-icon"><i data-lucide="graduation-cap"></i></div>
+        <h3>Cursos e Treinamentos EAD</h3>
+        <p>Capacitação profissional com foco em segurança e conformidade. Cursos de atualização, formação e NRs com
+          total flexibilidade para sua empresa.</p>
       </div>
     </div>
   </section>
 
-  <!-- ── CLOSING CTA ── -->
+  <!-- -- COMO FUNCIONA (PROCESSO) ------------------- -->
+  <section class="como fade-up">
+    <div class="section-tag">Processo Simples</div>
+    <h2 class="section-title">Como Funciona</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Solicite Cotação</h4>
+        <p>Informe tipo de operação, quantidade de veículos e prazo.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Dimensionamento</h4>
+        <p>Montamos a frota ideal, modelo a modelo, para a sua operação.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Adequação Técnica</h4>
+        <p>Preparamos os veículos conforme exigências de cada contratante.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Operação e Suporte</h4>
+        <p>Você opera. Nós cuidamos de manutenção, documentação e suporte 24h.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="resultados-operacionais fade-up" id="resultados">
+    <span class="section-tag">Atuação Comprovada</span>
+    <h2 class="section-title">Onde Já Entregamos Resultados</h2>
+    <p class="resultados-lead">
+      A Soares Serviços Consultoria e Locação já estruturou, adequou e entregou documentação técnica com aprovação
+      dentro do padrão de conformidade exigido em operações industriais e mineradoras de grande porte.
+    </p>
+
+    <div class="resultados-grid">
+      <div class="resultado-card">
+        <h3>Compliance & Credenciamento</h3>
+        <p>Emissão de ARTs e estruturação de prontuários técnicos para aprovação imediata em portais de contratantes.
+        </p>
+      </div>
+      <div class="resultado-card">
+        <h3>Prontidão NR-12/NR-22</h3>
+        <p>Adequação física rigorosa: sistemas de checklist, sinalização sonora/visual e contenção de energia.</p>
+      </div>
+      <div class="resultado-card">
+        <h3>Liberação de Contrato</h3>
+        <p>Redução drástica no tempo de mobilização, eliminando multas por atraso e ociosidade de equipes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mapa-operacoes fade-up" id="presenca-operacional">
+    <span class="section-tag">Presença Operacional</span>
+    <h2 class="section-title">Locais com Entrega Técnica e Mobilização Concluída</h2>
+    <p class="mapa-lead">
+      Atuação com documentação aprovada, adequação operacional e liberação para operação conforme exigências
+      contratuais.
+    </p>
+    <div id="mapaOperacoes" role="region" aria-label="Mapa de operações da Soares Serviços"></div>
+  </section>
+
+  <!-- -- POSICIONAMENTO ESTRATÉGICO: CONTROLE TÉCNICO INTEGRAL -- -->
+  <section class="risco-zero bg-light">
+    <div class="risco-zero-container">
+      <div class="risco-content">
+        <span class="section-tag">Diferencial Enterprise</span>
+        <h2 class="section-title">Mobilização com Controle Técnico Integral</h2>
+        <p class="lead">Assumimos responsabilidade técnica estruturada na adequação documental e operacional da frota
+          durante o processo de validação junto à contratante.</p>
+        <p>Atuamos para reduzir riscos de reprovação técnica, retrabalho e atrasos contratuais por meio de método
+          definido, análise criteriosa e acompanhamento contínuo.</p>
+        <ul class="check-list">
+          <li><i data-lucide="check-circle-2"></i> Monitoramento em tempo real do status de aprovação.</li>
+          <li><i data-lucide="check-circle-2"></i> Adequação física imediata (oficina volante).</li>
+          <li><i data-lucide="check-circle-2"></i> Gestão de compliance documental (Vigência de NRs e ARTs).</li>
+        </ul>
+      </div>
+      <div class="risco-visual">
+        <div class="badge-premium">
+          <i data-lucide="award"></i>
+          <span>Selo de Conformidade<br><strong>Soares Serviços</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -- CLOSING CTA -- -->
   <section class="cta-section fade-up">
-    <h2 class="section-title" style="color:var(--white); margin-bottom: 1.5rem;">Transformamos exigência em solução.
-    </h2>
-    <p style="color:rgba(255,255,255,0.7); font-size:1.2rem; max-width:700px; margin: 0 auto 3rem;">Se sua empresa
-      precisa operar com eficiência dentro dos padrões exigidos pelas grandes mineradoras, a Soares Serviços é o
+    <h2 class="section-title text-white mb-3">Transformamos exigência em solução.</h2>
+    <p class="text-light-70 max-w-700 mx-auto mb-4 cta-lead">Se sua empresa precisa operar com
+      eficiência dentro dos padrões exigidos pelas grandes mineradoras, a Soares Serviços Consultoria e Locação é o
       parceiro técnico ideal.</p>
-    <a href="contato.html" class="btn-primary" style="background:var(--white); color:var(--primary);">Falar com um
-      Especialista</a>
+    <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank"
+      rel="noopener" class="btn-primary bg-white text-primary">Falar com um Especialista</a>
   </section>
 
-  <!-- ── FOOTER ── -->
-  <footer style="padding: 4rem 6% 2rem; background: var(--navy-deep); color: var(--white);">
-    <div
-      style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem;">
+  <!--  FOOTER  -->
+  <footer class="bg-navy footer-main">
+    <div class="flex-between border-light-10 mb-4 footer-top">
       <div>
-        <h4 style="font-family:'Barlow Condensed',sans-serif; letter-spacing:0.1em; color:var(--accent);">SOARES
-          SERVIÇOS</h4>
-        <p style="font-size:0.8rem; color:rgba(255,255,255,0.5);">Engenharia e Locação para Mineração</p>
+        <h4 class="font-condensed ls-1 text-accent">SOARES SERVIÇOS</h4>
+        <p class="text-light-50 footer-meta">Soares Serviços Consultoria e Locação</p>
+        <p class="text-light-50 footer-meta">CNPJ 38.570.390/0001-41</p>
       </div>
-      <div style="display: flex; gap: 2rem;">
-        <a href="#" style="color:var(--white); text-decoration:none; font-size:0.9rem;">LinkedIn</a>
-        <a href="#" style="color:var(--white); text-decoration:none; font-size:0.9rem;">WhatsApp</a>
+      <div class="flex-gap-2">
+        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços."
+          target="_blank" rel="noopener" class="footer-link">WhatsApp</a>
+        <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
+        <a href="cliente.html" class="footer-link">Área do Cliente</a>
+        <a href="profissional.html" class="footer-link">Área do Profissional</a>
       </div>
     </div>
-    <p style="margin-top: 2rem; font-size: 0.75rem; color: rgba(255,255,255,0.3); text-align: center;">&copy; 2025
+    <p class="text-light-30 text-center mt-4 footer-copyright">&copy; 2026
       Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
+  <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js" defer></script>
   <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
+    // Initialize after DOM and scripts are ready
+    window.addEventListener('DOMContentLoaded', () => {
+      // Initialize Lucide icons
+      if (window.lucide) lucide.createIcons();
+
+      // Configure Map
+      const useSafeLabels = true;
+      const operacoes = [
+        {
+          official: 'Anglo American Níquel - Barro Alto',
+          safe: 'Operação Mineradora - Barro Alto (GO)',
+          cityState: 'Barro Alto - GO',
+          coords: [-15.0758491, -48.9445893],
+          type: 'mineração'
+        },
+        {
+          official: 'Terra Goyana Mineração',
+          safe: 'Operação Mineradora - Goiás (GO)',
+          cityState: 'Goiás - GO',
+          coords: [-15.083909, -48.996746],
+          type: 'mineração'
+        },
+        {
+          official: 'Mineração Alto Horizonte',
+          safe: 'Operação Mineradora - Alto Horizonte (GO)',
+          cityState: 'Alto Horizonte - GO',
+          coords: [-14.2314156, -49.38223],
+          type: 'mineração'
+        },
+        {
+          official: 'Hochschild - Mara Rosa',
+          safe: 'Operação Mineradora - Mara Rosa (GO)',
+          cityState: 'Mara Rosa - GO',
+          coords: [-13.9792101, -49.1775253],
+          type: 'mineração'
+        },
+        {
+          official: 'Aclara - Projeto Carina',
+          safe: 'Projeto de Mineração - Goiás (GO)',
+          cityState: 'Goiás - GO',
+          coords: [-13.6326251, -46.9855094],
+          type: 'mineração'
+        },
+        {
+          official: 'Aura Minerals - Almas',
+          safe: 'Operação Mineradora - Almas (TO)',
+          cityState: 'Almas - TO',
+          coords: [-11.6988218, -47.1674177],
+          type: 'mineração'
+        },
+        {
+          official: 'Vetria Mineração - Mina Monjolinho',
+          safe: 'Unidade de Mineração - MS',
+          cityState: 'Mato Grosso do Sul - MS',
+          coords: [-19.2602249, -57.5284382],
+          type: 'mineração'
+        },
+        {
+          official: 'Usina Vetorial',
+          safe: 'Unidade Industrial - MS',
+          cityState: 'Mato Grosso do Sul - MS',
+          coords: [-19.2938127, -57.5883274],
+          type: 'industrial'
+        },
+        {
+          official: 'Salitre Fertilizantes',
+          safe: 'Unidade Industrial - MG',
+          cityState: 'Minas Gerais - MG',
+          coords: [-19.0655396, -46.7285741],
+          type: 'industrial'
+        },
+        {
+          official: 'Mosaic Fertilizantes - Uberaba',
+          safe: 'Unidade Industrial - Uberaba (MG)',
+          cityState: 'Uberaba - MG',
+          coords: [-19.9898017, -47.8806657],
+          type: 'industrial'
+        },
+        {
+          official: 'Anglo American Níquel - Codemin',
+          safe: 'Unidade Industrial - Niquelândia (GO)',
+          cityState: 'Niquelândia - GO',
+          coords: [-14.1567711, -48.340014],
+          type: 'industrial'
+        }
+      ];
+
+      // Custom Icons — pin estilo teardrop SVG
+      const createIcon = (color) => L.divIcon({
+        className: 'custom-marker',
+        html: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36">
+          <path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z"
+            fill="${color}" stroke="white" stroke-width="2"/>
+          <circle cx="14" cy="14" r="5" fill="white" opacity="0.9"/>
+        </svg>`,
+        iconSize: [28, 36],
+        iconAnchor: [14, 36],
+        popupAnchor: [0, -36]
+      });
+
+      const iconMineracao = createIcon('#d9c006'); // Gold Primary
+      const iconIndustrial = createIcon('#0B2E6B'); // Navy Primary
+
+      const mapa = L.map('mapaOperacoes', {
+        scrollWheelZoom: false,
+        zoomControl: false
+      }).setView([-16.5, -49], 5);
+
+      L.control.zoom({ position: 'bottomright' }).addTo(mapa);
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; OpenStreetMap &copy; CARTO'
+      }).addTo(mapa);
+
+      const markers = L.markerClusterGroup({
+        showCoverageOnHover: false,
+        iconCreateFunction: function (cluster) {
+          return L.divIcon({
+            html: `<div style="background: var(--primary); color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 2px solid var(--accent);">${cluster.getChildCount()}</div>`,
+            className: 'cluster-icon',
+            iconSize: L.point(30, 30)
+          });
+        }
+      });
+
+      const bounds = [];
+      operacoes.forEach((item) => {
+        const label = useSafeLabels ? item.safe : item.official;
+        const icon = item.type === 'mineração' ? iconMineracao : iconIndustrial;
+
+        const marker = L.marker(item.coords, { icon: icon })
+          .bindPopup(`
+            <div style="font-family: 'Barlow', sans-serif;">
+              <strong style="color: var(--primary);">${label}</strong><br>
+              <span style="font-size: 0.8rem; color: var(--slate); text-transform: uppercase;">${item.type}</span><br>
+              <span style="font-size: 0.9rem;">${item.cityState}</span>
+            </div>
+          `);
+
+        markers.addLayer(marker);
+        bounds.push(item.coords);
+      });
+
+      mapa.addLayer(markers);
+
+      if (bounds.length > 0) {
+        mapa.fitBounds(bounds, { padding: [50, 50] });
+      }
+
+      window.addEventListener('resize', () => {
+        mapa.invalidateSize();
+      });
+    });
   </script>
 </body>
 

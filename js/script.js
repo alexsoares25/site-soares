@@ -28,3 +28,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log('Premium Logic Activated - Soares Serviços');
 });
+
+/**
+ * Handles EAD course selection and prepares WhatsApp message
+ */
+function solicitarOrcamento() {
+    const selectedCourses = [];
+    const checkboxes = document.querySelectorAll('.course-list input[type="checkbox"]:checked');
+
+    checkboxes.forEach(cb => {
+        selectedCourses.push(cb.value);
+    });
+
+    if (selectedCourses.length === 0) {
+        alert('Por favor, selecione pelo menos um curso para o orçamento.');
+        return;
+    }
+
+    const message = `Olá, gostaria de um orçamento especial para os seguintes cursos em EAD:\n\n- ${selectedCourses.join('\n- ')}\n\nAguardo retorno.`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/5562982736369?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, '_blank');
+}

@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <title>Plataforma em Implantação | Soares Serviços</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .construction-container {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 6%;
+        }
+
+        .construction-box {
+            max-width: 800px;
+            background: var(--light);
+            padding: 5rem;
+            border-top: 6px solid var(--accent);
+            position: relative;
+        }
+
+        .construction-icon {
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .construction-box h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 3rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .construction-box p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--slate);
+            margin-bottom: 2rem;
+        }
+
+        .feature-list {
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 3rem;
+        }
+
+        .feature-list div {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .feature-list i {
+            color: var(--accent);
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="Soares Serviços">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="contato.html">Contato</a>
+
+        </div>
+    </nav>
+
+    <main class="construction-container">
+        <div class="construction-box fade-up">
+            <div class="construction-icon"><i data-lucide="lock" size="64"></i></div>
+            <h2>Plataforma Digital em Implantação</h2>
+            <p>Estamos estruturando nossa plataforma exclusiva para integração operacional entre clientes, profissionais
+                e gestão técnica. Em breve estarão disponíveis:</p>
+
+            <div class="feature-list">
+                <div><i data-lucide="check"></i> Acesso a documentos técnicos</div>
+                <div><i data-lucide="check"></i> Controle de mobilização</div>
+                <div><i data-lucide="check"></i> Gestão de conformidade</div>
+                <div><i data-lucide="check"></i> Relatórios operacionais</div>
+                <div><i data-lucide="check"></i> Ambiente seguro e rastreável</div>
+            </div>
+
+            <p class="meta-sm font-italic">Nosso objetivo é integrar Engenharia,
+                Tecnologia e conformidade em um único ecossistema digital.</p>
+
+            <a href="index.html" class="btn-primary">Voltar para Página Inicial</a>
+        </div>
+    </main>
+
+    <footer class="footer-construction">
+        <div class="footer-construction-inner">
+            <div>
+                <h4 class="footer-brand-title">SOARES
+                    SERVIÇOS</h4>
+                <p class="footer-meta">Soares Serviços Consultoria e Locação</p>
+                <p class="footer-meta">CNPJ 38.570.390/0001-41</p>
+            </div>
+            <div class="footer-links-row">
+                <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços."
+                    target="_blank" rel="noopener" class="footer-link">WhatsApp</a>
+                <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2026
+            Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
