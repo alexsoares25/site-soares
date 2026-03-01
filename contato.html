@@ -1,107 +1,503 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato | Soares Serviços Consultoria e Locação</title>
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <title>Canais de Atendimento | Soares Serviços | Mobilização Nacional</title>
 
     <meta name="description"
-        content="Entre em contato com a Soares Serviços. Solicite uma análise técnica para sua operação industrial ou mineradora.">
-    <meta name="keywords" content="contato, orçamento, análise técnica, Soares Serviços, mineração">
-    <meta property="og:title" content="Contato | Soares Serviços">
-    <meta property="og:description" content="Integramos Engenharia e Conformidade para fortalecer sua operação.">
+        content="Entre em contato com a Soares Serviços Consultoria e Locação. Atendimento comercial, diretoria e financeiro. Mobilizações em todo o território brasileiro com rapidez e conformidade.">
+    <meta name="keywords"
+        content="contato, canais de atendimento, orçamento, análise técnica, Soares Serviços, mineração, mobilização, NR-22, NR-12">
+    <meta property="og:title" content="Canais de Atendimento | Soares Serviços">
+    <meta property="og:description"
+        content="Mobilize com agilidade, segurança e conformidade. Fale com nosso time especializado.">
 
+    <!-- PERFORMANCE & FONTS -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Soares Serviços Consultoria e Locação",
+        "telephone": "+55-62-98273-6369",
+        "email": "comercial@soaresservicos.com.br"
+      }
+    }
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <link rel="stylesheet" href="css/styles.css">
 
     <style>
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 5rem;
-        }
-
-        .contact-info h2 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 3rem;
-            text-transform: uppercase;
-            font-weight: 900;
-            color: var(--primary);
-            margin-bottom: 2rem;
-        }
-
-        .contact-item {
+        /* ── HERO ──────────────────────────────────────────── */
+        .contact-hero {
+            min-height: 52vh;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
+            background: var(--navy-deep);
+            padding: 160px 6% 90px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero .hero-grid {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image: linear-gradient(rgba(201, 146, 42, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201, 146, 42, 0.05) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridMove 28s linear infinite;
+        }
+
+        .contact-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 900;
+            line-height: 0.92;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-hero h1 em {
+            display: block;
+            font-style: normal;
+            color: var(--accent);
+        }
+
+        .contact-hero p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.68);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+
+        /* ── CHANNELS STRIP ────────────────────────────────── */
+        .channels-section {
+            background: var(--light);
+            padding: clamp(5rem, 9vw, 7.5rem) 6%;
+        }
+
+        .channels-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .channels-header h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .channels-header p {
+            font-size: 1.05rem;
+            color: var(--slate);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .channel-card {
+            background: var(--white);
+            border-radius: var(--radius-card);
+            border: 1px solid rgba(11, 46, 107, 0.08);
+            border-top: 5px solid var(--accent);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .channel-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .channel-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(217, 192, 6, 0.12);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .channel-icon i {
+            color: var(--accent);
+            width: 24px;
+            height: 24px;
+        }
+
+        .channel-card .channel-role {
+            display: block;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--accent);
+            margin-bottom: 0.4rem;
+        }
+
+        .channel-card h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            line-height: 1.1;
+        }
+
+        .channel-card .channel-desc {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.65;
+            margin-bottom: 1.5rem;
+        }
+
+        .channel-contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: 'Barlow', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 0.6rem;
+            transition: color 0.2s ease;
+            word-break: break-all;
+        }
+
+        .channel-contact-link:hover {
+            color: var(--accent);
+        }
+
+        .channel-contact-link i {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            color: var(--accent);
+        }
+
+        /* ── NATIONAL COVERAGE BANNER ─────────────────────── */
+        .national-banner {
+            background: var(--navy-deep);
+            padding: 3rem 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+            border-top: 3px solid var(--accent);
+            border-radius: var(--radius-card);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .national-banner .nb-left {
+            display: flex;
+            align-items: center;
             gap: 1.5rem;
+        }
+
+        .national-banner .flag-icon {
+            font-size: 2.8rem;
+            line-height: 1;
+        }
+
+        .national-banner h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .national-banner p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+        }
+
+        .national-banner .nb-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nb-badge {
+            background: rgba(217, 192, 6, 0.12);
+            border: 1px solid rgba(217, 192, 6, 0.35);
+            border-radius: 999px;
+            padding: 0.5rem 1.2rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+        }
+
+        /* ── FORM SECTION ─────────────────────────────────── */
+        .form-section {
+            background: var(--white);
+            padding: clamp(5rem, 9vw, 7.5rem) 6%;
+        }
+
+        .form-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 6rem;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Left side - reinforcer */
+        .form-aside h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 1.2rem;
+        }
+
+        .form-aside h2 em {
+            display: block;
+            font-style: normal;
+            color: var(--accent);
+        }
+
+        .form-aside .aside-lead {
+            font-size: 1.05rem;
+            color: var(--slate);
+            line-height: 1.75;
             margin-bottom: 2.5rem;
         }
 
-        .contact-item i {
+        .form-trust-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-trust-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        .form-trust-list li i {
             color: var(--accent);
-            width: 24px;
-            margin-top: 5px;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
 
-        .contact-item h4 {
-            font-family: 'Barlow Condensed', sans-serif;
-            text-transform: uppercase;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+        .aside-urgency {
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            background: rgba(217, 192, 6, 0.08);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 12px 12px 0;
         }
 
-        .contact-form {
+        .aside-urgency p {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--navy-deep);
+            line-height: 1.55;
+        }
+
+        /* Right side - form card */
+        .form-card {
             background: var(--light);
-            padding: 4rem;
+            border-radius: var(--radius-card);
+            border: 1px solid rgba(11, 46, 107, 0.08);
             border-top: 6px solid var(--accent);
+            padding: 3rem 2.8rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .form-card h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-card .form-subtitle {
+            font-size: 0.88rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.4rem;
         }
 
         .form-group label {
             display: block;
             font-family: 'Barlow Condensed', sans-serif;
             text-transform: uppercase;
+            letter-spacing: 0.1em;
             font-weight: 700;
-            font-size: 0.8rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.78rem;
+            margin-bottom: 0.45rem;
             color: var(--navy-mid);
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            padding: 1rem;
-            border: 1px solid rgba(11, 46, 107, 0.1);
+            padding: 0.95rem 1.1rem;
+            border: 1.5px solid rgba(11, 46, 107, 0.16);
             background: var(--white);
             font-family: 'Barlow', sans-serif;
-            font-size: 1rem;
+            font-size: 0.97rem;
+            color: var(--text);
             outline: none;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .form-group select {
+            border-radius: 999px;
+            cursor: pointer;
+        }
+
+        .form-group textarea {
+            border-radius: 12px;
+            resize: vertical;
+            min-height: 120px;
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(217, 192, 6, 0.12);
         }
 
-        @media (max-width: 960px) {
-            .contact-grid {
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(74, 94, 122, 0.5);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1.1rem 2rem;
+            background: var(--accent);
+            color: var(--navy-deep);
+            border: none;
+            border-radius: 999px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: background 0.25s ease, transform 0.2s ease;
+            margin-top: 0.5rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .form-note {
+            font-size: 0.75rem;
+            color: rgba(0, 0, 0, 0.38);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* ── MEDIA QUERIES ─────────────────────────────────── */
+        @media (max-width: 1024px) {
+            .channels-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .form-layout {
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .channels-grid {
                 grid-template-columns: 1fr;
             }
 
-            .contact-form {
-                padding: 2rem;
+            .form-card {
+                padding: 2rem 1.5rem;
             }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .national-banner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Active nav link */
+        .nav-links a.active {
+            color: var(--accent) !important;
         }
     </style>
 </head>
@@ -111,115 +507,259 @@
     <nav>
         <div class="nav-logo">
             <a href="index.html">
-                <img src="https://via.placeholder.com/200x50/0B2E6B/C9922A?text=SOARES+SERVIÇOS" alt="Soares Serviços">
+                <img src="assets/logo.png" alt="Soares Serviços">
             </a>
         </div>
         <div class="nav-links">
             <a href="index.html">Início</a>
             <a href="sobre.html">Sobre</a>
             <a href="servicos.html">Serviços</a>
-            <a href="contato.html">Contato</a>
-            <a href="contato.html" class="nav-cta">Solicitar Análise</a>
+            <a href="contato.html" class="active">Contato</a>
         </div>
     </nav>
 
-    <section class="hero" style="min-height: 40vh; padding-top: 180px;">
+    <!-- ── HERO ────────────────────────────────────────────── -->
+    <section class="contact-hero">
         <div class="hero-grid"></div>
-        <div class="hero-content">
+        <div class="contact-hero-content fade-up">
             <div class="eyebrow">Canais de Atendimento</div>
-            <h1>Vamos Fortalecer sua<br><em>Operação</em> Hoje</h1>
+            <h1>Mobilize com <em>Agilidade</em></h1>
+            <p>Segurança, precisão técnica e cobertura nacional. Nossa equipe está pronta para atender sua operação.</p>
         </div>
     </section>
 
-    <section>
-        <div class="contact-grid">
-            <div class="contact-info fade-up">
-                <h2>Canais Diretos</h2>
+    <!-- ── DIRECT CHANNELS ─────────────────────────────────── -->
+    <section class="channels-section">
+        <div class="channels-header fade-up">
+            <span class="section-tag">Canais Diretos</span>
+            <h2>Fale com o Departamento Certo</h2>
+            <p>Direcionamento ágil para que sua demanda chegue ao responsável correto desde o primeiro contato.</p>
+        </div>
 
-                <div class="contact-item">
+        <div class="channels-grid">
+
+            <!-- Comercial -->
+            <div class="channel-card fade-up" id="canal-comercial">
+                <div class="channel-icon">
+                    <i data-lucide="briefcase"></i>
+                </div>
+                <span class="channel-role">Propostas & Contratos</span>
+                <h3>Atendimento Comercial</h3>
+                <p class="channel-desc">Solicitações de propostas, mobilização de frota e novos contratos operacionais.
+                </p>
+                <a href="mailto:comercial@soaresservicos.com.br" class="channel-contact-link" id="link-email-comercial">
                     <i data-lucide="mail"></i>
-                    <div>
-                        <h4>E-mail</h4>
-                        <p>contato@soaresservicos.com.br</p>
-                    </div>
-                </div>
+                    comercial@soaresservicos.com.br
+                </a>
+                <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20proposta%20comercial%20junto%20à%20Soares%20Serviços."
+                    target="_blank" rel="noopener" class="channel-contact-link" id="link-wa-comercial">
+                    <i data-lucide="smartphone"></i>
+                    WhatsApp Corporativo
+                </a>
+            </div>
 
-                <div class="contact-item">
-                    <i data-lucide="phone"></i>
-                    <div>
-                        <h4>WhatsApp / Telefone</h4>
-                        <p>+55 (XX) XXXXX-XXXX</p>
-                    </div>
+            <!-- Relacionamento Institucional -->
+            <div class="channel-card fade-up delay-1" id="canal-institucional">
+                <div class="channel-icon">
+                    <i data-lucide="handshake"></i>
                 </div>
+                <span class="channel-role">Relacionamento Institucional</span>
+                <h3>Institucional</h3>
+                <p class="channel-desc">Demandas estratégicas, parcerias técnicas e tratativas corporativas.</p>
+                <a href="mailto:contato@soaresservicos.com.br" class="channel-contact-link"
+                    id="link-email-institucional">
+                    <i data-lucide="mail"></i>
+                    contato@soaresservicos.com.br
+                </a>
+            </div>
 
-                <div class="contact-item">
-                    <i data-lucide="map-pin"></i>
-                    <div>
-                        <h4>Localização</h4>
-                        <p>Atendimento Nacional com base operacional estratégica.</p>
-                    </div>
+            <!-- Financeiro -->
+            <div class="channel-card fade-up delay-2" id="canal-financeiro">
+                <div class="channel-icon">
+                    <i data-lucide="file-text"></i>
                 </div>
+                <span class="channel-role">Administrativo & Financeiro</span>
+                <h3>Financeiro</h3>
+                <p class="channel-desc">Notas fiscais, contratos vigentes e assuntos administrativos.</p>
+                <a href="mailto:financeiro@soaresservicos.com.br" class="channel-contact-link"
+                    id="link-email-financeiro">
+                    <i data-lucide="mail"></i>
+                    financeiro@soaresservicos.com.br
+                </a>
+            </div>
 
-                <div
-                    style="margin-top: 3rem; padding: 2rem; background: rgba(201,146,42,0.1); border-left: 4px solid var(--accent);">
-                    <p style="font-weight: 600; color: var(--navy-deep);">Disponível para mobilizações urgentes em todo
-                        o Brasil.</p>
+        </div>
+
+        <!-- National Coverage Banner -->
+        <div class="national-banner fade-up" id="atendimento-nacional">
+            <div class="nb-left">
+                <div class="flag-icon">🇧🇷</div>
+                <div>
+                    <h3>Atendimento Nacional</h3>
+                    <p>Atuação técnica especializada em mobilização, regularização e caracterização de veículos, com
+                        cobertura em todo território nacional e resposta operacional ágil.</p>
+                </div>
+            </div>
+            <div class="nb-badges">
+                <span class="nb-badge">Operações Urgentes</span>
+                <span class="nb-badge">Cobertura Nacional</span>
+                <span class="nb-badge">Resposta Ágil</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CONTACT FORM ────────────────────────────────────── -->
+    <section class="form-section">
+        <div class="form-layout">
+
+            <!-- Aside -->
+            <div class="form-aside fade-up">
+                <span class="section-tag">Análise Técnica</span>
+                <h2>Solicite um <em>Direcionamento</em></h2>
+                <p class="aside-lead">Preencha os dados ao lado e nossa equipe retornará com um direcionamento técnico
+                    adequado à sua necessidade operacional.</p>
+
+                <ul class="form-trust-list">
+                    <li>
+                        <i data-lucide="shield-check"></i>
+                        Análise técnica conduzida por engenheiros especializados em conformidade NR-22 e NR-12.
+                    </li>
+                    <li>
+                        <i data-lucide="clock"></i>
+                        Retorno garantido em até 24 horas úteis após o recebimento da solicitação.
+                    </li>
+                    <li>
+                        <i data-lucide="map-pin"></i>
+                        Capacidade de atendimento em todas as regiões do Brasil, incluindo operações remotas.
+                    </li>
+                    <li>
+                        <i data-lucide="zap"></i>
+                        Mobilizações emergenciais com protocolo de ativação acelerada disponível.
+                    </li>
+                </ul>
+
+                <div class="aside-urgency">
+                    <p>📱 Para demandas <strong>urgentes</strong>, entre em contato diretamente via WhatsApp:<br>
+                        <a href="https://wa.me/5562982736369" target="_blank" rel="noopener"
+                            class="link-primary font-bold">+55 62 9 8273-6369</a>
+                    </p>
                 </div>
             </div>
 
-            <div class="contact-form fade-up" style="transition-delay: 0.2s;">
-                <h3
-                    style="font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; margin-bottom:2rem; font-size:1.8rem;">
-                    Solicite uma Análise Técnica</h3>
-                <form id="contactForm">
+            <!-- Form -->
+            <div class="form-card fade-up delay-2">
+                <h3>Solicite uma Análise Técnica</h3>
+                <p class="form-subtitle">Todos os campos marcados são obrigatórios.</p>
+
+                <form id="contactForm" action="https://formsubmit.co/comercial@soaresservicos.com.br" method="POST">
+                    <input type="hidden" name="_subject" value="Nova Solicitação — Site Soares Serviços">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
                     <div class="form-group">
-                        <label>Nome Completo</label>
-                        <input type="text" placeholder="Seu nome ou da sua empresa" required>
+                        <label for="nome">Nome Completo</label>
+                        <input id="nome" type="text" name="nome" placeholder="Seu nome ou da sua empresa" required>
                     </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-mail Corporativo</label>
+                            <input id="email" type="email" name="email" placeholder="email@empresa.com.br" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone / WhatsApp</label>
+                            <input id="telefone" type="tel" name="telefone" placeholder="(00) 00000-0000" required>
+                        </div>
+                    </div>
+
                     <div class="form-group">
-                        <label>E-mail Corporativo</label>
-                        <input type="email" placeholder="email@empresa.com.br" required>
+                        <label for="assunto">Tipo de Demanda</label>
+                        <select id="assunto" name="assunto">
+                            <option value="" disabled selected>Selecione o tipo de solicitação</option>
+                            <option value="Proposta Comercial">Proposta Comercial</option>
+                            <option value="Mobilização de Equipamentos">Mobilização de Equipamentos</option>
+                            <option value="Adequação e Conformidade">Adequação e Conformidade de Equipamentos
+                            </option>
+                            <option value="Parceria Institucional">Parceria Institucional</option>
+                            <option value="Outros">Outros</option>
+                        </select>
                     </div>
+
                     <div class="form-group">
-                        <label>Telefone / WhatsApp</label>
-                        <input type="tel" placeholder="(00) 00000-0000" required>
+                        <label for="mensagem">Descreva sua Necessidade</label>
+                        <textarea id="mensagem" name="mensagem" rows="5"
+                            placeholder="Explique brevemente o tipo de mobilização, volume de veículos ou exigências específicas."></textarea>
                     </div>
-                    <div class="form-group">
-                        <label>Como podemos ajudar?</label>
-                        <textarea rows="4" placeholder="Descreva brevemente sua necessidade operacional"></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; border:none;">Enviar
-                        Solicitação</button>
-                    <p style="font-size:0.7rem; color:rgba(0,0,0,0.4); margin-top:1rem; text-align:center;">Retornaremos
-                        em até 24h úteis.</p>
+
+                    <button type="submit" class="btn-submit" id="btn-enviar">Enviar Solicitação</button>
+                    <p class="form-note">Retorno em até 24 horas úteis. Seus dados são tratados com total
+                        confidencialidade.</p>
                 </form>
             </div>
+
         </div>
     </section>
 
-    <footer style="padding: 4rem 6% 2rem; background: var(--navy-deep); color: var(--white);">
-        <div
-            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem;">
+    <!-- ── FOOTER ──────────────────────────────────────────── -->
+    <footer class="bg-navy footer-main">
+        <div class="flex-between border-light-10 mb-4 footer-top">
             <div>
-                <h4 style="font-family:'Barlow Condensed',sans-serif; letter-spacing:0.1em; color:var(--accent);">SOARES
-                    SERVIÇOS</h4>
-                <p style="font-size:0.8rem; color:rgba(255,255,255,0.5);">Engenharia e Locação para Mineração</p>
+                <h4 class="font-condensed ls-1 text-accent">SOARES SERVIÇOS</h4>
+                <p class="text-light-50 footer-meta">Soares Serviços Consultoria e Locação</p>
+                <p class="text-light-50 footer-meta">CNPJ 38.570.390/0001-41</p>
             </div>
-            <div style="display: flex; gap: 2rem;">
-                <a href="#" style="color:var(--white); text-decoration:none; font-size:0.9rem;">LinkedIn</a>
-                <a href="#" style="color:var(--white); text-decoration:none; font-size:0.9rem;">WhatsApp</a>
+            <div class="flex-gap-2">
+                <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços."
+                    target="_blank" rel="noopener" class="footer-link">WhatsApp</a>
+                <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
+                <a href="cliente.html" class="footer-link">Área do Cliente</a>
+                <a href="profissional.html" class="footer-link">Área do Profissional</a>
             </div>
         </div>
-        <p style="margin-top: 2rem; font-size: 0.75rem; color: rgba(255,255,255,0.3); text-align: center;">&copy; 2025
+        <p class="text-light-30 text-center mt-4 footer-copyright">&copy; 2026
             Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
     <script>
-        lucide.createIcons();
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Esta é uma versão demonstrativa. O formulário está pronto para integração com o backend.');
+        window.addEventListener('DOMContentLoaded', () => {
+
+            // Init icons
+            if (window.lucide) lucide.createIcons();
+
+            // Form handler: WhatsApp + FormSubmit
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const nome = this.querySelector('#nome').value;
+                const email = this.querySelector('#email').value;
+                const telefone = this.querySelector('#telefone').value;
+                const assunto = this.querySelector('#assunto').value;
+                const mensagem = this.querySelector('#mensagem').value;
+
+                const texto =
+                    `Nova solicitação pelo site Soares Serviços:%0A%0A` +
+                    `Nome: ${nome}%0A` +
+                    `Email: ${email}%0A` +
+                    `Telefone: ${telefone}%0A` +
+                    `Assunto: ${assunto}%0A` +
+                    `Mensagem: ${mensagem}`;
+
+                // Open WhatsApp
+                window.open(`https://wa.me/5562982736369?text=${texto}`, '_blank');
+
+                // Send via FormSubmit
+                this.submit();
+            });
+
+            // Scroll reveal
+            const obs = new IntersectionObserver(
+                entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+                { threshold: 0.08 }
+            );
+            document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
         });
     </script>
 </body>

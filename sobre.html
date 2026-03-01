@@ -1,62 +1,91 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nós | Soares Serviços Consultoria e Locação</title>
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <title>Sobre Nós | Soares Serviços | Autoridade em Engenharia e Conformidade</title>
 
     <meta name="description"
-        content="Saiba mais sobre a Soares Serviços. Integramos Engenharia e Conformidade para fortalecer sua operação industrial e mineradora.">
-    <meta name="keywords" content="engenharia, conformidade, mineração, gestão técnica, Soares Serviços">
-    <meta property="og:title" content="Sobre Nós | Soares Serviços">
+        content="Engenharia aplicada à conformidade para operações mineradoras de alta exigência. Locação de frotas, gestão técnica (NR-22/NR-12) e adequação de veículos com rigor normativo e controle operacional.">
+    <meta name="keywords"
+        content="engenharia de frotas, NR-22, NR-12, conformidade mineral, compliance operacional, risco contratual, Soares Serviços">
+    <meta property="og:title" content="Sobre Nós | Soares Serviços | Autoridade Técnica">
     <meta property="og:description"
-        content="Nossa missão é transformar exigência em solução através da engenharia aplicada.">
+        content="Estruturação técnica e controle documental para operações mineradoras de alta exigência.">
 
+    <!-- PERFORMANCE & FONTS -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Soares Serviços Consultoria e Locação",
+        "description": "Especialista em conformidade técnica e engenharia para operações mineradoras."
+      }
+    }
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <link rel="stylesheet" href="css/styles.css">
 
     <style>
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
+        .strategic-pillars {
+            padding: 8rem 6% 4rem;
         }
 
-        .about-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            color: var(--slate);
+        .pillar-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 5rem;
         }
 
-        .highlight-box {
-            background: var(--primary);
-            color: var(--white);
-            padding: 3rem;
-            border-left: 6px solid var(--accent);
-        }
-
-        .highlight-box h3 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 2rem;
+        .pillar-header h2 {
+            font-size: 3.5rem;
+            color: var(--primary);
             text-transform: uppercase;
-            margin-bottom: 1rem;
-            color: var(--accent);
+            font-family: 'Barlow Condensed', sans-serif;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
         }
 
-        @media (max-width: 960px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
+        .pillar-header p {
+            font-size: 1.25rem;
+            color: var(--slate);
+            line-height: 1.8;
+        }
+
+        .governance-section {
+            padding: 6rem 6%;
+            background: #f8fbff;
+            text-align: center;
+        }
+
+        .governance-section h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .governance-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--slate);
+            line-height: 1.8;
         }
     </style>
 </head>
@@ -66,64 +95,157 @@
     <nav>
         <div class="nav-logo">
             <a href="index.html">
-                <img src="https://via.placeholder.com/200x50/0B2E6B/C9922A?text=SOARES+SERVIÇOS" alt="Soares Serviços">
+                <img src="assets/logo.png" alt="Soares Serviços" loading="lazy">
             </a>
         </div>
         <div class="nav-links">
             <a href="index.html">Início</a>
-            <a href="sobre.html">Sobre</a>
+            <a href="sobre.html" class="active">Sobre</a>
             <a href="servicos.html">Serviços</a>
+            <a href="servicos.html#ead">Cursos EAD</a>
             <a href="contato.html">Contato</a>
-            <a href="contato.html" class="nav-cta">Solicitar Análise</a>
+
         </div>
     </nav>
 
-    <section class="hero" style="min-height: 50vh; padding-top: 180px;">
+    <section class="hero hero-md">
         <div class="hero-grid"></div>
         <div class="hero-content">
-            <div class="eyebrow">Institucional</div>
-            <h1>Autoridade Técnica &<br><em>Segurança</em> Operacional</h1>
+            <div class="eyebrow">Autoridade & Governança</div>
+            <h1>Engenharia Aplicada à<br><em>Conformidade</em> Operacional</h1>
         </div>
     </section>
 
-    <section>
-        <div class="about-grid">
-            <div class="about-content fade-up">
-                <span class="section-tag">Quem Somos</span>
-                <h2 class="section-title">Engenharia, frota e conformidade em uma única empresa</h2>
-                <p>A Soares Serviços Consultoria e Locação atua na integração estratégica entre engenharia aplicada,
-                    locação de frotas operacionais e conformidade regulatória para grandes operações industriais.</p>
-                <p>Nossa atuação vai além de fornecer veículos: entregamos segurança, controle documental e aderência
-                    total às normas exigidas por mineradoras. Trabalhamos com rigor técnico para reduzir riscos e
-                    garantir aprovação em qualquer processo de credenciamento.</p>
+    <!-- -- QUEM SOMOS E PILARES ESTRATGICOS -------------- -->
+    <section class="strategic-pillars">
+        <div class="pillar-header fade-up">
+            <span class="section-tag">Quem Somos</span>
+            <h2>Engenharia, Governança Técnica e Conformidade</h2>
+            <p>A Soares Serviços Consultoria e Locação atua como parceira estratégica de operações industriais, com foco
+                em mineradoras que exigem alto padrão de segurança, rastreabilidade e conformidade normativa.</p>
+        </div>
+
+        <div class="pillars-container">
+            <!-- Pillar 1: ENGENHARIA -->
+            <div class="pillar-item featured fade-up">
+                <i data-lucide="shield-check"></i>
+                <div class="step-num pillar-ghost-num">1
+                </div>
+                <h3>1. ENGENHARIA</h3>
+                <p class="pillar-subtitle">O PILAR CENTRAL
+                </p>
+                <p>O núcleo da nossa atuação. Desenvolvemos análises técnicas, laudos e estudos normativos que asseguram
+                    aderência integral às exigências industriais.</p>
+                <ul>
+                    <li>Avaliação de riscos operacionais</li>
+                    <li>Conformidade com normas internas</li>
+                    <li>Planos técnicos estruturados</li>
+                    <li>Rastreabilidade documental</li>
+                </ul>
             </div>
-            <div class="highlight-box fade-up" style="transition-delay: 0.2s;">
-                <h3>Nossa Missão</h3>
-                <p>Fortalecer a operação de nossos clientes através de soluções técnicas integradas, eliminando
-                    burocracia e garantindo a máxima segurança e conformidade normativa.</p>
+
+            <!-- Pillar 2: CONSULTORIA -->
+            <div class="pillar-item fade-up delay-1">
+                <i data-lucide="brain-circuit"></i>
+                <div class="step-num pillar-ghost-num">2
+                </div>
+                <h3>2. CONSULTORIA</h3>
+                <p class="pillar-subtitle">INTELIGÊNCIA
+                    APLICADA</p>
+                <p>Transformamos exigências em estratégia. Apoiamos terceirizadas e contratantes na estruturação
+                    completa para ambientes controlados.</p>
+                <ul>
+                    <li>Credenciamento em mineradoras</li>
+                    <li>Adequação normativa profunda</li>
+                    <li>Implementação de planos de gestão</li>
+                    <li>Mitigação de riscos contratuais</li>
+                </ul>
+            </div>
+
+            <!-- Pillar 3: SERVIÇOS -->
+            <div class="pillar-item fade-up delay-2">
+                <i data-lucide="settings-2"></i>
+                <div class="step-num pillar-ghost-num">3
+                </div>
+                <h3>3. SERVIÇOS</h3>
+                <p class="pillar-subtitle">RESULTADO
+                    CONTROLADO</p>
+                <p>Executamos apenas o tecnicamente validado. Onde a conformidade se torna realidade operacional.</p>
+                <ul>
+                    <li>Adequação conforme padrão da mineradora</li>
+                    <li>Dispositivos e itens de segurança</li>
+                    <li>Gestão documental de frotas</li>
+                    <li>Locação de frota em conformidade normativa</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <footer style="padding: 4rem 6% 2rem; background: var(--navy-deep); color: var(--white);">
-        <div
-            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem;">
+    <!-- -- MISSO, VISO, VALORES ------------------------ -->
+    <section class="mvv-premium">
+        <div class="mvv-grid">
+            <div class="mvv-card fade-up">
+                <h3>MISSÃO</h3>
+                <p>Garantir que frotas e operações técnicas estejam integralmente conformes, seguras e aptas a operar em
+                    ambientes industriais de alta exigência, integrando engenharia aplicada, consultoria especializada e
+                    execução controlada.</p>
+            </div>
+            <div class="mvv-card fade-up delay-1">
+                <h3>VISÃO</h3>
+                <p>Ser reconhecida como a principal empresa de engenharia aplicada e governança técnica para frotas
+                    industriais, referência nacional em conformidade normativa e segurança operacional.</p>
+            </div>
+            <div class="mvv-card fade-up delay-2">
+                <h3>VALORES</h3>
+                <ul>
+                    <li><strong>Rigor Técnico</strong> – Acima de qualquer improviso ou conveniência.</li>
+                    <li><strong>Segurança Absoluta</strong> – Princípio inegociável em cada decisão.</li>
+                    <li><strong>Conformidade Total</strong> – Excelência em padrões e normas.</li>
+                    <li><strong>Transparência</strong> – Processos auditáveis e comunicação clara.</li>
+                    <li><strong>Responsabilidade</strong> – Compromisso com a continuidade operacional do cliente.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- -- DIFERENCIAL ESTRATÉGICO ----------------------- -->
+    <section class="governance-section fade-up">
+        <h2>Por que a Soares não é apenas uma prestadora de serviço?</h2>
+        <p>Não entregamos apenas veículos ou documentação. Entregamos <strong>governança técnica integrada</strong>,
+            controle rigoroso e previsibilidade operacional. Transformamos exigências técnicas em vantagem competitiva e
+            segurança jurídica para nossos clientes.</p>
+    </section>
+
+    <footer class="bg-navy footer-main">
+        <div class="flex-between border-light-10 mb-4 footer-top">
             <div>
-                <h4 style="font-family:'Barlow Condensed',sans-serif; letter-spacing:0.1em; color:var(--accent);">SOARES
-                    SERVIÇOS</h4>
-                <p style="font-size:0.8rem; color:rgba(255,255,255,0.5);">Engenharia e Locação para Mineração</p>
+                <h4 class="font-condensed ls-1 text-accent">SOARES SERVIÇOS</h4>
+                <p class="text-light-50 footer-meta">Soares Serviços Consultoria e Locação</p>
+                <p class="text-light-50 footer-meta">CNPJ 38.570.390/0001-41</p>
             </div>
-            <div style="display: flex; gap: 2rem;">
-                <a href="#" style="color:var(--white); text-decoration:none; font-size:0.9rem;">LinkedIn</a>
-                <a href="#" style="color:var(--white); text-decoration:none; font-size:0.9rem;">WhatsApp</a>
+            <div class="flex-gap-2">
+                <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços."
+                    target="_blank" rel="noopener" class="footer-link">WhatsApp</a>
+                <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
+                <a href="cliente.html" class="footer-link">Área do Cliente</a>
+                <a href="profissional.html" class="footer-link">Área do Profissional</a>
             </div>
         </div>
-        <p style="margin-top: 2rem; font-size: 0.75rem; color: rgba(255,255,255,0.3); text-align: center;">&copy; 2025
+        <p class="text-light-30 text-center mt-4 footer-copyright">&copy; 2026
             Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script>lucide.createIcons();</script>
+    <script src="js/script.js" defer></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) lucide.createIcons();
+            const obs = new IntersectionObserver(entries =>
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+                { threshold: 0.1 }
+            );
+            document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+        });
+    </script>
 </body>
 
 </html>
