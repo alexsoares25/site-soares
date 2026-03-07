@@ -7,25 +7,11 @@
   <link rel="icon" type="image/png" href="assets/icons/favicon.png">
   <title>Soares Serviços Consultoria e Locação | Engenharia e Conformidade</title>
 
-  <!-- SEO ESTRUTURADO -->
-  <meta name="description"
-    content="Engenharia aplicada à conformidade para operações mineradoras de alta exigência. Locação de frotas, gestão técnica (NR-22/NR-12) e adequação de veículos com rigor normativo e controle operacional.">
-  <meta name="keywords"
-    content="mineração, NR-22, NR-12, gestão de frotas, adequação de veículos, mobilização industrial, compliance operacional, risco contratual">
+  <meta name="description" content="Engenharia aplicada à conformidade para operações mineradoras de alta exigência. Locação de frotas, gestão técnica (NR-22/NR-12) e adequação de veículos com rigor normativo e controle operacional.">
+  <meta name="keywords" content="mineração, NR-22, NR-12, gestão de frotas, adequação de veículos, mobilização industrial, compliance operacional, risco contratual">
   <meta property="og:title" content="Soares Serviços | Engenharia e Conformidade Mineradora">
-  <meta property="og:description"
-    content="Estruturação técnica e controle documental para operações mineradoras de alta exigência.">
+  <meta property="og:description" content="Estruturação técnica e controle documental para operações mineradoras de alta exigência.">
 
-  <!-- PERFORMANCE & FONTS -->
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
-
-  <!-- JSON-LD (Autoridade de Domínio) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,119 +28,270 @@
   }
   </script>
 
-  <!-- ICONS (Lucide) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <script src="https://unpkg.com/lucide@latest" defer></script>
 
-  <!-- LOCAL STYLES -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
 
   <style>
-    /* Additional page-specific decorative styles for consistency with base model */
+    /* ─── PILLAR CARDS ─── */
     .pillar-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 4rem;
+      gap: 1.5rem;
+      margin-top: 3rem;
     }
 
     .pillar-card {
       background: var(--light);
-      padding: 3rem 2rem;
+      padding: 2.5rem 2rem;
       border-left: 4px solid var(--accent);
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
     }
 
-    .pillar-card:hover {
-      transform: translateY(-10px);
-      background: var(--white);
-      box-shadow: 0 20px 40px rgba(11, 46, 107, 0.08);
+    /* ghost number */
+    .pillar-card::before {
+      content: attr(data-num);
+      position: absolute;
+      bottom: -16px; right: 14px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 6.5rem; font-weight: 900;
+      color: var(--primary);
+      opacity: 0.04;
+      line-height: 1;
+      pointer-events: none;
     }
 
-    .pillar-icon {
-      color: var(--primary);
-      margin-bottom: 1.5rem;
+    .pillar-card:hover {
+      transform: translateY(-6px);
+      background: var(--white);
+      box-shadow: 0 16px 40px rgba(11, 46, 107, 0.1);
+      border-left-color: var(--primary);
     }
+
+    /* icon box */
+    .pillar-icon {
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      width: 46px; height: 46px;
+      background: var(--primary);
+      border-radius: 6px;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+      transition: background 0.25s;
+    }
+    .pillar-card:hover .pillar-icon { background: var(--accent); color: var(--primary); }
+    .pillar-icon svg { width: 20px; height: 20px; }
 
     .pillar-card h3 {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      color: var(--primary);
+      font-size: 1.35rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.03em;
+      margin-bottom: 0.75rem; color: var(--primary);
     }
 
     .pillar-card p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--slate);
+      font-size: 0.9rem; line-height: 1.65; color: var(--slate);
     }
 
+    /* ─── STATS BAR ─── */
+    .stats-bar { border-bottom: 3px solid var(--accent); }
+
+    .stat-item {
+      transition: background 0.2s;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item:hover { background: rgba(255,255,255,0.05); }
+
+    /* ─── STEPS ─── */
+    .steps { position: relative; }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 28px; left: 12.5%; right: 12.5%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0.25; z-index: 0;
+    }
+    @media (max-width: 768px) { .steps::before { display: none; } }
+
+    .step { position: relative; z-index: 1; }
+    .step-num { transition: all 0.25s; }
+    .step:hover .step-num,
+    .step:last-child .step-num { background: var(--accent); color: var(--primary); }
+
+    /* ─── RESULTADOS ─── */
+    .resultados-operacionais { padding: 80px 6%; background: var(--light); }
+
+    .resultados-lead {
+      max-width: 680px;
+      font-size: 0.95rem; line-height: 1.75; color: var(--slate);
+      margin: 0.75rem 0 2.5rem;
+    }
+
+    .resultados-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .resultado-card {
+      background: var(--white);
+      border: 1px solid rgba(11,46,107,0.07);
+      border-top: 3px solid var(--accent);
+      padding: 2rem 1.75rem;
+      transition: all 0.25s ease;
+    }
+    .resultado-card:hover {
+      box-shadow: 0 8px 28px rgba(11,46,107,0.1);
+      transform: translateY(-4px);
+      border-top-color: var(--primary);
+    }
+
+    .resultado-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      color: var(--primary); margin-bottom: 0.75rem;
+    }
+
+    .resultado-card p { font-size: 0.875rem; line-height: 1.65; color: var(--slate); }
+
+    /* ─── MAPA ─── */
+    .mapa-operacoes { padding: 80px 6%; background: var(--white); }
+
+    .mapa-lead {
+      max-width: 640px;
+      font-size: 0.9rem; line-height: 1.7; color: var(--slate);
+      margin: 0.75rem 0 2rem;
+    }
+
+    #mapaOperacoes {
+      height: 480px; border-radius: 6px; overflow: hidden;
+      border: 1px solid rgba(11,46,107,0.1);
+      box-shadow: 0 4px 20px rgba(11,46,107,0.07);
+    }
+
+    .mapa-legend {
+      display: flex; gap: 20px; margin-top: 14px; flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate);
+    }
+    .legend-dot { width: 9px; height: 9px; border-radius: 50%; }
+
+    /* ─── CTA ─── */
     .cta-section {
       background: var(--primary);
       color: var(--white);
       text-align: center;
       padding: 100px 6%;
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
 
     .cta-section::before {
       content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(201, 146, 42, 0.05) 0%, transparent 100%);
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,146,42,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,146,42,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .cta-section::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(201,146,42,0.1) 0%, transparent 70%);
+    }
+    .cta-section > * { position: relative; z-index: 1; }
+
+    .cta-lead {
+      font-size: 1rem; line-height: 1.75;
+      color: rgba(255,255,255,0.6);
+      max-width: 580px; margin: 0 auto 2.5rem;
+    }
+
+    /* badge glow */
+    .badge-premium { position: relative; overflow: hidden; }
+    .badge-premium::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 40%, rgba(201,146,42,0.15) 0%, transparent 70%);
+    }
+    .badge-premium > * { position: relative; z-index: 1; }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .pillar-card:nth-child(2).reveal { transition-delay: 0.06s; }
+    .pillar-card:nth-child(3).reveal { transition-delay: 0.12s; }
+    .pillar-card:nth-child(4).reveal { transition-delay: 0.18s; }
+    .pillar-card:nth-child(5).reveal { transition-delay: 0.24s; }
+    .pillar-card:nth-child(6).reveal { transition-delay: 0.30s; }
+
+    .leaflet-popup-content-wrapper {
+      border-radius: 4px !important;
+      font-family: 'Barlow', sans-serif !important;
     }
   </style>
 </head>
 
 <body>
 
-  <!--  NAVIGATION  -->
+  <!-- NAVIGATION -->
   <nav>
     <div class="nav-logo">
       <a href="index.html">
-        <!-- Using placeholder for logo as specified in instructions -->
         <img src="assets/logo.png" alt="Soares Serviços" loading="lazy">
       </a>
-    </div>  
-    <div class="menu-toggle" id="menu-toggle">
-    ☰
-  </div>
+    </div>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
     <div class="nav-links">
       <a href="index.html">Início</a>
       <a href="sobre.html">Sobre</a>
       <a href="servicos.html">Serviços</a>
       <a href="servicos.html#ead">Cursos EAD</a>
       <a href="contato.html">Contato</a>
-
     </div>
   </nav>
 
-  <!--  HERO SECTION  -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-grid"></div>
     <div class="hero-accent"></div>
     <div class="hero-ghost">SOARES</div>
 
     <div class="hero-content">
-      <div class="eyebrow">Redução de Risco Contratual & Compliance</div>
+      <div class="eyebrow">Redução de Risco Contratual &amp; Compliance</div>
       <h1>Engenharia aplicada à <em>conformidade</em> para operações mineradoras de alta exigência.</h1>
-      <div class="hero-sub">Operações mineradoras aprovadas, mobilizadas e prontas para produção. Atendimento integral
-        às NRs e requisitos de grandes contratantes do setor mineral.</div>
+      <div class="hero-sub">Operações mineradoras aprovadas, mobilizadas e prontas para produção. Atendimento integral às NRs e requisitos de grandes contratantes do setor mineral.</div>
       <div class="hero-ctas">
-        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20Análise%20técnica%20e%20proposta%20comercial%20junto%20%20Soares%20Serviços."
-          target="_blank" rel="noopener" class="btn-primary">Solicitar Análise Técnica</a>
+        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20Análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços."
+          target="_blank" rel="noopener" class="btn-primary">
+          Solicitar Análise Técnica
+          <i data-lucide="arrow-right" style="width:16px;height:16px;vertical-align:middle;margin-left:6px;"></i>
+        </a>
       </div>
     </div>
   </section>
 
-  <!--  QUANTITATIVE PROOF (Enterprise Level)  -->
+  <!-- STATS BAR -->
   <section class="stats-bar">
     <div class="stat-item">
       <span class="stat-num">Rigor</span>
@@ -174,64 +311,51 @@
     </div>
   </section>
 
-  <!--  SERVICES PILLARS ══ -->
+  <!-- PILARES -->
   <section id="servicos">
     <span class="section-tag">Soluções Estratégicas</span>
     <h2 class="section-title">Nossos Pilares de Atuação</h2>
 
     <div class="pillar-grid">
-      <!-- Pillar 1 -->
-      <div class="pillar-card fade-up">
+      <div class="pillar-card reveal" data-num="01">
         <div class="pillar-icon"><i data-lucide="truck"></i></div>
         <h3>Locação de Frotas Operacionais</h3>
-        <p>Veículos 4x4 e utilitários já adequados aos padrões de segurança de mina. Mobilização imediata para reduzir o
-          <em>lead time</em> de entrada em operação.
-        </p>
+        <p>Veículos 4x4 e utilitários já adequados aos padrões de segurança de mina. Mobilização imediata para reduzir o <em>lead time</em> de entrada em operação.</p>
       </div>
 
-      <!-- Pillar 2 -->
-      <div class="pillar-card fade-up delay-1">
+      <div class="pillar-card reveal" data-num="02">
         <div class="pillar-icon"><i data-lucide="settings"></i></div>
         <h3>Gestão Técnica (NR-22/NR-12)</h3>
-        <p>Assumimos o controle técnico: manutenção rigorosa, gestão de pneus e compliance documental 24/7. Mitigamos o
-          risco de interrupção operacional por falha técnica.</p>
+        <p>Assumimos o controle técnico: manutenção rigorosa, gestão de pneus e compliance documental 24/7. Mitigamos o risco de interrupção operacional por falha técnica.</p>
       </div>
 
-      <!-- Pillar 3 -->
-      <div class="pillar-card fade-up delay-2">
+      <div class="pillar-card reveal" data-num="03">
         <div class="pillar-icon"><i data-lucide="shield-check"></i></div>
         <h3>Adequação Técnica Especializada</h3>
-        <p>Implementação de requisitos críticos (incluómetros, travas de segurança, iluminação) conforme normas de cada
-          contratante, seguindo critérios técnicos e exigências específicas.</p>
+        <p>Implementação de requisitos críticos (inclinômetros, travas de segurança, iluminação) conforme normas de cada contratante, seguindo critérios técnicos e exigências específicas.</p>
       </div>
 
-      <!-- Pillar 4 -->
-      <div class="pillar-card fade-up delay-3">
+      <div class="pillar-card reveal" data-num="04">
         <div class="pillar-icon"><i data-lucide="users"></i></div>
-        <h3>Mobilização & Compliance</h3>
-        <p>Gestão de documentação de veículos e equipes para acesso a áreas restritas. Reduzimos riscos de não
-          conformidade e atrasos no credenciamento por meio de controle documental estruturado.</p>
+        <h3>Mobilização &amp; Compliance</h3>
+        <p>Gestão de documentação de veículos e equipes para acesso a áreas restritas. Reduzimos riscos de não conformidade e atrasos no credenciamento por meio de controle documental estruturado.</p>
       </div>
 
-      <!-- Pillar 5 -->
-      <div class="pillar-card fade-up delay-4">
+      <div class="pillar-card reveal" data-num="05">
         <div class="pillar-icon"><i data-lucide="hard-hat"></i></div>
         <h3>Consultoria Operacional em Engenharia</h3>
-        <p>Suporte técnico especializado para conformidade com NR-12, NR-22 e requisitos específicos de contratantes.
-          Foco total na mitigação de riscos contratuais e operacionais.</p>
+        <p>Suporte técnico especializado para conformidade com NR-12, NR-22 e requisitos específicos de contratantes. Foco total na mitigação de riscos contratuais e operacionais.</p>
       </div>
 
-      <!-- Pillar 6 (EAD) -->
-      <div class="pillar-card fade-up delay-5">
+      <div class="pillar-card reveal" data-num="06">
         <div class="pillar-icon"><i data-lucide="graduation-cap"></i></div>
         <h3>Cursos e Treinamentos EAD</h3>
-        <p>Capacitação profissional com foco em segurança e conformidade. Cursos de atualização, formação e NRs com
-          total flexibilidade para sua empresa.</p>
+        <p>Capacitação profissional com foco em segurança e conformidade. Cursos de atualização, formação e NRs com total flexibilidade para sua empresa.</p>
       </div>
     </div>
   </section>
 
-  <!-- -- COMO FUNCIONA (PROCESSO) ------------------- -->
+  <!-- COMO FUNCIONA -->
   <section class="como fade-up">
     <div class="section-tag">Processo Simples</div>
     <h2 class="section-title">Como Funciona</h2>
@@ -259,19 +383,18 @@
     </div>
   </section>
 
+  <!-- RESULTADOS OPERACIONAIS -->
   <section class="resultados-operacionais fade-up" id="resultados">
     <span class="section-tag">Atuação Comprovada</span>
     <h2 class="section-title">Onde Já Entregamos Resultados</h2>
     <p class="resultados-lead">
-      A Soares Serviços Consultoria e Locação já estruturou, adequou e entregou documentação técnica com aprovação
-      dentro do padrão de conformidade exigido em operações industriais e mineradoras de grande porte.
+      A Soares Serviços Consultoria e Locação já estruturou, adequou e entregou documentação técnica com aprovação dentro do padrão de conformidade exigido em operações industriais e mineradoras de grande porte.
     </p>
 
     <div class="resultados-grid">
       <div class="resultado-card">
-        <h3>Compliance & Credenciamento</h3>
-        <p>Emissão de ARTs e estruturação de prontuários técnicos para aprovação imediata em portais de contratantes.
-        </p>
+        <h3>Compliance &amp; Credenciamento</h3>
+        <p>Emissão de ARTs e estruturação de prontuários técnicos para aprovação imediata em portais de contratantes.</p>
       </div>
       <div class="resultado-card">
         <h3>Prontidão NR-12/NR-22</h3>
@@ -284,26 +407,34 @@
     </div>
   </section>
 
+  <!-- MAPA -->
   <section class="mapa-operacoes fade-up" id="presenca-operacional">
     <span class="section-tag">Presença Operacional</span>
     <h2 class="section-title">Locais com Entrega Técnica e Mobilização Concluída</h2>
     <p class="mapa-lead">
-      Atuação com documentação aprovada, adequação operacional e liberação para operação conforme exigências
-      contratuais.
+      Atuação com documentação aprovada, adequação operacional e liberação para operação conforme exigências contratuais.
     </p>
     <div id="mapaOperacoes" role="region" aria-label="Mapa de operações da Soares Serviços"></div>
+    <div class="mapa-legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#d9c006;"></div>
+        Mineração
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#0B2E6B;"></div>
+        Industrial
+      </div>
+    </div>
   </section>
 
-  <!-- -- POSICIONAMENTO ESTRATÉGICO: CONTROLE TÉCNICO INTEGRAL -- -->
+  <!-- RISCO ZERO -->
   <section class="risco-zero bg-light">
     <div class="risco-zero-container">
       <div class="risco-content">
         <span class="section-tag">Diferencial Enterprise</span>
         <h2 class="section-title">Mobilização com Controle Técnico Integral</h2>
-        <p class="lead">Assumimos responsabilidade técnica estruturada na adequação documental e operacional da frota
-          durante o processo de validação junto à contratante.</p>
-        <p>Atuamos para reduzir riscos de reprovação técnica, retrabalho e atrasos contratuais por meio de método
-          definido, análise criteriosa e acompanhamento contínuo.</p>
+        <p class="lead">Assumimos responsabilidade técnica estruturada na adequação documental e operacional da frota durante o processo de validação junto à contratante.</p>
+        <p>Atuamos para reduzir riscos de reprovação técnica, retrabalho e atrasos contratuais por meio de método definido, análise criteriosa e acompanhamento contínuo.</p>
         <ul class="check-list">
           <li><i data-lucide="check-circle-2"></i> Monitoramento em tempo real do status de aprovação.</li>
           <li><i data-lucide="check-circle-2"></i> Adequação física imediata (oficina volante).</li>
@@ -319,17 +450,18 @@
     </div>
   </section>
 
-  <!-- -- CLOSING CTA -- -->
+  <!-- CTA -->
   <section class="cta-section fade-up">
     <h2 class="section-title text-white mb-3">Transformamos exigência em solução.</h2>
-    <p class="text-light-70 max-w-700 mx-auto mb-4 cta-lead">Se sua empresa precisa operar com
-      eficiência dentro dos padrões exigidos pelas grandes mineradoras, a Soares Serviços Consultoria e Locação é o
-      parceiro técnico ideal.</p>
-    <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank"
-      rel="noopener" class="btn-primary bg-white text-primary">Falar com um Especialista</a>
+    <p class="cta-lead">Se sua empresa precisa operar com eficiência dentro dos padrões exigidos pelas grandes mineradoras, a Soares Serviços Consultoria e Locação é o parceiro técnico ideal.</p>
+    <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista."
+      target="_blank" rel="noopener" class="btn-primary bg-white text-primary">
+      Falar com um Especialista
+      <i data-lucide="arrow-right" style="width:16px;height:16px;vertical-align:middle;margin-left:6px;"></i>
+    </a>
   </section>
 
-  <!--  FOOTER  -->
+  <!-- FOOTER -->
   <footer class="bg-navy footer-main">
     <div class="flex-between border-light-10 mb-4 footer-top">
       <div>
@@ -345,102 +477,45 @@
         <a href="profissional.html" class="footer-link">Área do Profissional</a>
       </div>
     </div>
-    <p class="text-light-30 text-center mt-4 footer-copyright">&copy; 2026
-      Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
+    <p class="text-light-30 text-center mt-4 footer-copyright">&copy; 2026 Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
   </footer>
 
   <script src="js/script.js" defer></script>
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
-  <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js" defer></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
   <script>
-    // Initialize after DOM and scripts are ready
     window.addEventListener('DOMContentLoaded', () => {
-      // Initialize Lucide icons
       if (window.lucide) lucide.createIcons();
 
-      // Configure Map
+      // Scroll reveal for pillar cards
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      // Map
       const useSafeLabels = true;
       const operacoes = [
-        {
-          official: 'Anglo American Níquel - Barro Alto',
-          safe: 'Operação Mineradora - Barro Alto (GO)',
-          cityState: 'Barro Alto - GO',
-          coords: [-15.0758491, -48.9445893],
-          type: 'mineração'
-        },
-        {
-          official: 'Terra Goyana Mineração',
-          safe: 'Operação Mineradora - Goiás (GO)',
-          cityState: 'Goiás - GO',
-          coords: [-15.083909, -48.996746],
-          type: 'mineração'
-        },
-        {
-          official: 'Mineração Alto Horizonte',
-          safe: 'Operação Mineradora - Alto Horizonte (GO)',
-          cityState: 'Alto Horizonte - GO',
-          coords: [-14.2314156, -49.38223],
-          type: 'mineração'
-        },
-        {
-          official: 'Hochschild - Mara Rosa',
-          safe: 'Operação Mineradora - Mara Rosa (GO)',
-          cityState: 'Mara Rosa - GO',
-          coords: [-13.9792101, -49.1775253],
-          type: 'mineração'
-        },
-        {
-          official: 'Aclara - Projeto Carina',
-          safe: 'Projeto de Mineração - Goiás (GO)',
-          cityState: 'Goiás - GO',
-          coords: [-13.6326251, -46.9855094],
-          type: 'mineração'
-        },
-        {
-          official: 'Aura Minerals - Almas',
-          safe: 'Operação Mineradora - Almas (TO)',
-          cityState: 'Almas - TO',
-          coords: [-11.6988218, -47.1674177],
-          type: 'mineração'
-        },
-        {
-          official: 'Vetria Mineração - Mina Monjolinho',
-          safe: 'Unidade de Mineração - MS',
-          cityState: 'Mato Grosso do Sul - MS',
-          coords: [-19.2602249, -57.5284382],
-          type: 'mineração'
-        },
-        {
-          official: 'Usina Vetorial',
-          safe: 'Unidade Industrial - MS',
-          cityState: 'Mato Grosso do Sul - MS',
-          coords: [-19.2938127, -57.5883274],
-          type: 'industrial'
-        },
-        {
-          official: 'Salitre Fertilizantes',
-          safe: 'Unidade Industrial - MG',
-          cityState: 'Minas Gerais - MG',
-          coords: [-19.0655396, -46.7285741],
-          type: 'industrial'
-        },
-        {
-          official: 'Mosaic Fertilizantes - Uberaba',
-          safe: 'Unidade Industrial - Uberaba (MG)',
-          cityState: 'Uberaba - MG',
-          coords: [-19.9898017, -47.8806657],
-          type: 'industrial'
-        },
-        {
-          official: 'Anglo American Níquel - Codemin',
-          safe: 'Unidade Industrial - Niquelândia (GO)',
-          cityState: 'Niquelândia - GO',
-          coords: [-14.1567711, -48.340014],
-          type: 'industrial'
-        }
+        { official: 'Anglo American Níquel - Barro Alto', safe: 'Operação Mineradora - Barro Alto (GO)', cityState: 'Barro Alto - GO', coords: [-15.0758491, -48.9445893], type: 'mineração' },
+        { official: 'Terra Goyana Mineração', safe: 'Operação Mineradora - Goiás (GO)', cityState: 'Goiás - GO', coords: [-15.083909, -48.996746], type: 'mineração' },
+        { official: 'Mineração Alto Horizonte', safe: 'Operação Mineradora - Alto Horizonte (GO)', cityState: 'Alto Horizonte - GO', coords: [-14.2314156, -49.38223], type: 'mineração' },
+        { official: 'Hochschild - Mara Rosa', safe: 'Operação Mineradora - Mara Rosa (GO)', cityState: 'Mara Rosa - GO', coords: [-13.9792101, -49.1775253], type: 'mineração' },
+        { official: 'Aclara - Projeto Carina', safe: 'Projeto de Mineração - Goiás (GO)', cityState: 'Goiás - GO', coords: [-13.6326251, -46.9855094], type: 'mineração' },
+        { official: 'Aura Minerals - Almas', safe: 'Operação Mineradora - Almas (TO)', cityState: 'Almas - TO', coords: [-11.6988218, -47.1674177], type: 'mineração' },
+        { official: 'Vetria Mineração - Mina Monjolinho', safe: 'Unidade de Mineração - MS', cityState: 'Mato Grosso do Sul - MS', coords: [-19.2602249, -57.5284382], type: 'mineração' },
+        { official: 'Usina Vetorial', safe: 'Unidade Industrial - MS', cityState: 'Mato Grosso do Sul - MS', coords: [-19.2938127, -57.5883274], type: 'industrial' },
+        { official: 'Salitre Fertilizantes', safe: 'Unidade Industrial - MG', cityState: 'Minas Gerais - MG', coords: [-19.0655396, -46.7285741], type: 'industrial' },
+        { official: 'Mosaic Fertilizantes - Uberaba', safe: 'Unidade Industrial - Uberaba (MG)', cityState: 'Uberaba - MG', coords: [-19.9898017, -47.8806657], type: 'industrial' },
+        { official: 'Anglo American Níquel - Codemin', safe: 'Unidade Industrial - Niquelândia (GO)', cityState: 'Niquelândia - GO', coords: [-14.1567711, -48.340014], type: 'industrial' }
       ];
 
-      // Custom Icons — pin estilo teardrop SVG
       const createIcon = (color) => L.divIcon({
         className: 'custom-marker',
         html: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36">
@@ -448,17 +523,14 @@
             fill="${color}" stroke="white" stroke-width="2"/>
           <circle cx="14" cy="14" r="5" fill="white" opacity="0.9"/>
         </svg>`,
-        iconSize: [28, 36],
-        iconAnchor: [14, 36],
-        popupAnchor: [0, -36]
+        iconSize: [28, 36], iconAnchor: [14, 36], popupAnchor: [0, -36]
       });
 
-      const iconMineracao = createIcon('#d9c006'); // Gold Primary
-      const iconIndustrial = createIcon('#0B2E6B'); // Navy Primary
+      const iconMineracao = createIcon('#d9c006');
+      const iconIndustrial = createIcon('#0B2E6B');
 
       const mapa = L.map('mapaOperacoes', {
-        scrollWheelZoom: false,
-        zoomControl: false
+        scrollWheelZoom: false, zoomControl: false
       }).setView([-16.5, -49], 5);
 
       L.control.zoom({ position: 'bottomright' }).addTo(mapa);
@@ -469,26 +541,24 @@
 
       const markers = L.markerClusterGroup({
         showCoverageOnHover: false,
-        iconCreateFunction: function (cluster) {
-          return L.divIcon({
-            html: `<div style="background: var(--primary); color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 2px solid var(--accent);">${cluster.getChildCount()}</div>`,
-            className: 'cluster-icon',
-            iconSize: L.point(30, 30)
-          });
-        }
+        iconCreateFunction: (cluster) => L.divIcon({
+          html: `<div style="background:#0B2E6B;color:white;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;border:2px solid #C9922A;">${cluster.getChildCount()}</div>`,
+          className: 'cluster-icon',
+          iconSize: L.point(30, 30)
+        })
       });
 
       const bounds = [];
-      operacoes.forEach((item) => {
+      operacoes.forEach(item => {
         const label = useSafeLabels ? item.safe : item.official;
         const icon = item.type === 'mineração' ? iconMineracao : iconIndustrial;
 
-        const marker = L.marker(item.coords, { icon: icon })
+        const marker = L.marker(item.coords, { icon })
           .bindPopup(`
-            <div style="font-family: 'Barlow', sans-serif;">
-              <strong style="color: var(--primary);">${label}</strong><br>
-              <span style="font-size: 0.8rem; color: var(--slate); text-transform: uppercase;">${item.type}</span><br>
-              <span style="font-size: 0.9rem;">${item.cityState}</span>
+            <div style="font-family:'Barlow',sans-serif;padding:2px 4px;">
+              <strong style="color:#0B2E6B;">${label}</strong><br>
+              <span style="font-size:0.75rem;color:#C9922A;text-transform:uppercase;letter-spacing:0.06em;">${item.type}</span><br>
+              <span style="font-size:0.85rem;color:#6B7280;">${item.cityState}</span>
             </div>
           `);
 
@@ -497,16 +567,9 @@
       });
 
       mapa.addLayer(markers);
-
-      if (bounds.length > 0) {
-        mapa.fitBounds(bounds, { padding: [50, 50] });
-      }
-
-      window.addEventListener('resize', () => {
-        mapa.invalidateSize();
-      });
+      if (bounds.length > 0) mapa.fitBounds(bounds, { padding: [50, 50] });
+      window.addEventListener('resize', () => mapa.invalidateSize());
     });
   </script>
 </body>
-
 </html>
