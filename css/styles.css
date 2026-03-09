@@ -243,4 +243,401 @@ nav .menu-toggle:hover, nav button:hover {
   align-items: center;
   gap: 8px;
   font-family: var(--ss-font-body);
-  font-size:​​​​​​​​​​​​​​​​
+  font-size: 0.925rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 14px 28px;
+  border-radius: var(--ss-radius-pill);
+  text-decoration: none !important;
+  cursor: pointer;
+  transition:
+    background var(--ss-transition),
+    box-shadow var(--ss-transition),
+    transform var(--ss-transition);
+}
+
+.btn-primary, .hero a[href*="wa.me"] {
+  background: var(--ss-accent) !important;
+  color: #0B1527 !important;
+  box-shadow: 0 4px 20px rgba(232, 153, 28, 0.35);
+}
+
+.btn-primary:hover, .hero a[href*="wa.me"]:hover {
+  background: var(--ss-accent-dark) !important;
+  box-shadow: 0 8px 32px rgba(232, 153, 28, 0.45);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent !important;
+  color: var(--ss-text-white) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.28) !important;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.50) !important;
+  transform: translateY(-2px);
+}
+
+.cta-section a[href*="wa.me"],
+section:last-of-type a[href*="wa.me"] {
+  background: #25D366 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.30);
+}
+
+.cta-section a[href*="wa.me"]:hover,
+section:last-of-type a[href*="wa.me"]:hover {
+  background: #1EBE5C !important;
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.40);
+  transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   7. SEÇÕES
+   ============================================================ */
+section, .section { padding: var(--ss-section-gap) 5%; }
+
+section:nth-child(even), .section-alt { background-color: var(--ss-bg-white); }
+
+section h2, .section h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--ss-text-primary);
+  margin-bottom: 20px;
+  max-width: 680px;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ss-accent), transparent);
+  border-radius: 2px;
+  margin-top: 14px;
+}
+
+section > p, .section > p {
+  font-size: 1.05rem;
+  color: var(--ss-text-secondary);
+  max-width: 560px;
+  line-height: 1.72;
+  margin-bottom: 52px;
+}
+
+
+/* ============================================================
+   8. CARDS
+   ============================================================ */
+.card, .service-card, .servico, .area-card, .feature-card {
+  background: var(--ss-bg-white);
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius-lg);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform var(--ss-transition),
+    box-shadow var(--ss-transition),
+    border-color var(--ss-transition);
+  box-shadow: var(--ss-shadow-xs);
+}
+
+.card::before, .service-card::before, .area-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ss-accent), var(--ss-blue-mid));
+  opacity: 0;
+  transition: opacity var(--ss-transition);
+}
+
+.card:hover, .service-card:hover, .area-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ss-shadow-lg);
+  border-color: var(--ss-border-mid);
+}
+
+.card:hover::before, .service-card:hover::before, .area-card:hover::before { opacity: 1; }
+
+.card h3, .service-card h3, .area-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ss-text-primary);
+  margin-bottom: 12px;
+}
+
+.card p, .service-card p, .area-card p {
+  font-size: 0.925rem;
+  color: var(--ss-text-secondary);
+  line-height: 1.68;
+}
+
+.cards-grid, .services-grid, .areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+
+/* ============================================================
+   9. PROCESSO / FLUXO
+   ============================================================ */
+.process-step, .step, .fluxo-item {
+  position: relative;
+  padding: 32px;
+  background: var(--ss-bg-white);
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius-lg);
+  box-shadow: var(--ss-shadow-xs);
+  transition: box-shadow var(--ss-transition), transform var(--ss-transition);
+}
+
+.process-step:hover, .step:hover {
+  box-shadow: var(--ss-shadow-md);
+  transform: translateY(-4px);
+}
+
+
+/* ============================================================
+   10. SEÇÕES ESCURAS (histórico, atuação)
+   ============================================================ */
+.historico, .atuacao, #historico, #atuacao {
+  background: linear-gradient(135deg, var(--ss-navy) 0%, var(--ss-blue) 100%);
+  color: var(--ss-text-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.historico h2, .atuacao h2 { color: var(--ss-text-white) !important; }
+.historico p, .atuacao p { color: rgba(255, 255, 255, 0.72) !important; }
+
+.historico .card, .atuacao .card {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  backdrop-filter: blur(8px);
+}
+
+.historico .card h3, .atuacao .card h3 { color: var(--ss-text-white) !important; }
+.historico .card p, .atuacao .card p { color: rgba(255, 255, 255, 0.65) !important; }
+
+.historico .card:hover, .atuacao .card:hover {
+  background: rgba(255, 255, 255, 0.10) !important;
+  border-color: rgba(232, 153, 28, 0.35) !important;
+}
+
+
+/* ============================================================
+   11. CTA FINAL
+   ============================================================ */
+.cta-section, #cta, .contact-cta {
+  background: linear-gradient(
+    135deg,
+    var(--ss-navy) 0%,
+    var(--ss-blue) 60%,
+    #1D4480 100%
+  );
+  text-align: center;
+  padding: clamp(64px, 8vw, 120px) 5%;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 153, 28, 0.08) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.cta-section h2 { color: var(--ss-text-white) !important; max-width: 600px; margin: 0 auto 16px; }
+.cta-section p { color: rgba(255, 255, 255, 0.70) !important; max-width: 480px; margin: 0 auto 36px; }
+.cta-section h2::after { margin: 14px auto 0; }
+
+
+/* ============================================================
+   12. LISTA DE BULLETS
+   ============================================================ */
+section ul { list-style: none; padding: 0; margin: 24px 0; }
+
+section ul li {
+  position: relative;
+  padding: 12px 0 12px 28px;
+  font-size: 0.95rem;
+  color: var(--ss-text-secondary);
+  border-bottom: 1px solid var(--ss-border);
+}
+
+section ul li:last-child { border-bottom: none; }
+
+section ul li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 8px; height: 8px;
+  background: var(--ss-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--ss-accent-glow);
+}
+
+
+/* ============================================================
+   13. FOOTER
+   ============================================================ */
+footer, .footer, #footer {
+  background: var(--ss-navy) !important;
+  color: rgba(255, 255, 255, 0.70);
+  padding: 60px 5% 32px;
+  font-size: 0.875rem;
+}
+
+footer h4, footer h5 {
+  font-family: var(--ss-font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ss-text-white) !important;
+  margin-bottom: 16px;
+}
+
+footer p { color: rgba(255, 255, 255, 0.55) !important; font-size: 0.85rem; line-height: 1.65; }
+
+footer a { color: rgba(255, 255, 255, 0.65) !important; text-decoration: none; transition: color var(--ss-transition); }
+footer a:hover { color: var(--ss-accent) !important; }
+
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; margin: 16px 0; }
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--ss-radius-pill);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75) !important;
+  transition: background var(--ss-transition), border-color var(--ss-transition), color var(--ss-transition);
+}
+
+.footer-links a:hover {
+  background: rgba(232, 153, 28, 0.12) !important;
+  border-color: rgba(232, 153, 28, 0.30);
+  color: var(--ss-accent) !important;
+}
+
+footer hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin: 32px 0 20px;
+}
+
+footer small { color: rgba(255, 255, 255, 0.35) !important; font-size: 0.80rem; }
+
+
+/* ============================================================
+   14. ANIMAÇÕES DE SCROLL
+   ============================================================ */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-fade-in { opacity: 0; transition: opacity 0.65s ease; }
+
+.animate-scale-in {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-fade-up.visible,
+.animate-fade-in.visible,
+.animate-scale-in.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.animate-delay-1 { transition-delay: 0.10s; }
+.animate-delay-2 { transition-delay: 0.20s; }
+.animate-delay-3 { transition-delay: 0.30s; }
+.animate-delay-4 { transition-delay: 0.40s; }
+.animate-delay-5 { transition-delay: 0.50s; }
+.animate-delay-6 { transition-delay: 0.60s; }
+
+
+/* ============================================================
+   15. NAVBAR SCROLLED
+   ============================================================ */
+nav.scrolled, header.scrolled, .navbar.scrolled {
+  background: rgba(11, 21, 39, 0.98) !important;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ============================================================
+   16. UTILITÁRIOS
+   ============================================================ */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--ss-blue-mid), var(--ss-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--ss-radius-lg);
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--ss-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+
+/* ============================================================
+   17. RESPONSIVIDADE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .cards-grid, .services-grid, .areas-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root { --ss-section-gap: 60px; }
+
+  .hero h1, #hero h1 { font-size: clamp(1.75rem, 7vw, 2.5rem); }
+
+  .cards-grid, .services-grid, .areas-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  .footer-links { gap: 10px; }
+
+  section, .section { padding: var(--ss-section-gap) 4%; }
+}
+
+@media (max-width: 480px) {
+  .hero, #hero { min-height: 70vh; padding: 60px 4% 60px; }
+
+  .btn, .button, a[href*="wa.me"] { padding: 12px 22px; font-size: 0.875rem; }
+}
