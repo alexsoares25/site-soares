@@ -35,50 +35,8 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
 
+  <link rel="stylesheet" href="css/shared.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --primary: #0B2E6B;
-      --accent: #C9922A;
-      --light: #f8fafc;
-      --white: #ffffff;
-      --slate: #334155;
-      --gray-soft: #eef2f6;
-      --glass-bg: rgba(255, 255, 255, 0.25);
-      --glass-border: rgba(255, 255, 255, 0.3);
-      --shadow-soft: 8px 8px 16px rgba(174, 192, 210, 0.3), -8px -8px 16px #ffffff;
-      --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
-      --gradient-gold: linear-gradient(135deg, #C9922A 0%, #e6b450 90%);
-      --gradient-navy: linear-gradient(135deg, #0B2E6B 0%, #1e4a8b 100%);
-    }
-
-    body {
-      font-family: 'Barlow', sans-serif;
-      background: var(--gray-soft);
-      color: var(--slate);
-      line-height: 1.5;
-    }
-
-    .section-tag {
-      display: inline-block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600;
-      letter-spacing: 2px;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: rgba(201, 146, 42, 0.1);
-      padding: 0.35rem 1rem;
-      border-radius: 40px;
-      margin-bottom: 1rem;
-      backdrop-filter: blur(4px);
-    }
-
     .section-title {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 2.8rem;
@@ -87,78 +45,11 @@
       color: var(--primary);
       max-width: 700px;
     }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--gradient-gold);
-      color: var(--primary);
-      font-weight: 600;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: none;
-      box-shadow: 0 10px 20px -8px rgba(201, 146, 42, 0.4);
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 30px -8px rgba(201, 146, 42, 0.6);
-    }
-
     .btn-primary.bg-white {
       background: var(--white);
       color: var(--primary);
       box-shadow: 0 10px 20px -8px rgba(11, 46, 107, 0.2);
     }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 6%;
-      background: rgba(11, 46, 107, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: var(--shadow-glass);
-    }
-
-    .nav-logo img {
-      height: 45px;
-      filter: brightness(0) invert(1);
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      margin-left: 2.5rem;
-      font-weight: 500;
-      font-size: 1.05rem;
-      transition: 0.2s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 4px;
-    }
-
-    .nav-links a:hover {
-      border-bottom-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: white;
-    }
-
     .hero {
       position: relative;
       padding: 100px 6%;
@@ -480,54 +371,7 @@
       margin: 1.5rem auto 2.5rem;
       opacity: 0.8;
     }
-
-    .footer-main {
-      background: var(--primary);
-      color: rgba(255, 255, 255, 0.7);
-      padding: 3rem 6% 1.5rem;
-    }
-
-    .footer-top {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .footer-link {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem 0 0;
-      font-weight: 500;
-      transition: 0.2s;
-    }
-
-    .footer-link:hover {
-      color: var(--accent);
-    }
-
-    .footer-copyright {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
       .menu-toggle {
         display: block;
       }
