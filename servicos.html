@@ -35,166 +35,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="css/shared.css">
   <style>
     /* ===== RESET & TOKENS ===================================== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --primary:       #0B2E6B;
-      --accent:        #C9922A;
-      --light:         #f8fafc;
-      --white:         #ffffff;
-      --slate:         #334155;
-      --gray-soft:     #eef2f6;
-      --glass-bg:      rgba(255,255,255,0.25);
-      --glass-border:  rgba(255,255,255,0.3);
-      --shadow-soft:   8px 8px 16px rgba(174,192,210,0.3), -8px -8px 16px #ffffff;
-      --shadow-glass:  0 8px 32px rgba(0,0,0,0.1);
-      --gradient-gold: linear-gradient(135deg,#C9922A 0%,#e6b450 90%);
-      --gradient-navy: linear-gradient(135deg,#0B2E6B 0%,#1e4a8b 100%);
-    }
-
-    body {
-      font-family: 'Barlow', sans-serif;
-      background: var(--gray-soft);
-      color: var(--slate);
-      line-height: 1.5;
-    }
-
-    /* ===== SHARED UTILITIES =================================== */
-    .section-tag {
-      display: inline-block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600;
-      letter-spacing: 2px;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: rgba(201,146,42,0.1);
-      padding: 0.35rem 1rem;
-      border-radius: 40px;
-      margin-bottom: 1rem;
-      backdrop-filter: blur(4px);
-    }
-
-    .section-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 800;
-      line-height: 1.1;
-      color: var(--primary);
-      max-width: 700px;
-    }
-
-    .section-title.white { color: var(--white); }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--gradient-gold);
-      color: var(--primary);
-      font-weight: 600;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'Barlow', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 20px -8px rgba(201,146,42,0.4);
-    }
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 30px -8px rgba(201,146,42,0.6);
-    }
-
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: transparent;
-      color: var(--accent);
-      font-weight: 600;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      border: 2px solid var(--accent);
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-    .btn-outline:hover {
-      background: rgba(201,146,42,0.08);
-      transform: translateY(-2px);
-    }
-
-    .btn-white {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--white);
-      color: var(--primary);
-      font-weight: 700;
-      padding: 1rem 2.4rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 20px -8px rgba(11,46,107,0.2);
-    }
-    .btn-white:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 30px -8px rgba(11,46,107,0.3);
-    }
-
-    /* ===== NAV ================================================ */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 6%;
-      background: rgba(11,46,107,0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: var(--shadow-glass);
-    }
-
-    .nav-logo img {
-      height: 45px;
-      filter: brightness(0) invert(1);
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      margin-left: 2.5rem;
-      font-weight: 500;
-      font-size: 1.05rem;
-      transition: 0.2s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 4px;
-    }
-    .nav-links a:hover,
-    .nav-links a.active {
-      border-bottom-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: white;
-      background: none;
-      border: none;
-    }
-
     /* ===== HERO / INTRO BANNER ================================ */
     .hero-servicos {
       position: relative;
@@ -236,9 +79,6 @@
       white-space: nowrap;
       letter-spacing: 0.04em;
     }
-
-    @keyframes gridMove {
-      to { background-position: 55px 55px; }
     }
 
     .hero-left {
@@ -247,26 +87,6 @@
       flex: 1;
       min-width: 280px;
     }
-
-    .hero-eyebrow {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 3px;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      width: 28px;
-      height: 2px;
-      background: var(--accent);
-      display: block;
-    }
-
     .hero-left h1 {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: clamp(2.8rem, 5vw, 4.5rem);
@@ -328,11 +148,6 @@
     }
 
     /* barra divisória dourada */
-    .gold-divider {
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent) 0%, #e6b450 50%, transparent 100%);
-    }
-
     /* ===== CONFORMIDADE ======================================= */
     .conformidade {
       background: var(--gradient-navy);
@@ -671,11 +486,7 @@
       position: relative;
       max-width: 100%;
     }
-    .cta-final .section-title em {
-      font-style: normal;
-      color: var(--accent);
-    }
-
+    .cta-final
     .cta-lead {
       max-width: 600px;
       margin: 1.5rem auto 2.5rem;
@@ -732,42 +543,7 @@
       transition: 0.2s;
     }
     .cta-contact-item a:hover { color: var(--accent); }
-
-    /* ===== FOOTER ============================================= */
-    .footer-main {
-      background: var(--primary);
-      color: rgba(255,255,255,0.7);
-      padding: 3rem 6% 1.5rem;
-    }
-    .footer-top {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .footer-link {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem 0 0;
-      font-weight: 500;
-      transition: 0.2s;
-    }
-    .footer-link:hover { color: var(--accent); }
-    .footer-copyright { margin-top: 2rem; font-size: 0.9rem; }
-
     /* ===== REVEAL ANIMATIONS ================================= */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     /* ===== RESPONSIVE ======================================== */
     @media (max-width: 900px) {
       .conf-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -775,7 +551,6 @@
     }
 
     @media (max-width: 768px) {
-      .nav-links { display: none; }
       .menu-toggle { display: block; }
       .hero-servicos { flex-direction: column; }
       .hero-right { grid-template-columns: 1fr 1fr; width: 100%; }
