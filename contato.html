@@ -656,33 +656,6 @@
       }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-      // Menu mobile
-      const toggle = document.getElementById('menu-toggle');
-      const navLinks = document.getElementById('nav-links');
-      if (toggle && navLinks) {
-        toggle.addEventListener('click', () => {
-          const isOpen = navLinks.style.display === 'flex';
-          Object.assign(navLinks.style, {
-            display: isOpen ? 'none' : 'flex',
-            flexDirection: 'column',
-            position: 'absolute',
-            top: '70px',
-            right: '0',
-            left: '0',
-            background: 'rgba(11,46,107,0.97)',
-            padding: '1.5rem 6%',
-            backdropFilter: 'blur(12px)',
-            zIndex: '99'
-          });
-          if (!isOpen) {
-            navLinks.querySelectorAll('a').forEach(a => {
-              a.style.marginLeft = '0';
-              a.style.marginBottom = '1rem';
-            });
-          }
-        });
-      }
-
       // Formulário: WhatsApp + FormSubmit
       const form = document.getElementById('contactForm');
       form.addEventListener('submit', function(e) {
@@ -707,5 +680,6 @@
     });
   </script>
 
+  <script src="js/script.js" defer></script>
 </body>
 </html>
