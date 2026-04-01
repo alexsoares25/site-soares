@@ -117,7 +117,45 @@
   }
 
   /* –––––––––––––––––––––––––––––
-     4. SMOOTH SCROLL para links internos
+     4. MENU MOBILE — toggle hambúrguer
+  ––––––––––––––––––––––––––––– */
+  function initMobileMenu() {
+    const toggle   = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    if (!toggle || !navLinks) return;
+
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Abrir menu');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.contains('nav-open');
+
+      navLinks.classList.toggle('nav-open', !isOpen);
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      toggle.textContent = isOpen ? '☰' : '✕';
+    });
+
+    // Fechar ao clicar em qualquer link do menu
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      });
+    });
+
+    // Fechar ao clicar fora do menu
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !toggle.contains(e.target)) {
+        navLinks.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      }
+    });
+  }
+
+  /* –––––––––––––––––––––––––––––
+     5. SMOOTH SCROLL para links internos
   ––––––––––––––––––––––––––––– */
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -136,7 +174,7 @@
   }
 
   /* –––––––––––––––––––––––––––––
-     5. BOTÕES — Efeito ripple no clique
+     6. BOTÕES — Efeito ripple no clique
   ––––––––––––––––––––––––––––– */
   function initRippleEffect() {
     const buttons = document.querySelectorAll(
@@ -185,7 +223,7 @@
   }
 
   /* –––––––––––––––––––––––––––––
-     6. COUNTER — Animação de números (se houver stats)
+     7. COUNTER — Animação de números (se houver stats)
   ––––––––––––––––––––––––––––– */
   function initCounters() {
     const counters = document.querySelectorAll('[data-count], .counter, .stat-number');
@@ -226,6 +264,7 @@
     initNavbarScroll();
     initScrollAnimations();
     initCardShimmer();
+    initMobileMenu();
     initSmoothScroll();
     initRippleEffect();
     initCounters();

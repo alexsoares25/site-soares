@@ -829,26 +829,6 @@
       }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-      // Menu mobile toggle
-      const toggle = document.getElementById('menu-toggle');
-      const navLinks = document.getElementById('nav-links');
-      if (toggle && navLinks) {
-        toggle.addEventListener('click', () => {
-          const open = navLinks.style.display === 'flex';
-          navLinks.style.display = open ? 'none' : 'flex';
-          navLinks.style.flexDirection = 'column';
-          navLinks.style.position = 'absolute';
-          navLinks.style.top = '70px';
-          navLinks.style.right = '0';
-          navLinks.style.left = '0';
-          navLinks.style.background = 'rgba(11,46,107,0.97)';
-          navLinks.style.padding = '1.5rem 6%';
-          navLinks.style.backdropFilter = 'blur(12px)';
-          if (!open) {
-            navLinks.querySelectorAll('a').forEach(a => { a.style.marginLeft = '0'; a.style.marginBottom = '1rem'; });
-          }
-        });
-      }
     });
 
     // EAD orçamento via WhatsApp
@@ -864,5 +844,6 @@
     }
   </script>
 
+  <script src="js/script.js" defer></script>
 </body>
 </html>
