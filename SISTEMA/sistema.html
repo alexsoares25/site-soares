@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <title>Sistema SGDT | Soares Serviços</title>
+  <meta name="description" content="Sistema de Gestão Documental Técnica — Vistorias, laudos técnicos e checklist NR-12/22.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #0B2E6B;
+      --accent: #C9922A;
+      --gradient-navy: linear-gradient(135deg, #0B2E6B 0%, #1e4a8b 100%);
+    }
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: #040f26;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── TOPBAR ─── */
+    .topbar {
+      height: 48px;
+      background: rgba(11,46,107,0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201,146,42,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      flex-shrink: 0;
+      z-index: 10;
+    }
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .topbar-left img {
+      height: 28px;
+      filter: brightness(0) invert(1);
+    }
+    .topbar-sep {
+      width: 1px;
+      height: 20px;
+      background: rgba(255,255,255,0.15);
+    }
+    .topbar-sys {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .sys-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+    .sys-badge {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.52rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: rgba(201,146,42,0.18);
+      color: #e0a832;
+      border: 1px solid rgba(201,146,42,0.3);
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      padding: 4px 10px;
+      text-decoration: none;
+      transition: 0.15s ease;
+      cursor: pointer;
+    }
+    .btn-back:hover {
+      color: #fff;
+      border-color: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.1);
+    }
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 6px rgba(34,197,94,0.5);
+      flex-shrink: 0;
+    }
+    .status-txt {
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ─── LOADING ─── */
+    #loading {
+      position: absolute;
+      inset: 48px 0 0 0;
+      background: #040f26;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      transition: opacity 0.4s ease;
+    }
+    .load-logo {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, #e0a832, #C9922A, #a8731e);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 28px rgba(201,146,42,0.4);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 10px 28px rgba(201,146,42,0.4); }
+      50% { transform: scale(1.04); box-shadow: 0 14px 36px rgba(201,146,42,0.6); }
+    }
+    .load-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .load-name em { color: #C9922A; font-style: normal; }
+    .load-sub {
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 28px;
+    }
+    .load-bar-wrap {
+      width: 200px;
+      height: 3px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .load-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #e0a832, #C9922A);
+      border-radius: 10px;
+      animation: loadbar 1.6s ease-in-out forwards;
+    }
+    @keyframes loadbar {
+      0% { width: 0%; }
+      60% { width: 75%; }
+      100% { width: 100%; }
+    }
+    .load-msg {
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.08em;
+    }
+
+    /* ─── IFRAME ─── */
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+      display: block;
+      background: #040f26;
+    }
+
+    /* ─── MOBILE WARNING ─── */
+    .mobile-warn {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(201,146,42,0.12);
+      border-top: 1px solid rgba(201,146,42,0.25);
+      padding: 6px 14px;
+      font-size: 0.62rem;
+      color: rgba(201,146,42,0.8);
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+    @media (max-width: 600px) {
+      .mobile-warn { display: block; }
+      .topbar-right .status-dot,
+      .topbar-right .status-txt { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── TOPBAR ── -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <a href="index.html">
+        <img src="assets/logo.png" alt="Soares Serviços" onerror="this.style.display='none'">
+      </a>
+      <div class="topbar-sep"></div>
+      <div class="topbar-sys">
+        <span class="sys-label">Sistema de Vistorias</span>
+        <span class="sys-badge">SGDT v6</span>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <div class="status-dot"></div>
+      <span class="status-txt">online</span>
+      <a href="index.html" class="btn-back">
+        ← Voltar ao Site
+      </a>
+    </div>
+  </div>
+
+  <!-- ── LOADING SCREEN ── -->
+  <div id="loading">
+    <div class="load-logo">S</div>
+    <div class="load-name">Soares <em>Serviços</em></div>
+    <div class="load-sub">Carregando sistema...</div>
+    <div class="load-bar-wrap"><div class="load-bar"></div></div>
+    <div class="load-msg">SGDT — Sistema de Gestão Documental Técnica</div>
+  </div>
+
+  <!-- ── SGDT EMBARCADO ── -->
+  <iframe
+    id="sgdt-frame"
+    src="sgdt.html"
+    title="SGDT — Soares Serviços"
+    allow="downloads"
+    onload="frameReady()"
+  ></iframe>
+
+  <div class="mobile-warn">
+    💡 Para melhor experiência no sistema, use um computador ou tablet.
+  </div>
+
+  <script>
+    function frameReady() {
+      const loading = document.getElementById('loading');
+      setTimeout(function() {
+        loading.style.opacity = '0';
+        setTimeout(function() { loading.style.display = 'none'; }, 400);
+      }, 800);
+    }
+    // Fallback: esconder loading após 4s mesmo se iframe não disparar onload
+    setTimeout(function() {
+      const loading = document.getElementById('loading');
+      if (loading && loading.style.display !== 'none') {
+        loading.style.opacity = '0';
+        setTimeout(function() { loading.style.display = 'none'; }, 400);
+      }
+    }, 4000);
+  </script>
+
+</body>
+</html>
