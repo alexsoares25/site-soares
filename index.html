@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -29,494 +28,891 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
 
   <style>
-    * {
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
     :root {
-      --primary: #0B2E6B;
-      --accent: #C9922A;
-      --light: #f8fafc;
-      --white: #ffffff;
-      --slate: #334155;
-      --gray-soft: #eef2f6;
-      --glass-bg: rgba(255, 255, 255, 0.25);
-      --glass-border: rgba(255, 255, 255, 0.3);
-      --shadow-soft: 8px 8px 16px rgba(174, 192, 210, 0.3), -8px -8px 16px #ffffff;
-      --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
-      --gradient-gold: linear-gradient(135deg, #C9922A 0%, #e6b450 90%);
-      --gradient-navy: linear-gradient(135deg, #0B2E6B 0%, #1e4a8b 100%);
+      --primary: #0a1628;
+      --primary-light: #162544;
+      --accent: #d4a745;
+      --accent-dark: #b8923d;
+      --accent-glow: rgba(212, 167, 69, 0.15);
+      --text-primary: #f8fafc;
+      --text-secondary: rgba(248, 250, 252, 0.7);
+      --text-muted: rgba(248, 250, 252, 0.5);
+      --surface: rgba(255, 255, 255, 0.03);
+      --surface-hover: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(255, 255, 255, 0.15);
+      --gradient-primary: linear-gradient(135deg, #0a1628 0%, #162544 50%, #1a2f55 100%);
+      --gradient-accent: linear-gradient(135deg, #d4a745 0%, #f0c95a 100%);
+      --gradient-glow: radial-gradient(ellipse at 50% 50%, rgba(212, 167, 69, 0.08) 0%, transparent 70%);
+      --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.3);
+      --shadow-glow: 0 0 60px rgba(212, 167, 69, 0.15);
+      --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Barlow', sans-serif;
-      background: var(--gray-soft);
-      color: var(--slate);
-      line-height: 1.5;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    .section-tag {
-      display: inline-block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600;
-      letter-spacing: 2px;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: rgba(201, 146, 42, 0.1);
-      padding: 0.35rem 1rem;
-      border-radius: 40px;
-      margin-bottom: 1rem;
-      backdrop-filter: blur(4px);
+    /* ===== ANIMATED BACKGROUND ===== */
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    .section-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 800;
-      line-height: 1.1;
-      color: var(--primary);
-      max-width: 700px;
+    .bg-glow {
+      position: fixed;
+      width: 800px;
+      height: 800px;
+      background: var(--gradient-glow);
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+      animation: float 20s ease-in-out infinite;
     }
 
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--gradient-gold);
-      color: var(--primary);
-      font-weight: 600;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: none;
-      box-shadow: 0 10px 20px -8px rgba(201, 146, 42, 0.4);
-      font-size: 1rem;
-      letter-spacing: 0.5px;
+    .bg-glow-1 { top: -200px; right: -200px; }
+    .bg-glow-2 { bottom: -200px; left: -200px; animation-delay: -10s; }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-30px, 30px) scale(1.1); }
     }
 
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 30px -8px rgba(201, 146, 42, 0.6);
-    }
-
-    .btn-primary.bg-white {
-      background: var(--white);
-      color: var(--primary);
-      box-shadow: 0 10px 20px -8px rgba(11, 46, 107, 0.2);
-    }
-
+    /* ===== NAVBAR ===== */
     nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 6%;
-      background: rgba(11, 46, 107, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: var(--shadow-glass);
+      padding: 1.25rem 5%;
+      background: rgba(10, 22, 40, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    nav.scrolled {
+      padding: 0.875rem 5%;
+      background: rgba(10, 22, 40, 0.95);
+      box-shadow: var(--shadow-soft);
     }
 
     .nav-logo img {
-      height: 45px;
+      height: 42px;
       filter: brightness(0) invert(1);
+      transition: var(--transition);
+    }
+
+    .nav-logo img:hover {
+      opacity: 0.8;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .nav-links a {
-      color: white;
+      color: var(--text-secondary);
       text-decoration: none;
-      margin-left: 2.5rem;
+      font-size: 0.9rem;
       font-weight: 500;
-      font-size: 1.05rem;
-      transition: 0.2s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 4px;
+      padding: 0.625rem 1.25rem;
+      border-radius: 100px;
+      transition: var(--transition-fast);
+      position: relative;
     }
 
     .nav-links a:hover {
-      border-bottom-color: var(--accent);
-      color: var(--accent);
+      color: var(--text-primary);
+      background: var(--surface-hover);
+    }
+
+    .nav-links a.active {
+      color: var(--primary);
+      background: var(--gradient-accent);
     }
 
     .menu-toggle {
       display: none;
-      font-size: 2rem;
+      font-size: 1.5rem;
       cursor: pointer;
-      color: white;
+      color: var(--text-primary);
+      padding: 0.5rem;
+      border-radius: 8px;
+      transition: var(--transition-fast);
     }
 
+    .menu-toggle:hover {
+      background: var(--surface);
+    }
+
+    /* ===== HERO ===== */
     .hero {
       position: relative;
-      padding: 100px 6%;
-      background: radial-gradient(circle at 80% 30%, rgba(201, 146, 42, 0.08) 0%, transparent 40%),
-                  var(--gradient-navy);
-      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 5% 100px;
       overflow: hidden;
     }
 
     .hero::before {
       content: '';
       position: absolute;
-      top: -30%;
-      right: -10%;
-      width: 600px;
-      height: 600px;
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 50%;
-      backdrop-filter: blur(20px);
+      top: 0;
+      right: 0;
+      width: 60%;
+      height: 100%;
+      background: var(--gradient-glow);
+      opacity: 0.5;
+      pointer-events: none;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 700px;
+      max-width: 800px;
     }
 
-    .hero .eyebrow {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: 3px;
-      color: var(--accent);
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      margin-bottom: 1rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--accent-glow);
+      border: 1px solid rgba(212, 167, 69, 0.2);
+      border-radius: 100px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
     }
 
     .hero h1 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 4.5rem;
-      font-weight: 900;
-      line-height: 1;
-      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s 0.4s forwards;
     }
 
     .hero h1 em {
-      color: var(--accent);
       font-style: normal;
-      border-bottom: 3px solid var(--accent);
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .hero-sub {
-      font-size: 1.2rem;
-      margin: 2rem 0;
-      opacity: 0.9;
+    .hero-description {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
       max-width: 600px;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s 0.6s forwards;
     }
 
-    /* ===== STATS BAR — sem brilho branco nas bordas ===== */
-    .stats-bar {
+    .hero-ctas {
       display: flex;
+      gap: 1rem;
       flex-wrap: wrap;
-      justify-content: center;
-      background: var(--white);
-      border-radius: 80px;
-      margin: -40px 6% 40px;
-      padding: 0.8rem 1.5rem;
-      /* Substituído: removida a parcela "-8px -8px 16px #ffffff" que causava o brilho branco */
-      box-shadow: 0 12px 40px rgba(11, 46, 107, 0.18);
-      position: relative;
-      z-index: 10;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s 0.8s forwards;
     }
 
-    .stat-item {
-      flex: 1;
-      text-align: center;
-      padding: 1rem 0.5rem;
-      border-right: 1px solid rgba(11, 46, 107, 0.1);
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .stat-item:last-child { border-right: none; }
-
-    .stat-num {
-      display: block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .stat-label {
-      font-size: 0.9rem;
-      color: var(--slate);
-    }
-
-    .pillar-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-      padding: 0 6%;
-    }
-
-    .pillar-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 2.5rem 2rem;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow-soft);
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
       position: relative;
       overflow: hidden;
     }
 
+    .btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .btn:hover::before {
+      opacity: 1;
+    }
+
+    .btn-primary {
+      background: var(--gradient-accent);
+      color: var(--primary);
+      box-shadow: 0 8px 32px rgba(212, 167, 69, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(212, 167, 69, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+    }
+
+    .btn i, .btn svg {
+      width: 18px;
+      height: 18px;
+      transition: var(--transition-fast);
+    }
+
+    .btn:hover i, .btn:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar {
+      position: relative;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin: -60px 5% 0;
+      background: var(--surface);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .stat-item::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 20%;
+      height: 60%;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .stat-item:last-child::after {
+      display: none;
+    }
+
+    .stat-item:hover {
+      background: var(--surface-hover);
+    }
+
+    .stat-num {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      position: relative;
+      padding: 120px 5%;
+      z-index: 1;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-glow);
+      border: 1px solid rgba(212, 167, 69, 0.2);
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .section-description {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== PILLAR CARDS ===== */
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pillar-card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      transition: var(--transition);
+      overflow: hidden;
+      cursor: default;
+    }
+
     .pillar-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .pillar-card::after {
       content: attr(data-num);
       position: absolute;
       bottom: -20px;
-      right: 10px;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 7rem;
-      font-weight: 900;
-      color: var(--primary);
-      opacity: 0.03;
+      right: 20px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      opacity: 0.02;
       pointer-events: none;
+      transition: var(--transition);
     }
 
     .pillar-card:hover {
-      transform: translateY(-10px);
-      background: rgba(255, 255, 255, 0.4);
-      box-shadow: 12px 12px 24px rgba(174, 192, 210, 0.4), -12px -12px 24px #ffffff;
+      background: var(--surface-hover);
+      border-color: var(--border-hover);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .pillar-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .pillar-card:hover::after {
+      opacity: 0.04;
     }
 
     .pillar-icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 60px;
-      height: 60px;
-      background: var(--gradient-gold);
-      border-radius: 18px;
-      color: var(--primary);
+      width: 56px;
+      height: 56px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(212, 167, 69, 0.2);
+      border-radius: 16px;
+      color: var(--accent);
       margin-bottom: 1.5rem;
-      box-shadow: 0 10px 20px -5px rgba(201, 146, 42, 0.4);
+      transition: var(--transition);
+    }
+
+    .pillar-card:hover .pillar-icon {
+      background: var(--gradient-accent);
+      color: var(--primary);
+      transform: scale(1.1) rotate(-5deg);
     }
 
     .pillar-icon svg {
-      width: 28px;
-      height: 28px;
-      stroke-width: 1.5;
+      width: 26px;
+      height: 26px;
     }
 
     .pillar-card h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.875rem;
     }
 
     .pillar-card p {
-      color: var(--slate);
+      color: var(--text-secondary);
+      font-size: 0.95rem;
       line-height: 1.7;
     }
 
+    /* ===== STEPS / FLUXO ===== */
     .steps {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin: 3rem 6%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--border), var(--border), transparent);
+      z-index: 0;
     }
 
     .step {
-      flex: 1 1 200px;
+      position: relative;
       text-align: center;
-      background: var(--glass-bg);
-      backdrop-filter: blur(8px);
-      border-radius: 40px;
-      padding: 2rem 1rem;
-      border: 1px solid var(--glass-border);
-      box-shadow: var(--shadow-soft);
-      transition: 0.2s;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 1.5rem;
+      transition: var(--transition);
+      z-index: 1;
     }
 
     .step:hover {
-      background: rgba(255, 255, 255, 0.5);
+      background: var(--surface-hover);
+      border-color: var(--border-hover);
+      transform: translateY(-6px);
     }
 
     .step-num {
-      width: 50px;
-      height: 50px;
-      background: var(--gradient-navy);
-      color: white;
-      font-weight: 800;
-      font-size: 1.5rem;
+      width: 48px;
+      height: 48px;
+      background: var(--gradient-accent);
+      color: var(--primary);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 30px;
-      margin: 0 auto 1rem;
-      box-shadow: 0 8px 14px rgba(11, 46, 107, 0.3);
+      border-radius: 50%;
+      margin: 0 auto 1.25rem;
+      box-shadow: 0 8px 24px rgba(212, 167, 69, 0.3);
+      transition: var(--transition);
     }
 
-    .resultados-operacionais {
-      padding: 80px 6%;
+    .step:hover .step-num {
+      transform: scale(1.15);
     }
 
+    .step h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.625rem;
+    }
+
+    .step p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ===== RESULTADOS ===== */
     .resultados-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
-      margin-top: 2rem;
     }
 
     .resultado-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(8px);
-      border-radius: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
       padding: 2rem;
-      border: 1px solid var(--glass-border);
-      box-shadow: var(--shadow-soft);
-      border-top: 4px solid var(--accent);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .resultado-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--gradient-accent);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: var(--transition);
+    }
+
+    .resultado-card:hover {
+      background: var(--surface-hover);
+      transform: translateX(8px);
+    }
+
+    .resultado-card:hover::before {
+      transform: scaleY(1);
     }
 
     .resultado-card h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      color: var(--primary);
-      font-size: 1.4rem;
-      margin-bottom: 0.8rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
     }
 
-    .mapa-operacoes {
-      padding: 80px 6%;
+    .resultado-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ===== MAPA ===== */
+    .mapa-section {
+      padding: 120px 5%;
     }
 
     #mapaOperacoes {
-      height: 480px;
-      border-radius: 32px;
+      height: 500px;
+      border-radius: var(--radius-xl);
       overflow: hidden;
-      border: 1px solid var(--glass-border);
+      border: 1px solid var(--border);
       box-shadow: var(--shadow-soft);
     }
 
-    .risco-zero {
-      background: linear-gradient(145deg, #ffffff 0%, #f0f4fa 100%);
-      padding: 80px 6%;
-    }
-
-    .risco-zero-container {
+    .mapa-legend {
       display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .risco-content {
-      flex: 2;
-    }
-
-    .risco-visual {
-      flex: 1;
-      display: flex;
+      gap: 2rem;
+      margin-top: 1.5rem;
       justify-content: center;
     }
 
-    .badge-premium {
-      background: var(--glass-bg);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--glass-border);
-      border-radius: 60px;
-      padding: 2rem 3rem;
-      text-align: center;
-      box-shadow: var(--shadow-soft);
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
     }
 
-    .badge-premium i {
-      width: 48px;
-      height: 48px;
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    /* ===== RISCO ZERO ===== */
+    .risco-section {
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+    }
+
+    .risco-container {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .risco-content .section-tag {
+      margin-bottom: 1rem;
+    }
+
+    .risco-content .section-title {
+      margin-bottom: 1.5rem;
+    }
+
+    .risco-lead {
+      font-size: 1.15rem;
       color: var(--accent);
-      stroke-width: 1.2;
-      margin-bottom: 0.5rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .risco-text {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      line-height: 1.7;
     }
 
     .check-list {
       list-style: none;
-      margin-top: 2rem;
     }
 
     .check-list li {
       display: flex;
-      gap: 0.8rem;
-      align-items: center;
-      margin-bottom: 0.8rem;
+      align-items: flex-start;
+      gap: 0.875rem;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
     }
 
-    .check-list i {
+    .check-list i, .check-list svg {
       color: var(--accent);
       width: 22px;
       height: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
-    .cta-section {
-      background: var(--gradient-navy);
-      color: white;
+    .badge-premium {
+      background: var(--surface);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
       text-align: center;
-      padding: 100px 6%;
+      transition: var(--transition);
+    }
+
+    .badge-premium:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .badge-premium i, .badge-premium svg {
+      width: 56px;
+      height: 56px;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .badge-premium span {
+      display: block;
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .badge-premium strong {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      color: var(--text-primary);
+      margin-top: 0.5rem;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      text-align: center;
+      padding: 140px 5%;
+      background: linear-gradient(180deg, var(--primary) 0%, var(--primary-light) 100%);
       position: relative;
       overflow: hidden;
     }
 
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 800px;
+      background: var(--gradient-glow);
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+    }
+
     .cta-section .section-title {
-      color: white;
-    }
-
-    .cta-lead {
       max-width: 600px;
-      margin: 1.5rem auto 2.5rem;
-      opacity: 0.8;
+      margin: 0 auto 1rem;
+      position: relative;
     }
 
-    .footer-main {
-      background: var(--primary);
-      color: rgba(255, 255, 255, 0.7);
-      padding: 3rem 6% 1.5rem;
+    .cta-section .section-description {
+      max-width: 500px;
+      margin: 0 auto 2.5rem;
+      position: relative;
+    }
+
+    .cta-section .btn {
+      position: relative;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: rgba(10, 22, 40, 0.95);
+      border-top: 1px solid var(--border);
+      padding: 4rem 5% 2rem;
+      position: relative;
+      z-index: 1;
     }
 
     .footer-top {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
-      align-items: center;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .footer-brand h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .footer-link {
-      color: white;
+      color: var(--text-secondary);
       text-decoration: none;
-      margin: 0 1rem 0 0;
+      font-size: 0.9rem;
       font-weight: 500;
-      transition: 0.2s;
+      padding: 0.625rem 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      transition: var(--transition-fast);
     }
 
     .footer-link:hover {
       color: var(--accent);
+      border-color: var(--accent);
+      background: var(--accent-glow);
     }
 
     .footer-copyright {
       margin-top: 2rem;
-      font-size: 0.9rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
+    /* ===== ANIMATIONS ===== */
     .reveal {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                  transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .reveal.visible {
@@ -524,24 +920,158 @@
       transform: translateY(0);
     }
 
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-6 { transition-delay: 0.6s; }
+
+    /* ===== MOBILE MENU ===== */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(10, 22, 40, 0.98);
+      backdrop-filter: blur(20px);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .mobile-menu.active {
+      display: flex;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-menu a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    .mobile-menu a:hover {
+      color: var(--accent);
+    }
+
+    .mobile-menu-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 5%;
+      font-size: 2rem;
+      color: var(--text-primary);
+      cursor: pointer;
+    }
+
+    /* ===== RESPONSIVENESS ===== */
+    @media (max-width: 1024px) {
+      .pillar-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps::before {
+        display: none;
+      }
+
+      .risco-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
     @media (max-width: 768px) {
+      nav {
+        padding: 1rem 4%;
+      }
+
       .nav-links {
         display: none;
       }
+
       .menu-toggle {
         display: block;
       }
-      .stats-bar {
+
+      .hero {
+        padding: 120px 4% 80px;
+        min-height: auto;
+      }
+
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .hero-ctas {
         flex-direction: column;
-        border-radius: 40px;
-        margin: -20px 4% 30px;
       }
+
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        margin: -40px 4% 0;
+      }
+
+      .stat-item:nth-child(2)::after {
+        display: none;
+      }
+
+      section {
+        padding: 80px 4%;
+      }
+
+      .pillar-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .badge-premium {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-item::after {
+        display: none !important;
+      }
+
       .stat-item {
-        border-right: none;
-        border-bottom: 1px solid rgba(11,46,107,0.1);
+        border-bottom: 1px solid var(--border);
       }
-      .section-title {
-        font-size: 2.2rem;
+
+      .stat-item:last-child {
+        border-bottom: none;
+      }
+
+      .mapa-legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
       }
     }
   </style>
@@ -549,52 +1079,77 @@
 </head>
 <body>
 
-  <nav>
+  <!-- Background Effects -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
     <div class="nav-logo">
       <a href="index.html">
-        <img src="assets/logo.png" alt="Soares Serviços Consultoria e locação" loading="lazy">
+        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação" loading="lazy">
       </a>
     </div>
-    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <i data-lucide="menu"></i>
+    </div>
     <div class="nav-links">
-      <a href="index.html">Início</a>
+      <a href="index.html" class="active">Inicio</a>
       <a href="sobre.html">Sobre</a>
-      <a href="servicos.html">Serviços</a>
+      <a href="servicos.html">Servicos</a>
       <a href="servicos.html#ead">Cursos EAD</a>
       <a href="contato.html">Contato</a>
     </div>
   </nav>
 
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-close" id="mobile-menu-close">
+      <i data-lucide="x"></i>
+    </div>
+    <a href="index.html">Inicio</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="servicos.html">Servicos</a>
+    <a href="servicos.html#ead">Cursos EAD</a>
+    <a href="contato.html">Contato</a>
+  </div>
+
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <div class="eyebrow">Engenharia Aplicada à Segurança e Conformidade Operacional</div>
-      <h1>Engenharia técnica para indústria, <em>mineração</em> e projetos residenciais.</h1>
-      <div class="hero-sub">Oferecemos soluções técnicas para inspeção, regularização e adequação de veículos, estruturas e operações. Atuamos na elaboração de laudos técnicos, adequação de veículos conforme as exigências normativas, avaliações e orientações técnicas para imóveis residenciais, além de cursos de capacitação e atualização para condutores e profissionais do setor.
-
-Nosso trabalho é conduzido com responsabilidade técnica, rigor normativo e foco em garantir segurança, conformidade e eficiência para cada cliente e projeto atendido.</div>
-<div class="hero-ctas">
-<a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20Análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços."
-target="_blank" rel="noopener" class="btn-primary">
-Solicitar Análise Técnica
-<i data-lucide="arrow-right" style="width:16px;height:16px;vertical-align:middle;margin-left:6px;"></i>
-</a>
-</div>
-</div>
-
+      <div class="hero-eyebrow">Engenharia Aplicada a Seguranca e Conformidade</div>
+      <h1>Engenharia tecnica para industria, <em>mineracao</em> e projetos residenciais.</h1>
+      <p class="hero-description">
+        Oferecemos solucoes tecnicas para inspecao, regularizacao e adequacao de veiculos, estruturas e operacoes. Atuamos com responsabilidade tecnica, rigor normativo e foco em garantir seguranca e conformidade para cada projeto.
+      </p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/5562982736369?text=Ola,%20gostaria%20de%20solicitar%20uma%20Analise%20tecnica%20e%20proposta%20comercial%20junto%20a%20Soares%20Servicos."
+           target="_blank" rel="noopener" class="btn btn-primary">
+          Solicitar Analise Tecnica
+          <i data-lucide="arrow-right"></i>
+        </a>
+        <a href="servicos.html" class="btn btn-secondary">
+          Conhecer Servicos
+          <i data-lucide="chevron-right"></i>
+        </a>
+      </div>
+    </div>
   </section>
 
+  <!-- Stats Bar -->
   <section class="stats-bar">
     <div class="stat-item">
-      <span class="stat-num">Inspeção</span>
-      <span class="stat-label">e Laudos Técnicos</span>
+      <span class="stat-num">Inspecao</span>
+      <span class="stat-label">e Laudos Tecnicos</span>
     </div>
     <div class="stat-item">
-      <span class="stat-num">Adequação</span>
+      <span class="stat-num">Adequacao</span>
       <span class="stat-label">de Equipamentos</span>
     </div>
     <div class="stat-item">
-      <span class="stat-num">Gestão</span>
-      <span class="stat-label">Técnica de Manutenção</span>
+      <span class="stat-num">Gestao</span>
+      <span class="stat-label">Tecnica de Manutencao</span>
     </div>
     <div class="stat-item">
       <span class="stat-num">Projetos</span>
@@ -602,231 +1157,316 @@ Solicitar Análise Técnica
     </div>
   </section>
 
+  <!-- Services Section -->
   <section id="servicos">
-    <div style="padding:0 6%;">
-      <span class="section-tag">Áreas de Atuação</span>
-      <h2 class="section-title">Engenharia Técnica em Três Frentes</h2>
+    <div class="section-header reveal">
+      <span class="section-tag">Areas de Atuacao</span>
+      <h2 class="section-title">Engenharia Tecnica em Tres Frentes</h2>
+      <p class="section-description">Solucoes completas de engenharia para diferentes segmentos, com foco em qualidade, seguranca e conformidade normativa.</p>
     </div>
     <div class="pillar-grid">
-      <div class="pillar-card reveal" data-num="01">
+      <div class="pillar-card reveal reveal-delay-1" data-num="01">
         <div class="pillar-icon"><i data-lucide="settings"></i></div>
-        <h3>Engenharia Mecânica</h3>
-        <p>Inspeções técnicas, emissão de laudos, adequação de equipamentos e gestão de manutenção. Avaliação técnica de veículos e máquinas com base em critérios normativos e análise de desempenho operacional.</p>
+        <h3>Engenharia Mecanica</h3>
+        <p>Inspecoes tecnicas, emissao de laudos, adequacao de equipamentos e gestao de manutencao. Avaliacao tecnica de veiculos e maquinas com base em criterios normativos.</p>
       </div>
-      <div class="pillar-card reveal" data-num="02">
+      <div class="pillar-card reveal reveal-delay-2" data-num="02">
         <div class="pillar-icon"><i data-lucide="hard-hat"></i></div>
-        <h3>Engenharia para Mineração</h3>
-        <p>Adequação técnica de veículos para operações em ambiente de mina, preparação e mobilização de equipamentos, suporte técnico em campo e organização documental conforme NR-22 e requisitos de cada contratante.</p>
+        <h3>Engenharia para Mineracao</h3>
+        <p>Adequacao tecnica de veiculos para operacoes em ambiente de mina, preparacao e mobilizacao de equipamentos, suporte tecnico conforme NR-22.</p>
       </div>
-      <div class="pillar-card reveal" data-num="03">
+      <div class="pillar-card reveal reveal-delay-3" data-num="03">
         <div class="pillar-icon"><i data-lucide="home"></i></div>
         <h3>Engenharia Residencial</h3>
-        <p>Elaboração de projetos residenciais, acompanhamento técnico de obras, análise estrutural, regularização de edificações e consultoria técnica para construções de pequeno e médio porte.</p>
+        <p>Elaboracao de projetos residenciais, acompanhamento tecnico de obras, analise estrutural e consultoria tecnica para construcoes.</p>
       </div>
-      <div class="pillar-card reveal" data-num="04">
+      <div class="pillar-card reveal reveal-delay-4" data-num="04">
         <div class="pillar-icon"><i data-lucide="clipboard-list"></i></div>
-        <h3>Laudos e Inspeções Técnicas</h3>
-        <p>Emissão de laudos técnicos com responsabilidade de engenheiro habilitado. Inspeções periódicas em equipamentos, instalações e estruturas, com registro documental e emissão de ART quando aplicável.</p>
+        <h3>Laudos e Inspecoes Tecnicas</h3>
+        <p>Emissao de laudos tecnicos com responsabilidade de engenheiro habilitado. Inspecoes periodicas com registro documental e emissao de ART.</p>
       </div>
-      <div class="pillar-card reveal" data-num="05">
+      <div class="pillar-card reveal reveal-delay-5" data-num="05">
         <div class="pillar-icon"><i data-lucide="truck"></i></div>
-        <h3>Locação e Gestão de Frotas</h3>
-        <p>Locação de veículos utilitários e 4x4 para operações industriais e mineradoras. Gestão técnica da frota com controle de manutenção, documentação e atendimento a exigências operacionais de cada contratante.</p>
+        <h3>Locacao e Gestao de Frotas</h3>
+        <p>Locacao de veiculos utilitarios e 4x4 para operacoes industriais e mineradoras. Gestao tecnica da frota com controle de manutencao.</p>
       </div>
-      <div class="pillar-card reveal" data-num="06">
+      <div class="pillar-card reveal reveal-delay-6" data-num="06">
         <div class="pillar-icon"><i data-lucide="graduation-cap"></i></div>
         <h3>Cursos e Treinamentos EAD</h3>
-        <p>Capacitação técnica com foco em normas regulamentadoras e segurança operacional. Formação e atualização profissional em NRs com flexibilidade de horário para equipes e empresas.</p>
+        <p>Capacitacao tecnica com foco em normas regulamentadoras e seguranca operacional. Formacao profissional em NRs com flexibilidade de horario.</p>
       </div>
     </div>
   </section>
 
+  <!-- How We Work Section -->
   <section class="como">
-    <div style="padding:0 6%;">
+    <div class="section-header reveal">
       <span class="section-tag">Fluxo de Atendimento</span>
       <h2 class="section-title">Como Trabalhamos</h2>
+      <p class="section-description">Processo estruturado para garantir qualidade e eficiencia em todas as etapas do projeto.</p>
     </div>
     <div class="steps">
-      <div class="step">
+      <div class="step reveal reveal-delay-1">
         <div class="step-num">1</div>
         <h4>Contato Inicial</h4>
-        <p>Informe o tipo de demanda, prazo e escopo da operação ou projeto.</p>
+        <p>Informe o tipo de demanda, prazo e escopo da operacao ou projeto.</p>
       </div>
-      <div class="step">
+      <div class="step reveal reveal-delay-2">
         <div class="step-num">2</div>
-        <h4>Análise Técnica</h4>
-        <p>Avaliamos os requisitos técnicos e normativos aplicáveis à sua demanda.</p>
+        <h4>Analise Tecnica</h4>
+        <p>Avaliamos os requisitos tecnicos e normativos aplicaveis a sua demanda.</p>
       </div>
-      <div class="step">
+      <div class="step reveal reveal-delay-3">
         <div class="step-num">3</div>
-        <h4>Execução e Adequação</h4>
-        <p>Realizamos inspeções, adequações e elaboramos a documentação técnica necessária.</p>
+        <h4>Execucao e Adequacao</h4>
+        <p>Realizamos inspecoes, adequacoes e elaboramos a documentacao tecnica.</p>
       </div>
-      <div class="step">
+      <div class="step reveal reveal-delay-4">
         <div class="step-num">4</div>
         <h4>Entrega e Suporte</h4>
-        <p>Entregamos laudos, projetos ou equipamentos adequados com suporte técnico contínuo.</p>
+        <p>Entregamos laudos, projetos ou equipamentos com suporte tecnico continuo.</p>
       </div>
     </div>
   </section>
 
+  <!-- Results Section -->
   <section class="resultados-operacionais" id="resultados">
-    <span class="section-tag">Histórico Técnico</span>
-    <h2 class="section-title">Onde Já Atuamos</h2>
-    <p class="resultados-lead" style="max-width:680px; margin:1rem 0 2.5rem;">
-      A Soares Serviços Consultoria e Locação possui histórico de atuação técnica em operações industriais e mineradoras de grande porte, com entregas documentadas nas áreas de adequação de equipamentos, inspeção técnica e mobilização operacional.
-    </p>
+    <div class="section-header reveal">
+      <span class="section-tag">Historico Tecnico</span>
+      <h2 class="section-title">Onde Ja Atuamos</h2>
+      <p class="section-description">A Soares Servicos possui historico de atuacao tecnica em operacoes industriais e mineradoras de grande porte.</p>
+    </div>
     <div class="resultados-grid">
-      <div class="resultado-card">
-        <h3>Mecânica & Adequação</h3>
-        <p>Inspeções técnicas e adequação de equipamentos e veículos conforme requisitos normativos e exigências específicas de cada contratante.</p>
+      <div class="resultado-card reveal reveal-delay-1">
+        <h3>Mecanica e Adequacao</h3>
+        <p>Inspecoes tecnicas e adequacao de equipamentos e veiculos conforme requisitos normativos e exigencias especificas de cada contratante.</p>
       </div>
-      <div class="resultado-card">
-        <h3>Mineração & Mobilização</h3>
-        <p>Preparação técnica e mobilização de frotas para operações em mina, com documentação estruturada para aprovação em portais de contratantes (NR-12 e NR-22).</p>
+      <div class="resultado-card reveal reveal-delay-2">
+        <h3>Mineracao e Mobilizacao</h3>
+        <p>Preparacao tecnica e mobilizacao de frotas para operacoes em mina, com documentacao estruturada para aprovacao em portais de contratantes.</p>
       </div>
-      <div class="resultado-card">
-        <h3>Projetos & Documentação</h3>
-        <p>Elaboração de laudos técnicos, ARTs e prontuários com responsabilidade de engenheiro habilitado para operações industriais e projetos residenciais.</p>
+      <div class="resultado-card reveal reveal-delay-3">
+        <h3>Projetos e Documentacao</h3>
+        <p>Elaboracao de laudos tecnicos, ARTs e prontuarios com responsabilidade de engenheiro habilitado para operacoes industriais e projetos residenciais.</p>
       </div>
     </div>
   </section>
 
-  <section class="mapa-operacoes" id="presenca-operacional">
-    <span class="section-tag">Presença Operacional</span>
-    <h2 class="section-title">Locais com Atuação Técnica Registrada</h2>
-    <p class="mapa-lead" style="max-width:640px; margin:0.75rem 0 2rem;">
-      Operações concluídas com documentação técnica aprovada, adequação de equipamentos e liberação para operação conforme requisitos de cada contratante.
-    </p>
-    <div id="mapaOperacoes" role="region" aria-label="Mapa de operações da Soares Serviços"></div>
-    <div class="mapa-legend" style="display:flex; gap:20px; margin-top:14px;">
-      <div class="legend-item" style="display:flex; align-items:center; gap:8px;">
-        <div style="width:9px; height:9px; border-radius:50%; background:#d9c006;"></div>
-        Mineração
+  <!-- Map Section -->
+  <section class="mapa-section" id="presenca-operacional">
+    <div class="section-header reveal">
+      <span class="section-tag">Presenca Operacional</span>
+      <h2 class="section-title">Locais com Atuacao Tecnica Registrada</h2>
+      <p class="section-description">Operacoes concluidas com documentacao tecnica aprovada, adequacao de equipamentos e liberacao para operacao.</p>
+    </div>
+    <div id="mapaOperacoes" class="reveal" role="region" aria-label="Mapa de operacoes da Soares Servicos"></div>
+    <div class="mapa-legend reveal">
+      <div class="legend-item">
+        <div class="legend-dot" style="background: #d4a745;"></div>
+        Mineracao
       </div>
-      <div class="legend-item" style="display:flex; align-items:center; gap:8px;">
-        <div style="width:9px; height:9px; border-radius:50%; background:#0B2E6B;"></div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background: #0a1628;"></div>
         Industrial
       </div>
     </div>
   </section>
 
-  <section class="risco-zero">
-    <div class="risco-zero-container">
-      <div class="risco-content">
-        <span class="section-tag">Atuação Técnica Responsável</span>
-        <h2 class="section-title">Responsabilidade Técnica em Todo o Processo</h2>
-        <p class="lead" style="font-size:1.2rem; color:var(--primary); margin:1.5rem 0;">Assumimos responsabilidade técnica na adequação documental e operacional de equipamentos e frotas, com acompanhamento estruturado ao longo de todo o processo de validação junto à contratante.</p>
-        <p>Trabalhamos com método definido, análise criteriosa e acompanhamento contínuo para reduzir retrabalho, atrasos e não conformidades técnicas.</p>
+  <!-- Risco Zero Section -->
+  <section class="risco-section">
+    <div class="risco-container">
+      <div class="risco-content reveal">
+        <span class="section-tag">Atuacao Tecnica Responsavel</span>
+        <h2 class="section-title">Responsabilidade Tecnica em Todo o Processo</h2>
+        <p class="risco-lead">Assumimos responsabilidade tecnica na adequacao documental e operacional de equipamentos e frotas, com acompanhamento estruturado ao longo de todo o processo.</p>
+        <p class="risco-text">Trabalhamos com metodo definido, analise criteriosa e acompanhamento continuo para reduzir retrabalho, atrasos e nao conformidades tecnicas.</p>
         <ul class="check-list">
-          <li><i data-lucide="check-circle-2"></i> Acompanhamento do status de aprovação técnica junto ao contratante.</li>
-          <li><i data-lucide="check-circle-2"></i> Adequação física de equipamentos com suporte técnico em campo.</li>
-          <li><i data-lucide="check-circle-2"></i> Gestão documental com controle de vigência de NRs e ARTs.</li>
+          <li><i data-lucide="check-circle-2"></i> Acompanhamento do status de aprovacao tecnica junto ao contratante.</li>
+          <li><i data-lucide="check-circle-2"></i> Adequacao fisica de equipamentos com suporte tecnico em campo.</li>
+          <li><i data-lucide="check-circle-2"></i> Gestao documental com controle de vigencia de NRs e ARTs.</li>
         </ul>
       </div>
-      <div class="risco-visual">
+      <div class="risco-visual reveal reveal-delay-2">
         <div class="badge-premium">
           <i data-lucide="award"></i>
-          <span>Responsabilidade Técnica<br><strong>Soares Serviços</strong></span>
+          <span>Responsabilidade Tecnica</span>
+          <strong>Soares Servicos</strong>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CTA Section -->
   <section class="cta-section">
-    <h2 class="section-title text-white mb-3">Entre em contato com nossa equipe técnica.</h2>
-    <p class="cta-lead">Atendemos demandas de engenharia mecânica, projetos para mineração e engenharia residencial. Fale com um de nossos time e receba uma análise técnica da sua necessidade.</p>
-    <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista."
-      target="_blank" rel="noopener" class="btn-primary bg-white text-primary">
+    <h2 class="section-title reveal">Entre em contato com nossa equipe tecnica.</h2>
+    <p class="section-description reveal reveal-delay-1">Atendemos demandas de engenharia mecanica, projetos para mineracao e engenharia residencial. Fale com nosso time e receba uma analise tecnica da sua necessidade.</p>
+    <a href="https://wa.me/5562982736369?text=Ola,%20gostaria%20de%20falar%20com%20um%20especialista."
+       target="_blank" rel="noopener" class="btn btn-primary reveal reveal-delay-2">
       Falar com um Atendente
-      <i data-lucide="arrow-right" style="width:16px;height:16px;vertical-align:middle;margin-left:6px;"></i>
+      <i data-lucide="arrow-right"></i>
     </a>
   </section>
 
-  <footer class="footer-main">
+  <!-- Footer -->
+  <footer>
     <div class="footer-top">
-      <div>
-        <h4 style="font-family:'Barlow Condensed',sans-serif; color:var(--accent);">SOARES SERVIÇOS CONSULTORIA E LOCAÇÃO</h4>
-        <p style="opacity:0.7;">Soares Serviços Consultoria e Locação LTDA</p>
-        <p style="opacity:0.7;">CNPJ 38.570.390/0001-08</p>
+      <div class="footer-brand">
+        <h4>SOARES SERVICOS CONSULTORIA E LOCACAO</h4>
+        <p>Soares Servicos Consultoria e Locacao LTDA</p>
+        <p>CNPJ 38.570.390/0001-08</p>
       </div>
-      <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
-        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" class="footer-link">WhatsApp</a>
+      <div class="footer-links">
+        <a href="https://wa.me/5562982736369?text=Ola,%20gostaria%20de%20solicitar%20uma%20analise%20tecnica%20e%20proposta%20comercial%20junto%20a%20Soares%20Servicos." target="_blank" class="footer-link">WhatsApp</a>
         <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
-        <a href="cliente.html" class="footer-link">Área do Cliente</a>
-        <a href="profissional.html" class="footer-link">Área do Profissional</a>
+        <a href="cliente.html" class="footer-link">Area do Cliente</a>
+        <a href="profissional.html" class="footer-link">Area do Profissional</a>
       </div>
     </div>
-    <p class="footer-copyright">&copy; 2026 Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
+    <p class="footer-copyright">2026 Soares Servicos Consultoria e Locacao. Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://unpkg.com/lucide@latest"></script>
-
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
   <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
+      // Initialize Lucide Icons
       if (window.lucide) lucide.createIcons();
 
-      const observer = new IntersectionObserver((entries) => {
+      // Navbar Scroll Effect
+      const navbar = document.getElementById('navbar');
+      let lastScrollY = window.scrollY;
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+        lastScrollY = window.scrollY;
+      }, { passive: true });
+
+      // Mobile Menu
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      mobileMenuClose.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+
+      // Reveal Animations
+      const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+            revealObserver.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      }, { 
+        threshold: 0.1, 
+        rootMargin: '0px 0px -50px 0px' 
+      });
 
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+      // Smooth Scroll for Anchor Links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href').slice(1);
+          const target = document.getElementById(targetId);
+          if (!target) return;
+
+          e.preventDefault();
+          const navHeight = navbar.offsetHeight;
+          const targetTop = target.getBoundingClientRect().top + window.scrollY - navHeight - 20;
+          window.scrollTo({ top: targetTop, behavior: 'smooth' });
+        });
+      });
+
+      // Map Configuration
       const useSafeLabels = true;
       const operacoes = [
-        { official: 'Anglo American Níquel - Barro Alto', safe: 'Operação Mineradora - Barro Alto (GO)', cityState: 'Barro Alto - GO', coords: [-15.0758491, -48.9445893], type: 'mineração' },
-        { official: 'Terra Goyana Mineração', safe: 'Operação Mineradora - Goiás (GO)', cityState: 'Goiás - GO', coords: [-15.083909, -48.996746], type: 'mineração' },
-        { official: 'Mineração Alto Horizonte', safe: 'Operação Mineradora - Alto Horizonte (GO)', cityState: 'Alto Horizonte - GO', coords: [-14.2314156, -49.38223], type: 'mineração' },
-        { official: 'Hochschild - Mara Rosa', safe: 'Operação Mineradora - Mara Rosa (GO)', cityState: 'Mara Rosa - GO', coords: [-13.9792101, -49.1775253], type: 'mineração' },
-        { official: 'Aclara - Projeto Carina', safe: 'Projeto de Mineração - Goiás (GO)', cityState: 'Goiás - GO', coords: [-13.6326251, -46.9855094], type: 'mineração' },
-        { official: 'Aura Minerals - Almas', safe: 'Operação Mineradora - Almas (TO)', cityState: 'Almas - TO', coords: [-11.6988218, -47.1674177], type: 'mineração' },
-        { official: 'Vetria Mineração - Mina Monjolinho', safe: 'Unidade de Mineração - MS', cityState: 'Mato Grosso do Sul - MS', coords: [-19.2602249, -57.5284382], type: 'mineração' },
+        { official: 'Anglo American Niquel - Barro Alto', safe: 'Operacao Mineradora - Barro Alto (GO)', cityState: 'Barro Alto - GO', coords: [-15.0758491, -48.9445893], type: 'mineracao' },
+        { official: 'Terra Goyana Mineracao', safe: 'Operacao Mineradora - Goias (GO)', cityState: 'Goias - GO', coords: [-15.083909, -48.996746], type: 'mineracao' },
+        { official: 'Mineracao Alto Horizonte', safe: 'Operacao Mineradora - Alto Horizonte (GO)', cityState: 'Alto Horizonte - GO', coords: [-14.2314156, -49.38223], type: 'mineracao' },
+        { official: 'Hochschild - Mara Rosa', safe: 'Operacao Mineradora - Mara Rosa (GO)', cityState: 'Mara Rosa - GO', coords: [-13.9792101, -49.1775253], type: 'mineracao' },
+        { official: 'Aclara - Projeto Carina', safe: 'Projeto de Mineracao - Goias (GO)', cityState: 'Goias - GO', coords: [-13.6326251, -46.9855094], type: 'mineracao' },
+        { official: 'Aura Minerals - Almas', safe: 'Operacao Mineradora - Almas (TO)', cityState: 'Almas - TO', coords: [-11.6988218, -47.1674177], type: 'mineracao' },
+        { official: 'Vetria Mineracao - Mina Monjolinho', safe: 'Unidade de Mineracao - MS', cityState: 'Mato Grosso do Sul - MS', coords: [-19.2602249, -57.5284382], type: 'mineracao' },
         { official: 'Usina Vetorial', safe: 'Unidade Industrial - MS', cityState: 'Mato Grosso do Sul - MS', coords: [-19.2938127, -57.5883274], type: 'industrial' },
         { official: 'Salitre Fertilizantes', safe: 'Unidade Industrial - MG', cityState: 'Minas Gerais - MG', coords: [-19.0655396, -46.7285741], type: 'industrial' },
         { official: 'Mosaic Fertilizantes - Uberaba', safe: 'Unidade Industrial - Uberaba (MG)', cityState: 'Uberaba - MG', coords: [-19.9898017, -47.8806657], type: 'industrial' },
-        { official: 'Anglo American Níquel - Codemin', safe: 'Unidade Industrial - Niquelândia (GO)', cityState: 'Niquelândia - GO', coords: [-14.1567711, -48.340014], type: 'industrial' }
+        { official: 'Anglo American Niquel - Codemin', safe: 'Unidade Industrial - Niquelandia (GO)', cityState: 'Niquelandia - GO', coords: [-14.1567711, -48.340014], type: 'industrial' }
       ];
 
       const createIcon = (color) => L.divIcon({
         className: 'custom-marker',
-        html: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36"><path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z" fill="${color}" stroke="white" stroke-width="2"/><circle cx="14" cy="14" r="5" fill="white" opacity="0.9"/></svg>`,
-        iconSize: [28, 36], iconAnchor: [14, 36], popupAnchor: [0, -36]
+        html: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 32 40">
+          <defs>
+            <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="${color}" flood-opacity="0.4"/>
+            </filter>
+          </defs>
+          <path d="M16 0C7.164 0 0 7.164 0 16c0 10.667 16 24 16 24S32 26.667 32 16C32 7.164 24.836 0 16 0z" fill="${color}" filter="url(#shadow)"/>
+          <circle cx="16" cy="16" r="6" fill="white" opacity="0.95"/>
+        </svg>`,
+        iconSize: [32, 40],
+        iconAnchor: [16, 40],
+        popupAnchor: [0, -40]
       });
 
-      const iconMineracao = createIcon('#d9c006');
-      const iconIndustrial = createIcon('#0B2E6B');
+      const iconMineracao = createIcon('#d4a745');
+      const iconIndustrial = createIcon('#0a1628');
 
-      const mapa = L.map('mapaOperacoes', { scrollWheelZoom: false, zoomControl: false }).setView([-16.5, -49], 5);
+      const mapa = L.map('mapaOperacoes', { 
+        scrollWheelZoom: false, 
+        zoomControl: false 
+      }).setView([-16.5, -49], 5);
+
       L.control.zoom({ position: 'bottomright' }).addTo(mapa);
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; OpenStreetMap &copy; CARTO' }).addTo(mapa);
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; OpenStreetMap &copy; CARTO'
+      }).addTo(mapa);
 
       const markers = L.markerClusterGroup({
         showCoverageOnHover: false,
         iconCreateFunction: (cluster) => L.divIcon({
-          html: `<div style="background:#0B2E6B;color:white;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;border:2px solid #C9922A;">${cluster.getChildCount()}</div>`,
-          className: 'cluster-icon', iconSize: L.point(30, 30)
+          html: `<div style="background: linear-gradient(135deg, #d4a745, #f0c95a); color: #0a1628; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; box-shadow: 0 4px 12px rgba(212, 167, 69, 0.4);">${cluster.getChildCount()}</div>`,
+          className: 'cluster-icon',
+          iconSize: L.point(36, 36)
         })
       });
 
       const bounds = [];
       operacoes.forEach(item => {
         const label = useSafeLabels ? item.safe : item.official;
-        const icon = item.type === 'mineração' ? iconMineracao : iconIndustrial;
+        const icon = item.type === 'mineracao' ? iconMineracao : iconIndustrial;
         const marker = L.marker(item.coords, { icon }).bindPopup(`
-          <div style="font-family:'Barlow',sans-serif;padding:2px 4px;">
-            <strong style="color:#0B2E6B;">${label}</strong><br>
-            <span style="font-size:0.75rem;color:#C9922A;text-transform:uppercase;letter-spacing:0.06em;">${item.type}</span><br>
-            <span style="font-size:0.85rem;color:#6B7280;">${item.cityState}</span>
+          <div style="font-family: 'Inter', sans-serif; padding: 8px;">
+            <strong style="color: #d4a745; font-size: 0.95rem;">${label}</strong><br>
+            <span style="font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 0.08em;">${item.type}</span><br>
+            <span style="font-size: 0.85rem; color: #ccc;">${item.cityState}</span>
           </div>
-        `);
+        `, {
+          className: 'custom-popup'
+        });
         markers.addLayer(marker);
         bounds.push(item.coords);
       });
@@ -836,6 +1476,24 @@ Solicitar Análise Técnica
       window.addEventListener('resize', () => mapa.invalidateSize());
     });
   </script>
+
+  <style>
+    .leaflet-popup-content-wrapper {
+      background: rgba(10, 22, 40, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+    .leaflet-popup-tip {
+      background: rgba(10, 22, 40, 0.95);
+    }
+    .leaflet-popup-close-button {
+      color: #888 !important;
+    }
+    .leaflet-popup-close-button:hover {
+      color: #d4a745 !important;
+    }
+  </style>
 
 </body>
 </html>
