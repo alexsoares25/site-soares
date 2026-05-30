@@ -8,6 +8,21 @@
   <meta name="description" content="Entre em contato com a Soares Serviços Consultoria e Locação. Atendimento comercial, diretoria e financeiro. Mobilizações em todo o território brasileiro com rapidez e conformidade.">
   <meta property="og:title" content="Canais de Atendimento | Soares Serviços">
   <meta property="og:description" content="Mobilize com agilidade, segurança e conformidade. Fale com nosso time especializado.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.soaresservicos.com.br/contato.html">
+  <meta property="og:image" content="https://www.soaresservicos.com.br/assets/logo.png">
+  <link rel="canonical" href="https://www.soaresservicos.com.br/contato.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.soaresservicos.com.br/" },
+      { "@type": "ListItem", "position": 2, "name": "Contato", "item": "https://www.soaresservicos.com.br/contato.html" }
+    ]
+  }
+  </script>
 
   <script type="application/ld+json">
   {
@@ -26,102 +41,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="css/shared.css">
   <style>
     /* ===== RESET & TOKENS ===================================== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --primary:       #0B2E6B;
-      --accent:        #C9922A;
-      --light:         #f8fafc;
-      --white:         #ffffff;
-      --slate:         #334155;
-      --gray-soft:     #eef2f6;
-      --glass-bg:      rgba(255,255,255,0.25);
-      --glass-border:  rgba(255,255,255,0.3);
-      --shadow-soft:   8px 8px 16px rgba(174,192,210,0.3), -8px -8px 16px #ffffff;
-      --shadow-glass:  0 8px 32px rgba(0,0,0,0.1);
-      --gradient-gold: linear-gradient(135deg,#C9922A 0%,#e6b450 90%);
-      --gradient-navy: linear-gradient(135deg,#0B2E6B 0%,#1e4a8b 100%);
-    }
-
-    body {
-      font-family: 'Barlow', sans-serif;
-      background: var(--gray-soft);
-      color: var(--slate);
-      line-height: 1.5;
-    }
-
     /* ===== UTILITIES ========================================== */
-    .section-tag {
-      display: inline-block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600;
-      letter-spacing: 2px;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: rgba(201,146,42,0.1);
-      padding: 0.35rem 1rem;
-      border-radius: 40px;
-      margin-bottom: 1rem;
-      backdrop-filter: blur(4px);
-    }
-
-    .section-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 800;
-      line-height: 1.1;
-      color: var(--primary);
-      max-width: 700px;
-    }
-    .section-title.white { color: var(--white); }
-    .section-title em { font-style: normal; color: var(--accent); }
-
-    /* ===== NAV ================================================ */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 6%;
-      background: rgba(11,46,107,0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: var(--shadow-glass);
-    }
-    .nav-logo img {
-      height: 45px;
-      filter: brightness(0) invert(1);
-    }
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      margin-left: 2.5rem;
-      font-weight: 500;
-      font-size: 1.05rem;
-      transition: 0.2s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 4px;
-    }
-    .nav-links a:hover,
-    .nav-links a.active {
-      border-bottom-color: var(--accent);
-      color: var(--accent);
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: white;
-      background: none;
-      border: none;
-    }
-
     /* ===== HERO =============================================== */
     .hero-contato {
       position: relative;
@@ -160,33 +83,11 @@
       letter-spacing: 0.04em;
     }
 
-    @keyframes gridMove { to { background-position: 55px 55px; } }
-
     .hero-content-contato {
       position: relative;
       z-index: 2;
       max-width: 680px;
     }
-
-    .hero-eyebrow {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 3px;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      width: 28px;
-      height: 2px;
-      background: var(--accent);
-      display: block;
-    }
-
     .hero-contato h1 {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: clamp(2.8rem, 5.5vw, 5rem);
@@ -207,13 +108,6 @@
       max-width: 520px;
       line-height: 1.75;
     }
-
-    /* barra dourada */
-    .gold-divider {
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent) 0%, #e6b450 50%, transparent 100%);
-    }
-
     /* ===== CANAIS DIRETOS ==================================== */
     .channels-section {
       padding: 90px 6%;
@@ -544,52 +438,19 @@
       margin-top: 1rem;
       line-height: 1.5;
     }
-
-    /* ===== FOOTER ============================================ */
-    .footer-main {
-      background: var(--primary);
-      color: rgba(255,255,255,0.7);
-      padding: 3rem 6% 1.5rem;
-    }
-    .footer-top {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .footer-link {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem 0 0;
-      font-weight: 500;
-      transition: 0.2s;
-    }
-    .footer-link:hover { color: var(--accent); }
-    .footer-copyright { margin-top: 2rem; font-size: 0.9rem; }
-
-    /* ===== REVEAL ============================================ */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .delay-1 { transition-delay: 0.15s; }
-    .delay-2 { transition-delay: 0.3s; }
-
     /* ===== RESPONSIVE ======================================== */
     @media (max-width: 1024px) {
       .form-layout { grid-template-columns: 1fr; gap: 3.5rem; }
     }
 
     @media (max-width: 768px) {
-      .nav-links { display: none; }
       .menu-toggle { display: block; }
       .section-title { font-size: 2.2rem; }
       .hero-contato::after { font-size: 5rem; }
       .form-row { grid-template-columns: 1fr; }
+      .form-group input,
+      .form-group textarea,
+      .form-group select { font-size: 16px; }
       .form-card { padding: 2rem 1.5rem; }
       .national-banner { flex-direction: column; align-items: flex-start; }
     }
@@ -614,6 +475,8 @@
     </div>
   </nav>
 
+  <main>
+
   <!-- ===== HERO ============================================= -->
   <section class="hero-contato">
     <div class="hero-content-contato">
@@ -636,35 +499,35 @@
     <div class="channels-grid">
 
       <div class="channel-card reveal">
-        <div class="channel-icon"><i data-lucide="briefcase"></i></div>
+        <div class="channel-icon"><i aria-hidden="true" data-lucide="briefcase"></i></div>
         <span class="channel-role">Propostas &amp; Contratos</span>
         <h3>Atendimento Comercial</h3>
         <p class="channel-desc">Solicitações de propostas, mobilização de frota e novos contratos operacionais.</p>
         <a href="mailto:comercial@soaresservicos.com.br" class="channel-link">
-          <i data-lucide="mail"></i> comercial@soaresservicos.com.br
+          <i aria-hidden="true" data-lucide="mail"></i> comercial@soaresservicos.com.br
         </a>
-        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" rel="noopener" class="channel-link">
-          <i data-lucide="smartphone"></i> WhatsApp Corporativo
+        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" rel="noopener noreferrer" class="channel-link">
+          <i aria-hidden="true" data-lucide="smartphone"></i> WhatsApp Corporativo
         </a>
       </div>
 
       <div class="channel-card reveal delay-1">
-        <div class="channel-icon"><i data-lucide="handshake"></i></div>
+        <div class="channel-icon"><i aria-hidden="true" data-lucide="handshake"></i></div>
         <span class="channel-role">Relacionamento Institucional</span>
         <h3>Institucional</h3>
         <p class="channel-desc">Demandas estratégicas, parcerias técnicas e tratativas corporativas.</p>
         <a href="mailto:contato@soaresservicos.com.br" class="channel-link">
-          <i data-lucide="mail"></i> contato@soaresservicos.com.br
+          <i aria-hidden="true" data-lucide="mail"></i> contato@soaresservicos.com.br
         </a>
       </div>
 
       <div class="channel-card reveal delay-2">
-        <div class="channel-icon"><i data-lucide="file-text"></i></div>
+        <div class="channel-icon"><i aria-hidden="true" data-lucide="file-text"></i></div>
         <span class="channel-role">Administrativo &amp; Financeiro</span>
         <h3>Financeiro</h3>
         <p class="channel-desc">Notas fiscais, contratos vigentes e assuntos administrativos.</p>
         <a href="mailto:financeiro@soaresservicos.com.br" class="channel-link">
-          <i data-lucide="mail"></i> financeiro@soaresservicos.com.br
+          <i aria-hidden="true" data-lucide="mail"></i> financeiro@soaresservicos.com.br
         </a>
       </div>
 
@@ -699,26 +562,26 @@
 
         <ul class="trust-list">
           <li>
-            <i data-lucide="shield-check"></i>
+            <i aria-hidden="true" data-lucide="shield-check"></i>
             Análise técnica conduzida por engenheiros especializados em conformidade NR-22 e NR-12.
           </li>
           <li>
-            <i data-lucide="clock"></i>
+            <i aria-hidden="true" data-lucide="clock"></i>
             Retorno garantido em até 24 horas úteis após o recebimento da solicitação.
           </li>
           <li>
-            <i data-lucide="map-pin"></i>
+            <i aria-hidden="true" data-lucide="map-pin"></i>
             Capacidade de atendimento em todas as regiões do Brasil, incluindo operações remotas.
           </li>
           <li>
-            <i data-lucide="zap"></i>
+            <i aria-hidden="true" data-lucide="zap"></i>
             Mobilizações emergenciais com protocolo de ativação acelerada disponível.
           </li>
         </ul>
 
         <div class="urgency-box">
           <p>📱 Para demandas <strong>urgentes</strong>, entre em contato diretamente via WhatsApp:<br>
-            <a href="https://wa.me/5562982736369" target="_blank" rel="noopener">+55 62 9 8273-6369</a>
+            <a href="https://wa.me/5562982736369" target="_blank" rel="noopener noreferrer">+55 62 9 8273-6369</a>
           </p>
         </div>
       </div>
@@ -730,7 +593,7 @@
 
         <form id="contactForm" action="https://formsubmit.co/comercial@soaresservicos.com.br" method="POST">
           <input type="hidden" name="_subject" value="Nova Solicitação — Site Soares Serviços">
-          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_captcha" value="true">
           <input type="hidden" name="_template" value="table">
 
           <div class="form-group">
@@ -775,15 +638,17 @@
   </section>
 
   <!-- ===== FOOTER ========================================== -->
+  </main>
+
   <footer class="footer-main">
     <div class="footer-top">
-      <div>
+      <address style="font-style:normal;">
         <h4 style="font-family:'Barlow Condensed',sans-serif;color:var(--accent);letter-spacing:1px;">SOARES SERVIÇOS CONSULTORIA E LOCAÇÃO</h4>
-        <p style="opacity:0.7;">Soares Serviços Consultoria e Locação LTDA</p>
-        <p style="opacity:0.7;">CNPJ 38.570.390/0001-08</p>
-      </div>
+        <p style="opacity:0.85;">Soares Serviços Consultoria e Locação LTDA</p>
+        <p style="opacity:0.85;">CNPJ 38.570.390/0001-08</p>
+      </address>
       <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1rem;">
-        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" rel="noopener" class="footer-link">WhatsApp</a>
+        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
         <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
         <a href="cliente.html" class="footer-link">Área do Cliente</a>
         <a href="profissional.html" class="footer-link">Área do Profissional</a>
@@ -793,11 +658,9 @@
   </footer>
 
   <!-- ===== SCRIPTS ========================================= -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.474.0"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      if (window.lucide) lucide.createIcons();
-
       // Scroll reveal
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -808,33 +671,6 @@
         });
       }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-      // Menu mobile
-      const toggle = document.getElementById('menu-toggle');
-      const navLinks = document.getElementById('nav-links');
-      if (toggle && navLinks) {
-        toggle.addEventListener('click', () => {
-          const isOpen = navLinks.style.display === 'flex';
-          Object.assign(navLinks.style, {
-            display: isOpen ? 'none' : 'flex',
-            flexDirection: 'column',
-            position: 'absolute',
-            top: '70px',
-            right: '0',
-            left: '0',
-            background: 'rgba(11,46,107,0.97)',
-            padding: '1.5rem 6%',
-            backdropFilter: 'blur(12px)',
-            zIndex: '99'
-          });
-          if (!isOpen) {
-            navLinks.querySelectorAll('a').forEach(a => {
-              a.style.marginLeft = '0';
-              a.style.marginBottom = '1rem';
-            });
-          }
-        });
-      }
 
       // Formulário: WhatsApp + FormSubmit
       const form = document.getElementById('contactForm');
@@ -860,5 +696,6 @@
     });
   </script>
 
+  <script src="js/script.js" defer></script>
 </body>
 </html>
