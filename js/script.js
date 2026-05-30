@@ -273,6 +273,10 @@
   /* –––––––––––––––––––––––––––––
      INIT — Aguarda DOM carregado
   ––––––––––––––––––––––––––––– */
+  function initLucide() {
+    if (window.lucide) lucide.createIcons();
+  }
+
   function init() {
     initNavbarScroll();
     initScrollAnimations();
@@ -282,6 +286,7 @@
     initRippleEffect();
     initCounters();
     initActiveNav();
+    initLucide();
   }
 
   if (document.readyState === 'loading') {

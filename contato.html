@@ -437,6 +437,9 @@
       .section-title { font-size: 2.2rem; }
       .hero-contato::after { font-size: 5rem; }
       .form-row { grid-template-columns: 1fr; }
+      .form-group input,
+      .form-group textarea,
+      .form-group select { font-size: 16px; }
       .form-card { padding: 2rem 1.5rem; }
       .national-banner { flex-direction: column; align-items: flex-start; }
     }
@@ -460,6 +463,8 @@
       <a href="contato.html" class="active">Contato</a>
     </div>
   </nav>
+
+  <main>
 
   <!-- ===== HERO ============================================= -->
   <section class="hero-contato">
@@ -622,6 +627,8 @@
   </section>
 
   <!-- ===== FOOTER ========================================== -->
+  </main>
+
   <footer class="footer-main">
     <div class="footer-top">
       <div>
@@ -643,8 +650,6 @@
   <script src="https://unpkg.com/lucide@0.474.0"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      if (window.lucide) lucide.createIcons();
-
       // Scroll reveal
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

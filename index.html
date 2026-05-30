@@ -412,6 +412,8 @@
     </div>
   </nav>
 
+  <main>
+
   <section class="hero">
     <div class="hero-content">
       <div class="eyebrow">Engenharia Aplicada à Segurança e Conformidade Operacional</div>
@@ -585,10 +587,12 @@ Solicitar Análise Técnica
     <p class="cta-lead">Atendemos demandas de engenharia mecânica, projetos para mineração e engenharia residencial. Fale com um de nossos time e receba uma análise técnica da sua necessidade.</p>
     <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista."
       target="_blank" rel="noopener noreferrer" class="btn-primary bg-white text-primary">
-      Falar com um Atendente
+      Falar com Especialista
       <i data-lucide="arrow-right" style="width:16px;height:16px;vertical-align:middle;margin-left:6px;"></i>
     </a>
   </section>
+
+  </main>
 
   <footer class="footer-main">
     <div class="footer-top">
@@ -615,8 +619,6 @@ Solicitar Análise Técnica
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      if (window.lucide) lucide.createIcons();
-
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
