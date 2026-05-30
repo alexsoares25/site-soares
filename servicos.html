@@ -8,6 +8,21 @@
   <meta name="description" content="Engenharia aplicada à conformidade para operações mineradoras de alta exigência. Locação de frotas, gestão técnica (NR-22/NR-12) e adequação de veículos com rigor normativo e controle operacional.">
   <meta property="og:title" content="Nossos Serviços | Soares Serviços">
   <meta property="og:description" content="Estruturação técnica e controle documental para operações mineradoras de alta exigência.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.soaresservicos.com.br/servicos.html">
+  <meta property="og:image" content="https://www.soaresservicos.com.br/assets/logo.png">
+  <link rel="canonical" href="https://www.soaresservicos.com.br/servicos.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.soaresservicos.com.br/" },
+      { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://www.soaresservicos.com.br/servicos.html" }
+    ]
+  }
+  </script>
 
   <script type="application/ld+json">
   {
@@ -19,13 +34,13 @@
       "@type": "OfferCatalog",
       "name": "Serviços de Engenharia e Locação",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Adequação de Veículos para Mineração (NR-22)" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Locação de Frotas Operacionais" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plano de Gerenciamento de Pneus" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laudo Eletromecânico" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plano de Manutenção Preventiva" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "NR 13 – Caldeiras, Vasos de Pressão e Tubulações" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cursos EAD de Capacitação Profissional" } }
+        { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "0", "priceCurrency": "BRL", "description": "Sob consulta" }, "itemOffered": { "@type": "Service", "name": "Adequação de Veículos para Mineração (NR-22)" } },
+        { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "0", "priceCurrency": "BRL", "description": "Sob consulta" }, "itemOffered": { "@type": "Service", "name": "Locação de Frotas Operacionais" } },
+        { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "0", "priceCurrency": "BRL", "description": "Sob consulta" }, "itemOffered": { "@type": "Service", "name": "Plano de Gerenciamento de Pneus" } },
+        { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "0", "priceCurrency": "BRL", "description": "Sob consulta" }, "itemOffered": { "@type": "Service", "name": "Laudo Eletromecânico" } },
+        { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "0", "priceCurrency": "BRL", "description": "Sob consulta" }, "itemOffered": { "@type": "Service", "name": "Plano de Manutenção Preventiva" } },
+        { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "0", "priceCurrency": "BRL", "description": "Sob consulta" }, "itemOffered": { "@type": "Service", "name": "NR 13 – Caldeiras, Vasos de Pressão e Tubulações" } },
+        { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "0", "priceCurrency": "BRL", "description": "Sob consulta" }, "itemOffered": { "@type": "Service", "name": "Cursos EAD de Capacitação Profissional" } }
       ]
     }
   }
@@ -35,166 +50,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="css/shared.css">
   <style>
     /* ===== RESET & TOKENS ===================================== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --primary:       #0B2E6B;
-      --accent:        #C9922A;
-      --light:         #f8fafc;
-      --white:         #ffffff;
-      --slate:         #334155;
-      --gray-soft:     #eef2f6;
-      --glass-bg:      rgba(255,255,255,0.25);
-      --glass-border:  rgba(255,255,255,0.3);
-      --shadow-soft:   8px 8px 16px rgba(174,192,210,0.3), -8px -8px 16px #ffffff;
-      --shadow-glass:  0 8px 32px rgba(0,0,0,0.1);
-      --gradient-gold: linear-gradient(135deg,#C9922A 0%,#e6b450 90%);
-      --gradient-navy: linear-gradient(135deg,#0B2E6B 0%,#1e4a8b 100%);
-    }
-
-    body {
-      font-family: 'Barlow', sans-serif;
-      background: var(--gray-soft);
-      color: var(--slate);
-      line-height: 1.5;
-    }
-
-    /* ===== SHARED UTILITIES =================================== */
-    .section-tag {
-      display: inline-block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600;
-      letter-spacing: 2px;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: rgba(201,146,42,0.1);
-      padding: 0.35rem 1rem;
-      border-radius: 40px;
-      margin-bottom: 1rem;
-      backdrop-filter: blur(4px);
-    }
-
-    .section-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 800;
-      line-height: 1.1;
-      color: var(--primary);
-      max-width: 700px;
-    }
-
-    .section-title.white { color: var(--white); }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--gradient-gold);
-      color: var(--primary);
-      font-weight: 600;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'Barlow', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 20px -8px rgba(201,146,42,0.4);
-    }
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 30px -8px rgba(201,146,42,0.6);
-    }
-
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: transparent;
-      color: var(--accent);
-      font-weight: 600;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      border: 2px solid var(--accent);
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-    .btn-outline:hover {
-      background: rgba(201,146,42,0.08);
-      transform: translateY(-2px);
-    }
-
-    .btn-white {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--white);
-      color: var(--primary);
-      font-weight: 700;
-      padding: 1rem 2.4rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 20px -8px rgba(11,46,107,0.2);
-    }
-    .btn-white:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 30px -8px rgba(11,46,107,0.3);
-    }
-
-    /* ===== NAV ================================================ */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 6%;
-      background: rgba(11,46,107,0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: var(--shadow-glass);
-    }
-
-    .nav-logo img {
-      height: 45px;
-      filter: brightness(0) invert(1);
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      margin-left: 2.5rem;
-      font-weight: 500;
-      font-size: 1.05rem;
-      transition: 0.2s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 4px;
-    }
-    .nav-links a:hover,
-    .nav-links a.active {
-      border-bottom-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: white;
-      background: none;
-      border: none;
-    }
-
     /* ===== HERO / INTRO BANNER ================================ */
     .hero-servicos {
       position: relative;
@@ -236,9 +94,6 @@
       white-space: nowrap;
       letter-spacing: 0.04em;
     }
-
-    @keyframes gridMove {
-      to { background-position: 55px 55px; }
     }
 
     .hero-left {
@@ -247,26 +102,6 @@
       flex: 1;
       min-width: 280px;
     }
-
-    .hero-eyebrow {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 3px;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      width: 28px;
-      height: 2px;
-      background: var(--accent);
-      display: block;
-    }
-
     .hero-left h1 {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: clamp(2.8rem, 5vw, 4.5rem);
@@ -328,11 +163,6 @@
     }
 
     /* barra divisória dourada */
-    .gold-divider {
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent) 0%, #e6b450 50%, transparent 100%);
-    }
-
     /* ===== CONFORMIDADE ======================================= */
     .conformidade {
       background: var(--gradient-navy);
@@ -671,11 +501,7 @@
       position: relative;
       max-width: 100%;
     }
-    .cta-final .section-title em {
-      font-style: normal;
-      color: var(--accent);
-    }
-
+    .cta-final
     .cta-lead {
       max-width: 600px;
       margin: 1.5rem auto 2.5rem;
@@ -732,42 +558,7 @@
       transition: 0.2s;
     }
     .cta-contact-item a:hover { color: var(--accent); }
-
-    /* ===== FOOTER ============================================= */
-    .footer-main {
-      background: var(--primary);
-      color: rgba(255,255,255,0.7);
-      padding: 3rem 6% 1.5rem;
-    }
-    .footer-top {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .footer-link {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem 0 0;
-      font-weight: 500;
-      transition: 0.2s;
-    }
-    .footer-link:hover { color: var(--accent); }
-    .footer-copyright { margin-top: 2rem; font-size: 0.9rem; }
-
     /* ===== REVEAL ANIMATIONS ================================= */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     /* ===== RESPONSIVE ======================================== */
     @media (max-width: 900px) {
       .conf-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -775,7 +566,6 @@
     }
 
     @media (max-width: 768px) {
-      .nav-links { display: none; }
       .menu-toggle { display: block; }
       .hero-servicos { flex-direction: column; }
       .hero-right { grid-template-columns: 1fr 1fr; width: 100%; }
@@ -805,6 +595,8 @@
       <a href="contato.html">Contato</a>
     </div>
   </nav>
+
+  <main>
 
   <!-- ===== HERO ============================================= -->
   <section class="hero-servicos">
@@ -868,22 +660,22 @@
     <p class="pq-intro">Não vendemos promessas. Entregamos estrutura documental auditável, validada em operações de alta exigência no setor mineral.</p>
     <div class="pq-grid">
       <div class="pq-card reveal">
-        <div class="pq-icon"><i data-lucide="shield-check"></i></div>
+        <div class="pq-icon"><i aria-hidden="true" data-lucide="shield-check"></i></div>
         <h3>Conformidade validada em operações mineradoras</h3>
         <p>Documentação aprovada em processos de credenciamento junto a grandes operações industriais em todo o Brasil, com registros rastreáveis.</p>
       </div>
       <div class="pq-card reveal">
-        <div class="pq-icon"><i data-lucide="folder-check"></i></div>
+        <div class="pq-icon"><i aria-hidden="true" data-lucide="folder-check"></i></div>
         <h3>Estrutura documental auditável</h3>
         <p>Cada entrega é acompanhada de dossiê técnico completo: laudos, ARTs, planos e registros prontos para auditorias contratuais internas e externas.</p>
       </div>
       <div class="pq-card reveal">
-        <div class="pq-icon"><i data-lucide="trending-down"></i></div>
+        <div class="pq-icon"><i aria-hidden="true" data-lucide="trending-down"></i></div>
         <h3>Redução de risco contratual</h3>
         <p>Nossa metodologia identifica e trata antecipadamente as não conformidades que geram bloqueio de acesso, penalidades contratuais e paralisação de frota.</p>
       </div>
       <div class="pq-card reveal">
-        <div class="pq-icon"><i data-lucide="users"></i></div>
+        <div class="pq-icon"><i aria-hidden="true" data-lucide="users"></i></div>
         <h3>Atendimento técnico especializado</h3>
         <p>Equipe com conhecimento aprofundado das NRs e requisitos específicos dos grandes contratantes do segmento mineral. Suporte direto, sem intermediários.</p>
       </div>
@@ -897,7 +689,7 @@
     <p class="eng-intro">Base técnica estruturada para suporte às operações mineradoras, integrando responsabilidade técnica, análise estrutural e controle mecânico com foco em conformidade normativa e mitigação de risco contratual.</p>
     <div class="eng-grid">
       <div class="eng-card reveal">
-        <div class="eng-card-icon"><i data-lucide="home"></i></div>
+        <div class="eng-card-icon"><i aria-hidden="true" data-lucide="home"></i></div>
         <h3>Engenharia Civil</h3>
         <ul class="eng-list">
           <li>Análise estrutural de bases operacionais</li>
@@ -909,7 +701,7 @@
         </ul>
       </div>
       <div class="eng-card reveal">
-        <div class="eng-card-icon"><i data-lucide="settings"></i></div>
+        <div class="eng-card-icon"><i aria-hidden="true" data-lucide="settings"></i></div>
         <h3>Engenharia Mecânica</h3>
         <ul class="eng-list">
           <li>Laudos eletromecânicos de veículos e equipamentos</li>
@@ -931,7 +723,7 @@
 
     <div class="ead-grid">
       <div class="ead-card reveal">
-        <h3><i data-lucide="refresh-cw"></i> Atualização</h3>
+        <h3><i aria-hidden="true" data-lucide="refresh-cw"></i> Atualização</h3>
         <ul class="course-list" data-category="Atualização">
           <li><label><input type="checkbox" value="Atualização Cargas Indivisíveis"> Cargas Indivisíveis</label></li>
           <li><label><input type="checkbox" value="Atualização Coletivo de Passageiros"> Coletivo de Passageiros</label></li>
@@ -943,7 +735,7 @@
       </div>
 
       <div class="ead-card reveal">
-        <h3><i data-lucide="rotate-ccw"></i> Reciclagem</h3>
+        <h3><i aria-hidden="true" data-lucide="rotate-ccw"></i> Reciclagem</h3>
         <ul class="course-list" data-category="Reciclagem">
           <li><label><input type="checkbox" value="Reciclagem Infrator"> Reciclagem para Condutores Infratores</label></li>
           <li><label><input type="checkbox" value="Reciclagem Preventiva"> Reciclagem Preventiva</label></li>
@@ -951,7 +743,7 @@
       </div>
 
       <div class="ead-card reveal">
-        <h3><i data-lucide="graduation-cap"></i> Formação</h3>
+        <h3><i aria-hidden="true" data-lucide="graduation-cap"></i> Formação</h3>
         <ul class="course-list" data-category="Formação">
           <li><label><input type="checkbox" value="Formação Coletivo de Passageiros"> Coletivo de Passageiros</label></li>
           <li><label><input type="checkbox" value="Formação Cargas Indivisíveis"> Cargas Indivisíveis</label></li>
@@ -962,7 +754,7 @@
       </div>
 
       <div class="ead-card reveal">
-        <h3><i data-lucide="shield"></i> NRs e Especializações</h3>
+        <h3><i aria-hidden="true" data-lucide="shield"></i> NRs e Especializações</h3>
         <ul class="course-list" data-category="NRs">
           <li><label><input type="checkbox" value="NR 20 (Básico/Interm/Avançado)"> NR 20 (Básico, Interm., Avançado)</label></li>
           <li><label><input type="checkbox" value="NR 17 Ergonomia"> NR 17 - Ergonomia</label></li>
@@ -975,10 +767,10 @@
 
     <div class="ead-actions">
       <button class="btn-primary" onclick="solicitarOrcamento()">
-        <i data-lucide="send"></i> Solicitar Orçamento Especial
+        <i aria-hidden="true" data-lucide="send"></i> Solicitar Orçamento Especial
       </button>
-      <a href="#" class="btn-outline">
-        Acessar Plataforma EAD <i data-lucide="external-link" style="width:14px;height:14px;"></i>
+      <a href="contato.html" class="btn-outline">
+        Acessar Plataforma EAD <i aria-hidden="true" data-lucide="external-link" style="width:14px;height:14px;"></i>
       </a>
     </div>
   </section>
@@ -991,11 +783,11 @@
     <p class="cta-lead">Fale com nossa equipe e receba uma avaliação personalizada da situação documental e normativa da sua frota.</p>
     <div class="cta-btns">
       <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços."
-         class="btn-primary" target="_blank" rel="noopener">
-        <i data-lucide="message-circle"></i> Falar no WhatsApp
+         class="btn-primary" target="_blank" rel="noopener noreferrer">
+        <i aria-hidden="true" data-lucide="message-circle"></i> Falar no WhatsApp
       </a>
       <a href="mailto:comercial@soaresservicos.com.br" class="btn-white">
-        <i data-lucide="mail"></i> Enviar E-mail
+        <i aria-hidden="true" data-lucide="mail"></i> Enviar E-mail
       </a>
     </div>
     <div class="cta-contact">
@@ -1015,15 +807,17 @@
   </section>
 
   <!-- ===== FOOTER ========================================== -->
+  </main>
+
   <footer class="footer-main">
     <div class="footer-top">
-      <div>
+      <address style="font-style:normal;">
         <h4 style="font-family:'Barlow Condensed',sans-serif;color:var(--accent);letter-spacing:1px;">SOARES SERVIÇOS CONSULTORIA E LOCAÇÃO</h4>
-        <p style="opacity:0.7;">Soares Serviços Consultoria e Locação LTDA</p>
-        <p style="opacity:0.7;">CNPJ 38.570.390/0001-08</p>
-      </div>
+        <p style="opacity:0.85;">Soares Serviços Consultoria e Locação LTDA</p>
+        <p style="opacity:0.85;">CNPJ 38.570.390/0001-08</p>
+      </address>
       <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1rem;">
-        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" rel="noopener" class="footer-link">WhatsApp</a>
+        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
         <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
         <a href="cliente.html" class="footer-link">Área do Cliente</a>
         <a href="profissional.html" class="footer-link">Área do Profissional</a>
@@ -1033,12 +827,9 @@
   </footer>
 
   <!-- ===== SCRIPTS ========================================= -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.474.0"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      // Lucide icons
-      if (window.lucide) lucide.createIcons();
-
       // Scroll reveal
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1050,26 +841,6 @@
       }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-      // Menu mobile toggle
-      const toggle = document.getElementById('menu-toggle');
-      const navLinks = document.getElementById('nav-links');
-      if (toggle && navLinks) {
-        toggle.addEventListener('click', () => {
-          const open = navLinks.style.display === 'flex';
-          navLinks.style.display = open ? 'none' : 'flex';
-          navLinks.style.flexDirection = 'column';
-          navLinks.style.position = 'absolute';
-          navLinks.style.top = '70px';
-          navLinks.style.right = '0';
-          navLinks.style.left = '0';
-          navLinks.style.background = 'rgba(11,46,107,0.97)';
-          navLinks.style.padding = '1.5rem 6%';
-          navLinks.style.backdropFilter = 'blur(12px)';
-          if (!open) {
-            navLinks.querySelectorAll('a').forEach(a => { a.style.marginLeft = '0'; a.style.marginBottom = '1rem'; });
-          }
-        });
-      }
     });
 
     // EAD orçamento via WhatsApp
@@ -1085,5 +856,6 @@
     }
   </script>
 
+  <script src="js/script.js" defer></script>
 </body>
 </html>

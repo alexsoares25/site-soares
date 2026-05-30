@@ -10,6 +10,10 @@
   <meta name="keywords" content="engenharia mecânica, engenharia de mineração, engenharia residencial, inspeção técnica, laudo técnico, adequação de equipamentos, NR-22, NR-12, projetos residenciais, consultoria técnica">
   <meta property="og:title" content="Soares Serviços | Engenharia Mecânica, Mineração e Residencial">
   <meta property="og:description" content="Consultoria técnica e serviços de engenharia para indústria, mineração e projetos residenciais.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.soaresservicos.com.br/">
+  <meta property="og:image" content="https://www.soaresservicos.com.br/assets/logo.png">
+  <link rel="canonical" href="https://www.soaresservicos.com.br/">
 
   <script type="application/ld+json">
   {
@@ -31,54 +35,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 
+  <link rel="stylesheet" href="css/shared.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --primary: #0B2E6B;
-      --accent: #C9922A;
-      --light: #f8fafc;
-      --white: #ffffff;
-      --slate: #334155;
-      --gray-soft: #eef2f6;
-      --glass-bg: rgba(255, 255, 255, 0.25);
-      --glass-border: rgba(255, 255, 255, 0.3);
-      --shadow-soft: 8px 8px 16px rgba(174, 192, 210, 0.3), -8px -8px 16px #ffffff;
-      --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
-      --gradient-gold: linear-gradient(135deg, #C9922A 0%, #e6b450 90%);
-      --gradient-navy: linear-gradient(135deg, #0B2E6B 0%, #1e4a8b 100%);
-    }
-
-    body {
-      font-family: 'Barlow', sans-serif;
-      background: var(--gray-soft);
-      color: var(--slate);
-      line-height: 1.5;
-    }
-
-    .section-tag {
-      display: inline-block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600;
-      letter-spacing: 2px;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: rgba(201, 146, 42, 0.1);
-      padding: 0.35rem 1rem;
-      border-radius: 40px;
-      margin-bottom: 1rem;
-      backdrop-filter: blur(4px);
-    }
-
     .section-title {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 2.8rem;
@@ -87,78 +49,11 @@
       color: var(--primary);
       max-width: 700px;
     }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--gradient-gold);
-      color: var(--primary);
-      font-weight: 600;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: none;
-      box-shadow: 0 10px 20px -8px rgba(201, 146, 42, 0.4);
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 30px -8px rgba(201, 146, 42, 0.6);
-    }
-
     .btn-primary.bg-white {
       background: var(--white);
       color: var(--primary);
       box-shadow: 0 10px 20px -8px rgba(11, 46, 107, 0.2);
     }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 6%;
-      background: rgba(11, 46, 107, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: var(--shadow-glass);
-    }
-
-    .nav-logo img {
-      height: 45px;
-      filter: brightness(0) invert(1);
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      margin-left: 2.5rem;
-      font-weight: 500;
-      font-size: 1.05rem;
-      transition: 0.2s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 4px;
-    }
-
-    .nav-links a:hover {
-      border-bottom-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: white;
-    }
-
     .hero {
       position: relative;
       padding: 100px 6%;
@@ -171,13 +66,12 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: -30%;
+      top: 0;
       right: -10%;
       width: 600px;
       height: 600px;
       background: rgba(255, 255, 255, 0.03);
       border-radius: 50%;
-      backdrop-filter: blur(20px);
     }
 
     .hero-content {
@@ -255,7 +149,7 @@
 
     .pillar-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
       gap: 2rem;
       margin-top: 3rem;
       padding: 0 6%;
@@ -290,7 +184,7 @@
     .pillar-card:hover {
       transform: translateY(-10px);
       background: rgba(255, 255, 255, 0.4);
-      box-shadow: 12px 12px 24px rgba(174, 192, 210, 0.4), -12px -12px 24px #ffffff;
+      box-shadow: 0 8px 32px rgba(11, 46, 107, 0.15);
     }
 
     .pillar-icon {
@@ -480,54 +374,7 @@
       margin: 1.5rem auto 2.5rem;
       opacity: 0.8;
     }
-
-    .footer-main {
-      background: var(--primary);
-      color: rgba(255, 255, 255, 0.7);
-      padding: 3rem 6% 1.5rem;
-    }
-
-    .footer-top {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .footer-link {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem 0 0;
-      font-weight: 500;
-      transition: 0.2s;
-    }
-
-    .footer-link:hover {
-      color: var(--accent);
-    }
-
-    .footer-copyright {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
       .menu-toggle {
         display: block;
       }
@@ -555,8 +402,8 @@
         <img src="assets/logo.png" alt="Soares Serviços Consultoria e locação" loading="lazy">
       </a>
     </div>
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <div class="nav-links">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+    <div class="nav-links" id="nav-links">
       <a href="index.html">Início</a>
       <a href="sobre.html">Sobre</a>
       <a href="servicos.html">Serviços</a>
@@ -564,6 +411,8 @@
       <a href="contato.html">Contato</a>
     </div>
   </nav>
+
+  <main>
 
   <section class="hero">
     <div class="hero-content">
@@ -574,9 +423,9 @@
 Nosso trabalho é conduzido com responsabilidade técnica, rigor normativo e foco em garantir segurança, conformidade e eficiência para cada cliente e projeto atendido.</div>
 <div class="hero-ctas">
 <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20Análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços."
-target="_blank" rel="noopener" class="btn-primary">
+target="_blank" rel="noopener noreferrer" class="btn-primary">
 Solicitar Análise Técnica
-<i data-lucide="arrow-right" style="width:16px;height:16px;vertical-align:middle;margin-left:6px;"></i>
+<i aria-hidden="true" data-lucide="arrow-right" style="width:16px;height:16px;vertical-align:middle;margin-left:6px;"></i>
 </a>
 </div>
 </div>
@@ -609,32 +458,32 @@ Solicitar Análise Técnica
     </div>
     <div class="pillar-grid">
       <div class="pillar-card reveal" data-num="01">
-        <div class="pillar-icon"><i data-lucide="settings"></i></div>
+        <div class="pillar-icon"><i aria-hidden="true" data-lucide="settings"></i></div>
         <h3>Engenharia Mecânica</h3>
         <p>Inspeções técnicas, emissão de laudos, adequação de equipamentos e gestão de manutenção. Avaliação técnica de veículos e máquinas com base em critérios normativos e análise de desempenho operacional.</p>
       </div>
       <div class="pillar-card reveal" data-num="02">
-        <div class="pillar-icon"><i data-lucide="hard-hat"></i></div>
+        <div class="pillar-icon"><i aria-hidden="true" data-lucide="hard-hat"></i></div>
         <h3>Engenharia para Mineração</h3>
         <p>Adequação técnica de veículos para operações em ambiente de mina, preparação e mobilização de equipamentos, suporte técnico em campo e organização documental conforme NR-22 e requisitos de cada contratante.</p>
       </div>
       <div class="pillar-card reveal" data-num="03">
-        <div class="pillar-icon"><i data-lucide="home"></i></div>
+        <div class="pillar-icon"><i aria-hidden="true" data-lucide="home"></i></div>
         <h3>Engenharia Residencial</h3>
         <p>Elaboração de projetos residenciais, acompanhamento técnico de obras, análise estrutural, regularização de edificações e consultoria técnica para construções de pequeno e médio porte.</p>
       </div>
       <div class="pillar-card reveal" data-num="04">
-        <div class="pillar-icon"><i data-lucide="clipboard-list"></i></div>
+        <div class="pillar-icon"><i aria-hidden="true" data-lucide="clipboard-list"></i></div>
         <h3>Laudos e Inspeções Técnicas</h3>
         <p>Emissão de laudos técnicos com responsabilidade de engenheiro habilitado. Inspeções periódicas em equipamentos, instalações e estruturas, com registro documental e emissão de ART quando aplicável.</p>
       </div>
       <div class="pillar-card reveal" data-num="05">
-        <div class="pillar-icon"><i data-lucide="truck"></i></div>
+        <div class="pillar-icon"><i aria-hidden="true" data-lucide="truck"></i></div>
         <h3>Locação e Gestão de Frotas</h3>
         <p>Locação de veículos utilitários e 4x4 para operações industriais e mineradoras. Gestão técnica da frota com controle de manutenção, documentação e atendimento a exigências operacionais de cada contratante.</p>
       </div>
       <div class="pillar-card reveal" data-num="06">
-        <div class="pillar-icon"><i data-lucide="graduation-cap"></i></div>
+        <div class="pillar-icon"><i aria-hidden="true" data-lucide="graduation-cap"></i></div>
         <h3>Cursos e Treinamentos EAD</h3>
         <p>Capacitação técnica com foco em normas regulamentadoras e segurança operacional. Formação e atualização profissional em NRs com flexibilidade de horário para equipes e empresas.</p>
       </div>
@@ -719,14 +568,14 @@ Solicitar Análise Técnica
         <p class="lead" style="font-size:1.2rem; color:var(--primary); margin:1.5rem 0;">Assumimos responsabilidade técnica na adequação documental e operacional de equipamentos e frotas, com acompanhamento estruturado ao longo de todo o processo de validação junto à contratante.</p>
         <p>Trabalhamos com método definido, análise criteriosa e acompanhamento contínuo para reduzir retrabalho, atrasos e não conformidades técnicas.</p>
         <ul class="check-list">
-          <li><i data-lucide="check-circle-2"></i> Acompanhamento do status de aprovação técnica junto ao contratante.</li>
-          <li><i data-lucide="check-circle-2"></i> Adequação física de equipamentos com suporte técnico em campo.</li>
-          <li><i data-lucide="check-circle-2"></i> Gestão documental com controle de vigência de NRs e ARTs.</li>
+          <li><i aria-hidden="true" data-lucide="check-circle-2"></i> Acompanhamento do status de aprovação técnica junto ao contratante.</li>
+          <li><i aria-hidden="true" data-lucide="check-circle-2"></i> Adequação física de equipamentos com suporte técnico em campo.</li>
+          <li><i aria-hidden="true" data-lucide="check-circle-2"></i> Gestão documental com controle de vigência de NRs e ARTs.</li>
         </ul>
       </div>
       <div class="risco-visual">
         <div class="badge-premium">
-          <i data-lucide="award"></i>
+          <i aria-hidden="true" data-lucide="award"></i>
           <span>Responsabilidade Técnica<br><strong>Soares Serviços</strong></span>
         </div>
       </div>
@@ -737,21 +586,23 @@ Solicitar Análise Técnica
     <h2 class="section-title text-white mb-3">Entre em contato com nossa equipe técnica.</h2>
     <p class="cta-lead">Atendemos demandas de engenharia mecânica, projetos para mineração e engenharia residencial. Fale com um de nossos time e receba uma análise técnica da sua necessidade.</p>
     <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista."
-      target="_blank" rel="noopener" class="btn-primary bg-white text-primary">
-      Falar com um Atendente
-      <i data-lucide="arrow-right" style="width:16px;height:16px;vertical-align:middle;margin-left:6px;"></i>
+      target="_blank" rel="noopener noreferrer" class="btn-primary bg-white text-primary">
+      Falar com Especialista
+      <i aria-hidden="true" data-lucide="arrow-right" style="width:16px;height:16px;vertical-align:middle;margin-left:6px;"></i>
     </a>
   </section>
 
+  </main>
+
   <footer class="footer-main">
     <div class="footer-top">
-      <div>
+      <address style="font-style:normal;">
         <h4 style="font-family:'Barlow Condensed',sans-serif; color:var(--accent);">SOARES SERVIÇOS CONSULTORIA E LOCAÇÃO</h4>
-        <p style="opacity:0.7;">Soares Serviços Consultoria e Locação LTDA</p>
-        <p style="opacity:0.7;">CNPJ 38.570.390/0001-08</p>
-      </div>
+        <p style="opacity:0.85;">Soares Serviços Consultoria e Locação LTDA</p>
+        <p style="opacity:0.85;">CNPJ 38.570.390/0001-08</p>
+      </address>
       <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
-        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" class="footer-link">WhatsApp</a>
+        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
         <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
         <a href="cliente.html" class="footer-link">Área do Cliente</a>
         <a href="profissional.html" class="footer-link">Área do Profissional</a>
@@ -760,16 +611,14 @@ Solicitar Análise Técnica
     <p class="footer-copyright">&copy; 2026 Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.474.0"></script>
 
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      if (window.lucide) lucide.createIcons();
-
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -837,5 +686,6 @@ Solicitar Análise Técnica
     });
   </script>
 
+  <script src="js/script.js" defer></script>
 </body>
 </html>
