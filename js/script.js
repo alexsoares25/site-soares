@@ -258,6 +258,19 @@
   }
 
   /* –––––––––––––––––––––––––––––
+     8. NAVBAR ATIVA — marca o link da página atual
+  ––––––––––––––––––––––––––––– */
+  function initActiveNav() {
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach((link) => {
+      const href = link.getAttribute('href').split('#')[0];
+      if (href === current || (current === '' && href === 'index.html')) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  /* –––––––––––––––––––––––––––––
      INIT — Aguarda DOM carregado
   ––––––––––––––––––––––––––––– */
   function init() {
@@ -268,6 +281,7 @@
     initSmoothScroll();
     initRippleEffect();
     initCounters();
+    initActiveNav();
   }
 
   if (document.readyState === 'loading') {
