@@ -22,6 +22,13 @@
     "name": "Soares Serviços Consultoria e Locação",
     "url": "https://soaresservicos.com.br",
     "logo": "https://soaresservicos.com.br/assets/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Goiânia",
+      "addressRegion": "GO",
+      "addressCountry": "BR"
+    },
+    "areaServed": "BR",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+55-62-98273-6369",
@@ -91,7 +98,7 @@
 
     .hero h1 {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 4.5rem;
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
       font-weight: 900;
       line-height: 1;
       color: var(--white);
@@ -296,6 +303,9 @@
       overflow: hidden;
       border: 1px solid var(--glass-border);
       box-shadow: var(--shadow-soft);
+      isolation: isolate;
+      position: relative;
+      z-index: 0;
     }
 
     .risco-zero {
@@ -379,13 +389,24 @@
         display: block;
       }
       .stats-bar {
-        flex-direction: column;
-        border-radius: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 20px;
         margin: -20px 4% 30px;
       }
       .stat-item {
         border-right: none;
         border-bottom: 1px solid rgba(11,46,107,0.1);
+      }
+      .stat-item:nth-child(odd) {
+        border-right: 1px solid rgba(11,46,107,0.1);
+      }
+      .stat-item:last-child,
+      .stat-item:nth-last-child(2):nth-child(odd) {
+        border-bottom: none;
+      }
+      #mapaOperacoes {
+        height: 300px;
       }
       .section-title {
         font-size: 2.2rem;
@@ -399,7 +420,7 @@
   <nav>
     <div class="nav-logo">
       <a href="index.html">
-        <img src="assets/logo.png" alt="Soares Serviços Consultoria e locação" loading="lazy">
+        <img src="assets/logo.png" alt="Soares Serviços Consultoria e locação" loading="eager">
       </a>
     </div>
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
@@ -418,9 +439,7 @@
     <div class="hero-content">
       <div class="eyebrow">Engenharia Aplicada à Segurança e Conformidade Operacional</div>
       <h1>Engenharia técnica para indústria, <em>mineração</em> e projetos residenciais.</h1>
-      <div class="hero-sub">Oferecemos soluções técnicas para inspeção, regularização e adequação de veículos, estruturas e operações. Atuamos na elaboração de laudos técnicos, adequação de veículos conforme as exigências normativas, avaliações e orientações técnicas para imóveis residenciais, além de cursos de capacitação e atualização para condutores e profissionais do setor.
-
-Nosso trabalho é conduzido com responsabilidade técnica, rigor normativo e foco em garantir segurança, conformidade e eficiência para cada cliente e projeto atendido.</div>
+      <div class="hero-sub">Laudos técnicos, adequação de equipamentos e conformidade normativa para operações industriais e mineradoras. Atuamos com responsabilidade de engenheiro habilitado — da inspeção ao documento aprovado.</div>
 <div class="hero-ctas">
 <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20Análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços."
 target="_blank" rel="noopener noreferrer" class="btn-primary">
@@ -434,20 +453,20 @@ Solicitar Análise Técnica
 
   <section class="stats-bar">
     <div class="stat-item">
-      <span class="stat-num">Inspeção</span>
-      <span class="stat-label">e Laudos Técnicos</span>
+      <span class="stat-num">11+</span>
+      <span class="stat-label">Operações Concluídas</span>
     </div>
     <div class="stat-item">
-      <span class="stat-num">Adequação</span>
-      <span class="stat-label">de Equipamentos</span>
+      <span class="stat-num">5</span>
+      <span class="stat-label">Estados Atendidos</span>
     </div>
     <div class="stat-item">
-      <span class="stat-num">Gestão</span>
-      <span class="stat-label">Técnica de Manutenção</span>
+      <span class="stat-num">7+</span>
+      <span class="stat-label">Tipos de Laudos Aprovados</span>
     </div>
     <div class="stat-item">
-      <span class="stat-num">Projetos</span>
-      <span class="stat-label">e Acompanhamento de Obras</span>
+      <span class="stat-num">NR-12/22</span>
+      <span class="stat-label">Conformidade Normativa</span>
     </div>
   </section>
 
@@ -600,12 +619,14 @@ Solicitar Análise Técnica
         <h4 style="font-family:'Barlow Condensed',sans-serif; color:var(--accent);">SOARES SERVIÇOS CONSULTORIA E LOCAÇÃO</h4>
         <p style="opacity:0.85;">Soares Serviços Consultoria e Locação LTDA</p>
         <p style="opacity:0.85;">CNPJ 38.570.390/0001-08</p>
+        <p style="opacity:0.85;">Goiânia — GO · Atuação Nacional</p>
       </address>
-      <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+      <div style="display:flex; gap:1.5rem; flex-wrap:wrap; align-items:flex-start;">
         <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
         <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
-        <a href="cliente.html" class="footer-link">Área do Cliente</a>
-        <a href="profissional.html" class="footer-link">Área do Profissional</a>
+        <a href="sobre.html" class="footer-link">Sobre</a>
+        <a href="servicos.html" class="footer-link">Serviços</a>
+        <a href="contato.html" class="footer-link">Contato</a>
       </div>
     </div>
     <p class="footer-copyright">&copy; 2026 Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
