@@ -4,21 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="assets/icons/favicon.png">
-  <title>Sobre Nós | Soares Serviços | Autoridade em Engenharia e Conformidade</title>
-  <meta name="description" content="Engenharia aplicada à conformidade para operações mineradoras de alta exigência. Locação de frotas, gestão técnica (NR-22/NR-12) e adequação de veículos com rigor normativo e controle operacional.">
-  <meta property="og:title" content="Sobre Nós | Soares Serviços | Autoridade Técnica">
-  <meta property="og:description" content="Estruturação técnica e controle documental para operações mineradoras de alta exigência.">
+  <title>Sobre | Soares Serviços | Engenharia e Conformidade Técnica</title>
+  <meta name="description" content="Conheça a Soares Serviços: engenharia aplicada, consultoria especializada e execução controlada para obras, indústria e operações mineradoras.">
+  <meta property="og:title" content="Sobre | Soares Serviços | Engenharia e Conformidade Técnica">
+  <meta property="og:description" content="Engenharia aplicada, consultoria especializada e execução controlada.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.soaresservicos.com.br/sobre.html">
   <meta property="og:image" content="https://www.soaresservicos.com.br/assets/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Soares Serviços — Engenharia técnica para indústria, mineração e projetos residenciais">
+  <meta property="og:image:alt" content="Soares Serviços — Engenharia para obras civis, indústria e mineração">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Soares Serviços">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://www.soaresservicos.com.br/sobre.html">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -30,613 +29,186 @@
   }
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Soares Serviços Consultoria e Locação",
-      "description": "Especialista em conformidade técnica e engenharia para operações mineradoras."
-    }
-  }
-  </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/shared.css">
-  <style>
-    /* ===== RESET & TOKENS ===================================== */
-    /* ===== HERO =============================================== */
-    .hero-sobre {
-      position: relative;
-      padding: 110px 6% 90px;
-      background: radial-gradient(circle at 75% 35%, rgba(201,146,42,0.09) 0%, transparent 45%),
-                  var(--gradient-navy);
-      color: var(--white);
-      overflow: hidden;
-    }
-
-    /* grid animado */
-    .hero-sobre::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(201,146,42,.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,146,42,.05) 1px, transparent 1px);
-      background-size: 55px 55px;
-      animation: gridMove 24s linear infinite;
-      pointer-events: none;
-    }
-
-    /* palavra fantasma */
-    .hero-sobre::after {
-      content: 'SOBRE';
-      position: absolute;
-      right: 2%;
-      bottom: 4%;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12rem;
-      font-weight: 900;
-      color: rgba(255,255,255,0.025);
-      pointer-events: none;
-      white-space: nowrap;
-      letter-spacing: 0.04em;
-    }
-
-    .hero-content-sobre {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-    }
-    .hero-sobre h1 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      font-weight: 900;
-      line-height: 0.95;
-      color: var(--white);
-    }
-    .hero-sobre h1 em {
-      color: var(--accent);
-      font-style: normal;
-      border-bottom: 3px solid var(--accent);
-    }
-
-    .hero-sobre p {
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.8;
-      max-width: 580px;
-      margin-top: 1.5rem;
-    }
-    /* ===== QUEM SOMOS — INTRO ================================= */
-    .quem-somos {
-      padding: 90px 6%;
-      background: var(--white);
-      text-align: center;
-    }
-
-    .quem-somos p {
-      max-width: 780px;
-      margin: 1rem auto 0;
-      font-size: 1.15rem;
-      color: var(--slate);
-      line-height: 1.85;
-    }
-
-    /* ===== PILARES ESTRATÉGICOS ============================== */
-    .pilares {
-      padding: 90px 6%;
-      background: var(--gray-soft);
-    }
-
-    .pilares-header {
-      max-width: 680px;
-      margin-bottom: 3.5rem;
-    }
-
-    .pilares-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .pillar-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 2.5rem 2rem;
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-
-    /* número fantasma */
-    .pillar-card::before {
-      content: attr(data-num);
-      position: absolute;
-      bottom: -20px;
-      right: 10px;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 7rem;
-      font-weight: 900;
-      color: var(--primary);
-      opacity: 0.04;
-      pointer-events: none;
-      line-height: 1;
-    }
-
-    /* destaque no primeiro card */
-    .pillar-card.featured {
-      border-top: 4px solid var(--accent);
-    }
-
-    .pillar-card:hover {
-      transform: translateY(-10px);
-      background: rgba(255,255,255,0.45);
-      box-shadow: 0 8px 32px rgba(11, 46, 107, 0.15);
-    }
-
-    .pillar-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 58px;
-      height: 58px;
-      background: var(--gradient-gold);
-      border-radius: 18px;
-      margin-bottom: 1.4rem;
-      box-shadow: 0 10px 20px -5px rgba(201,146,42,0.4);
-    }
-    .pillar-icon svg { width: 26px; height: 26px; stroke-width: 1.5; color: var(--primary); }
-
-    .pillar-card h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.55rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 0.3rem;
-      text-transform: uppercase;
-    }
-
-    .pillar-subtitle {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .pillar-card > p {
-      font-size: 0.95rem;
-      color: var(--slate);
-      line-height: 1.7;
-      margin-bottom: 1.2rem;
-    }
-
-    .pillar-card ul {
-      list-style: none;
-      padding: 0;
-    }
-    .pillar-card ul li {
-      position: relative;
-      padding-left: 1.3rem;
-      font-size: 0.9rem;
-      color: var(--slate);
-      margin-bottom: 0.5rem;
-    }
-    .pillar-card ul li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 900;
-    }
-
-    /* ===== MISSÃO VISÃO VALORES ============================== */
-    .mvv {
-      padding: 90px 6%;
-      background: var(--gradient-navy);
-      color: var(--white);
-    }
-
-    .mvv-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-
-    .mvv-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .mvv-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 2.5rem 2rem;
-      box-shadow: var(--shadow-glass);
-      transition: 0.3s;
-    }
-    .mvv-card:hover {
-      background: rgba(255,255,255,0.35);
-      transform: translateY(-6px);
-    }
-
-    .mvv-card h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      padding-bottom: 0.7rem;
-      border-bottom: 2px solid rgba(201,146,42,0.3);
-    }
-
-    .mvv-card p {
-      font-size: 0.97rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.8;
-    }
-
-    .mvv-card ul {
-      list-style: none;
-      padding: 0;
-    }
-    .mvv-card ul li {
-      font-size: 0.93rem;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 0.7rem;
-      padding-left: 1.2rem;
-      position: relative;
-      line-height: 1.5;
-    }
-    .mvv-card ul li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
-    .mvv-card ul li strong {
-      color: var(--white);
-    }
-
-    /* ===== DIFERENCIAL ESTRATÉGICO ========================== */
-    .diferencial {
-      padding: 90px 6%;
-      background: var(--light);
-    }
-
-    .dif-container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 4rem;
-    }
-
-    .dif-content {
-      flex: 2;
-      min-width: 280px;
-    }
-
-    .dif-content p.lead {
-      font-size: 1.2rem;
-      color: var(--primary);
-      line-height: 1.8;
-      margin: 1.5rem 0 1rem;
-    }
-
-    .dif-content p.body {
-      font-size: 1rem;
-      color: var(--slate);
-      line-height: 1.8;
-    }
-
-    .dif-visual {
-      flex: 1;
-      min-width: 240px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .badge-premium {
-      background: var(--glass-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--glass-border);
-      border-radius: 60px;
-      padding: 2.5rem 3rem;
-      text-align: center;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .badge-premium svg {
-      width: 52px;
-      height: 52px;
-      color: var(--accent);
-      stroke-width: 1.2;
-      margin-bottom: 1rem;
-    }
-
-    .badge-premium span {
-      display: block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1rem;
-      color: var(--primary);
-      font-weight: 700;
-      line-height: 1.5;
-    }
-
-    .check-list {
-      list-style: none;
-      margin-top: 1.8rem;
-    }
-    .check-list li {
-      display: flex;
-      gap: 0.8rem;
-      align-items: flex-start;
-      margin-bottom: 0.9rem;
-      font-size: 0.97rem;
-      color: var(--slate);
-    }
-    .check-icon {
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
-      margin-top: 1px;
-      color: var(--accent);
-    }
-
-    /* ===== CTA =============================================== */
-    .cta-section {
-      background: var(--gradient-navy);
-      color: var(--white);
-      text-align: center;
-      padding: 100px 6%;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(201,146,42,0.1), transparent 70%);
-      pointer-events: none;
-    }
-    .cta-section .section-title {
-      color: var(--white);
-      max-width: 100%;
-      position: relative;
-    }
-    .cta-lead {
-      max-width: 600px;
-      margin: 1.5rem auto 2.5rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.7;
-      position: relative;
-    }
-    .cta-btn-group {
-      display: flex;
-      gap: 1.2rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      position: relative;
-    }
-    /* ===== RESPONSIVE ======================================== */
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-      .section-title { font-size: 2.2rem; }
-      .dif-container { flex-direction: column; }
-      .hero-sobre::after { font-size: 5rem; }
-      .pilares-header { margin-bottom: 2rem; }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- ===== NAV ============================================== -->
-  <nav>
-    <div class="nav-logo">
-      <a href="index.html">
-        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação">
-      </a>
-    </div>
+  <nav aria-label="Principal">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/logo-azul.png" alt="Soares Serviços Consultoria e Locação" width="774" height="156">
+    </a>
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
     <div class="nav-links" id="nav-links">
       <a href="index.html">Início</a>
-      <a href="sobre.html" class="active">Sobre</a>
+      <a href="sobre.html" class="active" aria-current="page">Sobre</a>
       <a href="servicos.html">Serviços</a>
       <a href="projetos.html">Projetos</a>
       <a href="servicos.html#ead">Cursos EAD</a>
       <a href="contato.html">Contato</a>
+      <a class="nav-cta" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20t%C3%A9cnica%20e%20proposta%20comercial%20junto%20%C3%A0%20Soares%20Servi%C3%A7os." target="_blank" rel="noopener noreferrer">Orçamento</a>
     </div>
   </nav>
 
   <main>
-
-  <!-- ===== HERO ============================================= -->
-  <section class="hero-sobre">
-    <div class="hero-content-sobre">
-      <div class="hero-eyebrow">Autoridade &amp; Governança</div>
-      <h1>Engenharia Aplicada à<br><em>Conformidade</em> Operacional</h1>
-      <p>Somos parceiros estratégicos de operações industriais que exigem alto padrão de segurança, rastreabilidade e conformidade normativa.</p>
-    </div>
-  </section>
-
-  <div class="gold-divider"></div>
-
-  <!-- ===== QUEM SOMOS ====================================== -->
-  <section class="quem-somos reveal">
-    <span class="section-tag">Quem Somos</span>
-    <h2 class="section-title" style="margin:0 auto 1rem;">Engenharia, Governança Técnica e Conformidade</h2>
-    <p>A Soares Serviços Consultoria e Locação atua como parceira estratégica de operações industriais, com foco em mineradoras que exigem alto padrão de segurança, rastreabilidade e conformidade normativa. Nossa estrutura integra engenharia aplicada, consultoria especializada e execução controlada — transformando exigências técnicas em vantagem competitiva para nossos clientes.</p>
-  </section>
-
-  <!-- ===== PILARES ESTRATÉGICOS ============================ -->
-  <section class="pilares" id="pilares">
-    <div class="pilares-header">
-      <span class="section-tag">Nossa Estrutura</span>
-      <h2 class="section-title">Três Pilares Estratégicos</h2>
-    </div>
-    <div class="pilares-grid">
-
-      <div class="pillar-card featured reveal" data-num="01">
-        <div class="pillar-icon"><i aria-hidden="true" data-lucide="shield-check"></i></div>
-        <h3>Engenharia</h3>
-        <p class="pillar-subtitle">O Pilar Central</p>
-        <p>O núcleo da nossa atuação. Desenvolvemos análises técnicas, laudos e estudos normativos que asseguram aderência integral às exigências industriais.</p>
-        <ul>
-          <li>Avaliação de riscos operacionais</li>
-          <li>Conformidade com normas internas</li>
-          <li>Planos técnicos estruturados</li>
-          <li>Rastreabilidade documental</li>
-        </ul>
-      </div>
-
-      <div class="pillar-card reveal delay-1" data-num="02">
-        <div class="pillar-icon"><i aria-hidden="true" data-lucide="brain-circuit"></i></div>
-        <h3>Consultoria</h3>
-        <p class="pillar-subtitle">Inteligência Aplicada</p>
-        <p>Transformamos exigências em estratégia. Apoiamos terceirizadas e contratantes na estruturação completa para ambientes controlados.</p>
-        <ul>
-          <li>Credenciamento em mineradoras</li>
-          <li>Adequação normativa profunda</li>
-          <li>Implementação de planos de gestão</li>
-          <li>Mitigação de riscos contratuais</li>
-        </ul>
-      </div>
-
-      <div class="pillar-card reveal delay-2" data-num="03">
-        <div class="pillar-icon"><i aria-hidden="true" data-lucide="settings-2"></i></div>
-        <h3>Serviços</h3>
-        <p class="pillar-subtitle">Resultado Controlado</p>
-        <p>Executamos apenas o tecnicamente validado. Onde a conformidade se torna realidade operacional, com controle e responsabilidade em cada etapa.</p>
-        <ul>
-          <li>Adequação conforme padrão da mineradora</li>
-          <li>Dispositivos e itens de segurança</li>
-          <li>Gestão documental de frotas</li>
-          <li>Locação de frota em conformidade normativa</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== MISSÃO VISÃO VALORES ============================ -->
-  <section class="mvv" id="mvv">
-    <div class="mvv-header reveal">
-      <span class="section-tag" style="background:rgba(201,146,42,0.15);">Identidade Organizacional</span>
-      <h2 class="section-title white" style="margin:0 auto;">Missão, Visão e Valores</h2>
-    </div>
-    <div class="mvv-grid">
-
-      <div class="mvv-card reveal">
-        <h3>Missão</h3>
-        <p>Garantir que frotas e operações técnicas estejam integralmente conformes, seguras e aptas a operar em ambientes industriais de alta exigência, integrando engenharia aplicada, consultoria especializada e execução controlada.</p>
-      </div>
-
-      <div class="mvv-card reveal delay-1">
-        <h3>Visão</h3>
-        <p>Ser reconhecida como a principal empresa de engenharia aplicada e governança técnica para frotas industriais, referência nacional em conformidade normativa e segurança operacional.</p>
-      </div>
-
-      <div class="mvv-card reveal delay-2">
-        <h3>Valores</h3>
-        <ul>
-          <li><strong>Rigor Técnico</strong> — Acima de qualquer improviso ou conveniência.</li>
-          <li><strong>Segurança Absoluta</strong> — Princípio inegociável em cada decisão.</li>
-          <li><strong>Conformidade Total</strong> — Excelência em padrões e normas.</li>
-          <li><strong>Transparência</strong> — Processos auditáveis e comunicação clara.</li>
-          <li><strong>Responsabilidade</strong> — Compromisso com a continuidade operacional do cliente.</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== DIFERENCIAL ESTRATÉGICO ======================== -->
-  <section class="diferencial" id="diferencial">
-    <div class="dif-container">
-      <div class="dif-content reveal">
-        <span class="section-tag">Nosso Diferencial</span>
-        <h2 class="section-title">Por que a Soares não é apenas uma prestadora de serviço?</h2>
-        <p class="lead">Não entregamos apenas veículos ou documentação. Entregamos <strong>governança técnica integrada</strong>, controle rigoroso e previsibilidade operacional.</p>
-        <p class="body">Transformamos exigências técnicas em vantagem competitiva e segurança jurídica para nossos clientes. Cada processo é rastreável, auditável e estruturado para suportar as exigências dos maiores contratantes do setor mineral.</p>
-        <ul class="check-list">
-          <li>
-            <svg class="check-icon" aria-hidden="true" data-lucide="check-circle-2"></svg>
-            Acompanhamento do status de aprovação técnica junto ao contratante.
-          </li>
-          <li>
-            <svg class="check-icon" aria-hidden="true" data-lucide="check-circle-2"></svg>
-            Adequação física de equipamentos com suporte técnico em campo.
-          </li>
-          <li>
-            <svg class="check-icon" aria-hidden="true" data-lucide="check-circle-2"></svg>
-            Gestão documental com controle de vigência de NRs e ARTs.
-          </li>
-        </ul>
-      </div>
-
-      <div class="dif-visual reveal delay-1">
-        <div class="badge-premium">
-          <svg aria-hidden="true" data-lucide="award"></svg>
-          <span>Governança Técnica<br><strong>Soares Serviços</strong></span>
+    <section class="hero">
+      <div class="hero-grade">
+        <div>
+          <span class="rotulo">Autoridade e governança</span>
+          <h1>Engenharia aplicada à <em>conformidade</em> operacional</h1>
+          <p class="lead">Somos parceiros estratégicos de operações industriais que exigem alto padrão de segurança, rastreabilidade e conformidade normativa.</p>
+        </div>
+        <div class="selo" aria-hidden="true">
+          <div><span>Assunto</span>Institucional</div>
+          <div><img src="assets/logo-azul.png" alt="" width="774" height="156"></div>
+          <div><span>Atendimento</span>Nacional</div>
+          <div><span>Folha</span>02/06</div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== CTA ============================================= -->
-  <section class="cta-section">
-    <h2 class="section-title">Conheça nossa atuação<br>em campo.</h2>
-    <p class="cta-lead">Explore nossos serviços ou entre em contato com nossa equipe técnica para uma análise personalizada da sua demanda.</p>
-    <div class="cta-btn-group">
-      <a href="servicos.html" class="btn-primary">
-        <i aria-hidden="true" data-lucide="layout-list"></i> Ver Serviços
-      </a>
-      <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista."
-         class="btn-white" target="_blank" rel="noopener noreferrer">
-        <i aria-hidden="true" data-lucide="message-circle"></i> Falar com Especialista
-      </a>
-    </div>
-  </section>
+    <section class="sec">
+      <div class="duas">
+        <header class="sec-topo" style="margin-bottom:0;">
+          <span class="rotulo">01 · Quem somos</span>
+          <h2>Engenharia, governança técnica e conformidade</h2>
+        </header>
+        <p class="lead">A Soares Serviços Consultoria e Locação atua como parceira estratégica de operações industriais, com foco em mineradoras que exigem alto padrão de segurança, rastreabilidade e conformidade normativa. Nossa estrutura integra engenharia aplicada, consultoria especializada e execução controlada — transformando exigências técnicas em vantagem competitiva para nossos clientes.</p>
+      </div>
+    </section>
 
-  <!-- ===== FOOTER ========================================== -->
+    <section class="sec branca" id="pilares">
+      <header class="sec-topo">
+        <span class="rotulo">02 · Nossa estrutura</span>
+        <h2>Três pilares estratégicos</h2>
+      </header>
+      <div class="grade c3">
+        <div class="reveal">
+          <span class="cod">Pilar 01 · O pilar central</span>
+          <h3>Engenharia</h3>
+          <p>O núcleo da nossa atuação. Desenvolvemos análises técnicas, laudos e estudos normativos que asseguram aderência integral às exigências industriais.</p>
+          <ul class="lista">
+            <li>Avaliação de riscos operacionais</li>
+            <li>Conformidade com normas internas</li>
+            <li>Planos técnicos estruturados</li>
+            <li>Rastreabilidade documental</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <span class="cod">Pilar 02 · Inteligência aplicada</span>
+          <h3>Consultoria</h3>
+          <p>Transformamos exigências em estratégia. Apoiamos terceirizadas e contratantes na estruturação completa para ambientes controlados.</p>
+          <ul class="lista">
+            <li>Credenciamento em mineradoras</li>
+            <li>Adequação normativa profunda</li>
+            <li>Implementação de planos de gestão</li>
+            <li>Mitigação de riscos contratuais</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <span class="cod">Pilar 03 · Resultado controlado</span>
+          <h3>Serviços</h3>
+          <p>Executamos apenas o tecnicamente validado. Onde a conformidade se torna realidade operacional, com controle e responsabilidade em cada etapa.</p>
+          <ul class="lista">
+            <li>Adequação conforme padrão da mineradora</li>
+            <li>Dispositivos e itens de segurança</li>
+            <li>Gestão documental de frotas</li>
+            <li>Locação de frota em conformidade normativa</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="faixa" id="mvv">
+      <header class="sec-topo">
+        <span class="rotulo">03 · Identidade organizacional</span>
+        <h2>Missão, visão e valores</h2>
+      </header>
+      <div class="grade c3">
+        <div>
+          <span class="cod">Missão</span>
+          <p>Garantir que frotas e operações técnicas estejam integralmente conformes, seguras e aptas a operar em ambientes industriais de alta exigência, integrando engenharia aplicada, consultoria especializada e execução controlada.</p>
+        </div>
+        <div>
+          <span class="cod">Visão</span>
+          <p>Ser reconhecida como a principal empresa de engenharia aplicada e governança técnica para frotas industriais, referência nacional em conformidade normativa e segurança operacional.</p>
+        </div>
+        <div>
+          <span class="cod">Valores</span>
+          <ul class="lista">
+            <li><strong>Rigor técnico</strong> — acima de qualquer improviso ou conveniência.</li>
+            <li><strong>Segurança absoluta</strong> — princípio inegociável em cada decisão.</li>
+            <li><strong>Conformidade total</strong> — excelência em padrões e normas.</li>
+            <li><strong>Transparência</strong> — processos auditáveis e comunicação clara.</li>
+            <li><strong>Responsabilidade</strong> — compromisso com a continuidade operacional do cliente.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="diferencial">
+      <div class="duas">
+        <header class="sec-topo" style="margin-bottom:0;">
+          <span class="rotulo">04 · Nosso diferencial</span>
+          <h2>Por que a Soares não é apenas uma prestadora de serviço?</h2>
+        </header>
+        <div>
+          <p class="lead">Não entregamos apenas veículos ou documentação. Entregamos <strong>governança técnica integrada</strong>, controle rigoroso e previsibilidade operacional.</p>
+          <p style="margin:1.2rem 0 1.5rem;">Transformamos exigências técnicas em vantagem competitiva e segurança jurídica para nossos clientes. Cada processo é rastreável, auditável e estruturado para suportar as exigências dos maiores contratantes do setor mineral.</p>
+          <ul class="lista">
+            <li>Acompanhamento do status de aprovação técnica junto ao contratante.</li>
+            <li>Adequação física de equipamentos com suporte técnico em campo.</li>
+            <li>Gestão documental com controle de vigência de NRs e ARTs.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="faixa">
+      <div class="faixa-chamada">
+        <div>
+          <h2>Conheça nossa atuação em campo.</h2>
+          <p class="lead" style="margin-top:1.2rem;">Explore nossos serviços ou entre em contato com nossa equipe técnica para uma análise personalizada da sua demanda.</p>
+        </div>
+        <div class="acoes">
+          <a class="btn claro" href="servicos.html">Ver serviços <span aria-hidden="true">→</span></a>
+          <a class="btn vazado" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" rel="noopener noreferrer">Falar com especialista</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer-main">
-    <div class="footer-top">
-      <address style="font-style:normal;">
-        <h4 style="font-family:'Barlow Condensed',sans-serif;color:var(--accent);letter-spacing:1px;">SOARES SERVIÇOS CONSULTORIA E LOCAÇÃO</h4>
-        <p style="opacity:0.85;">Soares Serviços Consultoria e Locação LTDA</p>
-        <p style="opacity:0.85;">CNPJ 38.570.390/0001-08</p>
+  <footer class="rodape">
+    <div class="rodape-grade">
+      <address>
+        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação" width="774" height="156" loading="lazy">
+        <p>Soares Serviços Consultoria e Locação LTDA</p>
+        <p>CNPJ 38.570.390/0001-08</p>
       </address>
-      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1rem;">
-        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
-        <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
-        <a href="cliente.html" class="footer-link">Área do Cliente</a>
-        <a href="profissional.html" class="footer-link">Área do Profissional</a>
-        <a href="privacidade.html" class="footer-link">Privacidade</a>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="cliente.html">Área do Cliente</a></li>
+          <li><a href="profissional.html">Área do Profissional</a></li>
+          <li><a href="privacidade.html">Privacidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20t%C3%A9cnica%20e%20proposta%20comercial%20junto%20%C3%A0%20Soares%20Servi%C3%A7os." target="_blank" rel="noopener noreferrer">WhatsApp +55 62 9 8273-6369</a></li>
+          <li><a href="mailto:comercial@soaresservicos.com.br">comercial@soaresservicos.com.br</a></li>
+          <li><a href="contato.html#formulario">Formulário de contato</a></li>
+        </ul>
       </div>
     </div>
-    <p class="footer-copyright">&copy; 2026 Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
+    <p class="rodape-fim">&copy; 2026 Soares Serviços Consultoria e Locação · Todos os direitos reservados</p>
   </footer>
-
-  <!-- ===== SCRIPTS ========================================= -->
-  <script src="https://unpkg.com/lucide@0.474.0"></script>
 
   <script src="js/script.js" defer></script>
 </body>

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +6,6 @@
   <link rel="icon" type="image/png" href="assets/icons/favicon.png">
   <title>Soares Serviços | Engenharia Civil, Projetos, Indústria e Mineração</title>
   <meta name="description" content="Projetos de arquitetura e engenharia civil, laudos técnicos, regularização de imóveis e acompanhamento de obras. Conformidade técnica e adequação de equipamentos para indústria e mineração.">
-  <meta name="keywords" content="engenharia civil, projeto arquitetônico, projeto estrutural, regularização de imóveis, engenharia mecânica, engenharia de mineração, inspeção técnica, laudo técnico, adequação de equipamentos, NR-22, NR-12, projetos residenciais, consultoria técnica">
   <meta property="og:title" content="Soares Serviços | Engenharia Civil, Projetos, Indústria e Mineração">
   <meta property="og:description" content="Projetos, laudos e regularização de imóveis, além de conformidade técnica para indústria e mineração.">
   <meta property="og:type" content="website">
@@ -20,7 +18,6 @@
   <meta property="og:site_name" content="Soares Serviços">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://www.soaresservicos.com.br/">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,788 +39,271 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
-
   <link rel="stylesheet" href="css/shared.css">
-  <style>
-    .btn-primary.bg-white {
-      background: var(--white);
-      color: var(--primary);
-      box-shadow: 0 10px 20px -8px rgba(11, 46, 107, 0.2);
-    }
-    /* ===== HERO em estilo de prancha: papel claro, malha fina, foto e carimbo ===== */
-    .hero {
-      --papel: #F4F3EF;
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      min-height: 640px;
-      background:
-        linear-gradient(rgba(11,46,107,0.09) 1px, transparent 1px) 0 0 / 120px 120px,
-        linear-gradient(90deg, rgba(11,46,107,0.09) 1px, transparent 1px) 0 0 / 120px 120px,
-        linear-gradient(rgba(11,46,107,0.045) 1px, transparent 1px) 0 0 / 24px 24px,
-        linear-gradient(90deg, rgba(11,46,107,0.045) 1px, transparent 1px) 0 0 / 24px 24px,
-        var(--papel);
-      color: var(--slate);
-      border-bottom: 2px solid var(--primary);
-      overflow: hidden;
-    }
-
-    .hero-ctas { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; }
-    .hero-link {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-size: 0.95rem;
-      color: var(--primary);
-      text-decoration: none;
-      border-bottom: 1px solid var(--primary);
-      padding-bottom: 2px;
-    }
-    .hero-link:hover { color: var(--accent-text); border-bottom-color: var(--accent-text); }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      margin: 0 0 2.25rem;
-      max-width: 600px;
-    }
-    .hero-stats > div { padding: 0 1.25rem; border-left: 2px solid var(--primary); }
-    .hero-stats > div:first-child { padding-left: 0; border-left: none; }
-    .hero-stats dt {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 700;
-      line-height: 1;
-      color: var(--primary);
-    }
-    .hero-stats dd { font-size: 0.85rem; line-height: 1.45; margin-top: 0.4rem; }
-
-    /* foto à direita: some para dentro do papel e recebe a malha por cima */
-    .hero-foto { position: relative; min-height: 360px; }
-    .hero-foto > img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
-              mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
-    }
-    .hero-foto::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(rgba(255,255,255,0.28) 1px, transparent 1px) 0 0 / 120px 120px,
-        linear-gradient(90deg, rgba(255,255,255,0.28) 1px, transparent 1px) 0 0 / 120px 120px;
-      pointer-events: none;
-    }
-
-    /* sem foto: o texto ocupa a largura e o carimbo fica no canto do papel */
-    .hero.sem-foto { grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.5fr); min-height: 0; }
-    .hero.sem-foto .hero-content { padding-left: 8.4%; }
-    .hero.sem-foto .hero-foto::after { display: none; }
-    .hero.sem-foto .selo { right: 12%; left: auto; width: 340px; }
-
-    /* carimbo de prancha */
-    .selo {
-      position: absolute;
-      right: 6%;
-      bottom: 32px;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      width: min(400px, 80%);
-      background: rgba(244,243,239,0.94);
-      border: 1px solid var(--primary);
-    }
-    .selo-cel {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 0.25rem;
-      min-height: 64px;
-      padding: 0.7rem 1.1rem;
-      border-right: 1px solid var(--primary);
-      border-bottom: 1px solid var(--primary);
-      font-family: 'Barlow Condensed', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--primary);
-    }
-    .selo-cel:nth-child(2n) { border-right: none; }
-    .selo-cel:nth-child(n+3) { border-bottom: none; }
-    .selo-cel span { font-size: 0.68rem; opacity: 0.65; }
-    .selo-cel strong { font-size: 0.9rem; font-weight: 600; }
-    .selo-logo { display: block; width: 150px; max-width: 100%; height: auto; }
-
-    /* ----- seção "Da planta à obra" ----- */
-    .obra-civil { padding: 80px 6% 80px; }
-    .obra-head p { max-width: 620px; margin-top: 1rem; }
-    .obra-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-    .obra-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--white);
-      border: 1px solid rgba(11,46,107,0.1);
-      border-radius: 8px;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: var(--shadow-soft);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.6s ease;
-    }
-    .obra-card:hover,
-    .obra-card:focus-visible {
-      transform: translateY(-6px);
-      box-shadow: 0 14px 34px rgba(11,46,107,0.18);
-    }
-    .obra-foto {
-      display: block;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      border-bottom: 3px solid var(--accent);
-    }
-    .obra-texto { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.4rem 1.5rem 1.6rem; flex: 1; }
-    .obra-texto h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.45rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-    .obra-texto p { font-size: 0.97rem; line-height: 1.6; }
-    .obra-link {
-      margin-top: auto;
-      padding-top: 0.6rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-weight: 600;
-      color: var(--primary);
-    }
-    .obra-link svg { width: 16px; height: 16px; transition: transform 0.2s; }
-    .obra-card:hover .obra-link svg { transform: translateX(4px); }
-    .areas { padding-top: 10px; }
-
-    @media (max-width: 960px) {
-      .hero { grid-template-columns: 1fr; min-height: 0; }
-      .hero-content { padding: 56px 6% 40px; }
-      .hero-foto { min-height: 0; height: 340px; }
-      .hero-foto > img {
-        -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 30%);
-                mask-image: linear-gradient(180deg, transparent 0%, #000 30%);
-      }
-      .selo { right: 6%; left: 6%; width: auto; bottom: 20px; }
-      .hero.sem-foto { grid-template-columns: 1fr; }
-      .hero.sem-foto .hero-content { padding: 56px 6% 32px; }
-      .hero.sem-foto .hero-foto { height: auto; padding: 0 6% 40px; }
-      .hero.sem-foto .selo { position: static; width: auto; }
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      align-self: center;
-      padding: 80px 0 80px 12%;
-    }
-
-    .hero .eyebrow {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: 3px;
-      color: var(--slate);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .hero h1 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2.6rem, 5vw, 4.2rem);
-      font-weight: 800;
-      line-height: 1.02;
-      color: var(--primary);
-    }
-
-    .hero h1 em {
-      white-space: nowrap;
-      font-style: normal;
-      background: linear-gradient(transparent 82%, var(--accent) 82%);
-    }
-
-    .hero-sub {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin: 1.5rem 0 2rem;
-      max-width: 560px;
-    }
-    .hero-sub p + p { margin-top: 1rem; }
-
-    .pillar-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-      padding: 0 6%;
-    }
-
-    .pillar-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 2.5rem 2rem;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pillar-card::before {
-      content: attr(data-num);
-      position: absolute;
-      bottom: -20px;
-      right: 10px;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 7rem;
-      font-weight: 900;
-      color: var(--primary);
-      opacity: 0.03;
-      pointer-events: none;
-    }
-
-    .pillar-card:hover {
-      transform: translateY(-10px);
-      background: rgba(255, 255, 255, 0.4);
-      box-shadow: 0 8px 32px rgba(11, 46, 107, 0.15);
-    }
-
-    .pillar-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      background: var(--gradient-gold);
-      border-radius: 18px;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      box-shadow: 0 10px 20px -5px rgba(201, 146, 42, 0.4);
-    }
-
-    .pillar-icon svg {
-      width: 28px;
-      height: 28px;
-      stroke-width: 1.5;
-    }
-
-    .pillar-card h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .pillar-card p {
-      color: var(--slate);
-      line-height: 1.7;
-    }
-
-    .steps {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin: 2.5rem 6% 3rem;
-    }
-    .step h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-    .mapa-rodape {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 14px;
-    }
-    .mapa-legend { display: flex; flex-wrap: wrap; gap: 20px; }
-    .legend-item { display: flex; align-items: center; gap: 8px; }
-    .legend-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
-    .pillar-more { padding: 2rem 6% 0; }
-    @media (max-width: 900px) { .steps { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
-
-    .step {
-      text-align: center;
-      background: var(--glass-bg);
-      backdrop-filter: blur(8px);
-      border-radius: 28px;
-      padding: 2rem 1.5rem;
-      border: 1px solid var(--glass-border);
-      box-shadow: var(--shadow-soft);
-      transition: 0.2s;
-    }
-
-    .step:hover {
-      background: rgba(255, 255, 255, 0.5);
-    }
-
-    .step-num {
-      width: 50px;
-      height: 50px;
-      background: var(--gradient-navy);
-      color: white;
-      font-weight: 800;
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 30px;
-      margin: 0 auto 1rem;
-      box-shadow: 0 8px 14px rgba(11, 46, 107, 0.3);
-    }
-
-    .resultados-operacionais {
-      padding: 80px 6%;
-    }
-
-    .resultados-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .resultado-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(8px);
-      border-radius: 24px;
-      padding: 2rem;
-      border: 1px solid var(--glass-border);
-      box-shadow: var(--shadow-soft);
-      border-top: 4px solid var(--accent);
-    }
-
-    .resultado-card h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      color: var(--primary);
-      font-size: 1.4rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .mapa-operacoes {
-      padding: 80px 6%;
-    }
-
-    #mapaOperacoes {
-      height: 480px;
-      border-radius: 32px;
-      overflow: hidden;
-      border: 1px solid var(--glass-border);
-      box-shadow: var(--shadow-soft);
-      isolation: isolate;
-      position: relative;
-      z-index: 0;
-    }
-
-    .risco-zero {
-      background: linear-gradient(145deg, #ffffff 0%, #f0f4fa 100%);
-      padding: 80px 6%;
-    }
-
-    .risco-zero-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .risco-content {
-      flex: 2;
-    }
-
-    .risco-visual {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
-
-    .badge-premium {
-      background: var(--glass-bg);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--glass-border);
-      border-radius: 60px;
-      padding: 2rem 3rem;
-      text-align: center;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .badge-premium i {
-      width: 48px;
-      height: 48px;
-      color: var(--accent);
-      stroke-width: 1.2;
-      margin-bottom: 0.5rem;
-    }
-
-    .check-list {
-      list-style: none;
-      margin-top: 2rem;
-    }
-
-    .check-list li {
-      display: flex;
-      gap: 0.8rem;
-      align-items: center;
-      margin-bottom: 0.8rem;
-    }
-
-    .check-list i {
-      color: var(--accent);
-      width: 22px;
-      height: 22px;
-    }
-
-    .cta-section {
-      background: var(--gradient-navy);
-      color: white;
-      text-align: center;
-      padding: 100px 6%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-section .section-title {
-      color: white;
-    }
-
-    .cta-lead {
-      max-width: 600px;
-      margin: 1.5rem auto 2.5rem;
-      opacity: 0.8;
-    }
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-      .section-title {
-        font-size: 2.2rem;
-      }
-      .hero-stats dt { font-size: 2.2rem; }
-      .hero-stats > div { padding: 0 0.8rem; }
-      .selo-cel { min-height: 54px; padding: 0.5rem 0.8rem; }
-      .hero .eyebrow { font-size: 0.85rem; letter-spacing: 2px; }
-      .hero-sub { font-size: 1.05rem; margin: 1.5rem 0; }
-    }
-  </style>
-
 </head>
 <body>
 
-  <nav>
-    <div class="nav-logo">
-      <a href="index.html">
-        <img src="assets/logo.png" alt="Soares Serviços Consultoria e locação">
-      </a>
-    </div>
+  <nav aria-label="Principal">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/logo-azul.png" alt="Soares Serviços Consultoria e Locação" width="774" height="156">
+    </a>
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
     <div class="nav-links" id="nav-links">
-      <a href="index.html">Início</a>
+      <a href="index.html" class="active" aria-current="page">Início</a>
       <a href="sobre.html">Sobre</a>
       <a href="servicos.html">Serviços</a>
       <a href="projetos.html">Projetos</a>
       <a href="servicos.html#ead">Cursos EAD</a>
       <a href="contato.html">Contato</a>
+      <a class="nav-cta" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20t%C3%A9cnica%20e%20proposta%20comercial%20junto%20%C3%A0%20Soares%20Servi%C3%A7os." target="_blank" rel="noopener noreferrer">Orçamento</a>
     </div>
   </nav>
 
   <main>
-
-  <!--
-    FOTOS: o topo e os 4 cartões de "Da planta à obra" estão prontos para receber fotos.
-    Quando os arquivos existirem em assets/fotos/ (hero.jpg, projeto.jpg, estrutura.jpg,
-    laudo.jpg, regularizacao.jpg):
-      1. troque class="hero sem-foto" por class="hero";
-      2. tire os comentários em volta dos blocos marcados com "FOTO:".
-  -->
-  <section class="hero sem-foto">
-    <div class="hero-content">
-      <div class="eyebrow">Projetos · Laudos · Regularização · Conformidade Técnica</div>
-      <h1>Engenharia para <em>obras civis</em>, indústria e mineração.</h1>
-      <div class="hero-sub">
-        <p>Projetos de arquitetura e engenharia, laudos técnicos e regularização de imóveis, do estudo preliminar à entrega da obra. Também adequamos veículos e equipamentos às exigências normativas de operações industriais e mineradoras.</p>
+    <section class="hero">
+      <div class="hero-grade">
+        <div>
+          <span class="rotulo">Projetos · Laudos · Regularização · Conformidade técnica</span>
+          <h1>Engenharia para <em>obras civis</em>, indústria e mineração.</h1>
+          <p class="lead">Projetos de arquitetura e engenharia, laudos técnicos e regularização de imóveis, do estudo preliminar à entrega da obra. Também adequamos veículos e equipamentos às exigências normativas de operações industriais e mineradoras.</p>
+          <dl class="numeros">
+            <div><dt>06</dt><dd>frentes de serviço, do projeto ao laudo</dd></div>
+            <div><dt>11</dt><dd>operações atendidas em mineração e indústria</dd></div>
+            <div><dt>04</dt><dd>estados com atuação técnica registrada</dd></div>
+          </dl>
+          <div class="acoes">
+            <a class="btn" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20t%C3%A9cnica%20e%20proposta%20comercial%20junto%20%C3%A0%20Soares%20Servi%C3%A7os." target="_blank" rel="noopener noreferrer">Solicitar análise técnica <span aria-hidden="true">→</span></a>
+            <a class="seta" href="projetos.html">Ver projetos realizados</a>
+          </div>
+        </div>
+        <div>
+          <span class="rotulo azul">Índice de serviços</span>
+          <div class="linhas" style="margin-bottom:1.75rem;">
+          <a href="servicos.html#catalogo-1"><span class="cod">ARQ</span><span>Arquitetura e projetos</span><span class="ir" aria-hidden="true">→</span></a>
+          <a href="servicos.html#catalogo-2"><span class="cod">CMP</span><span>Projetos complementares</span><span class="ir" aria-hidden="true">→</span></a>
+          <a href="servicos.html#catalogo-3"><span class="cod">LAU</span><span>Laudos e acompanhamento técnico</span><span class="ir" aria-hidden="true">→</span></a>
+          <a href="servicos.html#catalogo-4"><span class="cod">REG</span><span>Regularização de imóveis</span><span class="ir" aria-hidden="true">→</span></a>
+          <a href="servicos.html#catalogo-5"><span class="cod">INF</span><span>Infraestrutura urbana</span><span class="ir" aria-hidden="true">→</span></a>
+          <a href="servicos.html#catalogo-6"><span class="cod">SST</span><span>Segurança do trabalho</span><span class="ir" aria-hidden="true">→</span></a>
+          <a href="servicos.html#conformidade"><span class="cod">MIN</span><span>Mineração e indústria</span><span class="ir" aria-hidden="true">→</span></a>
+          <a href="servicos.html#ead"><span class="cod">EAD</span><span>Cursos e treinamentos</span><span class="ir" aria-hidden="true">→</span></a>
+          </div>
+        <div class="selo" aria-hidden="true">
+          <div><span>Assunto</span>Apresentação</div>
+          <div><img src="assets/logo-azul.png" alt="" width="774" height="156"></div>
+          <div><span>Atendimento</span>Nacional</div>
+          <div><span>Folha</span>01/06</div>
+        </div>
+        </div>
       </div>
-      <dl class="hero-stats">
-        <div><dt>6</dt><dd>frentes de serviço, do projeto ao laudo</dd></div>
-        <div><dt>11</dt><dd>operações atendidas em mineração e indústria</dd></div>
-        <div><dt>4</dt><dd>estados com atuação técnica registrada</dd></div>
-      </dl>
-      <div class="hero-ctas">
-        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20Análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços."
-           target="_blank" rel="noopener noreferrer" class="btn-primary">
-          Solicitar Análise Técnica
-          <i aria-hidden="true" data-lucide="arrow-right" style="width:16px;height:16px;"></i>
-        </a>
-        <a href="servicos.html#catalogo" class="hero-link">Ver serviços de engenharia civil <span aria-hidden="true">↓</span></a>
-      </div>
-    </div>
+    </section>
 
-    <div class="hero-foto">
-      <!-- FOTO: <img src="assets/fotos/hero.jpg" alt="Estrutura de concreto de uma edificação em construção" width="1600" height="1067" fetchpriority="high"> -->
-      <div class="selo" aria-hidden="true">
-        <div class="selo-cel"><span>Assunto</span><strong>Apresentação</strong></div>
-        <div class="selo-cel selo-marca"><img class="selo-logo" src="assets/logo-azul.png" alt="" width="774" height="156"></div>
-        <div class="selo-cel"><span>Atendimento</span><strong>Nacional</strong></div>
-        <div class="selo-cel"><span>Folha</span><strong>01</strong></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="obra-civil" id="obra-civil">
-    <div class="obra-head">
-      <span class="section-tag">Engenharia Civil e Arquitetura</span>
-      <h2 class="section-title">Da planta à <em>obra</em></h2>
-      <div class="cota" aria-hidden="true"></div>
-      <p>Projetos, laudos e regularização para quem vai construir, reformar ou regularizar um imóvel.</p>
-    </div>
-    <div class="obra-grid">
-      <a class="obra-card reveal" href="servicos.html#catalogo-1">
-        <!-- FOTO: <img class="obra-foto" src="assets/fotos/projeto.jpg" alt="Plantas de arquitetura sobre a mesa de trabalho" width="800" height="600" loading="lazy"> -->
-        <div class="obra-texto">
-          <h3>Arquitetura e Projetos</h3>
+    <section class="sec" id="obra-civil">
+      <header class="sec-topo">
+        <span class="rotulo">01 · Engenharia civil e arquitetura</span>
+        <h2>Da planta à <em>obra</em></h2>
+        <p class="lead">Projetos, laudos e regularização para quem vai construir, reformar ou regularizar um imóvel.</p>
+      </header>
+      <div class="grade c4">
+        <a class="reveal" href="servicos.html#catalogo-1">
+          <span class="cod">ARQ · 01</span>
+          <h3>Arquitetura e projetos</h3>
           <p>Do estudo preliminar ao projeto executivo, com maquete 3D e renders.</p>
-          <span class="obra-link">Ver serviços <i aria-hidden="true" data-lucide="arrow-right"></i></span>
-        </div>
-      </a>
-      <a class="obra-card reveal" href="servicos.html#catalogo-2">
-        <!-- FOTO: <img class="obra-foto" src="assets/fotos/estrutura.jpg" alt="Armação de aço e fôrmas de uma estrutura de concreto" width="800" height="600" loading="lazy"> -->
-        <div class="obra-texto">
-          <h3>Estrutura e Instalações</h3>
+          <span class="seta">Ver serviços →</span>
+        </a>
+        <a class="reveal" href="servicos.html#catalogo-2">
+          <span class="cod">CMP · 02</span>
+          <h3>Estrutura e instalações</h3>
           <p>Projeto estrutural, fundações, instalações elétricas e hidrossanitárias e PPCI.</p>
-          <span class="obra-link">Ver serviços <i aria-hidden="true" data-lucide="arrow-right"></i></span>
-        </div>
-      </a>
-      <a class="obra-card reveal" href="servicos.html#catalogo-3">
-        <!-- FOTO: <img class="obra-foto" src="assets/fotos/laudo.jpg" alt="Profissional fazendo vistoria técnica em obra" width="800" height="600" loading="lazy"> -->
-        <div class="obra-texto">
-          <h3>Laudos e Vistorias</h3>
+          <span class="seta">Ver serviços →</span>
+        </a>
+        <a class="reveal" href="servicos.html#catalogo-3">
+          <span class="cod">LAU · 03</span>
+          <h3>Laudos e vistorias</h3>
           <p>Laudo técnico estrutural, avaliação de imóveis e levantamento “as built”.</p>
-          <span class="obra-link">Ver serviços <i aria-hidden="true" data-lucide="arrow-right"></i></span>
-        </div>
-      </a>
-      <a class="obra-card reveal" href="servicos.html#catalogo-4">
-        <!-- FOTO: <img class="obra-foto" src="assets/fotos/regularizacao.jpg" alt="Casa em fase de acabamento" width="800" height="600" loading="lazy"> -->
-        <div class="obra-texto">
-          <h3>Regularização de Imóveis</h3>
+          <span class="seta">Ver serviços →</span>
+        </a>
+        <a class="reveal" href="servicos.html#catalogo-4">
+          <span class="cod">REG · 04</span>
+          <h3>Regularização de imóveis</h3>
           <p>Projeto para aprovação municipal, averbação de construção, desdobro e REURB.</p>
-          <span class="obra-link">Ver serviços <i aria-hidden="true" data-lucide="arrow-right"></i></span>
+          <span class="seta">Ver serviços →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="sec branca" id="servicos">
+      <header class="sec-topo">
+        <span class="rotulo">02 · Áreas de atuação</span>
+        <h2>Todas as frentes de atuação</h2>
+      </header>
+      <div class="grade c3">
+        <div class="reveal">
+          <span class="cod">Frente 01</span>
+          <h3>Engenharia civil e arquitetura</h3>
+          <p>Projetos arquitetônicos e complementares, laudos e vistorias, regularização de imóveis e acompanhamento técnico de obras, do estudo preliminar à entrega.</p>
         </div>
-      </a>
-    </div>
-  </section>
-
-  <section id="servicos" class="areas">
-    <div style="padding:0 6%;">
-      <span class="section-tag">Áreas de Atuação</span>
-      <h2 class="section-title">Todas as Frentes de Atuação</h2>
-    </div>
-    <div class="pillar-grid">
-      <div class="pillar-card reveal" data-num="01">
-        <div class="pillar-icon"><i aria-hidden="true" data-lucide="home"></i></div>
-        <h3>Engenharia Civil e Arquitetura</h3>
-        <p>Projetos arquitetônicos e complementares, laudos e vistorias, regularização de imóveis e acompanhamento técnico de obras, do estudo preliminar à entrega.</p>
-      </div>
-      <div class="pillar-card reveal" data-num="02">
-        <div class="pillar-icon"><i aria-hidden="true" data-lucide="settings"></i></div>
-        <h3>Engenharia Mecânica</h3>
-        <p>Inspeções técnicas, emissão de laudos, adequação de equipamentos e gestão de manutenção. Avaliação técnica de veículos e máquinas com base em critérios normativos e análise de desempenho operacional.</p>
-      </div>
-      <div class="pillar-card reveal" data-num="03">
-        <div class="pillar-icon"><i aria-hidden="true" data-lucide="hard-hat"></i></div>
-        <h3>Engenharia para Mineração</h3>
-        <p>Adequação técnica de veículos para operações em ambiente de mina, preparação e mobilização de equipamentos, suporte técnico em campo e organização documental conforme NR-22 e requisitos de cada contratante.</p>
-      </div>
-      <div class="pillar-card reveal" data-num="04">
-        <div class="pillar-icon"><i aria-hidden="true" data-lucide="clipboard-list"></i></div>
-        <h3>Laudos e Inspeções Técnicas</h3>
-        <p>Emissão de laudos técnicos com responsabilidade de engenheiro habilitado. Inspeções periódicas em equipamentos, instalações e estruturas, com registro documental e emissão de ART quando aplicável.</p>
-      </div>
-      <div class="pillar-card reveal" data-num="05">
-        <div class="pillar-icon"><i aria-hidden="true" data-lucide="truck"></i></div>
-        <h3>Locação e Gestão de Frotas</h3>
-        <p>Locação de veículos utilitários e 4x4 para operações industriais e mineradoras. Gestão técnica da frota com controle de manutenção, documentação e atendimento a exigências operacionais de cada contratante.</p>
-      </div>
-      <div class="pillar-card reveal" data-num="06">
-        <div class="pillar-icon"><i aria-hidden="true" data-lucide="graduation-cap"></i></div>
-        <h3>Cursos e Treinamentos EAD</h3>
-        <p>Capacitação técnica com foco em normas regulamentadoras e segurança operacional. Formação e atualização profissional em NRs com flexibilidade de horário para equipes e empresas.</p>
-      </div>
-    </div>
-    <div class="pillar-more">
-      <a href="servicos.html#catalogo" class="btn-outline">
-        Ver catálogo completo de serviços <i aria-hidden="true" data-lucide="arrow-right" style="width:16px;height:16px;"></i>
-      </a>
-    </div>
-  </section>
-
-  <section class="como">
-    <div style="padding:0 6%;">
-      <span class="section-tag">Fluxo de Atendimento</span>
-      <h2 class="section-title">Como Trabalhamos</h2>
-      <p style="max-width:640px; margin-top:0.75rem;">Do primeiro contato à entrega, você sabe em que etapa o trabalho está e o que vem a seguir.</p>
-    </div>
-    <ol class="steps">
-      <li class="step reveal">
-        <div class="step-num" aria-hidden="true">1</div>
-        <h3>Consulta Inicial</h3>
-        <p>Conversamos para entender sua necessidade, o objetivo do projeto e as restrições de prazo e orçamento.</p>
-      </li>
-      <li class="step reveal">
-        <div class="step-num" aria-hidden="true">2</div>
-        <h3>Análise Detalhada</h3>
-        <p>Avaliamos o local, o equipamento ou a documentação, além das normas e exigências legais que se aplicam.</p>
-      </li>
-      <li class="step reveal">
-        <div class="step-num" aria-hidden="true">3</div>
-        <h3>Proposta Personalizada</h3>
-        <p>Você recebe uma proposta clara, com o escopo do trabalho, o valor estimado e o cronograma.</p>
-      </li>
-      <li class="step reveal">
-        <div class="step-num" aria-hidden="true">4</div>
-        <h3>Desenvolvimento Colaborativo</h3>
-        <p>Desenvolvemos o projeto ou serviço com a sua participação, validando as decisões a cada etapa.</p>
-      </li>
-      <li class="step reveal">
-        <div class="step-num" aria-hidden="true">5</div>
-        <h3>Apresentação</h3>
-        <p>Apresentamos o resultado de forma visual e clara, para você conferir cada detalhe antes da execução.</p>
-      </li>
-      <li class="step reveal">
-        <div class="step-num" aria-hidden="true">6</div>
-        <h3>Aprovação e Entrega</h3>
-        <p>Fazemos os ajustes finais e entregamos a documentação técnica, com ART quando aplicável.</p>
-      </li>
-    </ol>
-  </section>
-
-  <section class="resultados-operacionais" id="resultados">
-    <span class="section-tag">Histórico Técnico</span>
-    <h2 class="section-title">Onde Já Atuamos</h2>
-    <p class="resultados-lead" style="max-width:680px; margin:1rem 0 2.5rem;">
-      A Soares Serviços Consultoria e Locação possui histórico de atuação técnica em operações industriais e mineradoras de grande porte, com entregas documentadas nas áreas de adequação de equipamentos, inspeção técnica e mobilização operacional.
-    </p>
-    <div class="resultados-grid">
-      <div class="resultado-card">
-        <h3>Mecânica & Adequação</h3>
-        <p>Inspeções técnicas e adequação de equipamentos e veículos conforme requisitos normativos e exigências específicas de cada contratante.</p>
-      </div>
-      <div class="resultado-card">
-        <h3>Mineração & Mobilização</h3>
-        <p>Preparação técnica e mobilização de frotas para operações em mina, com documentação estruturada para aprovação em portais de contratantes (NR-12 e NR-22).</p>
-      </div>
-      <div class="resultado-card">
-        <h3>Projetos & Documentação</h3>
-        <p>Elaboração de laudos técnicos, ARTs e prontuários com responsabilidade de engenheiro habilitado para operações industriais e projetos residenciais.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="mapa-operacoes" id="presenca-operacional">
-    <span class="section-tag">Presença Operacional</span>
-    <h2 class="section-title">Locais com Atuação Técnica Registrada</h2>
-    <p class="mapa-lead" style="max-width:640px; margin:0.75rem 0 2rem;">
-      Operações concluídas com documentação técnica aprovada, adequação de equipamentos e liberação para operação conforme requisitos de cada contratante.
-    </p>
-    <div id="mapaOperacoes" role="region" aria-label="Mapa de operações da Soares Serviços"></div>
-    <div class="mapa-rodape">
-      <div class="mapa-legend" id="mapaLegenda"></div>
-      <a href="projetos.html" class="btn-outline">
-        Ver projetos realizados <i aria-hidden="true" data-lucide="arrow-right" style="width:16px;height:16px;"></i>
-      </a>
-    </div>
-  </section>
-
-  <section class="risco-zero">
-    <div class="risco-zero-container">
-      <div class="risco-content">
-        <span class="section-tag">Atuação Técnica Responsável</span>
-        <h2 class="section-title">Responsabilidade Técnica em Todo o Processo</h2>
-        <p class="lead" style="font-size:1.2rem; color:var(--primary); margin:1.5rem 0;">Assumimos responsabilidade técnica na adequação documental e operacional de equipamentos e frotas, com acompanhamento estruturado ao longo de todo o processo de validação junto à contratante.</p>
-        <p>Trabalhamos com método definido, análise criteriosa e acompanhamento contínuo para reduzir retrabalho, atrasos e não conformidades técnicas.</p>
-        <ul class="check-list">
-          <li><i aria-hidden="true" data-lucide="check-circle-2"></i> Acompanhamento do status de aprovação técnica junto ao contratante.</li>
-          <li><i aria-hidden="true" data-lucide="check-circle-2"></i> Adequação física de equipamentos com suporte técnico em campo.</li>
-          <li><i aria-hidden="true" data-lucide="check-circle-2"></i> Gestão documental com controle de vigência de NRs e ARTs.</li>
-        </ul>
-      </div>
-      <div class="risco-visual">
-        <div class="badge-premium">
-          <i aria-hidden="true" data-lucide="award"></i>
-          <span>Responsabilidade Técnica<br><strong>Soares Serviços</strong></span>
+        <div class="reveal">
+          <span class="cod">Frente 02</span>
+          <h3>Engenharia mecânica</h3>
+          <p>Inspeções técnicas, emissão de laudos, adequação de equipamentos e gestão de manutenção. Avaliação técnica de veículos e máquinas com base em critérios normativos e análise de desempenho operacional.</p>
+        </div>
+        <div class="reveal">
+          <span class="cod">Frente 03</span>
+          <h3>Engenharia para mineração</h3>
+          <p>Adequação técnica de veículos para operações em ambiente de mina, preparação e mobilização de equipamentos, suporte técnico em campo e organização documental conforme NR-22 e requisitos de cada contratante.</p>
+        </div>
+        <div class="reveal">
+          <span class="cod">Frente 04</span>
+          <h3>Laudos e inspeções técnicas</h3>
+          <p>Emissão de laudos técnicos com responsabilidade de engenheiro habilitado. Inspeções periódicas em equipamentos, instalações e estruturas, com registro documental e emissão de ART quando aplicável.</p>
+        </div>
+        <div class="reveal">
+          <span class="cod">Frente 05</span>
+          <h3>Locação e gestão de frotas</h3>
+          <p>Locação de veículos utilitários e 4x4 para operações industriais e mineradoras. Gestão técnica da frota com controle de manutenção, documentação e atendimento a exigências operacionais de cada contratante.</p>
+        </div>
+        <div class="reveal">
+          <span class="cod">Frente 06</span>
+          <h3>Cursos e treinamentos EAD</h3>
+          <p>Capacitação técnica com foco em normas regulamentadoras e segurança operacional. Formação e atualização profissional em NRs com flexibilidade de horário para equipes e empresas.</p>
         </div>
       </div>
-    </div>
-  </section>
+      <p style="margin-top:2rem;"><a class="btn contorno" href="servicos.html#catalogo">Ver catálogo completo de serviços <span aria-hidden="true">→</span></a></p>
+    </section>
 
-  <section class="cta-section">
-    <h2 class="section-title text-white mb-3">Entre em contato com nossa equipe técnica.</h2>
-    <p class="cta-lead">Atendemos demandas de engenharia mecânica, projetos para mineração e engenharia residencial. Fale com nossa equipe e receba uma análise técnica da sua necessidade.</p>
-    <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista."
-      target="_blank" rel="noopener noreferrer" class="btn-primary bg-white text-primary">
-      Falar com Especialista
-      <i aria-hidden="true" data-lucide="arrow-right" style="width:16px;height:16px;vertical-align:middle;margin-left:6px;"></i>
-    </a>
-  </section>
+    <section class="sec" id="processo">
+      <header class="sec-topo">
+        <span class="rotulo">03 · Fluxo de atendimento</span>
+        <h2>Como trabalhamos</h2>
+        <p class="lead">Do primeiro contato à entrega, você sabe em que etapa o trabalho está e o que vem a seguir.</p>
+      </header>
+      <ol class="etapas grade c3">
+        <li class="reveal">
+          <h3>Consulta inicial</h3>
+          <p>Conversamos para entender sua necessidade, o objetivo do projeto e as restrições de prazo e orçamento.</p>
+        </li>
+        <li class="reveal">
+          <h3>Análise detalhada</h3>
+          <p>Avaliamos o local, o equipamento ou a documentação, além das normas e exigências legais que se aplicam.</p>
+        </li>
+        <li class="reveal">
+          <h3>Proposta personalizada</h3>
+          <p>Você recebe uma proposta clara, com o escopo do trabalho, o valor estimado e o cronograma.</p>
+        </li>
+        <li class="reveal">
+          <h3>Desenvolvimento colaborativo</h3>
+          <p>Desenvolvemos o projeto ou serviço com a sua participação, validando as decisões a cada etapa.</p>
+        </li>
+        <li class="reveal">
+          <h3>Apresentação</h3>
+          <p>Apresentamos o resultado de forma visual e clara, para você conferir cada detalhe antes da execução.</p>
+        </li>
+        <li class="reveal">
+          <h3>Aprovação e entrega</h3>
+          <p>Fazemos os ajustes finais e entregamos a documentação técnica, com ART quando aplicável.</p>
+        </li>
+      </ol>
+    </section>
 
+    <section class="sec branca" id="presenca-operacional">
+      <header class="sec-topo">
+        <span class="rotulo">04 · Histórico técnico</span>
+        <h2>Onde já atuamos</h2>
+        <p class="lead">A Soares Serviços Consultoria e Locação possui histórico de atuação técnica em operações industriais e mineradoras de grande porte, com entregas documentadas nas áreas de adequação de equipamentos, inspeção técnica e mobilização operacional.</p>
+      </header>
+      <div class="grade c3" style="margin-bottom:2.5rem;">
+        <div>
+          <span class="cod">Mecânica e adequação</span>
+          <p>Inspeções técnicas e adequação de equipamentos e veículos conforme requisitos normativos e exigências específicas de cada contratante.</p>
+        </div>
+        <div>
+          <span class="cod">Mineração e mobilização</span>
+          <p>Preparação técnica e mobilização de frotas para operações em mina, com documentação estruturada para aprovação em portais de contratantes (NR-12 e NR-22).</p>
+        </div>
+        <div>
+          <span class="cod">Projetos e documentação</span>
+          <p>Elaboração de laudos técnicos, ARTs e prontuários com responsabilidade de engenheiro habilitado para operações industriais e projetos residenciais.</p>
+        </div>
+      </div>
+      <div class="mapa" id="mapaOperacoes" role="region" aria-label="Mapa de operações da Soares Serviços"></div>
+      <div class="mapa-rodape">
+        <div class="mapa-legend" id="mapaLegenda"></div>
+        <a class="seta" href="projetos.html">Ver projetos realizados →</a>
+      </div>
+    </section>
+
+    <section class="sec" id="responsabilidade">
+      <div class="duas">
+        <header class="sec-topo" style="margin-bottom:0;">
+          <span class="rotulo">05 · Atuação técnica responsável</span>
+          <h2>Responsabilidade técnica em todo o processo</h2>
+        </header>
+        <div>
+          <p class="lead">Assumimos responsabilidade técnica na adequação documental e operacional de equipamentos e frotas, com acompanhamento estruturado ao longo de todo o processo de validação junto à contratante.</p>
+          <p style="margin:1.2rem 0 1.5rem;">Trabalhamos com método definido, análise criteriosa e acompanhamento contínuo para reduzir retrabalho, atrasos e não conformidades técnicas.</p>
+          <ul class="lista">
+            <li>Acompanhamento do status de aprovação técnica junto ao contratante.</li>
+            <li>Adequação física de equipamentos com suporte técnico em campo.</li>
+            <li>Gestão documental com controle de vigência de NRs e ARTs.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="faixa">
+      <div class="faixa-chamada">
+        <div>
+          <h2>Entre em contato com nossa equipe técnica.</h2>
+          <p class="lead" style="margin-top:1.2rem;">Atendemos demandas de engenharia civil e mecânica, projetos para mineração e regularização de imóveis. Fale com nossa equipe e receba uma análise técnica da sua necessidade.</p>
+        </div>
+        <div class="acoes">
+          <a class="btn claro" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" rel="noopener noreferrer">Falar no WhatsApp <span aria-hidden="true">→</span></a>
+          <a class="btn vazado" href="contato.html#formulario">Enviar formulário</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer-main">
-    <div class="footer-top">
-      <address style="font-style:normal;">
-        <h4 style="font-family:'Barlow Condensed',sans-serif; color:var(--accent);">SOARES SERVIÇOS CONSULTORIA E LOCAÇÃO</h4>
-        <p style="opacity:0.85;">Soares Serviços Consultoria e Locação LTDA</p>
-        <p style="opacity:0.85;">CNPJ 38.570.390/0001-08</p>
+  <footer class="rodape">
+    <div class="rodape-grade">
+      <address>
+        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação" width="774" height="156" loading="lazy">
+        <p>Soares Serviços Consultoria e Locação LTDA</p>
+        <p>CNPJ 38.570.390/0001-08</p>
       </address>
-      <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
-        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
-        <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
-        <a href="cliente.html" class="footer-link">Área do Cliente</a>
-        <a href="profissional.html" class="footer-link">Área do Profissional</a>
-        <a href="privacidade.html" class="footer-link">Privacidade</a>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="cliente.html">Área do Cliente</a></li>
+          <li><a href="profissional.html">Área do Profissional</a></li>
+          <li><a href="privacidade.html">Privacidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20t%C3%A9cnica%20e%20proposta%20comercial%20junto%20%C3%A0%20Soares%20Servi%C3%A7os." target="_blank" rel="noopener noreferrer">WhatsApp +55 62 9 8273-6369</a></li>
+          <li><a href="mailto:comercial@soaresservicos.com.br">comercial@soaresservicos.com.br</a></li>
+          <li><a href="contato.html#formulario">Formulário de contato</a></li>
+        </ul>
       </div>
     </div>
-    <p class="footer-copyright">&copy; 2026 Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
+    <p class="rodape-fim">&copy; 2026 Soares Serviços Consultoria e Locação · Todos os direitos reservados</p>
   </footer>
 
-  <script src="https://unpkg.com/lucide@0.474.0"></script>
-
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-
   <script src="js/projetos.js"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-
       // Os pontos do mapa vêm de js/projetos.js (mesma lista da página projetos.html).
       // Só entram no mapa os projetos que têm o campo "coords".
       const categorias = window.SOARES_CATEGORIAS || {};
@@ -834,12 +314,12 @@
         html: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36"><path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z" fill="${color}" stroke="white" stroke-width="2"/><circle cx="14" cy="14" r="5" fill="white" opacity="0.9"/></svg>`,
         iconSize: [28, 36], iconAnchor: [14, 36], popupAnchor: [0, -36]
       });
-
       const icones = {};
       const iconeDa = (categoria) => {
         if (!icones[categoria]) icones[categoria] = createIcon((categorias[categoria] || {}).cor || '#0B2E6B');
         return icones[categoria];
       };
+
       const mapa = L.map('mapaOperacoes', { scrollWheelZoom: false, zoomControl: false }).setView([-16.5, -49], 5);
       L.control.zoom({ position: 'bottomright' }).addTo(mapa);
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; OpenStreetMap &copy; CARTO' }).addTo(mapa);
@@ -847,7 +327,7 @@
       const markers = L.markerClusterGroup({
         showCoverageOnHover: false,
         iconCreateFunction: (cluster) => L.divIcon({
-          html: `<div style="background:#0B2E6B;color:white;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;border:2px solid #C9922A;">${cluster.getChildCount()}</div>`,
+          html: `<div style="background:#0B2E6B;color:white;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:13px;border:2px solid #C9922A;">${cluster.getChildCount()}</div>`,
           className: 'cluster-icon', iconSize: L.point(30, 30)
         })
       });
@@ -865,7 +345,6 @@
         markers.addLayer(marker);
         bounds.push(item.coords);
       });
-
       mapa.addLayer(markers);
 
       // Legenda: só as categorias que têm ponto no mapa
@@ -877,6 +356,7 @@
         el.innerHTML = `<span class="legend-dot" style="background:${info.cor};"></span>${info.nome}`;
         legenda.appendChild(el);
       });
+
       if (bounds.length > 0) mapa.fitBounds(bounds, { padding: [50, 50] });
       window.addEventListener('resize', () => mapa.invalidateSize());
     });

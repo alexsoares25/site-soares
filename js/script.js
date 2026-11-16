@@ -2,9 +2,8 @@
  * SOARES SERVIÇOS — js/script.js
  * ============================================================
  * Comportamentos compartilhados por todas as páginas:
- * menu mobile, animação de entrada (.reveal), rolagem suave,
- * efeito ripple nos botões de WhatsApp, link ativo do menu e
- * renderização dos ícones Lucide.
+ * menu mobile, animação de entrada (.reveal), rolagem suave
+ * e link ativo do menu.
  *
  * Inclua antes do </body>:
  * <script src="js/script.js" defer></script>
@@ -94,46 +93,7 @@
     });
   }
 
-  /* 4. RIPPLE — efeito de clique nos botões de WhatsApp */
-  function initRippleEffect() {
-    const buttons = document.querySelectorAll('a[href*="wa.me"]');
-
-    buttons.forEach((btn) => {
-      if (getComputedStyle(btn).position === 'static') btn.style.position = 'relative';
-      btn.style.overflow = 'hidden';
-
-      btn.addEventListener('click', function (e) {
-        const ripple = document.createElement('span');
-        const rect = btn.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-
-        Object.assign(ripple.style, {
-          position: 'absolute',
-          width: size + 'px',
-          height: size + 'px',
-          left: (e.clientX - rect.left - size / 2) + 'px',
-          top: (e.clientY - rect.top - size / 2) + 'px',
-          borderRadius: '50%',
-          background: 'rgba(255, 255, 255, 0.25)',
-          transform: 'scale(0)',
-          animation: 'ss-ripple 0.55s linear',
-          pointerEvents: 'none',
-        });
-
-        btn.appendChild(ripple);
-        ripple.addEventListener('animationend', () => ripple.remove());
-      });
-    });
-
-    if (!document.getElementById('ss-ripple-style')) {
-      const style = document.createElement('style');
-      style.id = 'ss-ripple-style';
-      style.textContent = '@keyframes ss-ripple { to { transform: scale(3); opacity: 0; } }';
-      document.head.appendChild(style);
-    }
-  }
-
-  /* 5. MENU ATIVO — marca o link da página atual */
+  /* 4. MENU ATIVO — marca o link da página atual */
   function initActiveNav() {
     const current = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a').forEach((link) => {
@@ -145,18 +105,11 @@
     });
   }
 
-  /* 6. ÍCONES LUCIDE */
-  function initLucide() {
-    if (window.lucide) window.lucide.createIcons();
-  }
-
   function init() {
     initReveal();
     initMobileMenu();
     initSmoothScroll();
-    initRippleEffect();
     initActiveNav();
-    initLucide();
   }
 
   if (document.readyState === 'loading') {

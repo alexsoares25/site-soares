@@ -13,11 +13,11 @@
   <meta property="og:image" content="https://www.soaresservicos.com.br/assets/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Soares Serviços — Engenharia para obras civis, indústria e mineração">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Soares Serviços">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://www.soaresservicos.com.br/projetos.html">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,284 +31,105 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/shared.css">
-  <style>
-    /* ===== HERO =============================================== */
-    .hero-projetos {
-      position: relative;
-      padding: 100px 6% 80px;
-      color: var(--white);
-      overflow: hidden;
-    }
-    .hero-projetos h1 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2.8rem, 5.5vw, 4.5rem);
-      font-weight: 900;
-      line-height: 1;
-    }
-    .hero-projetos h1 em { font-style: normal; color: var(--accent); }
-    .hero-projetos p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.8;
-      max-width: 620px;
-      margin-top: 1.5rem;
-    }
-
-    /* ===== LISTA ============================================== */
-    .projetos-section { padding: 70px 6% 90px; }
-
-    .filtros {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin: 1.75rem 0 1rem;
-    }
-    .filtro {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--primary);
-      background: var(--white);
-      border: 2px solid rgba(11,46,107,0.15);
-      border-radius: 50px;
-      padding: 0.6rem 1.3rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .filtro:hover { border-color: var(--primary); }
-    .filtro[aria-pressed="true"] {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: var(--white);
-    }
-    .filtro .qtd { opacity: 0.65; font-weight: 500; margin-left: 0.25rem; }
-
-    .projetos-status {
-      font-size: 0.9rem;
-      color: var(--slate);
-      margin-bottom: 1.5rem;
-    }
-
-    .projetos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
-      gap: 1.5rem;
-    }
-
-    .projeto-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--white);
-      border: 1px solid rgba(11,46,107,0.08);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-    }
-    .projeto-card[hidden] { display: none; }
-    .projeto-foto {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-      display: block;
-    }
-    .projeto-corpo {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      padding: 1.5rem;
-      border-top: 4px solid var(--cor, var(--accent));
-      flex: 1;
-    }
-    .projeto-cat {
-      align-self: flex-start;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--primary);
-    }
-    .projeto-cat::before {
-      content: '';
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--cor, var(--accent));
-    }
-    .projeto-card h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.45rem;
-      font-weight: 800;
-      line-height: 1.15;
-      color: var(--primary);
-    }
-    .projeto-local {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--slate);
-    }
-    .projeto-local svg { width: 16px; height: 16px; color: var(--accent-text); flex-shrink: 0; }
-    .projeto-resumo { font-size: 0.95rem; line-height: 1.6; color: var(--slate); }
-
-    .projeto-chips {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.3rem;
-    }
-    .projeto-chips li {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--primary);
-      background: var(--gray-soft);
-      border-radius: 50px;
-      padding: 0.25rem 0.7rem;
-    }
-
-    .projeto-ficha {
-      margin-top: 0.6rem;
-      border-top: 1px solid rgba(11,46,107,0.1);
-      padding-top: 0.8rem;
-      font-size: 0.92rem;
-      line-height: 1.6;
-    }
-    .projeto-ficha summary {
-      cursor: pointer;
-      font-weight: 600;
-      color: var(--primary);
-    }
-    .projeto-ficha h4 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent-text);
-      margin: 0.9rem 0 0.2rem;
-    }
-    .projeto-ficha ul { margin-left: 1.1rem; }
-
-    .projetos-nota {
-      display: flex;
-      gap: 0.9rem;
-      align-items: flex-start;
-      max-width: 760px;
-      margin-top: 2.5rem;
-      padding: 1.1rem 1.3rem;
-      background: rgba(201,146,42,0.09);
-      border-left: 4px solid var(--accent);
-      border-radius: 0 14px 14px 0;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    .projetos-nota svg { width: 22px; height: 22px; color: var(--accent-text); flex-shrink: 0; margin-top: 2px; }
-
-    /* ===== CTA ================================================ */
-    .cta-section {
-      background: var(--gradient-navy);
-      color: var(--white);
-      text-align: center;
-      padding: 90px 6%;
-    }
-    .cta-section .section-title { color: var(--white); margin: 0 auto; }
-    .cta-lead { max-width: 600px; margin: 1.25rem auto 2.25rem; opacity: 0.85; line-height: 1.7; }
-    .cta-btn-group { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-
-    @media (max-width: 768px) {
-      .hero-projetos { padding: 70px 6% 60px; }
-      .projetos-section { padding: 50px 6% 70px; }
-    }
-  </style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-logo">
-      <a href="index.html">
-        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação">
-      </a>
-    </div>
+  <nav aria-label="Principal">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/logo-azul.png" alt="Soares Serviços Consultoria e Locação" width="774" height="156">
+    </a>
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
     <div class="nav-links" id="nav-links">
       <a href="index.html">Início</a>
       <a href="sobre.html">Sobre</a>
       <a href="servicos.html">Serviços</a>
-      <a href="projetos.html" class="active">Projetos</a>
+      <a href="projetos.html" class="active" aria-current="page">Projetos</a>
       <a href="servicos.html#ead">Cursos EAD</a>
       <a href="contato.html">Contato</a>
+      <a class="nav-cta" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20t%C3%A9cnica%20e%20proposta%20comercial%20junto%20%C3%A0%20Soares%20Servi%C3%A7os." target="_blank" rel="noopener noreferrer">Orçamento</a>
     </div>
   </nav>
 
   <main>
-    <section class="hero-projetos malha-tecnica">
-      <div class="hero-eyebrow">Histórico Técnico</div>
-      <h1>Projetos<br><em>Realizados</em></h1>
-      <p>Operações e projetos concluídos com documentação técnica aprovada, adequação de equipamentos e liberação para operação conforme os requisitos de cada contratante.</p>
-    </section>
-    <div class="gold-divider"></div>
-
-    <section class="projetos-section" id="lista">
-      <span class="section-tag">Portfólio</span>
-      <h2 class="section-title">Filtre por tipo de projeto</h2>
-      <div class="cota" aria-hidden="true"></div>
-
-      <div class="filtros" id="filtros" role="group" aria-label="Filtrar projetos por tipo"></div>
-      <p class="projetos-status" id="projetosStatus" aria-live="polite"></p>
-
-      <div class="projetos-grid" id="projetosGrid"></div>
-
-      <noscript>
-        <p>Ative o JavaScript para ver a lista de projetos, ou <a href="contato.html">fale com nossa equipe</a>.</p>
-      </noscript>
-
-      <div class="projetos-nota">
-        <i aria-hidden="true" data-lucide="shield-check"></i>
-        <p><strong>Confidencialidade.</strong> Por compromisso contratual, as operações são identificadas pelo tipo e pela localidade, sem o nome do contratante. Referências e detalhes técnicos podem ser apresentados em reunião.</p>
+    <section class="hero">
+      <div class="hero-grade">
+        <div>
+          <span class="rotulo">Histórico técnico</span>
+          <h1>Projetos <em>realizados</em></h1>
+          <p class="lead">Operações e projetos concluídos com documentação técnica aprovada, adequação de equipamentos e liberação para operação conforme os requisitos de cada contratante.</p>
+        </div>
+        <div class="selo" aria-hidden="true">
+          <div><span>Assunto</span>Portfólio</div>
+          <div><img src="assets/logo-azul.png" alt="" width="774" height="156"></div>
+          <div><span>Atendimento</span>Nacional</div>
+          <div><span>Folha</span>04/06</div>
+        </div>
       </div>
     </section>
 
-    <section class="cta-section">
-      <h2 class="section-title">Tem um projeto parecido?</h2>
-      <p class="cta-lead">Conte o que você precisa e receba uma análise técnica da sua demanda.</p>
-      <div class="cta-btn-group">
-        <a href="https://wa.me/5562982736369?text=Olá,%20vi%20os%20projetos%20no%20site%20e%20gostaria%20de%20solicitar%20uma%20análise%20técnica." class="btn-primary" target="_blank" rel="noopener noreferrer">
-          <i aria-hidden="true" data-lucide="message-circle"></i> Falar no WhatsApp
-        </a>
-        <a href="servicos.html#catalogo" class="btn-white">
-          <i aria-hidden="true" data-lucide="layout-list"></i> Ver Serviços
-        </a>
+    <section class="sec" id="lista">
+      <header class="sec-topo">
+        <span class="rotulo">Portfólio</span>
+        <h2>Filtre por tipo de projeto</h2>
+      </header>
+      <div class="filtros" id="filtros" role="group" aria-label="Filtrar projetos por tipo"></div>
+      <p class="rotulo projetos-status" id="projetosStatus" aria-live="polite"></p>
+      <div class="projetos-grid" id="projetosGrid"></div>
+      <noscript>
+        <p>Ative o JavaScript para ver a lista de projetos, ou <a href="contato.html">fale com nossa equipe</a>.</p>
+      </noscript>
+      <div class="nota">
+        <span class="rotulo azul">Confidencialidade</span>
+        <p>Por compromisso contratual, as operações são identificadas pelo tipo e pela localidade, sem o nome do contratante. Referências e detalhes técnicos podem ser apresentados em reunião.</p>
+      </div>
+    </section>
+
+    <section class="faixa">
+      <div class="faixa-chamada">
+        <div>
+          <h2>Tem um projeto parecido?</h2>
+          <p class="lead" style="margin-top:1.2rem;">Conte o que você precisa e receba uma análise técnica da sua demanda.</p>
+        </div>
+        <div class="acoes">
+          <a class="btn claro" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20vi%20os%20projetos%20no%20site%20e%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20t%C3%A9cnica." target="_blank" rel="noopener noreferrer">Falar no WhatsApp <span aria-hidden="true">→</span></a>
+          <a class="btn vazado" href="servicos.html#catalogo">Ver serviços</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer-main">
-    <div class="footer-top">
-      <address style="font-style:normal;">
-        <h4 style="font-family:'Barlow Condensed',sans-serif;color:var(--accent);letter-spacing:1px;">SOARES SERVIÇOS CONSULTORIA E LOCAÇÃO</h4>
-        <p style="opacity:0.85;">Soares Serviços Consultoria e Locação LTDA</p>
-        <p style="opacity:0.85;">CNPJ 38.570.390/0001-08</p>
+  <footer class="rodape">
+    <div class="rodape-grade">
+      <address>
+        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação" width="774" height="156" loading="lazy">
+        <p>Soares Serviços Consultoria e Locação LTDA</p>
+        <p>CNPJ 38.570.390/0001-08</p>
       </address>
-      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1rem;">
-        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
-        <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
-        <a href="cliente.html" class="footer-link">Área do Cliente</a>
-        <a href="profissional.html" class="footer-link">Área do Profissional</a>
-        <a href="privacidade.html" class="footer-link">Privacidade</a>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="cliente.html">Área do Cliente</a></li>
+          <li><a href="profissional.html">Área do Profissional</a></li>
+          <li><a href="privacidade.html">Privacidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20t%C3%A9cnica%20e%20proposta%20comercial%20junto%20%C3%A0%20Soares%20Servi%C3%A7os." target="_blank" rel="noopener noreferrer">WhatsApp +55 62 9 8273-6369</a></li>
+          <li><a href="mailto:comercial@soaresservicos.com.br">comercial@soaresservicos.com.br</a></li>
+          <li><a href="contato.html#formulario">Formulário de contato</a></li>
+        </ul>
       </div>
     </div>
-    <p class="footer-copyright">&copy; 2026 Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
+    <p class="rodape-fim">&copy; 2026 Soares Serviços Consultoria e Locação · Todos os direitos reservados</p>
   </footer>
 
-  <script src="https://unpkg.com/lucide@0.474.0"></script>
   <script src="js/projetos.js"></script>
   <script>
     // Monta os cards e os filtros a partir de js/projetos.js.
