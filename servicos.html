@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="assets/icons/favicon.png">
-  <title>Nossos Serviços | Soares Serviços | Engenharia e Conformidade Mineradora</title>
-  <meta name="description" content="Engenharia aplicada à conformidade para operações mineradoras de alta exigência. Locação de frotas, gestão técnica (NR-22/NR-12) e adequação de veículos com rigor normativo e controle operacional.">
+  <title>Serviços | Soares Serviços | Engenharia Civil, Arquitetura e Conformidade Técnica</title>
+  <meta name="description" content="Projetos de arquitetura e engenharia civil, laudos, regularização de imóveis, infraestrutura urbana e conformidade técnica (NR-12/NR-22) para mineração e indústria. Veja o catálogo completo.">
   <meta property="og:title" content="Nossos Serviços | Soares Serviços">
-  <meta property="og:description" content="Estruturação técnica e controle documental para operações mineradoras de alta exigência.">
+  <meta property="og:description" content="Engenharia civil, arquitetura, laudos, regularização de imóveis e conformidade técnica para mineração e indústria.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.soaresservicos.com.br/servicos.html">
   <meta property="og:image" content="https://www.soaresservicos.com.br/assets/og-image.jpg">
@@ -129,6 +129,10 @@
       max-width: 540px;
       margin-top: 1.5rem;
     }
+
+    .hero-left .hero-links { font-size: 0.95rem; margin-top: 1rem; }
+    .hero-links a { color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(201,146,42,0.5); }
+    .hero-links a:hover { border-bottom-color: var(--accent); }
 
     /* stats à direita do hero */
     .hero-right {
@@ -410,6 +414,78 @@
       font-weight: 900;
     }
 
+    /* ===== CATÁLOGO ========================================== */
+    .catalogo {
+      padding: 90px 6%;
+      background: linear-gradient(180deg, var(--white) 0%, var(--gray-soft) 100%);
+      border-top: 1px solid rgba(11,46,107,0.08);
+    }
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+      gap: 1.75rem;
+      align-items: start;
+    }
+    .cat-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      border: 1px solid rgba(11,46,107,0.08);
+      border-top: 4px solid var(--accent);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: var(--shadow-soft);
+      scroll-margin-top: 100px;
+    }
+    .cat-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .cat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--primary);
+      opacity: 0.12;
+    }
+    .cat-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--primary);
+      margin-bottom: 0.9rem;
+    }
+    .cat-recebe {
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--slate);
+      background: rgba(201,146,42,0.09);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 0.7rem 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+    .cat-recebe strong { color: var(--primary); }
+    .cat-card .eng-list { margin-bottom: 1.2rem; }
+    .cat-card .eng-list li { margin-bottom: 0.5rem; }
+    .cat-link {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      border-bottom: 2px solid var(--accent);
+      align-self: flex-start;
+      padding-bottom: 2px;
+    }
+    .cat-link svg { width: 16px; height: 16px; transition: transform 0.2s; }
+    .cat-link:hover svg { transform: translateX(4px); }
+
     /* ===== CURSOS EAD ======================================== */
     .ead-section {
       padding: 90px 6%;
@@ -602,6 +678,7 @@
       <a href="index.html">Início</a>
       <a href="sobre.html">Sobre</a>
       <a href="servicos.html" class="active">Serviços</a>
+      <a href="projetos.html">Projetos</a>
       <a href="#ead">Cursos EAD</a>
       <a href="contato.html">Contato</a>
     </div>
@@ -614,7 +691,8 @@
     <div class="hero-left">
       <div class="hero-eyebrow">Engenharia Contratual &amp; Conformidade</div>
       <h1>Nossos<br><em>Serviços</em></h1>
-      <p>Engenharia aplicada à conformidade para operações mineradoras de alta exigência. Atendimento integral às NRs e requisitos de grandes contratantes do setor mineral.</p>
+      <p>Engenharia aplicada à conformidade para operações mineradoras de alta exigência, além de projetos de engenharia civil e arquitetura, laudos e regularização de imóveis.</p>
+      <p class="hero-links"><a href="#conformidade">Mineração e conformidade</a> · <a href="#catalogo">Civil e arquitetura</a> · <a href="#ead">Cursos EAD</a></p>
     </div>
     <div class="hero-right">
       <div class="stat-glass">
@@ -723,6 +801,142 @@
           <li>Rastreabilidade técnica operacional</li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== CATÁLOGO: CIVIL, ARQUITETURA E SOLUÇÕES TÉCNICAS == -->
+  <section class="catalogo" id="catalogo">
+    <span class="section-tag">Catálogo de Serviços</span>
+    <h2 class="section-title">Engenharia Civil, Arquitetura e <em>Soluções Técnicas</em></h2>
+    <p class="eng-intro">Do estudo preliminar à regularização do imóvel. Veja o que fazemos em cada frente e o que você recebe ao final.</p>
+
+    <div class="cat-grid">
+      <article class="cat-card reveal" id="catalogo-1">
+        <div class="cat-head">
+          <div class="eng-card-icon"><i aria-hidden="true" data-lucide="drafting-compass"></i></div>
+          <span class="cat-num" aria-hidden="true">01</span>
+        </div>
+        <h3>Arquitetura e Projetos</h3>
+        <p class="cat-recebe"><strong>Você recebe:</strong> Projeto legal e executivo, detalhamentos e imagens 3D para você visualizar o resultado antes da obra.</p>
+        <ul class="eng-list">
+            <li>Estudo preliminar e anteprojeto</li>
+            <li>Projeto arquitetônico legal e executivo</li>
+            <li>Projeto de reforma</li>
+            <li>Projeto de interiores e interiores por ambiente</li>
+            <li>Detalhamento de forro e piso</li>
+            <li>Projeto de paisagismo</li>
+            <li>Projeto de acessibilidade</li>
+            <li>Projeto luminotécnico e de iluminação</li>
+            <li>Maquete eletrônica 3D, renders e tour virtual 360°</li>
+        </ul>
+        <a class="cat-link" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20arquitetura%20e%20projetos." target="_blank" rel="noopener noreferrer">
+          Pedir orçamento <i aria-hidden="true" data-lucide="arrow-right"></i>
+        </a>
+      </article>
+      <article class="cat-card reveal" id="catalogo-2">
+        <div class="cat-head">
+          <div class="eng-card-icon"><i aria-hidden="true" data-lucide="layers"></i></div>
+          <span class="cat-num" aria-hidden="true">02</span>
+        </div>
+        <h3>Projetos Complementares</h3>
+        <p class="cat-recebe"><strong>Você recebe:</strong> Os projetos de estrutura, instalações e segurança de que a obra precisa, com um único responsável.</p>
+        <ul class="eng-list">
+            <li>Projeto estrutural</li>
+            <li>Fundações e contenções</li>
+            <li>Instalações elétricas e hidrossanitárias</li>
+            <li>Drenagem predial e pluvial</li>
+            <li>SPDA e aterramento</li>
+            <li>Climatização</li>
+            <li>PPCI — prevenção e combate a incêndio</li>
+            <li>Rede lógica e telecomunicações</li>
+            <li>Piscinas</li>
+            <li>Terraplanagem e pavimentação</li>
+            <li>Sinalização e comunicação visual</li>
+        </ul>
+        <a class="cat-link" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20projetos%20complementares." target="_blank" rel="noopener noreferrer">
+          Pedir orçamento <i aria-hidden="true" data-lucide="arrow-right"></i>
+        </a>
+      </article>
+      <article class="cat-card reveal" id="catalogo-3">
+        <div class="cat-head">
+          <div class="eng-card-icon"><i aria-hidden="true" data-lucide="clipboard-check"></i></div>
+          <span class="cat-num" aria-hidden="true">03</span>
+        </div>
+        <h3>Laudos, Levantamentos e Acompanhamento Técnico</h3>
+        <p class="cat-recebe"><strong>Você recebe:</strong> Laudo ou relatório técnico com memorial descritivo, quantitativos e ART quando aplicável.</p>
+        <ul class="eng-list">
+            <li>Laudo técnico estrutural</li>
+            <li>Laudo de avaliação de imóveis</li>
+            <li>Vistorias e visitas técnicas</li>
+            <li>Levantamento “as built”</li>
+            <li>Levantamento topográfico</li>
+            <li>Sondagem de solo</li>
+            <li>Memorial descritivo</li>
+            <li>Quantitativos de materiais</li>
+            <li>Correção de projetos</li>
+            <li>Consultoria BIM</li>
+            <li>Gerenciamento de obras</li>
+            <li>ART — Anotação de Responsabilidade Técnica</li>
+        </ul>
+        <a class="cat-link" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20laudos%2C%20levantamentos%20e%20acompanhamento%20t%C3%A9cnico." target="_blank" rel="noopener noreferrer">
+          Pedir orçamento <i aria-hidden="true" data-lucide="arrow-right"></i>
+        </a>
+      </article>
+      <article class="cat-card reveal" id="catalogo-4">
+        <div class="cat-head">
+          <div class="eng-card-icon"><i aria-hidden="true" data-lucide="file-check-2"></i></div>
+          <span class="cat-num" aria-hidden="true">04</span>
+        </div>
+        <h3>Regularização de Imóveis e Aprovações</h3>
+        <p class="cat-recebe"><strong>Você recebe:</strong> O projeto e a documentação técnica para os processos de aprovação municipal, averbação e regularização.</p>
+        <ul class="eng-list">
+            <li>Regularização de imóveis</li>
+            <li>Projeto arquitetônico para aprovação municipal</li>
+            <li>Averbação de construção</li>
+            <li>Desdobro e remembramento de lotes</li>
+            <li>Projetos urbanísticos</li>
+            <li>Processos relacionados à vigilância sanitária</li>
+            <li>REURB — regularização fundiária urbana</li>
+        </ul>
+        <a class="cat-link" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20regulariza%C3%A7%C3%A3o%20de%20im%C3%B3veis%20e%20aprova%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">
+          Pedir orçamento <i aria-hidden="true" data-lucide="arrow-right"></i>
+        </a>
+      </article>
+      <article class="cat-card reveal" id="catalogo-5">
+        <div class="cat-head">
+          <div class="eng-card-icon"><i aria-hidden="true" data-lucide="map"></i></div>
+          <span class="cat-num" aria-hidden="true">05</span>
+        </div>
+        <h3>Infraestrutura Urbana</h3>
+        <p class="cat-recebe"><strong>Você recebe:</strong> Projetos de infraestrutura para loteamentos e áreas urbanas, do arruamento às redes.</p>
+        <ul class="eng-list">
+            <li>Drenagem urbana</li>
+            <li>Redes de água e esgoto</li>
+            <li>Iluminação pública</li>
+            <li>Terraplanagem e arruamento</li>
+            <li>CFTV e videomonitoramento</li>
+            <li>Licenciamento ambiental</li>
+        </ul>
+        <a class="cat-link" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20infraestrutura%20urbana." target="_blank" rel="noopener noreferrer">
+          Pedir orçamento <i aria-hidden="true" data-lucide="arrow-right"></i>
+        </a>
+      </article>
+      <article class="cat-card reveal" id="catalogo-6">
+        <div class="cat-head">
+          <div class="eng-card-icon"><i aria-hidden="true" data-lucide="hard-hat"></i></div>
+          <span class="cat-num" aria-hidden="true">06</span>
+        </div>
+        <h3>Segurança do Trabalho e Conformidade Técnica</h3>
+        <p class="cat-recebe"><strong>Você recebe:</strong> Programas e laudos de segurança do trabalho e apoio para atender às normas regulamentadoras.</p>
+        <ul class="eng-list">
+            <li>PGR e LTCAT</li>
+            <li>Serviços relacionados às NRs 06, 10, 18, 20 e 35</li>
+            <li>Avaliação de opacidade veicular pela Escala de Ringelmann</li>
+        </ul>
+        <a class="cat-link" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20seguran%C3%A7a%20do%20trabalho%20e%20conformidade%20t%C3%A9cnica." target="_blank" rel="noopener noreferrer">
+          Pedir orçamento <i aria-hidden="true" data-lucide="arrow-right"></i>
+        </a>
+      </article>
     </div>
   </section>
 

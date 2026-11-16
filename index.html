@@ -222,20 +222,40 @@
     }
 
     .steps {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2.5rem 6% 3rem;
+    }
+    .step h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .mapa-rodape {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin: 3rem 6%;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 14px;
     }
+    .mapa-legend { display: flex; flex-wrap: wrap; gap: 20px; }
+    .legend-item { display: flex; align-items: center; gap: 8px; }
+    .legend-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+    .pillar-more { padding: 2rem 6% 0; }
+    @media (max-width: 900px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
 
     .step {
-      flex: 1 1 200px;
       text-align: center;
       background: var(--glass-bg);
       backdrop-filter: blur(8px);
-      border-radius: 40px;
-      padding: 2rem 1rem;
+      border-radius: 28px;
+      padding: 2rem 1.5rem;
       border: 1px solid var(--glass-border);
       box-shadow: var(--shadow-soft);
       transition: 0.2s;
@@ -415,6 +435,7 @@
       <a href="index.html">Início</a>
       <a href="sobre.html">Sobre</a>
       <a href="servicos.html">Serviços</a>
+      <a href="projetos.html">Projetos</a>
       <a href="servicos.html#ead">Cursos EAD</a>
       <a href="contato.html">Contato</a>
     </div>
@@ -478,8 +499,8 @@ Solicitar Análise Técnica
       </div>
       <div class="pillar-card reveal" data-num="03">
         <div class="pillar-icon"><i aria-hidden="true" data-lucide="home"></i></div>
-        <h3>Engenharia Residencial</h3>
-        <p>Elaboração de projetos residenciais, acompanhamento técnico de obras, análise estrutural, regularização de edificações e consultoria técnica para construções de pequeno e médio porte.</p>
+        <h3>Engenharia Civil e Arquitetura</h3>
+        <p>Projetos arquitetônicos e complementares, laudos e vistorias, regularização de imóveis e acompanhamento técnico de obras, do estudo preliminar à entrega.</p>
       </div>
       <div class="pillar-card reveal" data-num="04">
         <div class="pillar-icon"><i aria-hidden="true" data-lucide="clipboard-list"></i></div>
@@ -497,35 +518,51 @@ Solicitar Análise Técnica
         <p>Capacitação técnica com foco em normas regulamentadoras e segurança operacional. Formação e atualização profissional em NRs com flexibilidade de horário para equipes e empresas.</p>
       </div>
     </div>
+    <div class="pillar-more">
+      <a href="servicos.html#catalogo" class="btn-outline">
+        Ver catálogo completo de serviços <i aria-hidden="true" data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+      </a>
+    </div>
   </section>
 
   <section class="como">
     <div style="padding:0 6%;">
       <span class="section-tag">Fluxo de Atendimento</span>
       <h2 class="section-title">Como Trabalhamos</h2>
+      <p style="max-width:640px; margin-top:0.75rem;">Do primeiro contato à entrega, você sabe em que etapa o trabalho está e o que vem a seguir.</p>
     </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h4>Contato Inicial</h4>
-        <p>Informe o tipo de demanda, prazo e escopo da operação ou projeto.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h4>Análise Técnica</h4>
-        <p>Avaliamos os requisitos técnicos e normativos aplicáveis à sua demanda.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h4>Execução e Adequação</h4>
-        <p>Realizamos inspeções, adequações e elaboramos a documentação técnica necessária.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <h4>Entrega e Suporte</h4>
-        <p>Entregamos laudos, projetos ou equipamentos adequados com suporte técnico contínuo.</p>
-      </div>
-    </div>
+    <ol class="steps">
+      <li class="step reveal">
+        <div class="step-num" aria-hidden="true">1</div>
+        <h3>Consulta Inicial</h3>
+        <p>Conversamos para entender sua necessidade, o objetivo do projeto e as restrições de prazo e orçamento.</p>
+      </li>
+      <li class="step reveal">
+        <div class="step-num" aria-hidden="true">2</div>
+        <h3>Análise Detalhada</h3>
+        <p>Avaliamos o local, o equipamento ou a documentação, além das normas e exigências legais que se aplicam.</p>
+      </li>
+      <li class="step reveal">
+        <div class="step-num" aria-hidden="true">3</div>
+        <h3>Proposta Personalizada</h3>
+        <p>Você recebe uma proposta clara, com o escopo do trabalho, o valor estimado e o cronograma.</p>
+      </li>
+      <li class="step reveal">
+        <div class="step-num" aria-hidden="true">4</div>
+        <h3>Desenvolvimento Colaborativo</h3>
+        <p>Desenvolvemos o projeto ou serviço com a sua participação, validando as decisões a cada etapa.</p>
+      </li>
+      <li class="step reveal">
+        <div class="step-num" aria-hidden="true">5</div>
+        <h3>Apresentação</h3>
+        <p>Apresentamos o resultado de forma visual e clara, para você conferir cada detalhe antes da execução.</p>
+      </li>
+      <li class="step reveal">
+        <div class="step-num" aria-hidden="true">6</div>
+        <h3>Aprovação e Entrega</h3>
+        <p>Fazemos os ajustes finais e entregamos a documentação técnica, com ART quando aplicável.</p>
+      </li>
+    </ol>
   </section>
 
   <section class="resultados-operacionais" id="resultados">
@@ -557,15 +594,11 @@ Solicitar Análise Técnica
       Operações concluídas com documentação técnica aprovada, adequação de equipamentos e liberação para operação conforme requisitos de cada contratante.
     </p>
     <div id="mapaOperacoes" role="region" aria-label="Mapa de operações da Soares Serviços"></div>
-    <div class="mapa-legend" style="display:flex; gap:20px; margin-top:14px;">
-      <div class="legend-item" style="display:flex; align-items:center; gap:8px;">
-        <div style="width:9px; height:9px; border-radius:50%; background:#d9c006;"></div>
-        Mineração
-      </div>
-      <div class="legend-item" style="display:flex; align-items:center; gap:8px;">
-        <div style="width:9px; height:9px; border-radius:50%; background:#0B2E6B;"></div>
-        Industrial
-      </div>
+    <div class="mapa-rodape">
+      <div class="mapa-legend" id="mapaLegenda"></div>
+      <a href="projetos.html" class="btn-outline">
+        Ver projetos realizados <i aria-hidden="true" data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+      </a>
     </div>
   </section>
 
@@ -627,24 +660,14 @@ Solicitar Análise Técnica
 
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
+  <script src="js/projetos.js"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
 
-      // Apenas descrições genéricas e coordenadas aproximadas (nível de município):
-      // os nomes dos contratantes não devem aparecer no código público.
-      const operacoes = [
-        { label: 'Operação Mineradora - Barro Alto (GO)', cityState: 'Barro Alto - GO', coords: [-15.1, -48.9], type: 'mineração' },
-        { label: 'Operação Mineradora - Goiás (GO)', cityState: 'Goiás - GO', coords: [-15.1, -49.0], type: 'mineração' },
-        { label: 'Operação Mineradora - Alto Horizonte (GO)', cityState: 'Alto Horizonte - GO', coords: [-14.2, -49.4], type: 'mineração' },
-        { label: 'Operação Mineradora - Mara Rosa (GO)', cityState: 'Mara Rosa - GO', coords: [-14.0, -49.2], type: 'mineração' },
-        { label: 'Projeto de Mineração - Goiás (GO)', cityState: 'Goiás - GO', coords: [-13.6, -47.0], type: 'mineração' },
-        { label: 'Operação Mineradora - Almas (TO)', cityState: 'Almas - TO', coords: [-11.7, -47.2], type: 'mineração' },
-        { label: 'Unidade de Mineração - MS', cityState: 'Mato Grosso do Sul - MS', coords: [-19.3, -57.5], type: 'mineração' },
-        { label: 'Unidade Industrial - MS', cityState: 'Mato Grosso do Sul - MS', coords: [-19.3, -57.6], type: 'industrial' },
-        { label: 'Unidade Industrial - MG', cityState: 'Minas Gerais - MG', coords: [-19.1, -46.7], type: 'industrial' },
-        { label: 'Unidade Industrial - Uberaba (MG)', cityState: 'Uberaba - MG', coords: [-20.0, -47.9], type: 'industrial' },
-        { label: 'Unidade Industrial - Niquelândia (GO)', cityState: 'Niquelândia - GO', coords: [-14.2, -48.3], type: 'industrial' }
-      ];
+      // Os pontos do mapa vêm de js/projetos.js (mesma lista da página projetos.html).
+      // Só entram no mapa os projetos que têm o campo "coords".
+      const categorias = window.SOARES_CATEGORIAS || {};
+      const operacoes = (window.SOARES_PROJETOS || []).filter(item => Array.isArray(item.coords));
 
       const createIcon = (color) => L.divIcon({
         className: 'custom-marker',
@@ -652,9 +675,11 @@ Solicitar Análise Técnica
         iconSize: [28, 36], iconAnchor: [14, 36], popupAnchor: [0, -36]
       });
 
-      const iconMineracao = createIcon('#d9c006');
-      const iconIndustrial = createIcon('#0B2E6B');
-
+      const icones = {};
+      const iconeDa = (categoria) => {
+        if (!icones[categoria]) icones[categoria] = createIcon((categorias[categoria] || {}).cor || '#0B2E6B');
+        return icones[categoria];
+      };
       const mapa = L.map('mapaOperacoes', { scrollWheelZoom: false, zoomControl: false }).setView([-16.5, -49], 5);
       L.control.zoom({ position: 'bottomright' }).addTo(mapa);
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; OpenStreetMap &copy; CARTO' }).addTo(mapa);
@@ -669,12 +694,12 @@ Solicitar Análise Técnica
 
       const bounds = [];
       operacoes.forEach(item => {
-        const icon = item.type === 'mineração' ? iconMineracao : iconIndustrial;
-        const marker = L.marker(item.coords, { icon }).bindPopup(`
+        const nomeCategoria = (categorias[item.categoria] || {}).nome || item.categoria;
+        const marker = L.marker(item.coords, { icon: iconeDa(item.categoria) }).bindPopup(`
           <div style="font-family:'Barlow',sans-serif;padding:2px 4px;">
-            <strong style="color:#0B2E6B;">${item.label}</strong><br>
-            <span style="font-size:0.75rem;color:#C9922A;text-transform:uppercase;letter-spacing:0.06em;">${item.type}</span><br>
-            <span style="font-size:0.85rem;color:#6B7280;">${item.cityState}</span>
+            <strong style="color:#0B2E6B;">${item.titulo}</strong><br>
+            <span style="font-size:0.75rem;color:#8A6212;text-transform:uppercase;letter-spacing:0.06em;">${nomeCategoria}</span><br>
+            <span style="font-size:0.85rem;color:#6B7280;">${item.local}</span>
           </div>
         `);
         markers.addLayer(marker);
@@ -682,6 +707,16 @@ Solicitar Análise Técnica
       });
 
       mapa.addLayer(markers);
+
+      // Legenda: só as categorias que têm ponto no mapa
+      const legenda = document.getElementById('mapaLegenda');
+      [...new Set(operacoes.map(item => item.categoria))].forEach(cat => {
+        const info = categorias[cat] || { nome: cat, cor: '#0B2E6B' };
+        const el = document.createElement('div');
+        el.className = 'legend-item';
+        el.innerHTML = `<span class="legend-dot" style="background:${info.cor};"></span>${info.nome}`;
+        legenda.appendChild(el);
+      });
       if (bounds.length > 0) mapa.fitBounds(bounds, { padding: [50, 50] });
       window.addEventListener('resize', () => mapa.invalidateSize());
     });
