@@ -69,6 +69,36 @@ body {
   background: linear-gradient(90deg, var(--accent) 0%, #e6b450 50%, transparent 100%);
 }
 
+/* Linha de cota (medida de desenho técnico) usada sob títulos */
+.cota {
+  position: relative;
+  width: 140px;
+  height: 12px;
+  margin-top: 1rem;
+  border-left: 2px solid var(--accent);
+  border-right: 2px solid var(--accent);
+}
+.cota::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5px;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* Malha de prancha técnica para heros de fundo azul */
+.malha-tecnica {
+  background:
+    linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px) 0 0 / 120px 120px,
+    linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px) 0 0 / 120px 120px,
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px) 0 0 / 24px 24px,
+    radial-gradient(circle at 78% 30%, rgba(201,146,42,0.10) 0%, transparent 45%),
+    var(--gradient-navy);
+}
+
 /* Em seções de fundo escuro o dourado original já tem bom contraste */
 .mvv .section-tag,
 .conformidade .section-tag,
