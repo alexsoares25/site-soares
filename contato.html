@@ -10,7 +10,13 @@
   <meta property="og:description" content="Mobilize com agilidade, segurança e conformidade. Fale com nosso time especializado.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.soaresservicos.com.br/contato.html">
-  <meta property="og:image" content="https://www.soaresservicos.com.br/assets/logo.png">
+  <meta property="og:image" content="https://www.soaresservicos.com.br/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Soares Serviços — Engenharia técnica para indústria, mineração e projetos residenciais">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Soares Serviços">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://www.soaresservicos.com.br/contato.html">
 
   <script type="application/ld+json">
@@ -431,9 +437,41 @@
       box-shadow: 0 18px 30px -8px rgba(201,146,42,0.6);
     }
 
+    .form-consent {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--slate);
+      margin-bottom: 1.5rem;
+    }
+    .form-consent input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--primary);
+    }
+    .form-consent a { color: var(--primary); font-weight: 600; }
+    .form-honey { position: absolute; left: -9999px; }
+    .form-success {
+      display: none;
+      gap: 0.8rem;
+      align-items: flex-start;
+      background: #ecfdf3;
+      border: 1px solid #a6e9c1;
+      color: #14532d;
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .form-success.show { display: flex; }
+
     .form-note {
       font-size: 0.75rem;
-      color: rgba(51,65,85,0.5);
+      color: #64748b;
       text-align: center;
       margin-top: 1rem;
       line-height: 1.5;
@@ -462,7 +500,7 @@
   <nav>
     <div class="nav-logo">
       <a href="index.html">
-        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação" loading="lazy">
+        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação">
       </a>
     </div>
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
@@ -591,24 +629,31 @@
         <h3>Solicitar Análise Técnica</h3>
         <p class="form-subtitle">Todos os campos são obrigatórios.</p>
 
+        <div class="form-success" id="formSuccess" role="status" tabindex="-1">
+          <span aria-hidden="true">✅</span>
+          <span><strong>Solicitação enviada.</strong> Recebemos seus dados e nossa equipe retornará em até 24 horas úteis.</span>
+        </div>
+
         <form id="contactForm" action="https://formsubmit.co/comercial@soaresservicos.com.br" method="POST">
           <input type="hidden" name="_subject" value="Nova Solicitação — Site Soares Serviços">
           <input type="hidden" name="_captcha" value="true">
           <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://www.soaresservicos.com.br/contato.html?enviado=1#formulario">
+          <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <div class="form-group">
             <label for="nome">Nome Completo</label>
-            <input id="nome" type="text" name="nome" placeholder="Seu nome ou da sua empresa" required>
+            <input id="nome" type="text" name="nome" placeholder="Seu nome ou da sua empresa" autocomplete="name" required>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="email">E-mail Corporativo</label>
-              <input id="email" type="email" name="email" placeholder="email@empresa.com.br" required>
+              <input id="email" type="email" name="email" placeholder="email@empresa.com.br" autocomplete="email" required>
             </div>
             <div class="form-group">
               <label for="telefone">Telefone / WhatsApp</label>
-              <input id="telefone" type="tel" name="telefone" placeholder="(00) 00000-0000" required>
+              <input id="telefone" type="tel" name="telefone" placeholder="(00) 00000-0000" autocomplete="tel" required>
             </div>
           </div>
 
@@ -626,9 +671,13 @@
 
           <div class="form-group">
             <label for="mensagem">Descreva sua Necessidade</label>
-            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Explique brevemente o tipo de mobilização, volume de veículos ou exigências específicas."></textarea>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Explique brevemente o tipo de mobilização, volume de veículos ou exigências específicas." required></textarea>
           </div>
 
+          <label class="form-consent">
+            <input type="checkbox" name="consentimento_lgpd" value="Sim" required>
+            <span>Autorizo o uso dos meus dados para retorno desta solicitação, conforme a <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>.</span>
+          </label>
           <button type="submit" class="btn-submit">Enviar Solicitação</button>
           <p class="form-note">Retorno em até 24 horas úteis. Seus dados são tratados com total confidencialidade.</p>
         </form>
@@ -652,6 +701,7 @@
         <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
         <a href="cliente.html" class="footer-link">Área do Cliente</a>
         <a href="profissional.html" class="footer-link">Área do Profissional</a>
+        <a href="privacidade.html" class="footer-link">Privacidade</a>
       </div>
     </div>
     <p class="footer-copyright">&copy; 2026 Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
@@ -661,37 +711,24 @@
   <script src="https://unpkg.com/lucide@0.474.0"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      // Scroll reveal
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-      // Formulário: WhatsApp + FormSubmit
+      // Formulário: envio por e-mail (FormSubmit). Ao voltar com ?enviado=1, mostra a confirmação.
       const form = document.getElementById('contactForm');
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const nome     = document.getElementById('nome').value;
-        const email    = document.getElementById('email').value;
-        const telefone = document.getElementById('telefone').value;
-        const assunto  = document.getElementById('assunto').value;
-        const mensagem = document.getElementById('mensagem').value;
-
-        const texto =
-          `Nova solicitação pelo site Soares Serviços:%0A%0A` +
-          `Nome: ${encodeURIComponent(nome)}%0A` +
-          `Email: ${encodeURIComponent(email)}%0A` +
-          `Telefone: ${encodeURIComponent(telefone)}%0A` +
-          `Assunto: ${encodeURIComponent(assunto)}%0A` +
-          `Mensagem: ${encodeURIComponent(mensagem)}`;
-
-        window.open(`https://wa.me/5562982736369?text=${texto}`, '_blank');
-        this.submit();
+      if (new URLSearchParams(window.location.search).get('enviado') === '1') {
+        const ok = document.getElementById('formSuccess');
+        ok.classList.add('show');
+        ok.focus();
+      }
+      form.addEventListener('submit', function () {
+        const btn = form.querySelector('.btn-submit');
+        btn.disabled = true;
+        btn.textContent = 'Enviando...';
+      });
+      // Se o visitante voltar para a página pelo botão "voltar", reativa o botão
+      window.addEventListener('pageshow', () => {
+        const btn = form.querySelector('.btn-submit');
+        btn.disabled = false;
+        btn.textContent = 'Enviar Solicitação';
       });
     });
   </script>

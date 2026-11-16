@@ -16,6 +16,7 @@
 :root {
   --primary:       #0B2E6B;
   --accent:        #C9922A;
+  --accent-text:   #8A6212; /* dourado escuro: contraste AA sobre fundo claro */
   --light:         #f8fafc;
   --white:         #ffffff;
   --slate:         #334155;
@@ -44,7 +45,7 @@ body {
   letter-spacing: 2px;
   font-size: 0.9rem;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
   background: rgba(201, 146, 42, 0.1);
   padding: 0.35rem 1rem;
   border-radius: 40px;
@@ -67,6 +68,11 @@ body {
   height: 4px;
   background: linear-gradient(90deg, var(--accent) 0%, #e6b450 50%, transparent 100%);
 }
+
+/* Em seções de fundo escuro o dourado original já tem bom contraste */
+.mvv .section-tag,
+.conformidade .section-tag,
+.cta-section .section-tag { color: var(--accent); }
 
 /* ===== BOTÕES ============================================== */
 .btn-primary {

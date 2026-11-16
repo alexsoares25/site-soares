@@ -10,7 +10,13 @@
   <meta property="og:description" content="Estruturação técnica e controle documental para operações mineradoras de alta exigência.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.soaresservicos.com.br/servicos.html">
-  <meta property="og:image" content="https://www.soaresservicos.com.br/assets/logo.png">
+  <meta property="og:image" content="https://www.soaresservicos.com.br/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Soares Serviços — Engenharia técnica para indústria, mineração e projetos residenciais">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Soares Serviços">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://www.soaresservicos.com.br/servicos.html">
 
   <script type="application/ld+json">
@@ -343,7 +349,7 @@
 
     .eng-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
       gap: 2rem;
     }
 
@@ -575,6 +581,11 @@
       .cta-contact-item { text-align: center; }
       .hero-servicos::after { font-size: 5rem; }
     }
+
+    @media (max-width: 420px) {
+      .stat-glass { min-width: 0; padding: 1.1rem 1rem; }
+      .stat-glass .big { font-size: 1.4rem; }
+    }
   </style>
 </head>
 <body>
@@ -583,7 +594,7 @@
   <nav>
     <div class="nav-logo">
       <a href="index.html">
-        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação" loading="lazy">
+        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação">
       </a>
     </div>
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
@@ -769,8 +780,8 @@
       <button class="btn-primary" onclick="solicitarOrcamento()">
         <i aria-hidden="true" data-lucide="send"></i> Solicitar Orçamento Especial
       </button>
-      <a href="contato.html" class="btn-outline">
-        Acessar Plataforma EAD <i aria-hidden="true" data-lucide="external-link" style="width:14px;height:14px;"></i>
+      <a href="contato.html#formulario" class="btn-outline">
+        Dúvidas sobre os Cursos <i aria-hidden="true" data-lucide="arrow-right" style="width:14px;height:14px;"></i>
       </a>
     </div>
   </section>
@@ -801,7 +812,7 @@
       </div>
       <div class="cta-contact-item">
         <span>Site</span>
-        <a href="https://soaresservicos.com.br">soaresservicos.com.br</a>
+        <a href="https://www.soaresservicos.com.br/">soaresservicos.com.br</a>
       </div>
     </div>
   </section>
@@ -821,6 +832,7 @@
         <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
         <a href="cliente.html" class="footer-link">Área do Cliente</a>
         <a href="profissional.html" class="footer-link">Área do Profissional</a>
+        <a href="privacidade.html" class="footer-link">Privacidade</a>
       </div>
     </div>
     <p class="footer-copyright">&copy; 2026 Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
@@ -829,19 +841,6 @@
   <!-- ===== SCRIPTS ========================================= -->
   <script src="https://unpkg.com/lucide@0.474.0"></script>
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      // Scroll reveal
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    });
 
     // EAD orçamento via WhatsApp
     function solicitarOrcamento() {

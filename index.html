@@ -12,7 +12,13 @@
   <meta property="og:description" content="Consultoria técnica e serviços de engenharia para indústria, mineração e projetos residenciais.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.soaresservicos.com.br/">
-  <meta property="og:image" content="https://www.soaresservicos.com.br/assets/logo.png">
+  <meta property="og:image" content="https://www.soaresservicos.com.br/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Soares Serviços — Engenharia técnica para indústria, mineração e projetos residenciais">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Soares Serviços">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://www.soaresservicos.com.br/">
 
   <script type="application/ld+json">
@@ -20,12 +26,15 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Soares Serviços Consultoria e Locação",
-    "url": "https://soaresservicos.com.br",
-    "logo": "https://soaresservicos.com.br/assets/logo.png",
+    "url": "https://www.soaresservicos.com.br/",
+    "logo": "https://www.soaresservicos.com.br/assets/logo.png",
+    "email": "comercial@soaresservicos.com.br",
+    "taxID": "38.570.390/0001-08",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+55-62-98273-6369",
       "contactType": "customer service",
+      "availableLanguage": "Portuguese",
       "areaServed": "BR"
     }
   }
@@ -41,14 +50,6 @@
 
   <link rel="stylesheet" href="css/shared.css">
   <style>
-    .section-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 800;
-      line-height: 1.1;
-      color: var(--primary);
-      max-width: 700px;
-    }
     .btn-primary.bg-white {
       background: var(--white);
       color: var(--primary);
@@ -91,7 +92,7 @@
 
     .hero h1 {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 4.5rem;
+      font-size: clamp(2.6rem, 7vw, 4.5rem);
       font-weight: 900;
       line-height: 1;
       color: var(--white);
@@ -109,6 +110,7 @@
       opacity: 0.9;
       max-width: 600px;
     }
+    .hero-sub p + p { margin-top: 1rem; }
 
     /* ===== STATS BAR — sem brilho branco nas bordas ===== */
     .stats-bar {
@@ -393,6 +395,9 @@
       .section-title {
         font-size: 2.2rem;
       }
+      .hero { padding: 64px 6% 80px; }
+      .hero .eyebrow { font-size: 0.85rem; letter-spacing: 2px; }
+      .hero-sub { font-size: 1.05rem; margin: 1.5rem 0; }
     }
   </style>
 
@@ -402,7 +407,7 @@
   <nav>
     <div class="nav-logo">
       <a href="index.html">
-        <img src="assets/logo.png" alt="Soares Serviços Consultoria e locação" loading="lazy">
+        <img src="assets/logo.png" alt="Soares Serviços Consultoria e locação">
       </a>
     </div>
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
@@ -421,9 +426,10 @@
     <div class="hero-content">
       <div class="eyebrow">Engenharia Aplicada à Segurança e Conformidade Operacional</div>
       <h1>Engenharia técnica para indústria, <em>mineração</em> e projetos residenciais.</h1>
-      <div class="hero-sub">Oferecemos soluções técnicas para inspeção, regularização e adequação de veículos, estruturas e operações. Atuamos na elaboração de laudos técnicos, adequação de veículos conforme as exigências normativas, avaliações e orientações técnicas para imóveis residenciais, além de cursos de capacitação e atualização para condutores e profissionais do setor.
-
-Nosso trabalho é conduzido com responsabilidade técnica, rigor normativo e foco em garantir segurança, conformidade e eficiência para cada cliente e projeto atendido.</div>
+      <div class="hero-sub">
+        <p>Oferecemos soluções técnicas para inspeção, regularização e adequação de veículos, estruturas e operações. Atuamos na elaboração de laudos técnicos, adequação de veículos conforme as exigências normativas, avaliações e orientações técnicas para imóveis residenciais, além de cursos de capacitação e atualização para condutores e profissionais do setor.</p>
+        <p>Nosso trabalho é conduzido com responsabilidade técnica, rigor normativo e foco em garantir segurança, conformidade e eficiência para cada cliente e projeto atendido.</p>
+      </div>
 <div class="hero-ctas">
 <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20Análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços."
 target="_blank" rel="noopener noreferrer" class="btn-primary">
@@ -587,7 +593,7 @@ Solicitar Análise Técnica
 
   <section class="cta-section">
     <h2 class="section-title text-white mb-3">Entre em contato com nossa equipe técnica.</h2>
-    <p class="cta-lead">Atendemos demandas de engenharia mecânica, projetos para mineração e engenharia residencial. Fale com um de nossos time e receba uma análise técnica da sua necessidade.</p>
+    <p class="cta-lead">Atendemos demandas de engenharia mecânica, projetos para mineração e engenharia residencial. Fale com nossa equipe e receba uma análise técnica da sua necessidade.</p>
     <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista."
       target="_blank" rel="noopener noreferrer" class="btn-primary bg-white text-primary">
       Falar com Especialista
@@ -609,6 +615,7 @@ Solicitar Análise Técnica
         <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
         <a href="cliente.html" class="footer-link">Área do Cliente</a>
         <a href="profissional.html" class="footer-link">Área do Profissional</a>
+        <a href="privacidade.html" class="footer-link">Privacidade</a>
       </div>
     </div>
     <p class="footer-copyright">&copy; 2026 Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
@@ -622,29 +629,21 @@ Solicitar Análise Técnica
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-      const useSafeLabels = true;
+      // Apenas descrições genéricas e coordenadas aproximadas (nível de município):
+      // os nomes dos contratantes não devem aparecer no código público.
       const operacoes = [
-        { official: '', safe: 'Operação Mineradora - Barro Alto (GO)', cityState: 'Barro Alto - GO', coords: [-15.0758491, -48.9445893], type: 'mineração' },
-        { official: '', safe: 'Operação Mineradora - Goiás (GO)', cityState: 'Goiás - GO', coords: [-15.083909, -48.996746], type: 'mineração' },
-        { official: '', safe: 'Operação Mineradora - Alto Horizonte (GO)', cityState: 'Alto Horizonte - GO', coords: [-14.2314156, -49.38223], type: 'mineração' },
-        { official: '', safe: 'Operação Mineradora - Mara Rosa (GO)', cityState: 'Mara Rosa - GO', coords: [-13.9792101, -49.1775253], type: 'mineração' },
-        { official: '', safe: 'Projeto de Mineração - Goiás (GO)', cityState: 'Goiás - GO', coords: [-13.6326251, -46.9855094], type: 'mineração' },
-        { official: '', safe: 'Operação Mineradora - Almas (TO)', cityState: 'Almas - TO', coords: [-11.6988218, -47.1674177], type: 'mineração' },
-        { official: '', safe: 'Unidade de Mineração - MS', cityState: 'Mato Grosso do Sul - MS', coords: [-19.2602249, -57.5284382], type: 'mineração' },
-        { official: '', safe: 'Unidade Industrial - MS', cityState: 'Mato Grosso do Sul - MS', coords: [-19.2938127, -57.5883274], type: 'industrial' },
-        { official: '', safe: 'Unidade Industrial - MG', cityState: 'Minas Gerais - MG', coords: [-19.0655396, -46.7285741], type: 'industrial' },
-        { official: '', safe: 'Unidade Industrial - Uberaba (MG)', cityState: 'Uberaba - MG', coords: [-19.9898017, -47.8806657], type: 'industrial' },
-        { official: '', safe: 'Unidade Industrial - Niquelândia (GO)', cityState: 'Niquelândia - GO', coords: [-14.1567711, -48.340014], type: 'industrial' }
+        { label: 'Operação Mineradora - Barro Alto (GO)', cityState: 'Barro Alto - GO', coords: [-15.1, -48.9], type: 'mineração' },
+        { label: 'Operação Mineradora - Goiás (GO)', cityState: 'Goiás - GO', coords: [-15.1, -49.0], type: 'mineração' },
+        { label: 'Operação Mineradora - Alto Horizonte (GO)', cityState: 'Alto Horizonte - GO', coords: [-14.2, -49.4], type: 'mineração' },
+        { label: 'Operação Mineradora - Mara Rosa (GO)', cityState: 'Mara Rosa - GO', coords: [-14.0, -49.2], type: 'mineração' },
+        { label: 'Projeto de Mineração - Goiás (GO)', cityState: 'Goiás - GO', coords: [-13.6, -47.0], type: 'mineração' },
+        { label: 'Operação Mineradora - Almas (TO)', cityState: 'Almas - TO', coords: [-11.7, -47.2], type: 'mineração' },
+        { label: 'Unidade de Mineração - MS', cityState: 'Mato Grosso do Sul - MS', coords: [-19.3, -57.5], type: 'mineração' },
+        { label: 'Unidade Industrial - MS', cityState: 'Mato Grosso do Sul - MS', coords: [-19.3, -57.6], type: 'industrial' },
+        { label: 'Unidade Industrial - MG', cityState: 'Minas Gerais - MG', coords: [-19.1, -46.7], type: 'industrial' },
+        { label: 'Unidade Industrial - Uberaba (MG)', cityState: 'Uberaba - MG', coords: [-20.0, -47.9], type: 'industrial' },
+        { label: 'Unidade Industrial - Niquelândia (GO)', cityState: 'Niquelândia - GO', coords: [-14.2, -48.3], type: 'industrial' }
       ];
 
       const createIcon = (color) => L.divIcon({
@@ -670,11 +669,10 @@ Solicitar Análise Técnica
 
       const bounds = [];
       operacoes.forEach(item => {
-        const label = useSafeLabels ? item.safe : item.official;
         const icon = item.type === 'mineração' ? iconMineracao : iconIndustrial;
         const marker = L.marker(item.coords, { icon }).bindPopup(`
           <div style="font-family:'Barlow',sans-serif;padding:2px 4px;">
-            <strong style="color:#0B2E6B;">${label}</strong><br>
+            <strong style="color:#0B2E6B;">${item.label}</strong><br>
             <span style="font-size:0.75rem;color:#C9922A;text-transform:uppercase;letter-spacing:0.06em;">${item.type}</span><br>
             <span style="font-size:0.85rem;color:#6B7280;">${item.cityState}</span>
           </div>

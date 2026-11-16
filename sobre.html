@@ -10,7 +10,13 @@
   <meta property="og:description" content="Estruturação técnica e controle documental para operações mineradoras de alta exigência.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.soaresservicos.com.br/sobre.html">
-  <meta property="og:image" content="https://www.soaresservicos.com.br/assets/logo.png">
+  <meta property="og:image" content="https://www.soaresservicos.com.br/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Soares Serviços — Engenharia técnica para indústria, mineração e projetos residenciais">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Soares Serviços">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://www.soaresservicos.com.br/sobre.html">
 
   <script type="application/ld+json">
@@ -444,7 +450,7 @@
   <nav>
     <div class="nav-logo">
       <a href="index.html">
-        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação" loading="lazy">
+        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação">
       </a>
     </div>
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
@@ -622,6 +628,7 @@
         <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
         <a href="cliente.html" class="footer-link">Área do Cliente</a>
         <a href="profissional.html" class="footer-link">Área do Profissional</a>
+        <a href="privacidade.html" class="footer-link">Privacidade</a>
       </div>
     </div>
     <p class="footer-copyright">&copy; 2026 Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
@@ -629,20 +636,6 @@
 
   <!-- ===== SCRIPTS ========================================= -->
   <script src="https://unpkg.com/lucide@0.474.0"></script>
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      // Scroll reveal
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    });
-  </script>
 
   <script src="js/script.js" defer></script>
 </body>

@@ -1,142 +1,161 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
-    <title>Plataforma em Implantação | Soares Serviços</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <title>Plataforma em Implantação | Soares Serviços</title>
+  <meta name="description" content="Plataforma digital da Soares Serviços para clientes e profissionais: documentos técnicos, mobilização e gestão de conformidade. Em implantação.">
+  <meta name="robots" content="noindex, follow">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/shared.css">
-    <script src="https://unpkg.com/lucide@0.474.0"></script>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .construction-container {
+      min-height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 6%;
+    }
 
-    <style>
-        .construction-container {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 100px 6%;
-        }
+    .construction-box {
+      width: 100%;
+      max-width: 800px;
+      background: var(--light);
+      padding: 4rem 3rem;
+      border-top: 6px solid var(--accent);
+      border-radius: 0 0 24px 24px;
+      box-shadow: var(--shadow-soft);
+    }
 
-        .construction-box {
-            max-width: 800px;
-            background: var(--light);
-            padding: 5rem;
-            border-top: 6px solid var(--accent);
-            position: relative;
-        }
+    .construction-icon {
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .construction-icon svg { width: 56px; height: 56px; }
 
-        .construction-icon {
-            color: var(--accent);
-            margin-bottom: 2rem;
-        }
+    .construction-box h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 6vw, 3rem);
+      line-height: 1.1;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
 
-        .construction-box h2 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 3rem;
-            text-transform: uppercase;
-            font-weight: 900;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
+    .construction-box p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--slate);
+      margin-bottom: 2rem;
+    }
 
-        .construction-box p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: var(--slate);
-            margin-bottom: 2rem;
-        }
+    .construction-box .construction-note {
+      font-size: 0.95rem;
+      font-style: italic;
+    }
 
-        .feature-list {
-            text-align: left;
-            display: inline-block;
-            margin-bottom: 3rem;
-        }
+    .feature-list {
+      list-style: none;
+      text-align: left;
+      display: inline-block;
+      margin-bottom: 2.5rem;
+    }
 
-        .feature-list div {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
 
-        .feature-list i {
-            color: var(--accent);
-            width: 20px;
-        }
-    </style>
+    .feature-list svg {
+      color: var(--accent);
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .construction-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      .construction-container { padding: 40px 4%; }
+      .construction-box { padding: 2.5rem 1.25rem; }
+      .construction-box p { font-size: 1rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <nav>
-        <div class="nav-logo">
-            <a href="index.html">
-                <img src="assets/logo.png" alt="Soares Serviços">
-            </a>
-        </div>
-        <div class="nav-links">
-            <a href="index.html">Início</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="servicos.html">Serviços</a>
-            <a href="contato.html">Contato</a>
+  <nav>
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação">
+      </a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="servicos.html#ead">Cursos EAD</a>
+      <a href="contato.html">Contato</a>
+    </div>
+  </nav>
 
-        </div>
-    </nav>
+  <main class="construction-container">
+    <div class="construction-box reveal">
+      <div class="construction-icon"><i aria-hidden="true" data-lucide="lock"></i></div>
+      <h1>Plataforma Digital em Implantação</h1>
+      <p>Estamos estruturando nossa plataforma exclusiva para integração operacional entre clientes, profissionais e gestão técnica. Em breve estarão disponíveis:</p>
 
-    <main class="construction-container">
-        <div class="construction-box fade-up">
-            <div class="construction-icon"><i data-lucide="lock" size="64"></i></div>
-            <h2>Plataforma Digital em Implantação</h2>
-            <p>Estamos estruturando nossa plataforma exclusiva para integração operacional entre clientes, profissionais
-                e gestão técnica. Em breve estarão disponíveis:</p>
+      <ul class="feature-list">
+        <li><i aria-hidden="true" data-lucide="check"></i> Acesso a documentos técnicos</li>
+        <li><i aria-hidden="true" data-lucide="check"></i> Controle de mobilização</li>
+        <li><i aria-hidden="true" data-lucide="check"></i> Gestão de conformidade</li>
+        <li><i aria-hidden="true" data-lucide="check"></i> Relatórios operacionais</li>
+        <li><i aria-hidden="true" data-lucide="check"></i> Ambiente seguro e rastreável</li>
+      </ul>
 
-            <div class="feature-list">
-                <div><i data-lucide="check"></i> Acesso a documentos técnicos</div>
-                <div><i data-lucide="check"></i> Controle de mobilização</div>
-                <div><i data-lucide="check"></i> Gestão de conformidade</div>
-                <div><i data-lucide="check"></i> Relatórios operacionais</div>
-                <div><i data-lucide="check"></i> Ambiente seguro e rastreável</div>
-            </div>
+      <p class="construction-note">Nosso objetivo é integrar engenharia, tecnologia e conformidade em um único ecossistema digital.</p>
 
-            <p class="meta-sm font-italic">Nosso objetivo é integrar Engenharia,
-                Tecnologia e conformidade em um único ecossistema digital.</p>
+      <div class="construction-actions">
+        <a href="index.html" class="btn-primary">Voltar para a Página Inicial</a>
+        <a href="contato.html" class="btn-outline">Falar com a Equipe</a>
+      </div>
+    </div>
+  </main>
 
-            <a href="index.html" class="btn-primary">Voltar para Página Inicial</a>
-        </div>
-    </main>
+  <footer class="footer-main">
+    <div class="footer-top">
+      <address style="font-style:normal;">
+        <h4 style="font-family:'Barlow Condensed',sans-serif;color:var(--accent);letter-spacing:1px;">SOARES SERVIÇOS CONSULTORIA E LOCAÇÃO</h4>
+        <p style="opacity:0.85;">Soares Serviços Consultoria e Locação LTDA</p>
+        <p style="opacity:0.85;">CNPJ 38.570.390/0001-08</p>
+      </address>
+      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1rem;">
+        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
+        <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
+        <a href="privacidade.html" class="footer-link">Privacidade</a>
+      </div>
+    </div>
+    <p class="footer-copyright">&copy; 2026 Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
+  </footer>
 
-    <footer class="footer-construction">
-        <div class="footer-construction-inner">
-            <div>
-                <h4 class="footer-brand-title">SOARES
-                    SERVIÇOS</h4>
-                <p class="footer-meta">Soares Serviços Consultoria e Locação</p>
-                <p class="footer-meta">CNPJ 38.570.390/0001-08</p>
-            </div>
-            <div class="footer-links-row">
-                <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços."
-                    target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
-                <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
-            </div>
-        </div>
-        <p class="footer-copy">&copy; 2026
-            Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="js/script.js"></script>
-    <script>lucide.createIcons();</script>
+  <script src="https://unpkg.com/lucide@0.474.0"></script>
+  <script src="js/script.js" defer></script>
 </body>
-
 </html>
