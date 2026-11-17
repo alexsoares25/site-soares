@@ -9,11 +9,12 @@
  * Copie um bloco { ... } da lista SOARES_PROJETOS e preencha.
  *
  * Campos obrigatórios:
- *   categoria  'residencial' | 'industrial' | 'mineracao'
+ *   categoria  'residencial' | 'institucional' | 'industrial' | 'mineracao'
  *   titulo     nome do projeto como deve aparecer no site
- *   local      cidade e estado
  *
  * Campos opcionais (aparecem na ficha só quando preenchidos):
+ *   local      cidade e estado, por exemplo 'Goianésia - GO'
+ *   area       área do projeto, por exemplo '115 m²'
  *   coords     [latitude, longitude] — coloca o projeto no mapa da home
  *   ano        ano de conclusão
  *   foto       caminho da imagem, por exemplo 'assets/projetos/casa-01.jpg'
@@ -34,7 +35,13 @@ window.SOARES_CATEGORIAS = {
     nome: 'Residencial',
     cor: '#C9922A',
     resumo: 'Projeto, regularização ou acompanhamento técnico de obra residencial.',
-    servicos: ['Projeto', 'Acompanhamento técnico', 'ART']
+    servicos: ['Projeto arquitetônico', 'Projetos complementares', 'ART']
+  },
+  institucional: {
+    nome: 'Institucional',
+    cor: '#4E7A3C',
+    resumo: 'Projeto para órgão público ou equipamento de uso coletivo, com aprovação junto à prefeitura.',
+    servicos: ['Projeto arquitetônico', 'Projetos complementares', 'ART']
   },
   industrial: {
     nome: 'Industrial',
@@ -51,6 +58,51 @@ window.SOARES_CATEGORIAS = {
 };
 
 window.SOARES_PROJETOS = [
+  // ----- Engenharia civil e arquitetura -----
+  {
+    categoria: 'institucional',
+    titulo: 'Praça pública',
+    local: 'Goianésia - GO',
+    coords: [-15.3, -49.1],
+    area: '1.500 m²',
+    resumo: 'Projeto completo de praça pública, da arquitetura aos projetos complementares, para aprovação junto à prefeitura.',
+    servicos: ['Projeto arquitetônico legal', 'Projeto estrutural', 'Instalações elétricas', 'Instalações hidrossanitárias', 'Maquete 3D e renders']
+  },
+  {
+    categoria: 'residencial',
+    titulo: 'Residência em lote estreito',
+    local: 'Caçapava - SP',
+    coords: [-23.1, -45.7],
+    area: '42 m²',
+    resumo: 'Projeto para lote de 3,5 × 12 m, com solução de planta para área reduzida e aprovação municipal.',
+    servicos: ['Projeto arquitetônico legal', 'Projeto estrutural', 'Instalações elétricas', 'Instalações hidrossanitárias']
+  },
+  {
+    categoria: 'residencial',
+    titulo: 'Residência com projetos complementares',
+    // local: preencher a cidade quando confirmada
+    area: '115 m²',
+    resumo: 'Projeto arquitetônico e complementares com emissão de ART e aprovação junto à prefeitura.',
+    servicos: ['Projeto arquitetônico legal', 'Projeto de interiores', 'Projeto estrutural', 'Instalações elétricas', 'Instalações hidrossanitárias']
+  },
+  {
+    categoria: 'residencial',
+    titulo: 'Regularização e acréscimo de área',
+    // local: preencher a cidade quando confirmada
+    area: '238 m²',
+    resumo: 'Regularização de imóvel com acréscimo de área, incluindo os memoriais necessários para aprovação na prefeitura.',
+    servicos: ['Projeto arquitetônico legal', 'Regularização de imóveis', 'Memorial descritivo']
+  },
+  {
+    categoria: 'residencial',
+    titulo: 'Área gourmet e lavanderia',
+    // local: preencher a cidade quando confirmada
+    area: '50 m²',
+    resumo: 'Projeto executivo de ampliação residencial, com renders para visualização antes da obra.',
+    servicos: ['Projeto arquitetônico executivo', 'Renders fotorrealísticos', 'Projeto estrutural', 'Instalações elétricas', 'Instalações hidráulicas e sanitárias']
+  },
+
+  // ----- Indústria e mineração -----
   { categoria: 'mineracao',  titulo: 'Operação Mineradora',  local: 'Barro Alto - GO',        coords: [-15.1, -48.9] },
   { categoria: 'mineracao',  titulo: 'Operação Mineradora',  local: 'Goiás - GO',             coords: [-15.1, -49.0] },
   { categoria: 'mineracao',  titulo: 'Operação Mineradora',  local: 'Alto Horizonte - GO',    coords: [-14.2, -49.4] },

@@ -60,12 +60,15 @@
           <h1>Projetos <em>realizados</em></h1>
           <p class="lead">Operações e projetos concluídos com documentação técnica aprovada, adequação de equipamentos e liberação para operação conforme os requisitos de cada contratante.</p>
         </div>
+        <figure class="prancha">
+          <img src="assets/desenhos/implantacao.svg" alt="Implantação de uma edificação no lote, com recuos e cotas" width="760" height="430" fetchpriority="high">
         <div class="selo" aria-hidden="true">
           <div><span>Assunto</span>Portfólio</div>
           <div><img src="assets/logo-azul.png" alt="" width="774" height="156"></div>
           <div><span>Atendimento</span>Nacional</div>
           <div><span>Folha</span>04/06</div>
         </div>
+        </figure>
       </div>
     </section>
 
@@ -158,7 +161,7 @@
         if (p.foto) {
           const img = el('img', 'projeto-foto');
           img.src = p.foto;
-          img.alt = p.titulo + ' — ' + p.local;
+          img.alt = p.titulo + (p.local ? ' — ' + p.local : '');
           img.loading = 'lazy';
           card.appendChild(img);
         }
@@ -167,10 +170,14 @@
         corpo.appendChild(el('span', 'projeto-cat', cat.nome));
         corpo.appendChild(el('h3', '', p.titulo));
 
-        const local = el('p', 'projeto-local');
-        local.innerHTML = PIN;
-        local.appendChild(document.createTextNode(p.local + (p.ano ? ' · ' + p.ano : '')));
-        corpo.appendChild(local);
+        // Linha de local/área: cada parte só aparece quando preenchida
+        const partes = [p.local, p.area, p.ano].filter(Boolean);
+        if (partes.length) {
+          const local = el('p', 'projeto-local');
+          if (p.local) local.innerHTML = PIN;
+          local.appendChild(document.createTextNode(partes.join(' · ')));
+          corpo.appendChild(local);
+        }
 
         corpo.appendChild(el('p', 'projeto-resumo', p.resumo || cat.resumo || ''));
 
