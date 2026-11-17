@@ -4,15 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="assets/icons/favicon.png">
-  <title>Nossos Serviços | Soares Serviços | Engenharia e Conformidade Mineradora</title>
-  <meta name="description" content="Engenharia aplicada à conformidade para operações mineradoras de alta exigência. Locação de frotas, gestão técnica (NR-22/NR-12) e adequação de veículos com rigor normativo e controle operacional.">
-  <meta property="og:title" content="Nossos Serviços | Soares Serviços">
-  <meta property="og:description" content="Estruturação técnica e controle documental para operações mineradoras de alta exigência.">
+  <title>Serviços | Soares Serviços | Engenharia Civil, Arquitetura e Conformidade Técnica</title>
+  <meta name="description" content="Projetos de arquitetura e engenharia civil, laudos, regularização de imóveis, infraestrutura urbana e conformidade técnica (NR-12/NR-22) para mineração e indústria. Veja o catálogo completo.">
+  <meta property="og:title" content="Serviços | Soares Serviços | Engenharia Civil, Arquitetura e Conformidade Técnica">
+  <meta property="og:description" content="Engenharia civil, arquitetura, laudos, regularização de imóveis e conformidade técnica para mineração e indústria.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.soaresservicos.com.br/servicos.html">
-  <meta property="og:image" content="https://www.soaresservicos.com.br/assets/logo.png">
+  <meta property="og:image" content="https://www.soaresservicos.com.br/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Soares Serviços — Engenharia para obras civis, indústria e mineração">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Soares Serviços">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://www.soaresservicos.com.br/servicos.html">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -24,826 +29,344 @@
   }
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "provider": { "@type": "Organization", "name": "Soares Serviços Consultoria e Locação" },
-    "areaServed": "BR",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Serviços de Engenharia e Locação",
-      "itemListElement": [
-        { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "0", "priceCurrency": "BRL", "description": "Sob consulta" }, "itemOffered": { "@type": "Service", "name": "Adequação de Veículos para Mineração (NR-22)" } },
-        { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "0", "priceCurrency": "BRL", "description": "Sob consulta" }, "itemOffered": { "@type": "Service", "name": "Locação de Frotas Operacionais" } },
-        { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "0", "priceCurrency": "BRL", "description": "Sob consulta" }, "itemOffered": { "@type": "Service", "name": "Plano de Gerenciamento de Pneus" } },
-        { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "0", "priceCurrency": "BRL", "description": "Sob consulta" }, "itemOffered": { "@type": "Service", "name": "Laudo Eletromecânico" } },
-        { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "0", "priceCurrency": "BRL", "description": "Sob consulta" }, "itemOffered": { "@type": "Service", "name": "Plano de Manutenção Preventiva" } },
-        { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "0", "priceCurrency": "BRL", "description": "Sob consulta" }, "itemOffered": { "@type": "Service", "name": "NR 13 – Caldeiras, Vasos de Pressão e Tubulações" } },
-        { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "0", "priceCurrency": "BRL", "description": "Sob consulta" }, "itemOffered": { "@type": "Service", "name": "Cursos EAD de Capacitação Profissional" } }
-      ]
-    }
-  }
-  </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/shared.css">
-  <style>
-    /* ===== RESET & TOKENS ===================================== */
-    /* ===== HERO / INTRO BANNER ================================ */
-    .hero-servicos {
-      position: relative;
-      padding: 110px 6% 90px;
-      background: radial-gradient(circle at 70% 40%, rgba(201,146,42,0.09) 0%, transparent 45%),
-                  var(--gradient-navy);
-      color: var(--white);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      gap: 4rem;
-      flex-wrap: wrap;
-    }
-
-    /* grid animado de fundo */
-    .hero-servicos::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(201,146,42,.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,146,42,.05) 1px, transparent 1px);
-      background-size: 55px 55px;
-      animation: gridMove 24s linear infinite;
-      pointer-events: none;
-    }
-
-    /* palavra fantasma */
-    .hero-servicos::after {
-      content: 'SERVIÇOS';
-      position: absolute;
-      right: 2%;
-      bottom: 3%;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 10rem;
-      font-weight: 900;
-      color: rgba(255,255,255,0.025);
-      pointer-events: none;
-      white-space: nowrap;
-      letter-spacing: 0.04em;
-    }
-    }
-
-    .hero-left {
-      position: relative;
-      z-index: 2;
-      flex: 1;
-      min-width: 280px;
-    }
-    .hero-left h1 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      font-weight: 900;
-      line-height: 0.95;
-      color: var(--white);
-    }
-    .hero-left h1 em {
-      color: var(--accent);
-      font-style: normal;
-      display: block;
-      border-bottom: 3px solid var(--accent);
-    }
-
-    .hero-left p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.8;
-      max-width: 540px;
-      margin-top: 1.5rem;
-    }
-
-    /* stats à direita do hero */
-    .hero-right {
-      position: relative;
-      z-index: 2;
-      flex: 0 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .stat-glass {
-      background: var(--glass-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 1.4rem 1.8rem;
-      min-width: 160px;
-      box-shadow: var(--shadow-glass);
-      transition: 0.3s;
-    }
-    .stat-glass:hover { background: rgba(255,255,255,0.35); }
-
-    .stat-glass .big {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: var(--accent);
-      line-height: 1;
-    }
-    .stat-glass .label {
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      margin-top: 0.3rem;
-    }
-
-    /* barra divisória dourada */
-    /* ===== CONFORMIDADE ======================================= */
-    .conformidade {
-      background: var(--gradient-navy);
-      padding: 90px 6%;
-      color: var(--white);
-    }
-
-    .conf-grid {
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .conf-body {
-      color: rgba(255,255,255,0.7);
-      line-height: 1.8;
-      margin: 1.5rem 0 2rem;
-      max-width: 540px;
-    }
-
-    .conf-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .conf-item {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      font-size: 0.93rem;
-      color: rgba(255,255,255,0.8);
-    }
-
-    .conf-check {
-      width: 24px;
-      height: 24px;
-      flex-shrink: 0;
-      background: var(--gradient-gold);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 900;
-      color: var(--primary);
-    }
-
-    /* card de selo */
-    .conf-seal {
-      background: var(--glass-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--glass-border);
-      border-radius: 28px;
-      padding: 3rem 2.5rem;
-      text-align: center;
-      box-shadow: var(--shadow-glass);
-    }
-
-    .conf-big-num {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 5.5rem;
-      font-weight: 900;
-      color: var(--accent);
-      line-height: 1;
-    }
-
-    .conf-seal-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.6);
-      margin: 0.5rem 0 1.5rem;
-    }
-
-    .conf-gold-rule {
-      width: 50px;
-      height: 3px;
-      background: var(--accent);
-      margin: 0 auto 1.5rem;
-      border-radius: 2px;
-    }
-
-    .conf-note {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.7;
-    }
-
-    /* ===== POR QUE ESCOLHER ================================== */
-    .por-que {
-      padding: 90px 6%;
-      background: var(--light);
-    }
-
-    .pq-intro {
-      max-width: 640px;
-      margin: 1rem 0 3rem;
-      color: var(--slate);
-      line-height: 1.8;
-    }
-
-    .pq-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .pq-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 2rem 1.8rem;
-      box-shadow: var(--shadow-soft);
-      transition: 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .pq-card::before {
-      content: '✔';
-      position: absolute;
-      bottom: -18px;
-      right: 8px;
-      font-size: 7rem;
-      color: var(--primary);
-      opacity: 0.03;
-      pointer-events: none;
-    }
-    .pq-card:hover {
-      transform: translateY(-8px);
-      background: rgba(255,255,255,0.45);
-    }
-
-    .pq-icon {
-      width: 52px;
-      height: 52px;
-      background: var(--gradient-gold);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.2rem;
-      box-shadow: 0 8px 18px -4px rgba(201,146,42,0.4);
-    }
-    .pq-icon svg { width: 24px; height: 24px; stroke-width: 1.5; color: var(--primary); }
-
-    .pq-card h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 0.7rem;
-    }
-    .pq-card p {
-      font-size: 0.93rem;
-      color: var(--slate);
-      line-height: 1.7;
-    }
-
-    /* ===== ENGENHARIA CIVIL & MECÂNICA ======================= */
-    .engenharia {
-      padding: 90px 6%;
-      background: var(--white);
-    }
-
-    .eng-intro {
-      max-width: 720px;
-      margin: 1rem 0 3rem;
-      color: var(--slate);
-      line-height: 1.8;
-    }
-
-    .eng-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2rem;
-    }
-
-    .eng-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 2.5rem;
-      box-shadow: var(--shadow-soft);
-      border-top: 4px solid var(--accent);
-      transition: 0.3s;
-    }
-    .eng-card:hover {
-      transform: translateY(-6px);
-      background: rgba(255,255,255,0.45);
-    }
-
-    .eng-card-icon {
-      width: 54px;
-      height: 54px;
-      background: var(--gradient-gold);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.4rem;
-      box-shadow: 0 8px 18px -4px rgba(201,146,42,0.4);
-    }
-    .eng-card-icon svg { width: 26px; height: 26px; stroke-width: 1.5; color: var(--primary); }
-
-    .eng-card h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.55rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 1.2rem;
-    }
-
-    .eng-list {
-      list-style: none;
-      padding: 0;
-    }
-    .eng-list li {
-      position: relative;
-      padding-left: 1.4rem;
-      margin-bottom: 0.75rem;
-      font-size: 0.95rem;
-      color: var(--slate);
-      line-height: 1.5;
-    }
-    .eng-list li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 900;
-    }
-
-    /* ===== CURSOS EAD ======================================== */
-    .ead-section {
-      padding: 90px 6%;
-      background: var(--gray-soft);
-    }
-
-    .ead-intro {
-      max-width: 640px;
-      margin: 1rem 0 2.5rem;
-      color: var(--slate);
-      line-height: 1.8;
-    }
-
-    .ead-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .ead-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 2rem;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .ead-card h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      border-bottom: 2px solid rgba(201,146,42,0.3);
-      padding-bottom: 0.7rem;
-      margin-bottom: 1.2rem;
-    }
-    .ead-card h3 svg { width: 18px; height: 18px; color: var(--accent); stroke-width: 2; }
-
-    .course-list {
-      list-style: none;
-      padding: 0;
-    }
-    .course-list li { margin-bottom: 0.7rem; }
-    .course-list label {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-size: 0.93rem;
-      color: var(--slate);
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-    .course-list label:hover { color: var(--primary); }
-    .course-list input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
-      accent-color: var(--accent);
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    .ead-actions {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    /* ===== CTA FINAL ========================================= */
-    .cta-final {
-      background: var(--gradient-navy);
-      color: var(--white);
-      text-align: center;
-      padding: 100px 6%;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-final::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(201,146,42,0.1), transparent 70%);
-      pointer-events: none;
-    }
-
-    .cta-final .section-title {
-      color: var(--white);
-      position: relative;
-      max-width: 100%;
-    }
-    .cta-final
-    .cta-lead {
-      max-width: 600px;
-      margin: 1.5rem auto 2.5rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.7;
-      position: relative;
-    }
-
-    .cta-btns {
-      display: flex;
-      gap: 1.2rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      position: relative;
-    }
-
-    .cta-contact {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 3rem;
-      margin-top: 4rem;
-      position: relative;
-    }
-
-    .cta-contact-item {
-      background: var(--glass-bg);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--glass-border);
-      border-radius: 18px;
-      padding: 1.4rem 2rem;
-      text-align: left;
-      flex: 1;
-      min-width: 220px;
-      max-width: 320px;
-      box-shadow: var(--shadow-glass);
-    }
-    .cta-contact-item span {
-      display: block;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--accent);
-      margin-bottom: 0.4rem;
-    }
-    .cta-contact-item a {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      word-break: break-word;
-      transition: 0.2s;
-    }
-    .cta-contact-item a:hover { color: var(--accent); }
-    /* ===== REVEAL ANIMATIONS ================================= */
-    /* ===== RESPONSIVE ======================================== */
-    @media (max-width: 900px) {
-      .conf-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .hero-right { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-      .hero-servicos { flex-direction: column; }
-      .hero-right { grid-template-columns: 1fr 1fr; width: 100%; }
-      .section-title { font-size: 2.2rem; }
-      .conf-list { grid-template-columns: 1fr; }
-      .cta-contact { flex-direction: column; align-items: center; }
-      .cta-contact-item { text-align: center; }
-      .hero-servicos::after { font-size: 5rem; }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- ===== NAV ============================================== -->
-  <nav>
-    <div class="nav-logo">
-      <a href="index.html">
-        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação" loading="lazy">
-      </a>
-    </div>
+  <nav aria-label="Principal">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/logo-azul.png" alt="Soares Serviços Consultoria e Locação" width="774" height="156">
+    </a>
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
     <div class="nav-links" id="nav-links">
       <a href="index.html">Início</a>
       <a href="sobre.html">Sobre</a>
-      <a href="servicos.html" class="active">Serviços</a>
-      <a href="#ead">Cursos EAD</a>
+      <a href="servicos.html" class="active" aria-current="page">Serviços</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="servicos.html#ead">Cursos EAD</a>
       <a href="contato.html">Contato</a>
+      <a class="nav-cta" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20t%C3%A9cnica%20e%20proposta%20comercial%20junto%20%C3%A0%20Soares%20Servi%C3%A7os." target="_blank" rel="noopener noreferrer">Orçamento</a>
     </div>
   </nav>
 
   <main>
-
-  <!-- ===== HERO ============================================= -->
-  <section class="hero-servicos">
-    <div class="hero-left">
-      <div class="hero-eyebrow">Engenharia Contratual &amp; Conformidade</div>
-      <h1>Nossos<br><em>Serviços</em></h1>
-      <p>Engenharia aplicada à conformidade para operações mineradoras de alta exigência. Atendimento integral às NRs e requisitos de grandes contratantes do setor mineral.</p>
-    </div>
-    <div class="hero-right">
-      <div class="stat-glass">
-        <div class="big">Rigor</div>
-        <div class="label">Normativo</div>
-      </div>
-      <div class="stat-glass">
-        <div class="big">Controle</div>
-        <div class="label">Operacional</div>
-      </div>
-      <div class="stat-glass">
-        <div class="big">Gestão</div>
-        <div class="label">Documental</div>
-      </div>
-      <div class="stat-glass">
-        <div class="big">Mitigação</div>
-        <div class="label">De Risco</div>
-      </div>
-    </div>
-  </section>
-
-  <div class="gold-divider"></div>
-
-  <!-- ===== CONFORMIDADE ===================================== -->
-  <section class="conformidade" id="conformidade">
-    <div class="conf-grid reveal">
-      <div>
-        <span class="section-tag">Aprovação Corporativa</span>
-        <h2 class="section-title white">Conformidade Técnica Aprovada</h2>
-        <p class="conf-body">Documentação aprovada em processos de credenciamento junto a grandes operações industriais e mineradoras em todo o Brasil, com registros rastreáveis e dossiês auditáveis.</p>
-        <div class="conf-list">
-          <div class="conf-item"><div class="conf-check">✓</div><span>Plano de Gerenciamento de Pneus</span></div>
-          <div class="conf-item"><div class="conf-check">✓</div><span>Concessão do Condutor ou Operador</span></div>
-          <div class="conf-item"><div class="conf-check">✓</div><span>Laudo de Cronotacógrafo</span></div>
-          <div class="conf-item"><div class="conf-check">✓</div><span>Laudo Eletromecânico</span></div>
-          <div class="conf-item"><div class="conf-check">✓</div><span>Laudo Estrutural de Ônibus e Micro-ônibus</span></div>
-          <div class="conf-item"><div class="conf-check">✓</div><span>Plano de Manutenção Preventiva</span></div>
-          <div class="conf-item"><div class="conf-check">✓</div><span>NR 13 validada em diversas mineradoras</span></div>
+    <section class="hero">
+      <div class="hero-grade">
+        <div>
+          <span class="rotulo">Catálogo de serviços</span>
+          <h1>Nossos <em>serviços</em></h1>
+          <p class="lead">Projetos de engenharia civil e arquitetura, laudos e regularização de imóveis, além de engenharia aplicada à conformidade para operações mineradoras de alta exigência.</p>
+        </div>
+        <div>
+          <figure class="prancha" style="margin-bottom:2.25rem;">
+            <img src="assets/desenhos/fachada.svg" alt="Desenho de fachada de uma casa de dois pavimentos" width="820" height="430" fetchpriority="high">
+          </figure>
+          <span class="rotulo azul">Nesta página</span>
+          <div class="linhas" style="margin-bottom:1.75rem;">
+            <a href="#catalogo"><span class="cod">01</span><span>Engenharia civil e arquitetura</span><span class="ir" aria-hidden="true">↓</span></a>
+            <a href="#conformidade"><span class="cod">02</span><span>Mineração e conformidade</span><span class="ir" aria-hidden="true">↓</span></a>
+            <a href="#engenharia"><span class="cod">03</span><span>Engenharia civil e mecânica</span><span class="ir" aria-hidden="true">↓</span></a>
+            <a href="#ead"><span class="cod">04</span><span>Cursos em EAD</span><span class="ir" aria-hidden="true">↓</span></a>
+          </div>
+        <div class="selo" aria-hidden="true">
+          <div><span>Assunto</span>Serviços</div>
+          <div><img src="assets/logo-azul.png" alt="" width="774" height="156"></div>
+          <div><span>Atendimento</span>Nacional</div>
+          <div><span>Folha</span>03/06</div>
+        </div>
         </div>
       </div>
-      <div class="conf-seal">
-        <div class="conf-big-num">7+</div>
-        <div class="conf-seal-label">Tipos de Documentos<br>com Aprovação Corporativa</div>
-        <div class="conf-gold-rule"></div>
-        <p class="conf-note">Aprovação não é consequência.<br>É parte da nossa estrutura operacional.<br><br>Controle, rastreabilidade e padronização em cada processo, garantindo segurança jurídica para seus clientes.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== POR QUE ESCOLHER ================================ -->
-  <section class="por-que" id="diferenciais">
-    <span class="section-tag">Prova de Valor</span>
-    <h2 class="section-title">Por que grandes operações<br>escolhem a Soares?</h2>
-    <p class="pq-intro">Não vendemos promessas. Entregamos estrutura documental auditável, validada em operações de alta exigência no setor mineral.</p>
-    <div class="pq-grid">
-      <div class="pq-card reveal">
-        <div class="pq-icon"><i aria-hidden="true" data-lucide="shield-check"></i></div>
-        <h3>Conformidade validada em operações mineradoras</h3>
-        <p>Documentação aprovada em processos de credenciamento junto a grandes operações industriais em todo o Brasil, com registros rastreáveis.</p>
+    <section class="sec" id="catalogo">
+      <header class="sec-topo">
+        <span class="rotulo">01 · Engenharia civil e arquitetura</span>
+        <h2>Engenharia civil, arquitetura e <em>soluções técnicas</em></h2>
+        <p class="lead">Do estudo preliminar à regularização do imóvel. Veja o que fazemos em cada frente e o que você recebe ao final.</p>
+      </header>
+      <div class="grade c3">
+        <article class="reveal" id="catalogo-1" style="scroll-margin-top:96px;">
+          <span class="cod">ARQ · 01</span>
+          <h3>Arquitetura e projetos</h3>
+          <p class="recebe"><strong>Você recebe:</strong> Projeto legal e executivo, detalhamentos e imagens 3D para você visualizar o resultado antes da obra.</p>
+          <ul class="lista">
+            <li>Estudo preliminar e anteprojeto</li>
+            <li>Projeto arquitetônico legal e executivo</li>
+            <li>Projeto de reforma</li>
+            <li>Projeto de interiores e interiores por ambiente</li>
+            <li>Detalhamento de forro e piso</li>
+            <li>Projeto de paisagismo</li>
+            <li>Projeto de acessibilidade</li>
+            <li>Projeto luminotécnico e de iluminação</li>
+            <li>Maquete eletrônica 3D, renders e tour virtual 360°</li>
+          </ul>
+          <a class="seta" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20arquitetura%20e%20projetos." target="_blank" rel="noopener noreferrer">Pedir orçamento →</a>
+        </article>
+        <article class="reveal" id="catalogo-2" style="scroll-margin-top:96px;">
+          <span class="cod">CMP · 02</span>
+          <h3>Projetos complementares</h3>
+          <p class="recebe"><strong>Você recebe:</strong> Os projetos de estrutura, instalações e segurança de que a obra precisa, com um único responsável.</p>
+          <ul class="lista">
+            <li>Projeto estrutural</li>
+            <li>Fundações e contenções</li>
+            <li>Instalações elétricas e hidrossanitárias</li>
+            <li>Drenagem predial e pluvial</li>
+            <li>SPDA e aterramento</li>
+            <li>Climatização</li>
+            <li>PPCI — prevenção e combate a incêndio</li>
+            <li>Rede lógica e telecomunicações</li>
+            <li>Piscinas</li>
+            <li>Terraplanagem e pavimentação</li>
+            <li>Sinalização e comunicação visual</li>
+          </ul>
+          <a class="seta" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20projetos%20complementares." target="_blank" rel="noopener noreferrer">Pedir orçamento →</a>
+        </article>
+        <article class="reveal" id="catalogo-3" style="scroll-margin-top:96px;">
+          <span class="cod">LAU · 03</span>
+          <h3>Laudos, levantamentos e acompanhamento técnico</h3>
+          <p class="recebe"><strong>Você recebe:</strong> Laudo ou relatório técnico com memorial descritivo, quantitativos e ART quando aplicável.</p>
+          <ul class="lista">
+            <li>Laudo técnico estrutural</li>
+            <li>Laudo de avaliação de imóveis</li>
+            <li>Vistorias e visitas técnicas</li>
+            <li>Levantamento “as built”</li>
+            <li>Levantamento topográfico</li>
+            <li>Sondagem de solo</li>
+            <li>Memorial descritivo</li>
+            <li>Quantitativos de materiais</li>
+            <li>Correção de projetos</li>
+            <li>Consultoria BIM</li>
+            <li>Gerenciamento de obras</li>
+            <li>ART — Anotação de Responsabilidade Técnica</li>
+          </ul>
+          <a class="seta" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20laudos%2C%20levantamentos%20e%20acompanhamento%20t%C3%A9cnico." target="_blank" rel="noopener noreferrer">Pedir orçamento →</a>
+        </article>
+        <article class="reveal" id="catalogo-4" style="scroll-margin-top:96px;">
+          <span class="cod">REG · 04</span>
+          <h3>Regularização de imóveis e aprovações</h3>
+          <p class="recebe"><strong>Você recebe:</strong> O projeto e a documentação técnica para os processos de aprovação municipal, averbação e regularização.</p>
+          <ul class="lista">
+            <li>Regularização de imóveis</li>
+            <li>Projeto arquitetônico para aprovação municipal</li>
+            <li>Averbação de construção</li>
+            <li>Desdobro e remembramento de lotes</li>
+            <li>Projetos urbanísticos</li>
+            <li>Processos relacionados à vigilância sanitária</li>
+            <li>REURB — regularização fundiária urbana</li>
+          </ul>
+          <a class="seta" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20regulariza%C3%A7%C3%A3o%20de%20im%C3%B3veis%20e%20aprova%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">Pedir orçamento →</a>
+        </article>
+        <article class="reveal" id="catalogo-5" style="scroll-margin-top:96px;">
+          <span class="cod">INF · 05</span>
+          <h3>Infraestrutura urbana</h3>
+          <p class="recebe"><strong>Você recebe:</strong> Projetos de infraestrutura para loteamentos e áreas urbanas, do arruamento às redes.</p>
+          <ul class="lista">
+            <li>Drenagem urbana</li>
+            <li>Redes de água e esgoto</li>
+            <li>Iluminação pública</li>
+            <li>Terraplanagem e arruamento</li>
+            <li>CFTV e videomonitoramento</li>
+            <li>Licenciamento ambiental</li>
+          </ul>
+          <a class="seta" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20infraestrutura%20urbana." target="_blank" rel="noopener noreferrer">Pedir orçamento →</a>
+        </article>
+        <article class="reveal" id="catalogo-6" style="scroll-margin-top:96px;">
+          <span class="cod">SST · 06</span>
+          <h3>Segurança do trabalho e conformidade técnica</h3>
+          <p class="recebe"><strong>Você recebe:</strong> Programas e laudos de segurança do trabalho e apoio para atender às normas regulamentadoras.</p>
+          <ul class="lista">
+            <li>PGR e LTCAT</li>
+            <li>Serviços relacionados às NRs 06, 10, 18, 20 e 35</li>
+            <li>Avaliação de opacidade veicular pela Escala de Ringelmann</li>
+          </ul>
+          <a class="seta" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20seguran%C3%A7a%20do%20trabalho%20e%20conformidade%20t%C3%A9cnica." target="_blank" rel="noopener noreferrer">Pedir orçamento →</a>
+        </article>
       </div>
-      <div class="pq-card reveal">
-        <div class="pq-icon"><i aria-hidden="true" data-lucide="folder-check"></i></div>
-        <h3>Estrutura documental auditável</h3>
-        <p>Cada entrega é acompanhada de dossiê técnico completo: laudos, ARTs, planos e registros prontos para auditorias contratuais internas e externas.</p>
-      </div>
-      <div class="pq-card reveal">
-        <div class="pq-icon"><i aria-hidden="true" data-lucide="trending-down"></i></div>
-        <h3>Redução de risco contratual</h3>
-        <p>Nossa metodologia identifica e trata antecipadamente as não conformidades que geram bloqueio de acesso, penalidades contratuais e paralisação de frota.</p>
-      </div>
-      <div class="pq-card reveal">
-        <div class="pq-icon"><i aria-hidden="true" data-lucide="users"></i></div>
-        <h3>Atendimento técnico especializado</h3>
-        <p>Equipe com conhecimento aprofundado das NRs e requisitos específicos dos grandes contratantes do segmento mineral. Suporte direto, sem intermediários.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== ENGENHARIA CIVIL & MECÂNICA ===================== -->
-  <section class="engenharia" id="engenharia">
-    <span class="section-tag">Estrutura Técnica</span>
-    <h2 class="section-title">Engenharia Civil &amp; Engenharia Mecânica</h2>
-    <p class="eng-intro">Base técnica estruturada para suporte às operações mineradoras, integrando responsabilidade técnica, análise estrutural e controle mecânico com foco em conformidade normativa e mitigação de risco contratual.</p>
-    <div class="eng-grid">
-      <div class="eng-card reveal">
-        <div class="eng-card-icon"><i aria-hidden="true" data-lucide="home"></i></div>
-        <h3>Engenharia Civil</h3>
-        <ul class="eng-list">
-          <li>Análise estrutural de bases operacionais</li>
-          <li>Adequação de infraestrutura conforme NRs</li>
-          <li>Emissão de ART e responsabilidade técnica</li>
-          <li>Laudos estruturais técnicos</li>
-          <li>Compatibilização técnica com exigências contratuais</li>
-          <li>Gestão documental aplicada a obras e operações</li>
+    <section class="faixa" id="conformidade">
+      <div class="duas iguais">
+        <div>
+          <header class="sec-topo">
+            <span class="rotulo">02 · Mineração e conformidade</span>
+            <h2>Conformidade técnica aprovada</h2>
+            <p class="lead">Documentação aprovada em processos de credenciamento junto a grandes operações industriais e mineradoras em todo o Brasil, com registros rastreáveis e dossiês auditáveis.</p>
+          </header>
+          <p class="destaque"><span>7+</span>tipos de documentos com aprovação corporativa. Aprovação não é consequência: é parte da nossa estrutura operacional.</p>
+        </div>
+        <ul class="lista">
+          <li>Plano de Gerenciamento de Pneus</li>
+          <li>Concessão do Condutor ou Operador</li>
+          <li>Laudo de Cronotacógrafo</li>
+          <li>Laudo Eletromecânico</li>
+          <li>Laudo Estrutural de Ônibus e Micro-ônibus</li>
+          <li>Plano de Manutenção Preventiva</li>
+          <li>NR 13 validada em diversas mineradoras</li>
         </ul>
       </div>
-      <div class="eng-card reveal">
-        <div class="eng-card-icon"><i aria-hidden="true" data-lucide="settings"></i></div>
-        <h3>Engenharia Mecânica</h3>
-        <ul class="eng-list">
-          <li>Laudos eletromecânicos de veículos e equipamentos</li>
-          <li>Análise técnica de sistemas mecânicos</li>
-          <li>Plano de manutenção preventiva estruturado</li>
-          <li>Gestão técnica de pneus e componentes críticos</li>
-          <li>Inspeção conforme NR-12 e NR-22</li>
-          <li>Rastreabilidade técnica operacional</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== CURSOS EAD ====================================== -->
-  <section class="ead-section" id="ead">
-    <span class="section-tag">Capacitação Profissional</span>
-    <h2 class="section-title">Cursos em EAD</h2>
-    <p class="ead-intro">Selecione os cursos de seu interesse para um orçamento personalizado ou acesse nossa plataforma. Flexibilidade de horário para equipes e empresas.</p>
-
-    <div class="ead-grid">
-      <div class="ead-card reveal">
-        <h3><i aria-hidden="true" data-lucide="refresh-cw"></i> Atualização</h3>
-        <ul class="course-list" data-category="Atualização">
-          <li><label><input type="checkbox" value="Atualização Cargas Indivisíveis"> Cargas Indivisíveis</label></li>
-          <li><label><input type="checkbox" value="Atualização Coletivo de Passageiros"> Coletivo de Passageiros</label></li>
-          <li><label><input type="checkbox" value="Atualização Produtos Perigosos"> Produtos Perigosos</label></li>
-          <li><label><input type="checkbox" value="Atualização Transporte de Emergência"> Transporte de Emergência</label></li>
-          <li><label><input type="checkbox" value="Atualização Transporte Escolar"> Transporte Escolar</label></li>
-          <li><label><input type="checkbox" value="Atualização Renovação CNH"> Renovação CNH</label></li>
-        </ul>
+    <section class="sec areia" id="diferenciais">
+      <header class="sec-topo">
+        <span class="rotulo">Prova de valor</span>
+        <h2>Por que grandes operações escolhem a Soares?</h2>
+        <p class="lead">Não vendemos promessas. Entregamos estrutura documental auditável, validada em operações de alta exigência no setor mineral.</p>
+      </header>
+      <div class="grade c2">
+        <div class="reveal">
+          <h3>Conformidade validada em operações mineradoras</h3>
+          <p>Documentação aprovada em processos de credenciamento junto a grandes operações industriais em todo o Brasil, com registros rastreáveis.</p>
+        </div>
+        <div class="reveal">
+          <h3>Estrutura documental auditável</h3>
+          <p>Cada entrega é acompanhada de dossiê técnico completo: laudos, ARTs, planos e registros prontos para auditorias contratuais internas e externas.</p>
+        </div>
+        <div class="reveal">
+          <h3>Redução de risco contratual</h3>
+          <p>Nossa metodologia identifica e trata antecipadamente as não conformidades que geram bloqueio de acesso, penalidades contratuais e paralisação de frota.</p>
+        </div>
+        <div class="reveal">
+          <h3>Atendimento técnico especializado</h3>
+          <p>Equipe com conhecimento aprofundado das NRs e requisitos específicos dos grandes contratantes do segmento mineral. Suporte direto, sem intermediários.</p>
+        </div>
       </div>
+    </section>
 
-      <div class="ead-card reveal">
-        <h3><i aria-hidden="true" data-lucide="rotate-ccw"></i> Reciclagem</h3>
-        <ul class="course-list" data-category="Reciclagem">
-          <li><label><input type="checkbox" value="Reciclagem Infrator"> Reciclagem para Condutores Infratores</label></li>
-          <li><label><input type="checkbox" value="Reciclagem Preventiva"> Reciclagem Preventiva</label></li>
-        </ul>
+    <section class="sec" id="engenharia">
+      <header class="sec-topo">
+        <span class="rotulo">03 · Estrutura técnica</span>
+        <h2>Engenharia civil e engenharia mecânica</h2>
+        <p class="lead">Base técnica estruturada para suporte às operações mineradoras, integrando responsabilidade técnica, análise estrutural e controle mecânico com foco em conformidade normativa e mitigação de risco contratual.</p>
+      </header>
+      <div class="grade c2">
+        <div>
+          <span class="cod">CIV</span>
+          <h3>Engenharia civil</h3>
+          <ul class="lista">
+            <li>Análise estrutural de bases operacionais</li>
+            <li>Adequação de infraestrutura conforme NRs</li>
+            <li>Emissão de ART e responsabilidade técnica</li>
+            <li>Laudos estruturais técnicos</li>
+            <li>Compatibilização técnica com exigências contratuais</li>
+            <li>Gestão documental aplicada a obras e operações</li>
+          </ul>
+        </div>
+        <div>
+          <span class="cod">MEC</span>
+          <h3>Engenharia mecânica</h3>
+          <ul class="lista">
+            <li>Laudos eletromecânicos de veículos e equipamentos</li>
+            <li>Análise técnica de sistemas mecânicos</li>
+            <li>Plano de manutenção preventiva estruturado</li>
+            <li>Gestão técnica de pneus e componentes críticos</li>
+            <li>Inspeção conforme NR-12 e NR-22</li>
+            <li>Rastreabilidade técnica operacional</li>
+          </ul>
+        </div>
       </div>
+    </section>
 
-      <div class="ead-card reveal">
-        <h3><i aria-hidden="true" data-lucide="graduation-cap"></i> Formação</h3>
-        <ul class="course-list" data-category="Formação">
-          <li><label><input type="checkbox" value="Formação Coletivo de Passageiros"> Coletivo de Passageiros</label></li>
-          <li><label><input type="checkbox" value="Formação Cargas Indivisíveis"> Cargas Indivisíveis</label></li>
-          <li><label><input type="checkbox" value="Formação Transporte de Emergência"> Transporte de Emergência</label></li>
-          <li><label><input type="checkbox" value="Formação Produtos Perigosos"> Produtos Perigosos</label></li>
-          <li><label><input type="checkbox" value="Formação Transporte Escolar"> Transporte Escolar</label></li>
-        </ul>
+    <section class="sec azulada" id="ead" style="scroll-margin-top:72px;">
+      <header class="sec-topo">
+        <span class="rotulo">04 · Capacitação profissional</span>
+        <h2>Cursos em EAD</h2>
+        <p class="lead">Selecione os cursos de seu interesse para um orçamento personalizado. Flexibilidade de horário para equipes e empresas.</p>
+      </header>
+      <div class="grade c4">
+        <div>
+          <h3>Atualização</h3>
+          <ul class="opcoes course-list" data-category="Atualização">
+            <li><label><input type="checkbox" value="Atualização Cargas Indivisíveis"> Cargas Indivisíveis</label></li>
+            <li><label><input type="checkbox" value="Atualização Coletivo de Passageiros"> Coletivo de Passageiros</label></li>
+            <li><label><input type="checkbox" value="Atualização Produtos Perigosos"> Produtos Perigosos</label></li>
+            <li><label><input type="checkbox" value="Atualização Transporte de Emergência"> Transporte de Emergência</label></li>
+            <li><label><input type="checkbox" value="Atualização Transporte Escolar"> Transporte Escolar</label></li>
+            <li><label><input type="checkbox" value="Atualização Renovação CNH"> Renovação CNH</label></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Reciclagem</h3>
+          <ul class="opcoes course-list" data-category="Reciclagem">
+            <li><label><input type="checkbox" value="Reciclagem Infrator"> Reciclagem para Condutores Infratores</label></li>
+            <li><label><input type="checkbox" value="Reciclagem Preventiva"> Reciclagem Preventiva</label></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Formação</h3>
+          <ul class="opcoes course-list" data-category="Formação">
+            <li><label><input type="checkbox" value="Formação Coletivo de Passageiros"> Coletivo de Passageiros</label></li>
+            <li><label><input type="checkbox" value="Formação Cargas Indivisíveis"> Cargas Indivisíveis</label></li>
+            <li><label><input type="checkbox" value="Formação Transporte de Emergência"> Transporte de Emergência</label></li>
+            <li><label><input type="checkbox" value="Formação Produtos Perigosos"> Produtos Perigosos</label></li>
+            <li><label><input type="checkbox" value="Formação Transporte Escolar"> Transporte Escolar</label></li>
+          </ul>
+        </div>
+        <div>
+          <h3>NRs e especializações</h3>
+          <ul class="opcoes course-list" data-category="NRs">
+            <li><label><input type="checkbox" value="NR 20 (Básico/Interm/Avançado)"> NR 20 (Básico, Interm., Avançado)</label></li>
+            <li><label><input type="checkbox" value="NR 17 Ergonomia"> NR 17 - Ergonomia</label></li>
+            <li><label><input type="checkbox" value="NR 35 Trabalho em Altura"> NR 35 - Trabalho em Altura</label></li>
+            <li><label><input type="checkbox" value="Monitor de Transporte Escolar"> Monitor de Transporte Escolar</label></li>
+            <li><label><input type="checkbox" value="Direção Defensiva"> Direção Defensiva</label></li>
+          </ul>
+        </div>
       </div>
+      <div class="acoes" style="margin-top:2rem;">
+        <button class="btn" type="button" onclick="solicitarOrcamento()">Solicitar orçamento dos cursos <span aria-hidden="true">→</span></button>
+        <a class="seta" href="contato.html#formulario">Dúvidas sobre os cursos</a>
+      </div>
+    </section>
 
-      <div class="ead-card reveal">
-        <h3><i aria-hidden="true" data-lucide="shield"></i> NRs e Especializações</h3>
-        <ul class="course-list" data-category="NRs">
-          <li><label><input type="checkbox" value="NR 20 (Básico/Interm/Avançado)"> NR 20 (Básico, Interm., Avançado)</label></li>
-          <li><label><input type="checkbox" value="NR 17 Ergonomia"> NR 17 - Ergonomia</label></li>
-          <li><label><input type="checkbox" value="NR 35 Trabalho em Altura"> NR 35 - Trabalho em Altura</label></li>
-          <li><label><input type="checkbox" value="Monitor de Transporte Escolar"> Monitor de Transporte Escolar</label></li>
-          <li><label><input type="checkbox" value="Direção Defensiva"> Direção Defensiva</label></li>
-        </ul>
+    <section class="faixa">
+      <div class="faixa-chamada">
+        <div>
+          <h2>Solicite uma <em>análise técnica</em></h2>
+          <p class="lead" style="margin-top:1.2rem;">Fale com nossa equipe e receba uma avaliação personalizada da sua obra, do seu imóvel ou da situação documental e normativa da sua frota.</p>
+        </div>
+        <div class="acoes">
+          <a class="btn claro" href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20t%C3%A9cnica%20e%20proposta%20comercial%20junto%20%C3%A0%20Soares%20Servi%C3%A7os." target="_blank" rel="noopener noreferrer">Falar no WhatsApp <span aria-hidden="true">→</span></a>
+          <a class="btn vazado" href="mailto:comercial@soaresservicos.com.br">Enviar e-mail</a>
+        </div>
       </div>
-    </div>
-
-    <div class="ead-actions">
-      <button class="btn-primary" onclick="solicitarOrcamento()">
-        <i aria-hidden="true" data-lucide="send"></i> Solicitar Orçamento Especial
-      </button>
-      <a href="contato.html" class="btn-outline">
-        Acessar Plataforma EAD <i aria-hidden="true" data-lucide="external-link" style="width:14px;height:14px;"></i>
-      </a>
-    </div>
-  </section>
-
-  <!-- ===== CTA FINAL ======================================= -->
-  <section class="cta-final" id="cta">
-    <h2 class="section-title" style="max-width:100%;text-align:center;margin-bottom:0;">
-      Solicite uma <em>Análise Técnica</em>
-    </h2>
-    <p class="cta-lead">Fale com nossa equipe e receba uma avaliação personalizada da situação documental e normativa da sua frota.</p>
-    <div class="cta-btns">
-      <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços."
-         class="btn-primary" target="_blank" rel="noopener noreferrer">
-        <i aria-hidden="true" data-lucide="message-circle"></i> Falar no WhatsApp
-      </a>
-      <a href="mailto:comercial@soaresservicos.com.br" class="btn-white">
-        <i aria-hidden="true" data-lucide="mail"></i> Enviar E-mail
-      </a>
-    </div>
-    <div class="cta-contact">
-      <div class="cta-contact-item">
-        <span>WhatsApp</span>
-        <a href="https://wa.me/5562982736369">+55 62 9 8273-6369</a>
-      </div>
-      <div class="cta-contact-item">
-        <span>E-mail</span>
-        <a href="mailto:comercial@soaresservicos.com.br">comercial@soaresservicos.com.br</a>
-      </div>
-      <div class="cta-contact-item">
-        <span>Site</span>
-        <a href="https://soaresservicos.com.br">soaresservicos.com.br</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ========================================== -->
+    </section>
   </main>
 
-  <footer class="footer-main">
-    <div class="footer-top">
-      <address style="font-style:normal;">
-        <h4 style="font-family:'Barlow Condensed',sans-serif;color:var(--accent);letter-spacing:1px;">SOARES SERVIÇOS CONSULTORIA E LOCAÇÃO</h4>
-        <p style="opacity:0.85;">Soares Serviços Consultoria e Locação LTDA</p>
-        <p style="opacity:0.85;">CNPJ 38.570.390/0001-08</p>
+  <footer class="rodape">
+    <div class="rodape-grade">
+      <address>
+        <img src="assets/logo.png" alt="Soares Serviços Consultoria e Locação" width="774" height="156" loading="lazy">
+        <p>Soares Serviços Consultoria e Locação LTDA</p>
+        <p>CNPJ 38.570.390/0001-08</p>
       </address>
-      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1rem;">
-        <a href="https://wa.me/5562982736369?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20e%20proposta%20comercial%20junto%20à%20Soares%20Serviços." target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
-        <a href="mailto:comercial@soaresservicos.com.br" class="footer-link">Comercial</a>
-        <a href="cliente.html" class="footer-link">Área do Cliente</a>
-        <a href="profissional.html" class="footer-link">Área do Profissional</a>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="cliente.html">Área do Cliente</a></li>
+          <li><a href="profissional.html">Área do Profissional</a></li>
+          <li><a href="privacidade.html">Privacidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5562982736369?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20t%C3%A9cnica%20e%20proposta%20comercial%20junto%20%C3%A0%20Soares%20Servi%C3%A7os." target="_blank" rel="noopener noreferrer">WhatsApp +55 62 9 8273-6369</a></li>
+          <li><a href="mailto:comercial@soaresservicos.com.br">comercial@soaresservicos.com.br</a></li>
+          <li><a href="contato.html#formulario">Formulário de contato</a></li>
+        </ul>
       </div>
     </div>
-    <p class="footer-copyright">&copy; 2026 Soares Serviços Consultoria e Locação. Todos os direitos reservados.</p>
+    <p class="rodape-fim">&copy; 2026 Soares Serviços Consultoria e Locação · Todos os direitos reservados</p>
   </footer>
 
-  <!-- ===== SCRIPTS ========================================= -->
-  <script src="https://unpkg.com/lucide@0.474.0"></script>
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      // Scroll reveal
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    });
-
-    // EAD orçamento via WhatsApp
+    // Orçamento dos cursos EAD via WhatsApp
     function solicitarOrcamento() {
       const checks = document.querySelectorAll('.course-list input[type="checkbox"]:checked');
       if (checks.length === 0) {

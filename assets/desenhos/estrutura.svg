@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-label="Corte estrutural com sapatas, pilares, vigas, laje e armaduras">
+<defs>
+<pattern id="piso" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0V12" fill="none" stroke="#16243A" stroke-opacity=".22" stroke-width=".6"/></pattern>
+<pattern id="madeira" width="60" height="9" patternUnits="userSpaceOnUse"><path d="M0 9H60M22 0V9" fill="none" stroke="#9A7A45" stroke-opacity=".28" stroke-width=".6"/></pattern>
+<pattern id="terra" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V14" stroke="#8A6A3A" stroke-opacity=".45" stroke-width="1"/></pattern>
+<pattern id="concreto" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="4" cy="5" r=".9" fill="#16243A" fill-opacity=".35"/><circle cx="13" cy="12" r=".7" fill="#16243A" fill-opacity=".3"/><path d="M9 3l2 1.4-2 .6z" fill="#16243A" fill-opacity=".25"/></pattern>
+<pattern id="tijolo" width="26" height="14" patternUnits="userSpaceOnUse"><path d="M0 0H26M0 7H26M0 0V7M13 7V14" fill="none" stroke="#9B5A3C" stroke-opacity=".5" stroke-width=".7"/></pattern>
+<pattern id="ripado" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M0 0V7" stroke="#7A5226" stroke-opacity=".5" stroke-width="1"/></pattern>
+<pattern id="hach" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V7" stroke="#16243A" stroke-opacity=".5" stroke-width=".8"/></pattern>
+</defs>
+<rect x="30" y="250" width="700" height="150" fill="#E2CFA6"/>
+<rect x="30" y="250" width="700" height="150" fill="url(#terra)"/>
+<path d="M120 372 h140 v-18 l-48 -28 h-44 l-48 28 z" fill="#D2CEC5" stroke="#16243A" stroke-width="1.4"/><path d="M120 372 h140 v-18 l-48 -28 h-44 l-48 28 z" fill="url(#concreto)"/>
+<rect x="112" y="372" width="156" height="9" fill="#BDB8AD" stroke="#16243A" stroke-width=".8"/>
+<path d="M172 326 v-256 h36 v256 z" fill="#D2CEC5" stroke="#16243A" stroke-width="1.4"/><path d="M172 326 v-256 h36 v256 z" fill="url(#concreto)"/>
+<path d="M450 372 h140 v-18 l-48 -28 h-44 l-48 28 z" fill="#D2CEC5" stroke="#16243A" stroke-width="1.4"/><path d="M450 372 h140 v-18 l-48 -28 h-44 l-48 28 z" fill="url(#concreto)"/>
+<rect x="442" y="372" width="156" height="9" fill="#BDB8AD" stroke="#16243A" stroke-width=".8"/>
+<path d="M502 326 v-256 h36 v256 z" fill="#D2CEC5" stroke="#16243A" stroke-width="1.4"/><path d="M502 326 v-256 h36 v256 z" fill="url(#concreto)"/>
+<path d="M208 234 h294 v44 h-294 z" fill="#D2CEC5" stroke="#16243A" stroke-width="1.4"/><path d="M208 234 h294 v44 h-294 z" fill="url(#concreto)"/>
+<path d="M60 222 h112 v12 h-112 z" fill="#D2CEC5" stroke="#16243A" stroke-width="1.4"/><path d="M60 222 h112 v12 h-112 z" fill="url(#concreto)"/>
+<path d="M208 222 h294 v12 h-294 z" fill="#D2CEC5" stroke="#16243A" stroke-width="1.4"/><path d="M208 222 h294 v12 h-294 z" fill="url(#concreto)"/>
+<path d="M538 222 h170 v12 h-170 z" fill="#D2CEC5" stroke="#16243A" stroke-width="1.4"/><path d="M538 222 h170 v12 h-170 z" fill="url(#concreto)"/>
+<path d="M60 52 h648 v18 h-648 z" fill="#D2CEC5" stroke="#16243A" stroke-width="1.4"/><path d="M60 52 h648 v18 h-648 z" fill="url(#concreto)"/>
+<path d="M208 70 h294 v36 h-294 z" fill="#D2CEC5" stroke="#16243A" stroke-width="1.4"/><path d="M208 70 h294 v36 h-294 z" fill="url(#concreto)"/>
+<rect x="232" y="106" width="246" height="116" fill="#E9C9B4" stroke="#16243A" stroke-width="1"/>
+<rect x="232" y="106" width="246" height="116" fill="url(#tijolo)"/>
+<rect x="310" y="130" width="90" height="62" fill="#BCD5EA" stroke="#16243A" stroke-width="1.1"/><line x1="355" y1="130" x2="355" y2="192" stroke="#16243A" stroke-width=".8"/>
+<line x1="179" y1="60" x2="179" y2="364" stroke="#B5472A" stroke-width="1.8"/>
+<line x1="201" y1="60" x2="201" y2="364" stroke="#B5472A" stroke-width="1.8"/>
+<line x1="178" y1="86" x2="202" y2="86" stroke="#B5472A" stroke-width="1"/>
+<line x1="178" y1="108" x2="202" y2="108" stroke="#B5472A" stroke-width="1"/>
+<line x1="178" y1="130" x2="202" y2="130" stroke="#B5472A" stroke-width="1"/>
+<line x1="178" y1="152" x2="202" y2="152" stroke="#B5472A" stroke-width="1"/>
+<line x1="178" y1="174" x2="202" y2="174" stroke="#B5472A" stroke-width="1"/>
+<line x1="178" y1="196" x2="202" y2="196" stroke="#B5472A" stroke-width="1"/>
+<line x1="178" y1="218" x2="202" y2="218" stroke="#B5472A" stroke-width="1"/>
+<line x1="178" y1="240" x2="202" y2="240" stroke="#B5472A" stroke-width="1"/>
+<line x1="178" y1="262" x2="202" y2="262" stroke="#B5472A" stroke-width="1"/>
+<line x1="178" y1="284" x2="202" y2="284" stroke="#B5472A" stroke-width="1"/>
+<line x1="178" y1="306" x2="202" y2="306" stroke="#B5472A" stroke-width="1"/>
+<path d="M130 364 h120" stroke="#B5472A" stroke-width="1.8" fill="none"/>
+<circle cx="138" cy="359" r="2.3" fill="#B5472A"/>
+<circle cx="155" cy="359" r="2.3" fill="#B5472A"/>
+<circle cx="172" cy="359" r="2.3" fill="#B5472A"/>
+<circle cx="189" cy="359" r="2.3" fill="#B5472A"/>
+<circle cx="206" cy="359" r="2.3" fill="#B5472A"/>
+<circle cx="223" cy="359" r="2.3" fill="#B5472A"/>
+<circle cx="240" cy="359" r="2.3" fill="#B5472A"/>
+<line x1="509" y1="60" x2="509" y2="364" stroke="#B5472A" stroke-width="1.8"/>
+<line x1="531" y1="60" x2="531" y2="364" stroke="#B5472A" stroke-width="1.8"/>
+<line x1="508" y1="86" x2="532" y2="86" stroke="#B5472A" stroke-width="1"/>
+<line x1="508" y1="108" x2="532" y2="108" stroke="#B5472A" stroke-width="1"/>
+<line x1="508" y1="130" x2="532" y2="130" stroke="#B5472A" stroke-width="1"/>
+<line x1="508" y1="152" x2="532" y2="152" stroke="#B5472A" stroke-width="1"/>
+<line x1="508" y1="174" x2="532" y2="174" stroke="#B5472A" stroke-width="1"/>
+<line x1="508" y1="196" x2="532" y2="196" stroke="#B5472A" stroke-width="1"/>
+<line x1="508" y1="218" x2="532" y2="218" stroke="#B5472A" stroke-width="1"/>
+<line x1="508" y1="240" x2="532" y2="240" stroke="#B5472A" stroke-width="1"/>
+<line x1="508" y1="262" x2="532" y2="262" stroke="#B5472A" stroke-width="1"/>
+<line x1="508" y1="284" x2="532" y2="284" stroke="#B5472A" stroke-width="1"/>
+<line x1="508" y1="306" x2="532" y2="306" stroke="#B5472A" stroke-width="1"/>
+<path d="M460 364 h120" stroke="#B5472A" stroke-width="1.8" fill="none"/>
+<circle cx="468" cy="359" r="2.3" fill="#B5472A"/>
+<circle cx="485" cy="359" r="2.3" fill="#B5472A"/>
+<circle cx="502" cy="359" r="2.3" fill="#B5472A"/>
+<circle cx="519" cy="359" r="2.3" fill="#B5472A"/>
+<circle cx="536" cy="359" r="2.3" fill="#B5472A"/>
+<circle cx="553" cy="359" r="2.3" fill="#B5472A"/>
+<circle cx="570" cy="359" r="2.3" fill="#B5472A"/>
+<line x1="212" y1="78" x2="498" y2="78" stroke="#B5472A" stroke-width="1.8"/>
+<line x1="212" y1="99" x2="498" y2="99" stroke="#B5472A" stroke-width="1.8"/>
+<line x1="226" y1="76" x2="226" y2="101" stroke="#B5472A" stroke-width="1"/>
+<line x1="250" y1="76" x2="250" y2="101" stroke="#B5472A" stroke-width="1"/>
+<line x1="274" y1="76" x2="274" y2="101" stroke="#B5472A" stroke-width="1"/>
+<line x1="298" y1="76" x2="298" y2="101" stroke="#B5472A" stroke-width="1"/>
+<line x1="322" y1="76" x2="322" y2="101" stroke="#B5472A" stroke-width="1"/>
+<line x1="346" y1="76" x2="346" y2="101" stroke="#B5472A" stroke-width="1"/>
+<line x1="370" y1="76" x2="370" y2="101" stroke="#B5472A" stroke-width="1"/>
+<line x1="394" y1="76" x2="394" y2="101" stroke="#B5472A" stroke-width="1"/>
+<line x1="418" y1="76" x2="418" y2="101" stroke="#B5472A" stroke-width="1"/>
+<line x1="442" y1="76" x2="442" y2="101" stroke="#B5472A" stroke-width="1"/>
+<line x1="466" y1="76" x2="466" y2="101" stroke="#B5472A" stroke-width="1"/>
+<line x1="490" y1="76" x2="490" y2="101" stroke="#B5472A" stroke-width="1"/>
+<line x1="212" y1="241" x2="498" y2="241" stroke="#B5472A" stroke-width="1.8"/>
+<line x1="212" y1="271" x2="498" y2="271" stroke="#B5472A" stroke-width="1.8"/>
+<line x1="30" y1="250" x2="172" y2="250" stroke="#16243A" stroke-width="1.6"/><line x1="538" y1="250" x2="730" y2="250" stroke="#16243A" stroke-width="1.6"/>
+<path d="M538 150 L600 128" stroke="#16243A" stroke-width=".8" fill="none"/><circle cx="538" cy="150" r="2.4" fill="#16243A"/><text x="605.0" y="131.0" font-family="'DM Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" font-weight="500" letter-spacing="1.2" fill="#16243A" text-anchor="start">PILAR 20×40</text>
+<path d="M430 88 L600 96" stroke="#16243A" stroke-width=".8" fill="none"/><circle cx="430" cy="88" r="2.4" fill="#16243A"/><text x="605.0" y="99.0" font-family="'DM Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" font-weight="500" letter-spacing="1.2" fill="#16243A" text-anchor="start">VIGA 20×50</text>
+<path d="M560 364 L620 398" stroke="#16243A" stroke-width=".8" fill="none"/><circle cx="560" cy="364" r="2.4" fill="#16243A"/><text x="625.0" y="401.0" font-family="'DM Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" font-weight="500" letter-spacing="1.2" fill="#16243A" text-anchor="start">SAPATA 140×140</text>
+<path d="M352 262 L322 346" stroke="#16243A" stroke-width=".8" fill="none"/><circle cx="352" cy="262" r="2.4" fill="#16243A"/><text x="327.0" y="349.0" font-family="'DM Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" font-weight="500" letter-spacing="1.2" fill="#16243A" text-anchor="start">VIGA BALDRAME</text>
+<path d="M120 61 L96 30" stroke="#16243A" stroke-width=".8" fill="none"/><circle cx="120" cy="61" r="2.4" fill="#16243A"/><text x="101.0" y="33.0" font-family="'DM Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" font-weight="500" letter-spacing="1.2" fill="#16243A" text-anchor="start">LAJE h=12 cm</text>
+<path d="M531 210 L600 190" stroke="#16243A" stroke-width=".8" fill="none"/><circle cx="531" cy="210" r="2.4" fill="#16243A"/><text x="605.0" y="193.0" font-family="'DM Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" font-weight="500" letter-spacing="1.2" fill="#16243A" text-anchor="start">ARMADURA Ø10 c/ 15</text>
+<line x1="190" y1="402" x2="520" y2="402" stroke="#B07A1C" stroke-width=".8"/><line x1="186" y1="406" x2="194" y2="398" stroke="#B07A1C" stroke-width="1.1"/><line x1="190" y1="393" x2="190" y2="408" stroke="#B07A1C" stroke-width=".6"/><line x1="516" y1="406" x2="524" y2="398" stroke="#B07A1C" stroke-width="1.1"/><line x1="520" y1="393" x2="520" y2="408" stroke="#B07A1C" stroke-width=".6"/><text x="355.0" y="397.0" font-family="'DM Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" font-weight="400" letter-spacing="1" fill="#B07A1C" text-anchor="middle">4,80</text>
+<text x="30.0" y="424.0" font-family="'DM Mono', ui-monospace, Menlo, Consolas, monospace" font-size="9.5" font-weight="500" letter-spacing="1.8" fill="#16243A" text-anchor="start">CORTE AA · ESTRUTURA</text>
+</svg>
